@@ -1,0 +1,298 @@
+{
+  "status": "completed",
+  "verified": true,
+  "returncode": 0,
+  "optimizer_step": 59724,
+  "wandb_state": "finished",
+  "wandb_id": "3500d9c2",
+  "source_pid": 2948515,
+  "source_start_ticks": "807593000",
+  "source_final": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/output/staged_component_search_20261018_141515/01_dflash_mha_rnn_hard_ce/checkpoints/final",
+  "metrics": [
+    {
+      "step": 59650,
+      "loss": 0.2981
+    },
+    {
+      "step": 59700,
+      "loss": 0.061
+    },
+    {
+      "step": 59724,
+      "loss": 0.4206
+    }
+  ],
+  "files": [
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/config.json",
+      "size": 2902,
+      "sha256": "02bef649872dbbcd7fcb57f36c2277ce312ec99a97dac5e33046983890af9600"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone.py",
+      "size": 307,
+      "sha256": "79f84e807a50956340ee5b02f4990aac7f1bfe94c9db89cb0f16455e84c1b210"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention.py",
+      "size": 443,
+      "sha256": "cf27cf147dcdbad4ac5e4d27c33c337be0738f867d6ae8503fb3bb8f0a4ea36a"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention_access.py",
+      "size": 412,
+      "sha256": "ccc784508917cd7b313e1d760bd02a7016b48ca1ab142b1e8e8bd44ecaf3888c"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention_access_base.py",
+      "size": 1289,
+      "sha256": "3daeb32445f0ef621729c6a50d4415c8cd2ad52af95a858debf2d6f62fe3c357"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention_access_dense.py",
+      "size": 309,
+      "sha256": "d5a10fed9ef9a353edb933a763b513eca565d3e673ca9a41c68a6debdd4ce333"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention_access_sliding_window.py",
+      "size": 426,
+      "sha256": "53ff7cd81f684101a75dae837e72302c2590de58deec32358a2927aebc8a2433"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention_base.py",
+      "size": 5737,
+      "sha256": "e2a6014f90435688d04184d72a99f6de083be6c9751d6c3597a0055f1776adcc"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention_mha.py",
+      "size": 2152,
+      "sha256": "c309fcae83f329630dd5bac9548eef626af3aaf00902437ee0da2262123bcfbb"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_attention_mla.py",
+      "size": 2739,
+      "sha256": "e5a223e3ba82d04af2dc681298cd840cd8e1c48bf2d2fb873d5a40ca14c0bfdf"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_base.py",
+      "size": 179,
+      "sha256": "f2043010c701e61ae4eb5724fda54bcb36de4de391b875c439e98c77b62716ef"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_layer.py",
+      "size": 3467,
+      "sha256": "83407509d01e405517bb50bafb82cad26273a0ebfc4989c0e88c3b1d938d7bcc"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_operators.py",
+      "size": 350,
+      "sha256": "47fe83c525fa040aafb84c41a95ac6da7cb99b8a5ad9c7d24ae7938cf646ff46"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_operators_dflash2_conv.py",
+      "size": 385,
+      "sha256": "e1da36caf6a931afc606b432a8d867a3801d69b951763cf84d81f80e571a746f"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_backbone_transformer.py",
+      "size": 1329,
+      "sha256": "c543b7e33bf410da0b1f24b9db62ff769fb28174db80cd5f38dbcfccaed85a36"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_configuration.py",
+      "size": 4465,
+      "sha256": "9bda3fa5d533c71122721d9f5a519d44a12fa6f42bf8044ebeb71ce06f1ed383"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_context.py",
+      "size": 367,
+      "sha256": "3ed98d7b6fd3943a2e7cdc95e99f2576719250ae4cd00e4083f9279781b4f1d5"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_context_base.py",
+      "size": 244,
+      "sha256": "fcb6a4ebe8f6459bd6431383acdaac4497939d7b5dc3a159fb007459edc7457c"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_context_hidden_gated.py",
+      "size": 1565,
+      "sha256": "450b3c80a2132ad978efbf3853188b3190eeaf67a978b63dcd431a18f148cfda"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_context_hidden_mlp.py",
+      "size": 944,
+      "sha256": "2e61a9e80c7a1d7066774b8225e39ff152add1b9141c2913ce5b04fee3d99385"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_contracts.py",
+      "size": 2770,
+      "sha256": "eb76bc975c23c4acc24b157296bbb74604ca065b2ccc82e815ca99c4d763d0f3"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_modeling.py",
+      "size": 6343,
+      "sha256": "437c6da6ec3ed61c018e3854643adff51a25caf6972a1a3f3d2c4f4f80aa64d8"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_proposal.py",
+      "size": 638,
+      "sha256": "9b1c6fb9d6687e254d491df072c1fd398b4c8e4ebb78dfaa54db3bb656709c7d"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_proposal_base.py",
+      "size": 201,
+      "sha256": "a36e685f2952876a5a06c933ff9ab06b0b2ff7c8e93c7e18fb5e3c58945de06a"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_proposal_markov.py",
+      "size": 2083,
+      "sha256": "aa5b18829f15e93c8a60fb2ce7cce219e284464ede6b3d94ce031de653a83277"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_proposal_parallel.py",
+      "size": 1536,
+      "sha256": "7f8c4642995db6173c256bdf208a3d273fbe57d5d266b9f3c6cc6ea720d7b528"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_proposal_rnn.py",
+      "size": 224,
+      "sha256": "b7b672e8b485eb20e588b898c000beb87dc059b8933311cb7eef4f77f4a5d228"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_proposal_selector.py",
+      "size": 3116,
+      "sha256": "ba442c7cb6802f8026d125017b457f76ef7be76ef8113c4eae4ed10ec9cba5e5"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_composable_proposal_sequential_rnn.py",
+      "size": 1979,
+      "sha256": "37b9e260d3308f5a58cf6d4e178b15b842fc96536976639f94216e46f3b1b793"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_dflash.py",
+      "size": 32049,
+      "sha256": "1f45ad0624975926a147102c743ae761a82b10044af51c3c48e37be031ae248c"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_dflash2.py",
+      "size": 13962,
+      "sha256": "ae8be9dbf380a22add2eab1266e8c0ff7d40ae4c358dfc71ffe7a620198dee56"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_dflash_kernels.py",
+      "size": 1619,
+      "sha256": "80827d2f29c348b6cdbc322e25795cac2344d655f4b694bfc30a7ecb5888d520"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_dlite.py",
+      "size": 46652,
+      "sha256": "1933561678b5aa091af73cd36bb273c9e08961b671717223a57029f1065078c1"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_dspark.py",
+      "size": 15349,
+      "sha256": "7a8b750d248d7780ff3b99d0ac810e732cb76a83cded1be1ec3cd762f3c949e9"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_flex_attention.py",
+      "size": 5166,
+      "sha256": "469cd4acf92b542f09f4694f0adf3c4b544fb726f19207ced13ad52cae2935e0"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_registry.py",
+      "size": 3867,
+      "sha256": "51d29e6c3caaf1a64c858f78cf46789282617ad8e31aca8544ddb5d67638e8fa"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_sampling.py",
+      "size": 1907,
+      "sha256": "39546ee50f07d7dd5c32ad0ebc7207b497fe8f11ce75f403d7376bc97a5fd4a8"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/cs_torch_compat.py",
+      "size": 1843,
+      "sha256": "0fa641f4495aed34295f0f779428f62a686c457cd3c866a2c9c658563ed57264"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/model.safetensors",
+      "size": 1235164080,
+      "sha256": "9a312f5dd602a791636c745dd8745d883d6df86a1cd18183fcddbf7791cd3e82"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_config.yaml",
+      "size": 1859,
+      "sha256": "29541fabe5bf193f807d9ed8ada402eaa60a625c868fcd2ed3a80bc1928635b9"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state.pt",
+      "size": 8385,
+      "sha256": "fde29f0cccf072d0ae84a043c941f594cb8f28b61c5554c533da0f4f8d2b4512"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00000.pt",
+      "size": 617691906,
+      "sha256": "13a96ac553ee11e0bac429381d0401f5e5cc765368eb87bba27efbec050285ba"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00001.pt",
+      "size": 617660441,
+      "sha256": "03280fb16b76f0e40b5815d76809c9b3e34eda279673d61cfd7f5ec250104099"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00002.pt",
+      "size": 617680980,
+      "sha256": "5fe0b72574033733910de630592af1a22438ff16bb0fcf4c518af247132aa9a6"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00003.pt",
+      "size": 617682009,
+      "sha256": "2f70f4239edbfdad7baa8761dfdea678d0472d2cb0f9ac34d1d312336ee69648"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00004.pt",
+      "size": 617682009,
+      "sha256": "5b336d9dffc7a7d48919a582821611d98d6d9382fb4ec7540a9ad2045d85672a"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00005.pt",
+      "size": 617682352,
+      "sha256": "2da8c5d6b3041cea6bc5e3b371208d1f2ee74bdc5714d52bf24116a4a5d28772"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00006.pt",
+      "size": 629485309,
+      "sha256": "e6d8a993188158effc58554aa3f333112ca02e28ea92efd8fb5ee003fb1f5b3a"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final/training_state_rank_00007.pt",
+      "size": 926447416,
+      "sha256": "1e331424a3fb1f6da23d9dceed936d77485ca895c56360d43bbbc8bbc56bed2f"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/train.log",
+      "size": 5089298,
+      "sha256": "e525413a711157b5a13ba51ce80da39eafaf1d15d5e21476a1ad678234a9ed6d"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/watcher.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/launch_receipt.json",
+      "size": 68,
+      "sha256": "7aabd6b23bbe6f9864740f4ec3a4b6489e31af5fa4ac33e3ad69f89963ec05fe"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/exit_receipt.json",
+      "size": 85,
+      "sha256": "423932dd4ee4d409dc6cd72702e8282f71e6c98f6b14af1de50ce46608e03e32"
+    },
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/launch_job.json",
+      "size": 848,
+      "sha256": "76ffc2915bb2a86b68c370ec355c955ed4f8b33194682306bb77b9f62c74ce2b"
+    }
+  ],
+  "imported_at": "2026-10-18T19:15:51.387483+00:00"
+}

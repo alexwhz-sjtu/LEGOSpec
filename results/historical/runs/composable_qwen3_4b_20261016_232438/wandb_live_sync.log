@@ -1,0 +1,1548 @@
+wandb: Syncing 1 run(s):
+wandb:   /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/wandb/offline-run-20261016_160455-ivanjb7x/run-ivanjb7x.wandb
+wandb: [wandb sync] Loaded credentials for https://api.wandb.ai from /root/.netrc.
+wandb: [spec-decoding/ivanjb7x] setting up run ivanjb7x
+wandb: [spec-decoding/ivanjb7x] View run composable_lite_spec_3 at https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/ivanjb7x
+wandb: [spec-decoding/ivanjb7x] updating run metadata
+wandb: [spec-decoding/ivanjb7x] updating run metadata; uploading console lines 0-3; waiting for more data
+wandb: [spec-decoding/ivanjb7x] updating run metadata; waiting for more data
+wandb: [spec-decoding/ivanjb7x] updating run metadata; waiting for more data; uploading requirements.txt; uploading wandb-metadata.json
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading requirements.txt; uploading wandb-metadata.json
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading wandb-metadata.json
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 0-89, summary, console lines 3-100
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 90-91, summary, console lines 101-102
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 92-93, summary, console lines 103-104
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 94-95, summary, console lines 105-106
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 96-97, summary, console lines 107-108
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 98-100, summary, console lines 109-111
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 101-103, summary, console lines 112-114
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 104-105, summary, console lines 115-116
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 106-107, summary, console lines 117-118
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 108-109, summary, console lines 119-120
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 110-112, summary, console lines 121-123
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 113-114, summary, console lines 124-125
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 115-117, summary, console lines 126-128
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 118-119, summary, console lines 129-130
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 120-121, summary, console lines 131-132
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 122-123, summary, console lines 133-134
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 124-126, summary, console lines 135-137
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 127-128, summary, console lines 138-139
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 129-131, summary, console lines 140-142
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 132-133, summary, console lines 143-144
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 134-135, summary, console lines 145-146
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 136-137, summary, console lines 147-148
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 138-138, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 139-140, summary, console lines 149-151
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 141-142, summary, console lines 152-153
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 143-145, summary, console lines 154-156
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 146-147, summary, console lines 157-158
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 148-149, summary, console lines 159-160
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 150-151, summary, console lines 161-162
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 152-154, summary, console lines 163-165
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 155-156, summary, console lines 166-167
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 157-159, summary, console lines 168-170
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 160-161, summary, console lines 171-172
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 162-163, summary, console lines 173-174
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 164-165, summary, console lines 175-176
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 166-167, summary, console lines 177-178
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 168-170, summary, console lines 179-181
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 171-172, summary, console lines 182-183
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 173-174, summary, console lines 184-185
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 175-176, summary, console lines 186-187
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 177-179, summary, console lines 188-190
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 180-181, summary, console lines 191-192
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 182-182, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 183-184, summary, console lines 193-195
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 185-186, summary, console lines 196-197
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 187-188, summary, console lines 198-199
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 189-190, summary, console lines 200-201
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 191-193, summary, console lines 202-204
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 194-195, summary, console lines 205-206
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 196-197, summary, console lines 207-209
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 209-209; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 198-199, summary, console lines 209-216
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 200-202, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 215-215; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 203-204, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 217-221; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 205-207, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 222-224; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 208-209, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 225-226; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 210-212, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 215-215; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 213-214, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 215-217, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 227-234; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 218-219, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 220-221, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 222-222, summary, console lines 235-238; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 223-224, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 225-226, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 239-243; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 227-228, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 229-231, summary, console lines 215-215
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 244-248; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 232-233, summary, console lines 249-250
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 234-236, summary, console lines 251-253
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 237-238, summary, console lines 254-255
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 239-241, summary, console lines 256-258
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 242-243, summary, console lines 259-260
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 244-245, summary, console lines 261-262
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 246-248, summary, console lines 263-265
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 249-250, summary, console lines 266-267
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 251-252, summary, console lines 268-269
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 253-255, summary, console lines 270-272
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 256-258, summary, console lines 273-275
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 259-260, summary, console lines 276-277
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 261-262, summary, console lines 278-279
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 263-264, summary, console lines 280-281
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 265-265; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 266-267, summary, console lines 282-284
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 268-269, summary, console lines 285-286
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 270-272, summary, console lines 287-289
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 273-274, summary, console lines 290-291
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 275-277, summary, console lines 292-294
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 278-279, summary, console lines 295-296
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 280-281, summary, console lines 297-298
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 282-283, summary, console lines 299-300
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 284-286, summary, console lines 301-303
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 287-288, summary, console lines 304-305
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 289-291, summary, console lines 306-308
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 292-293, summary, console lines 309-310
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 294-295, summary, console lines 311-312
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 296-298, summary, console lines 313-315
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 299-300, summary, console lines 316-317
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 301-302, summary, console lines 318-319
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 303-305, summary, console lines 320-322
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 306-307, summary, console lines 323-324
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 308-309, summary, console lines 325-326
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 310-312, summary, console lines 327-329
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 313-314, summary, console lines 330-331
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 315-316, summary, console lines 332-333
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 317-319, summary, console lines 334-336
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 320-321, summary, console lines 337-338
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 322-323, summary, console lines 339-340
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 324-325, summary, console lines 341-342
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 326-326; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 327-328, summary, console lines 343-345
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading summary
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 329-330, summary, console lines 346-347
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 331-333, summary, console lines 348-350
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 334-335, summary, console lines 351-352
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 336-337, summary, console lines 353-354
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 338-339, summary, console lines 355-356
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 340-342, summary, console lines 357-359
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 343-344, summary, console lines 360-361
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 345-347, summary, console lines 362-364
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 348-349, summary, console lines 365-366
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 350-351, summary, console lines 367-368
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 352-353, summary, console lines 369-370
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 354-356, summary, console lines 371-373
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 357-358, summary, console lines 374-375
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 359-360, summary, console lines 376-377
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 361-362, summary, console lines 378-379
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 363-365, summary, console lines 380-382
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 366-367, summary, console lines 383-384
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 368-368; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 369-370, summary, console lines 385-387
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 371-372, summary, console lines 388-389
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 373-374, summary, console lines 390-391
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 375-377, summary, console lines 392-394
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 378-379, summary, console lines 395-396
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 380-381, summary, console lines 397-398
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 382-383, summary, console lines 399-400
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 384-385, summary, console lines 401-402
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 386-388, summary, console lines 403-405
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 389-390, summary, console lines 406-407
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 391-392, summary, console lines 408-409
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 393-394, summary, console lines 410-411
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 395-397, summary, console lines 412-415
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 414-414; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 398-399, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 416-418; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 400-401, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 402-404, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 419-423; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 405-407, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 424-426; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 408-409, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 410-411, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 427-430; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 412-414, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 415-416, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 414-414; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 417-418, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 419-421, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 414-414; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 422-423, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 431-442; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 424-426, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 414-414; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 427-428, summary, console lines 414-414
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 443-447; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 429-431, summary, console lines 448-450
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 432-433, summary, console lines 451-452
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 434-435, summary, console lines 453-454
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 436-438, summary, console lines 455-457
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 439-440, summary, console lines 458-459
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 441-442, summary, console lines 460-461
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 443-445, summary, console lines 462-464
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 446-447, summary, console lines 465-466
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading summary
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 448-450, summary, console lines 467-469
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 451-452, summary, console lines 470-471
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 453-454, summary, console lines 472-473
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 455-457, summary, console lines 474-476
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 458-459, summary, console lines 477-478
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 460-461, summary, console lines 479-480
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 462-464, summary, console lines 481-483
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 465-466, summary, console lines 484-485
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 467-469, summary, console lines 486-488
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 470-471, summary, console lines 489-490
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 472-473, summary, console lines 491-492
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 474-475, summary, console lines 493-494
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 476-478, summary, console lines 495-497
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 479-481, summary, console lines 498-500
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 482-483, summary, console lines 501-502
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 484-485, summary, console lines 503-504
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 486-487, summary, console lines 505-506
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 488-488, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 489-490, summary, console lines 507-509
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 491-492, summary, console lines 510-511
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 493-495, summary, console lines 512-514
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 496-497, summary, console lines 515-516
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 498-499, summary, console lines 517-518
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 500-502, summary, console lines 519-521
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 503-504, summary, console lines 522-523
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 505-506, summary, console lines 524-525
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 507-509, summary, console lines 526-528
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 510-511, summary, console lines 529-530
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 512-513, summary, console lines 531-532
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 514-515, summary, console lines 533-534
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 516-518, summary, console lines 535-537
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 519-520, summary, console lines 538-539
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 521-523, summary, console lines 540-542
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 524-525, summary, console lines 543-544
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 526-527, summary, console lines 545-546
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 528-529, summary, console lines 547-548
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 530-532, summary, console lines 549-551
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 533-534, summary, console lines 552-553
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 535-537, summary, console lines 554-556
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 538-539, summary, console lines 557-558
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 540-541, summary, console lines 559-560
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 542-543, summary, console lines 561-562
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 544-546, summary, console lines 563-565
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 547-548, summary, console lines 566-567
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 549-550, summary, console lines 568-569
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 551-551; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 552-553, summary, console lines 570-572
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 554-555, summary, console lines 573-574
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 556-557, summary, console lines 575-576
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 558-560, summary, console lines 577-579
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 561-562, summary, console lines 580-581
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 563-564, summary, console lines 582-583
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 565-566, summary, console lines 584-585
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 567-569, summary, console lines 586-588
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 570-571, summary, console lines 589-590
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 572-573, summary, console lines 591-592
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 574-575, summary, console lines 593-594
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 576-576, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 577-578, summary, console lines 595-597
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 579-580, summary, console lines 598-599
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 581-583, summary, console lines 600-602
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 584-585, summary, console lines 603-604
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 586-587, summary, console lines 605-606
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 588-589, summary, console lines 607-608
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 590-592, summary, console lines 609-611
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 593-594, summary, console lines 612-613
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 595-596, summary, console lines 614-616
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 615-615
+wandb: [spec-decoding/ivanjb7x] uploading console lines 615-615; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 597-598, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 599-601, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 615-615
+wandb: [spec-decoding/ivanjb7x] uploading console lines 615-615; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 602-603, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 604-605, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 617-626; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 606-608, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 615-615; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 609-610, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 627-631; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 611-613, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 614-616, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 632-637; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 617-618, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 619-620, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 638-641; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 621-623, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 624-625, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 615-615; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 626-627, summary, console lines 615-615
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 642-648; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 628-630, summary, console lines 649-651
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading summary
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 631-632, summary, console lines 652-653
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 633-635, summary, console lines 654-656
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 636-637, summary, console lines 657-658
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 638-640, summary, console lines 659-661
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 641-642, summary, console lines 662-663
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 643-644, summary, console lines 664-665
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 645-646, summary, console lines 666-667
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 647-649, summary, console lines 668-670
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 650-651, summary, console lines 671-672
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 652-654, summary, console lines 673-675
+wandb: [spec-decoding/ivanjb7x] uploading history steps 652-654, summary, console lines 673-675; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 655-656, summary, console lines 676-677
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 657-657, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 658-659, summary, console lines 678-680
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 660-661, summary, console lines 681-682
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 662-663, summary, console lines 683-684
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 664-666, summary, console lines 685-687
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 667-668, summary, console lines 688-689
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 669-671, summary, console lines 690-692
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 672-673, summary, console lines 693-694
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 674-675, summary, console lines 695-696
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 676-677, summary, console lines 697-698
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 678-679, summary, console lines 699-700
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 680-680; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 681-682, summary, console lines 701-703
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 683-685, summary, console lines 704-706
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 686-687, summary, console lines 707-708
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 688-689, summary, console lines 709-710
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 690-691, summary, console lines 711-712
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 692-694, summary, console lines 713-715
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 695-696, summary, console lines 716-717
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 697-699, summary, console lines 718-720
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 700-701, summary, console lines 721-722
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 702-703, summary, console lines 723-724
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 704-706, summary, console lines 725-727
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 707-708, summary, console lines 728-729
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 709-710, summary, console lines 730-731
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 711-713, summary, console lines 732-734
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 714-715, summary, console lines 735-736
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 716-717, summary, console lines 737-738
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 718-718, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 719-720, summary, console lines 739-740
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 721-722, summary, console lines 741-743
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 723-724, summary, console lines 744-745
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 725-727, summary, console lines 746-748
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 728-729, summary, console lines 749-750
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 730-731, summary, console lines 751-752
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 732-733, summary, console lines 753-754
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 734-736, summary, console lines 755-757
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 737-738, summary, console lines 758-759
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 739-741, summary, console lines 760-762
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 742-743, summary, console lines 763-764
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 744-745, summary, console lines 765-766
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 746-747, summary, console lines 767-768
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 748-750, summary, console lines 769-771
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 751-752, summary, console lines 772-773
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 753-754, summary, console lines 774-775
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 755-755, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 756-757, summary, console lines 776-777
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 758-759, summary, console lines 778-780
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 760-761, summary, console lines 781-782
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 762-764, summary, console lines 783-785
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 765-766, summary, console lines 786-787
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 767-768, summary, console lines 788-789
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 769-770, summary, console lines 790-791
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 771-773, summary, console lines 792-794
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 774-775, summary, console lines 795-796
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 776-777, summary, console lines 797-798
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 778-779, summary, console lines 799-800
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 780-782, summary, console lines 801-803
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 783-784, summary, console lines 804-805
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 785-786, summary, console lines 806-807
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 787-787; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 788-788, summary, console lines 808-809
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 789-791, summary, console lines 810-812
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 792-793, summary, console lines 813-814
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 794-796, summary, console lines 815-818
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 797-798, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 816-816; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 799-800, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 801-803, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 819-826; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 804-805, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 806-807, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 808-808, console lines 827-830; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 809-810, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 811-812, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 831-835; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 813-814, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 815-817, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 816-816; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 818-819, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 836-842; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 820-822, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 843-845; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 823-825, summary, console lines 816-816
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 846-848; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 826-827, summary, console lines 849-850
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 828-829, summary, console lines 851-852
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 830-832, summary, console lines 853-855
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 833-834, summary, console lines 856-857
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 835-836, summary, console lines 858-859
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 837-839, summary, console lines 860-862
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 840-841, summary, console lines 863-864
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 842-844, summary, console lines 865-867
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 845-846, summary, console lines 868-869
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 847-848, summary, console lines 870-871
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 849-849; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 850-851, summary, console lines 872-874
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 852-853, summary, console lines 875-876
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 854-855, summary, console lines 877-878
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 856-858, summary, console lines 879-881
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 859-860, summary, console lines 882-883
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 861-863, summary, console lines 884-886
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 864-865, summary, console lines 887-888
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 866-867, summary, console lines 889-890
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 868-869, summary, console lines 891-892
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 870-870; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 871-872, summary, console lines 893-895
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 873-874, summary, console lines 896-897
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 875-877, summary, console lines 898-900
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 878-879, summary, console lines 901-902
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 880-880, summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 881-882, summary, console lines 903-905
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 883-884, summary, console lines 906-907
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 885-886, summary, console lines 908-909
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 887-888, summary, console lines 910-911
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 889-891, summary, console lines 912-914
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 892-893, summary, console lines 915-916
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 894-896, summary, console lines 917-919
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 897-898, summary, console lines 920-921
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 899-900, summary, console lines 922-923
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 901-902, summary, console lines 924-925
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 903-905, summary, console lines 926-928
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 906-907, summary, console lines 929-930
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 908-910, summary, console lines 931-933
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 911-912, summary, console lines 934-935
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 913-914, summary, console lines 936-937
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 915-916, summary, console lines 938-939
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 917-919, summary, console lines 940-942
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 920-921, summary, console lines 943-944
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 922-924, summary, console lines 945-947
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 925-926, summary, console lines 948-949
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 927-928, summary, console lines 950-951
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 929-930, summary, console lines 952-953
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 931-933, summary, console lines 954-956
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 934-935, summary, console lines 957-958
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 936-937, summary, console lines 959-960
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 938-939, summary, console lines 961-962
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 940-940; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 941-942, summary, console lines 963-965
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 943-945, summary, console lines 966-968
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 946-947, summary, console lines 969-970
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 948-949, summary, console lines 971-972
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 950-951, summary, console lines 973-974
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 952-953, summary, console lines 975-976
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 954-956, summary, console lines 977-979
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 957-958, summary, console lines 980-981
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 959-960, summary, console lines 982-983
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 961-962, summary, console lines 984-985
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 963-963; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 964-965, summary, console lines 986-988
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 966-967, summary, console lines 989-990
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 968-970, summary, console lines 991-993
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 971-972, summary, console lines 994-995
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 973-974, summary, console lines 996-997
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 975-976, summary, console lines 998-999
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 977-979, summary, console lines 1000-1002
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 980-981, summary, console lines 1003-1004
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 982-983, summary, console lines 1005-1006
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 984-985, summary, console lines 1007-1008
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 986-988, summary, console lines 1009-1011
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 989-990, summary, console lines 1012-1013
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 991-992, summary, console lines 1014-1015
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 993-994, summary, console lines 1016-1018
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 995-995; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 996-997, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 1017-1017; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 998-999, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1000-1001, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 1002-1002, console lines 1019-1026; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1003-1004, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 1027-1029; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1005-1006, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 1017-1017; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1007-1009, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 1017-1017; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1010-1012, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 1017-1017; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1013-1014, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1015-1017, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading console lines 1030-1042; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1018-1019, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1020-1021, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary, console lines 1043-1046; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1022-1023, summary, console lines 1017-1017
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1024-1026, summary, console lines 1047-1051
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1027-1028, summary, console lines 1052-1053
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1029-1031, summary, console lines 1054-1056
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1032-1033, summary, console lines 1057-1058
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1034-1036, summary, console lines 1059-1061
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1037-1038, summary, console lines 1062-1063
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1039-1040, summary, console lines 1064-1065
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1041-1043, summary, console lines 1066-1068
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1044-1045, summary, console lines 1069-1070
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1046-1047, summary, console lines 1071-1072
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1048-1050, summary, console lines 1073-1075
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1051-1052, summary, console lines 1076-1077
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1053-1055, summary, console lines 1078-1080
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1056-1057, summary, console lines 1081-1082
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1058-1059, summary, console lines 1083-1084
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1060-1061, summary, console lines 1085-1086
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1062-1064, summary, console lines 1087-1089
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1065-1066, summary, console lines 1090-1091
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1067-1069, summary, console lines 1092-1094
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1070-1071, summary, console lines 1095-1096
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1072-1074, summary, console lines 1097-1099
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1075-1076, summary, console lines 1100-1101
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1077-1078, summary, console lines 1102-1103
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1079-1080, summary, console lines 1104-1105
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1081-1083, summary, console lines 1106-1108
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1084-1086, summary, console lines 1109-1111
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1087-1088, summary, console lines 1112-1113
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1089-1090, summary, console lines 1114-1115
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1091-1092, summary, console lines 1116-1117
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1093-1095, summary, console lines 1118-1120
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1096-1097, summary, console lines 1121-1122
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1098-1100, summary, console lines 1123-1125
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1101-1102, summary, console lines 1126-1127
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1103-1104, summary, console lines 1128-1129
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1105-1106, summary, console lines 1130-1131
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1107-1108, summary, console lines 1132-1133
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1109-1111, summary, console lines 1134-1136
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1112-1113, summary, console lines 1137-1138
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1114-1116, summary, console lines 1139-1141
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1117-1118, summary, console lines 1142-1143
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1119-1120, summary, console lines 1144-1145
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1121-1122, summary, console lines 1146-1147
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1123-1125, summary, console lines 1148-1150
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1126-1127, summary, console lines 1151-1152
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1128-1130, summary, console lines 1153-1155
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1131-1132, summary, console lines 1156-1157
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1133-1134, summary, console lines 1158-1159
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1135-1136, summary, console lines 1160-1161
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1137-1139, summary, console lines 1162-1164
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1140-1141, summary, console lines 1165-1166
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1142-1143, summary, console lines 1167-1168
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1144-1145, summary, console lines 1169-1170
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1146-1148, summary, console lines 1171-1173
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1149-1150, summary, console lines 1174-1175
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1151-1153, summary, console lines 1176-1178
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1154-1155, summary, console lines 1179-1180
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1156-1157, summary, console lines 1181-1182
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1158-1159, summary, console lines 1183-1184
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1160-1162, summary, console lines 1185-1187
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1163-1164, summary, console lines 1188-1189
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1165-1166, summary, console lines 1190-1191
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1167-1169, summary, console lines 1192-1194
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1170-1171, summary, console lines 1195-1196
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1172-1173, summary, console lines 1197-1198
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1174-1175, summary, console lines 1199-1200
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1176-1177, summary, console lines 1201-1202
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading history steps 1178-1178; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1179-1180, summary, console lines 1203-1205
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading summary; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1181-1182, summary, console lines 1206-1207
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1183-1185, summary, console lines 1208-1210
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1186-1187, summary, console lines 1211-1212
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data; uploading history steps 1188-1189, summary, console lines 1213-1214
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] uploading data; waiting for more data
+wandb: [spec-decoding/ivanjb7x] waiting for more data
+wandb: [spec-decoding/ivanjb7x] updating run metadata
+wandb: [spec-decoding/ivanjb7x] updating run metadata; uploading history steps 1190-1194, summary, console lines 1215-1219
+wandb: [spec-decoding/ivanjb7x] uploading history steps 1190-1194, summary, console lines 1215-1219
+wandb: [spec-decoding/ivanjb7x] uploading history steps 1190-1194, summary, console lines 1215-1219; uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb: [spec-decoding/ivanjb7x] uploading wandb-summary.json; uploading config.yaml; uploading output.log
+wandb: [spec-decoding/ivanjb7x] uploading data
+wandb: [spec-decoding/ivanjb7x] Finished syncing /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/wandb/offline-run-20261016_160455-ivanjb7x

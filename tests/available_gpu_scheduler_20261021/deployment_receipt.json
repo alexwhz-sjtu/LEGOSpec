@@ -1,0 +1,36 @@
+{
+  "status": "dispatched",
+  "authorized_change": "Use idle GPUs instead of requiring all eight",
+  "at": "2026-10-20T17:53:43.193806+00:00",
+  "old_benchmark": {
+    "pid": 675006,
+    "state": "S",
+    "start_ticks": "188458853",
+    "command": "/share/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130/bin/python /mnt/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/component_benchmark_h8001_20261020/benchmark_queue.py --state /mnt/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/component_benchmark_h8001_20261020/new_models_test_queue.json "
+  },
+  "old_controller": {
+    "pid": 434485,
+    "state": "S",
+    "start_ticks": "181340748",
+    "command": "/share/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130/bin/python /share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/h8001_component_search_20261020/continuation.py "
+  },
+  "scheduler_sha256": "6aac711079190fad61e5706af0ed8258e9f1bf47652d55702aed121017f25e39",
+  "helper_sha256": "5e44821e75413382ff78d4edee27cdbc2eb730b15083a52540c5c020740e30c8",
+  "protected_files_before": 238,
+  "protected_files_after": 239,
+  "completed_jobs_preserved": 6,
+  "unchanged": "Training snapshot, recipes, weights, harness, panels, seeds, logical 8 shards",
+  "backups": "/share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/available_gpu_scheduler_20261021/original_controllers_and_guards",
+  "benchmark_supervisor": {
+    "pid": 849235,
+    "state": "R",
+    "start_ticks": "190258220",
+    "command": "/share/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130/bin/python /share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/component_benchmark_h8001_20261020/benchmark_queue.py --state /share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/component_benchmark_h8001_20261020/new_models_test_queue.json "
+  },
+  "continuation_controller": {
+    "pid": 849246,
+    "state": "R",
+    "start_ticks": "190258260",
+    "command": "/share/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130/bin/python /share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/h8001_component_search_20261020/continuation.py "
+  }
+}

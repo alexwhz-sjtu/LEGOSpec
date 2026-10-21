@@ -1,0 +1,288 @@
+{
+  "dataset_rows": 80000,
+  "first_five_schema": [
+    {
+      "row": 1,
+      "keys": [
+        "source",
+        "conversations",
+        "status",
+        "id"
+      ],
+      "source": {
+        "chars": 37
+      },
+      "conversations": {
+        "length": 2,
+        "first_item_keys": [
+          "role",
+          "content"
+        ],
+        "roles": [
+          "user",
+          "assistant"
+        ]
+      },
+      "status": {
+        "chars": 7
+      },
+      "id": {
+        "type": "int"
+      }
+    },
+    {
+      "row": 2,
+      "keys": [
+        "source",
+        "conversations",
+        "status",
+        "id"
+      ],
+      "source": {
+        "chars": 50
+      },
+      "conversations": {
+        "length": 2,
+        "first_item_keys": [
+          "role",
+          "content"
+        ],
+        "roles": [
+          "user",
+          "assistant"
+        ]
+      },
+      "status": {
+        "chars": 7
+      },
+      "id": {
+        "type": "int"
+      }
+    },
+    {
+      "row": 3,
+      "keys": [
+        "source",
+        "conversations",
+        "status",
+        "id"
+      ],
+      "source": {
+        "chars": 37
+      },
+      "conversations": {
+        "length": 2,
+        "first_item_keys": [
+          "role",
+          "content"
+        ],
+        "roles": [
+          "user",
+          "assistant"
+        ]
+      },
+      "status": {
+        "chars": 7
+      },
+      "id": {
+        "type": "int"
+      }
+    },
+    {
+      "row": 4,
+      "keys": [
+        "source",
+        "conversations",
+        "status",
+        "id"
+      ],
+      "source": {
+        "chars": 37
+      },
+      "conversations": {
+        "length": 2,
+        "first_item_keys": [
+          "role",
+          "content"
+        ],
+        "roles": [
+          "user",
+          "assistant"
+        ]
+      },
+      "status": {
+        "chars": 7
+      },
+      "id": {
+        "type": "int"
+      }
+    },
+    {
+      "row": 5,
+      "keys": [
+        "source",
+        "conversations",
+        "status",
+        "id"
+      ],
+      "source": {
+        "chars": 47
+      },
+      "conversations": {
+        "length": 2,
+        "first_item_keys": [
+          "role",
+          "content"
+        ],
+        "roles": [
+          "user",
+          "assistant"
+        ]
+      },
+      "status": {
+        "chars": 7
+      },
+      "id": {
+        "type": "int"
+      }
+    }
+  ],
+  "files": [
+    {
+      "repo": "alexwangsjtu/transfer",
+      "file": "open_perfectblend_80k_qwen3_4b.jsonl",
+      "size": 357019242,
+      "sha256": "b8fb09cec39962888b08d457836bcb2bfff0bd988df51ce4910a065e24edc168",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/datasets/open_perfectblend_80k_qwen3_4b.jsonl",
+      "local": "/data/temp/datasets/open_perfectblend_80k_qwen3_4b.jsonl",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": ".gitattributes",
+      "size": 2127,
+      "sha256": "088e25d6bceaa8943f4f292006210358292349cc36e7578f80c62fce75535f46",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/.gitattributes",
+      "local": "/data/temp/models/Qwen3-4B/.gitattributes",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "LICENSE",
+      "size": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/LICENSE",
+      "local": "/data/temp/models/Qwen3-4B/LICENSE",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "README.md",
+      "size": 16857,
+      "sha256": "71add1cd091c309b1cb1a6b943f2476eb2b004124b3bd1d32dcd0b24cc1abc47",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/README.md",
+      "local": "/data/temp/models/Qwen3-4B/README.md",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "config.json",
+      "size": 726,
+      "sha256": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/config.json",
+      "local": "/data/temp/models/Qwen3-4B/config.json",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "configuration.json",
+      "size": 73,
+      "sha256": "f888421726665e8a84b738eed42a64875aed79de8be7daade851ac8bf4c0cef9",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/configuration.json",
+      "local": "/data/temp/models/Qwen3-4B/configuration.json",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "generation_config.json",
+      "size": 239,
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/generation_config.json",
+      "local": "/data/temp/models/Qwen3-4B/generation_config.json",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "merges.txt",
+      "size": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/merges.txt",
+      "local": "/data/temp/models/Qwen3-4B/merges.txt",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "model-00001-of-00003.safetensors",
+      "size": 3957900840,
+      "sha256": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/model-00001-of-00003.safetensors",
+      "local": "/data/temp/models/Qwen3-4B/model-00001-of-00003.safetensors",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "model-00002-of-00003.safetensors",
+      "size": 3987450520,
+      "sha256": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/model-00002-of-00003.safetensors",
+      "local": "/data/temp/models/Qwen3-4B/model-00002-of-00003.safetensors",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "model-00003-of-00003.safetensors",
+      "size": 99630640,
+      "sha256": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/model-00003-of-00003.safetensors",
+      "local": "/data/temp/models/Qwen3-4B/model-00003-of-00003.safetensors",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "model.safetensors.index.json",
+      "size": 32819,
+      "sha256": "6dc0981b8829fead746441f68f38f24c5ca4a3a66351f652c26c6df0efc43ab2",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/model.safetensors.index.json",
+      "local": "/data/temp/models/Qwen3-4B/model.safetensors.index.json",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "tokenizer.json",
+      "size": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/tokenizer.json",
+      "local": "/data/temp/models/Qwen3-4B/tokenizer.json",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "tokenizer_config.json",
+      "size": 9732,
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/tokenizer_config.json",
+      "local": "/data/temp/models/Qwen3-4B/tokenizer_config.json",
+      "verified": true
+    },
+    {
+      "repo": "Qwen/Qwen3-4B",
+      "file": "vocab.json",
+      "size": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "cloud": "/mnt/bd-1/task/339953/artifacts/LiteSpec/models/Qwen3-4B/vocab.json",
+      "local": "/data/temp/models/Qwen3-4B/vocab.json",
+      "verified": true
+    }
+  ],
+  "model_index_verified": true
+}

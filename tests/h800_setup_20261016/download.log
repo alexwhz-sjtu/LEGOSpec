@@ -1,0 +1,32 @@
+DOWNLOAD alexwangsjtu/transfer open_perfectblend_80k_qwen3_4b.jsonl resume 0 size 357019242
+VERIFIED open_perfectblend_80k_qwen3_4b.jsonl 357019242
+DATASET_ROWS 80000 FIRST_FIVE_SCHEMA [{"row": 1, "keys": ["source", "conversations", "status", "id"], "source": {"chars": 37}, "conversations": {"length": 2, "first_item_keys": ["role", "content"], "roles": ["user", "assistant"]}, "status": {"chars": 7}, "id": {"type": "int"}}, {"row": 2, "keys": ["source", "conversations", "status", "id"], "source": {"chars": 50}, "conversations": {"length": 2, "first_item_keys": ["role", "content"], "roles": ["user", "assistant"]}, "status": {"chars": 7}, "id": {"type": "int"}}, {"row": 3, "keys": ["source", "conversations", "status", "id"], "source": {"chars": 37}, "conversations": {"length": 2, "first_item_keys": ["role", "content"], "roles": ["user", "assistant"]}, "status": {"chars": 7}, "id": {"type": "int"}}, {"row": 4, "keys": ["source", "conversations", "status", "id"], "source": {"chars": 37}, "conversations": {"length": 2, "first_item_keys": ["role", "content"], "roles": ["user", "assistant"]}, "status": {"chars": 7}, "id": {"type": "int"}}, {"row": 5, "keys": ["source", "conversations", "status", "id"], "source": {"chars": 47}, "conversations": {"length": 2, "first_item_keys": ["role", "content"], "roles": ["user", "assistant"]}, "status": {"chars": 7}, "id": {"type": "int"}}]
+DOWNLOAD Qwen/Qwen3-4B README.md resume 0 size 16857
+DOWNLOAD Qwen/Qwen3-4B .gitattributes resume 0 size 2127
+DOWNLOAD Qwen/Qwen3-4B LICENSE resume 0 size 11343
+VERIFIED README.md 16857
+DOWNLOAD Qwen/Qwen3-4B config.json resume 0 size 726
+VERIFIED LICENSE 11343
+VERIFIED .gitattributes 2127
+DOWNLOAD Qwen/Qwen3-4B configuration.json resume 0 size 73
+DOWNLOAD Qwen/Qwen3-4B generation_config.json resume 0 size 239
+VERIFIED config.json 726
+DOWNLOAD Qwen/Qwen3-4B merges.txt resume 0 size 1671853
+VERIFIED configuration.json 73
+VERIFIED generation_config.json 239
+DOWNLOAD Qwen/Qwen3-4B model-00001-of-00003.safetensors resume 0 size 3957900840
+DOWNLOAD Qwen/Qwen3-4B model-00002-of-00003.safetensors resume 0 size 3987450520
+VERIFIED merges.txt 1671853
+DOWNLOAD Qwen/Qwen3-4B model-00003-of-00003.safetensors resume 0 size 99630640
+VERIFIED model-00003-of-00003.safetensors 99630640
+DOWNLOAD Qwen/Qwen3-4B model.safetensors.index.json resume 0 size 32819
+VERIFIED model.safetensors.index.json 32819
+DOWNLOAD Qwen/Qwen3-4B tokenizer.json resume 0 size 11422654
+VERIFIED tokenizer.json 11422654
+DOWNLOAD Qwen/Qwen3-4B tokenizer_config.json resume 0 size 9732
+VERIFIED tokenizer_config.json 9732
+DOWNLOAD Qwen/Qwen3-4B vocab.json resume 0 size 2776833
+VERIFIED vocab.json 2776833
+VERIFIED model-00001-of-00003.safetensors 3957900840
+VERIFIED model-00002-of-00003.safetensors 3987450520
+ALL_ASSETS_VERIFIED 15 dataset_rows 80000

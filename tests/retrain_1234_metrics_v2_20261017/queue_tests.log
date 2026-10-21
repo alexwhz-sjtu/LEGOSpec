@@ -1,0 +1,13 @@
+test_actual_output_suffix_is_resolved (__main__.SerialQueueGuards.test_actual_output_suffix_is_resolved) ... ok
+test_complete_schedule_is_accepted (__main__.SerialQueueGuards.test_complete_schedule_is_accepted) ... ok
+test_early_exit_and_smoke_runs_are_rejected (__main__.SerialQueueGuards.test_early_exit_and_smoke_runs_are_rejected) ... ok
+test_existing_launch_claim_prevents_a_second_spawn (__main__.SerialQueueGuards.test_existing_launch_claim_prevents_a_second_spawn) ... ok
+test_experiments_cannot_be_reordered (__main__.SerialQueueGuards.test_experiments_cannot_be_reordered) ... ok
+test_missing_output_or_foreign_run_is_rejected (__main__.SerialQueueGuards.test_missing_output_or_foreign_run_is_rejected) ... ok
+test_process_identity_rejects_reused_pids (__main__.SerialQueueGuards.test_process_identity_rejects_reused_pids) ... ok
+test_snapshot_drift_is_rejected (__main__.SerialQueueGuards.test_snapshot_drift_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.003s
+
+OK

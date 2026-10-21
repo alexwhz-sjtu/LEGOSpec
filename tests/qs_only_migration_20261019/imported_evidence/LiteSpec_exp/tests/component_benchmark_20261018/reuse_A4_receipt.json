@@ -1,0 +1,9 @@
+{
+  "source": "QS_H800:/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/04_dflash_mha_parallel/checkpoints/final",
+  "training_returncode": 0,
+  "optimizer_step": 59724,
+  "hashes": {
+    "config.json": "f98e05d0b20a2e249e85075027be2afa327d3cbed385c4ed8eb13e75d6905249",
+    "model.safetensors": "9e8229261026f95c91fac08b61a0b7e2bf747c71d7176d22e6e5dfcb9afb59a3"
+  }
+}

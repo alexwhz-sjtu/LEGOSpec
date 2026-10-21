@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-18T00:22:00.052826+00:00",
+  "hashes_valid": true,
+  "completed_job": {
+    "number": 3,
+    "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/03_dflare_mha_selector/checkpoints/final",
+    "metadata": {
+      "optimizer_step": 59724,
+      "phases": 1
+    },
+    "returncode": 0,
+    "wandb_state": "finished",
+    "summary": {
+      "_step": 59724,
+      "train/loss": 1.0566229820251465,
+      "detail/composable/hard_label/token_accuracy": 0.883706271648407,
+      "train/walk_accepted_length": 6.611111164093018,
+      "train/expected_accept_len": 5.713028430938721
+    }
+  },
+  "started_job": {
+    "number": 4,
+    "pid": 220590,
+    "start_ticks": "2286778069",
+    "workers": [
+      220628,
+      220629,
+      220630,
+      220631,
+      220632,
+      220633,
+      220634,
+      220635
+    ],
+    "local_metrics": [
+      {
+        "step": 800,
+        "loss": 4.0102
+      },
+      {
+        "step": 850,
+        "loss": 3.5763
+      },
+      {
+        "step": 900,
+        "loss": 3.8019
+      }
+    ],
+    "wandb_state": "running",
+    "wandb_rows": [
+      {
+        "_step": 600,
+        "train/loss": 4.689879417419434,
+        "detail/composable/hard_label/token_accuracy": 0.24015413224697113,
+        "train/walk_accepted_length": 2.0336239337921143,
+        "train/expected_accept_len": 1.6984376907348633
+      },
+      {
+        "_step": 650,
+        "train/loss": 5.2448320388793945,
+        "detail/composable/hard_label/token_accuracy": 0.1856987476348877,
+        "train/walk_accepted_length": 1.7241487503051758,
+        "train/expected_accept_len": 1.5067676305770874
+      },
+      {
+        "_step": 700,
+        "train/loss": 3.145261287689209,
+        "detail/composable/hard_label/token_accuracy": 0.37081149220466614,
+        "train/walk_accepted_length": 2.793306350708008,
+        "train/expected_accept_len": 2.3125646114349365
+      },
+      {
+        "_step": 750,
+        "train/loss": 3.8568060398101807,
+        "detail/composable/hard_label/token_accuracy": 0.3181050717830658,
+        "train/walk_accepted_length": 2.5087976455688477,
+        "train/expected_accept_len": 2.140251874923706
+      },
+      {
+        "_step": 800,
+        "train/loss": 4.010239601135254,
+        "detail/composable/hard_label/token_accuracy": 0.293865829706192,
+        "train/walk_accepted_length": 2.358372449874878,
+        "train/expected_accept_len": 2.0189566612243652
+      }
+    ],
+    "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/04_dflash_mha_parallel/train.log",
+    "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/04_dflash_mha_parallel/checkpoints",
+    "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/sbmcgreu"
+  }
+}

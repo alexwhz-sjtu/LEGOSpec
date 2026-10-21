@@ -1,0 +1,17 @@
+[
+  {
+    "number": 1,
+    "dry_run_returncode": 0,
+    "only_objective_changed": true
+  },
+  {
+    "number": 2,
+    "dry_run_returncode": 0,
+    "only_objective_changed": true
+  },
+  {
+    "number": 3,
+    "dry_run_returncode": 0,
+    "only_objective_changed": true
+  }
+]

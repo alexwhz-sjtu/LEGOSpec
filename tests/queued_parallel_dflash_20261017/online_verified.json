@@ -1,0 +1,59 @@
+{
+  "verified_at": "2026-10-17T05:20:25.781672+00:00",
+  "status": "training_verified",
+  "pid": 90580,
+  "workers": [
+    90628,
+    90629,
+    90630,
+    90631,
+    90632,
+    90633,
+    90634,
+    90635
+  ],
+  "local_metrics": [
+    {
+      "step": 12300,
+      "loss": 1.1522
+    },
+    {
+      "step": 12350,
+      "loss": 0.83
+    },
+    {
+      "step": 12400,
+      "loss": 0.8883
+    }
+  ],
+  "wandb": {
+    "id": "h4iy1alf",
+    "state": "running",
+    "history": [
+      {
+        "_step": 12250,
+        "train/loss": 1.4619063138961792,
+        "detail/composable/micro_step": 12250
+      },
+      {
+        "_step": 12300,
+        "train/loss": 1.1521693468093872,
+        "detail/composable/micro_step": 12300
+      },
+      {
+        "_step": 12350,
+        "train/loss": 0.8299773335456848,
+        "detail/composable/micro_step": 12350
+      }
+    ],
+    "url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/h4iy1alf"
+  },
+  "source_completion": {
+    "optimizer_step": 59724,
+    "phase_index": 1
+  },
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_parallel_dflash_20261017_121432/train.log",
+  "checkpoints": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_parallel_dflash_20261017_121432/checkpoints",
+  "context": "dflash",
+  "proposal": "parallel"
+}

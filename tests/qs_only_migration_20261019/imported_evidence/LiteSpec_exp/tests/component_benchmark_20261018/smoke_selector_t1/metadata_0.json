@@ -1,0 +1,32 @@
+{
+  "protocol": "component-acceptance-v1",
+  "manifest_sha256": "1d721ff448aa6335fb478cec3264f0d3606c73e94d24eb7e4d7ffcfb75b154a0",
+  "draft": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/output/composable_1/final",
+  "draft_hashes": {
+    "model.safetensors": "67a9cefb92d52cd4bde863e1038ccaa6b4e8c37b16a95b0de8e724dd7bf74c3a"
+  },
+  "config_sha256": "042d94f87b866bccf83ab0f1446db0e870e6114995d4c52ca92aaaf1ffbe442b",
+  "target": "/data/wanghanzhen/models/Qwen3-4B",
+  "target_hashes": {
+    "model-00001-of-00003.safetensors": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+    "model-00002-of-00003.safetensors": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+    "model-00003-of-00003.safetensors": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1"
+  },
+  "harness_hashes": {
+    "run.py": "6135a6b880ff4909e182a5781b88e04119fc539dae8f3ce33b73240efd66d6a4",
+    "engine.py": "61ddc1c3533855ff32cedea1b2f71ae66681db813a30c7005eeb47ec5a6ffcfc",
+    "prepare.py": "1125f2e546f0fb516f3141df8151c48f252b847c752f8dc10d8af8a0532e51d1",
+    "test_verifier.py": "f18638ba87181a502ed308abcdf713196d05b6f03d7c1424b5e21a10cbd483d8",
+    "summarize.py": "eceebbd0dbe5022655331cad0f1e94b0575c1503f2fae127c6618f34b410381f"
+  },
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "max_new_tokens": 64,
+  "shards": 1,
+  "smoke": true,
+  "torch": "2.9.1+cu128",
+  "python": "3.11.15",
+  "target_attention": "sdpa",
+  "draft_attention": "sdpa",
+  "gpu": "NVIDIA H800"
+}

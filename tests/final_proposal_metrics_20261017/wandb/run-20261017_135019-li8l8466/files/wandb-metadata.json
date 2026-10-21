@@ -1,0 +1,89 @@
+{
+  "os": "Linux-5.15.0-151-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.11.17",
+  "startedAt": "2026-10-17T13:50:19.572468Z",
+  "program": "/data/temp/LiteSpec_exp/tests/final_proposal_metrics_20261017/candidate/tests/final_proposal_metrics_20261017/distributed_metrics_smoke.py",
+  "codePath": "tests/final_proposal_metrics_20261017/candidate/tests/final_proposal_metrics_20261017/distributed_metrics_smoke.py",
+  "codePathLocal": "tests/final_proposal_metrics_20261017/distributed_metrics_smoke.py",
+  "git": {
+    "remote": "https://github.com/alexwhz-sjtu/LiteSpec.git",
+    "commit": "8da3570ce538132d393acaf5b74ac49e86d9d1b8"
+  },
+  "email": "alex-wang@sjtu.edu.cn",
+  "root": "/data/temp/LiteSpec_exp/tests/final_proposal_metrics_20261017",
+  "host": "bsud-reservedpool-dn7lx-11",
+  "executable": "/data/temp/.cache/uv/environments-v2/litespec-cp3.11-57715f5c7963f9ff/bin/python",
+  "cpu_count": 90,
+  "cpu_count_logical": 180,
+  "gpu": "NVIDIA H800",
+  "gpu_count": 8,
+  "disk": {
+    "/": {
+      "total": "3779302981632",
+      "used": "1154006728704"
+    }
+  },
+  "memory": {
+    "total": "3105187758080"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-b1d0336d-9d75-019f-ad49-4e3d142d398f"
+    },
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-c76de2d2-4606-069d-6741-8b86c69b3bde"
+    },
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-ccdc3c7f-3eb0-53cf-8eec-61c686bc372b"
+    },
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-b68e2288-1170-d116-f5f9-77e8da74a1e4"
+    },
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-091ce976-f290-0705-ad74-b645c0626c7c"
+    },
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-cc2cb02c-5f1f-c202-7d9d-057139831c32"
+    },
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-56d29881-d3d9-47d4-b36d-da29aa59b678"
+    },
+    {
+      "name": "NVIDIA H800",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-e0e2fc8b-dca1-ae7c-ca9a-9cdfc91da884"
+    }
+  ],
+  "cudaVersion": "13.3",
+  "writerId": "t8tbjab1uslgdmz4505abtrbcqaj7iwa"
+}

@@ -1,0 +1,45 @@
+{
+  "models": {
+    "reused_RNN_hard_ce_from_inf_final": {
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/01_current_rnn_ce_final_9a312f5d/final",
+      "weight_sha256": "9a312f5dd602a791636c745dd8745d883d6df86a1cd18183fcddbf7791cd3e82",
+      "wandb_id": "3500d9c2",
+      "optimizer_step": 59724,
+      "historical_source": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final",
+      "original_returncode": 0
+    },
+    "reused_A4_parallel_hard_ce": {
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/11_04_dflash_mha_parallel_final_9e822926/final",
+      "weight_sha256": "9e8229261026f95c91fac08b61a0b7e2bf747c71d7176d22e6e5dfcb9afb59a3",
+      "wandb_id": "sbmcgreu",
+      "optimizer_step": 59724,
+      "historical_source": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/04_dflash_mha_parallel/checkpoints/final",
+      "original_returncode": 0
+    },
+    "reused_01_dflash_mha_rnn_dpace": {
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/05_01_dflash_mha_rnn_dpace_final_ad53d8a0/final",
+      "weight_sha256": "ad53d8a07e7cf66af89b0201aac1d3ba0d1d0e498f073e92cc2db65bca083328",
+      "wandb_id": "1a1eb290",
+      "optimizer_step": 59724,
+      "historical_source": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/01_dflash_mha_rnn_dpace/checkpoints/final",
+      "original_returncode": 0
+    },
+    "reused_02_dflash_mha_rnn_nla_gamma4": {
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/06_02_dflash_mha_rnn_nla_gamma4_final_cabcd6b5/final",
+      "weight_sha256": "cabcd6b5a48f2dba5b379ee1499c13cf91f5674c212f58dba03124c9827ac80c",
+      "wandb_id": "d0a10860",
+      "optimizer_step": 59724,
+      "historical_source": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/02_dflash_mha_rnn_nla_gamma4/checkpoints/final",
+      "original_returncode": 0
+    },
+    "reused_03_dflash_mha_rnn_ce01_tv09": {
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/07_03_dflash_mha_rnn_ce01_tv09_final_b0df884d/final",
+      "weight_sha256": "b0df884d7fb0f1d72f69432ab1dfc781c23b52a5c839b0b46cc0b55043394d07",
+      "wandb_id": "cac0aa4b",
+      "optimizer_step": 59724,
+      "historical_source": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/03_dflash_mha_rnn_ce01_tv09/checkpoints/final",
+      "original_returncode": 0
+    }
+  },
+  "note": "Optimizer states were intentionally not included in the portable inference backup. Reuse verifies exact weight SHA and original finished W&B; new runs still require full final/rank states."
+}

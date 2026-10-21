@@ -1,0 +1,11 @@
+{
+  "state": "finished",
+  "id": "li8l8466",
+  "url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/li8l8466",
+  "summary": {
+    "detail/composable/hard_label/token_accuracy": 0,
+    "train/walk_accepted_length": 1,
+    "train/expected_accept_len": 2.564518690109253
+  },
+  "step": 9
+}

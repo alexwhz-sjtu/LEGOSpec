@@ -1,0 +1,58 @@
+{
+  "request": "\u505c\u6b62\u8bad\u7ec3",
+  "reason": "explicit_user_stop",
+  "requested_at": "2026-10-21T06:53:04.506167+00:00",
+  "controller_before": {
+    "status": "training",
+    "python": "/mnt/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130-h8002/bin/python",
+    "world_size": 8,
+    "series_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/dflare_parallel_20261021",
+    "execution_host": "H800_2",
+    "controller_pid": 183750,
+    "controller_start_ticks": "769206035",
+    "updated_at": "2026-10-21T05:42:05.006296+00:00",
+    "training_supervisor": {
+      "pid": 183755,
+      "start_ticks": "769206083"
+    }
+  },
+  "queue_status_before": "running",
+  "signals": [
+    {
+      "pid": 183750,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 183755,
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 184142,
+      "signal": "SIGTERM"
+    }
+  ],
+  "stopped_at": "2026-10-21T06:53:09.039507+00:00",
+  "jobs": [
+    {
+      "number": 11,
+      "status": "stopped_by_user",
+      "last_logged_step": 23850,
+      "returncode": 1,
+      "exit_receipt": {
+        "pid": 184142,
+        "start_ticks": "769210251",
+        "watcher_pid": 184141,
+        "returncode": 1
+      }
+    },
+    {
+      "number": 12,
+      "status": "held_by_user",
+      "last_logged_step": null,
+      "returncode": null,
+      "exit_receipt": null
+    }
+  ],
+  "controllers_alive": [],
+  "workers_alive": []
+}

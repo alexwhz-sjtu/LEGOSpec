@@ -1,0 +1,52 @@
+{
+  "run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/train.log",
+  "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints",
+  "config": "/data/temp/LiteSpec_exp/scripts/config/composable.yaml",
+  "env_file": "/data/temp/LiteSpec_exp/tests/h800_setup_20261016/env.sh",
+  "pid": 14645,
+  "started_at": 1792166609.0563116,
+  "verified_at": "2026-10-16T16:08:42.803061+00:00",
+  "latest_verified_metrics": [
+    {
+      "optimizer_step": 400,
+      "micro_step": 400,
+      "loss": 1.7718
+    },
+    {
+      "optimizer_step": 450,
+      "micro_step": 450,
+      "loss": 1.957
+    },
+    {
+      "optimizer_step": 500,
+      "micro_step": 500,
+      "loss": 1.8149
+    },
+    {
+      "optimizer_step": 550,
+      "micro_step": 550,
+      "loss": 1.4669
+    },
+    {
+      "optimizer_step": 600,
+      "micro_step": 600,
+      "loss": 1.7716
+    }
+  ],
+  "worker_pids": [
+    14679,
+    14680,
+    14681,
+    14682,
+    14683,
+    14684,
+    14685,
+    14686
+  ],
+  "gpu_count": 8,
+  "online": true,
+  "num_epochs": 6,
+  "muon": true,
+  "wandb_mode": "offline"
+}

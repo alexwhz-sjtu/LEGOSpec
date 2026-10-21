@@ -1,0 +1,8 @@
+{"at": "2026-10-21T05:42:05.318267+00:00", "event": "supervisor_attached", "status": "prepared", "cursor": 0}
+{"at": "2026-10-21T05:42:05.324718+00:00", "event": "preflight_waiting_resources", "status": "waiting_resources", "cursor": 0}
+{"at": "2026-10-21T05:42:08.568174+00:00", "event": "preflight_started", "status": "preflight", "cursor": 0}
+{"at": "2026-10-21T05:42:46.155251+00:00", "event": "preflight_passed", "status": "preflight", "cursor": 0}
+{"at": "2026-10-21T05:42:46.158129+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 0}
+{"at": "2026-10-21T05:42:46.720717+00:00", "event": "launching_experiment_11", "status": "launching", "cursor": 0}
+{"at": "2026-10-21T05:42:46.932745+00:00", "event": "started_experiment_11", "status": "running", "cursor": 0}
+{"at": "2026-10-21T05:45:46.959456+00:00", "event": "verified_experiment_11", "status": "running", "cursor": 0}

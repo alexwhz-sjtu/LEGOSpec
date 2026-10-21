@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-18T14:44:33.162350+00:00",
+  "reason": "Finalize official v6 incremental source and identity validation before first full benchmark; no training source/config changed",
+  "changes": [
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/sources.json",
+      "old": "96abd26e7ad128e27cab2ae83868f6100cdc2a956e32afb88c5c78f8907e868a",
+      "new": "720a8d311e3280630e1cdc978cb35f86d556523838f7fc50aaddd93f63aaa897"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/summarize.py",
+      "old": "eceebbd0dbe5022655331cad0f1e94b0575c1503f2fae127c6618f34b410381f",
+      "new": "a63419b209ea651c84c1b1605fc85ff26c84d00672f895ef419d14dc56e1fc5f"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/engine.py",
+      "old": "61ddc1c3533855ff32cedea1b2f71ae66681db813a30c7005eeb47ec5a6ffcfc",
+      "new": "1953aa96b2e27ec7937a5a7adb4dfa148cd7c45dcc92745ff6a8c70b540dc7b2"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/prepare.py",
+      "old": "4bd53da3ce5e37def2120d99886ce3ae661b0d324e265aac775d337d4c88b363",
+      "new": "6aa9c251a007cbf0639cfc08400a364bd46f3fd5654c1c838bf2f8c704cc989f"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/PROTOCOL.md",
+      "old": "c2f9edcfb30526306cfd79db93693f07170d0d146fcbd2c638abca063f783c3c",
+      "new": "637a9aba8352569d6bc6339f58fd7e20c6fdf3b57bcb1f30e56e8d84e548fbd1"
+    }
+  ],
+  "training_untouched": true
+}

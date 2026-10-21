@@ -1,0 +1,287 @@
+"""Shared FlashMTP target/draft loading for benchmark and profiling."""
+
+from __future__ import annotations
+
+import argparse
+from typing import Any
+
+import torch
+from loguru import logger
+from transformers import AutoConfig, AutoModelForCausalLM, AutoTokenizer
+
+from specforge.modeling.draft.flashmtp import FlashMTPDraftModel
+
+
+def resolve_mask_token_id(
+    draft_model: FlashMTPDraftModel,
+    tokenizer: AutoTokenizer,
+    *,
+    cli_mask_token_id: int | None = None,
+) -> int:
+    """Resolve mask token id using the same priority as training."""
+    if cli_mask_token_id is not None:
+        return int(cli_mask_token_id)
+
+    mask_token_id = draft_model.mask_token_id
+    if mask_token_id is None:
+        fcfg = getattr(draft_model.config, "flashmtp_config", None) or {}
+        mask_token_id = fcfg.get("mask_token_id")
+
+    if mask_token_id is not None:
+        return int(mask_token_id)
+
+    if tokenizer.mask_token_id is not None:
+        return int(tokenizer.mask_token_id)
+
+    tokenizer.add_special_tokens({"mask_token": "<|MASK|>"})
+    if tokenizer.mask_token_id is None:
+        raise ValueError(
+            "mask_token_id is None. Pass --mask-token-id, use a checkpoint with "
+            "flashmtp_config['mask_token_id'], or a tokenizer with mask_token_id."
+        )
+    return int(tokenizer.mask_token_id)
+
+
+def flashmtp_config_summary(draft_model: FlashMTPDraftModel) -> dict[str, Any]:
+    fcfg = getattr(draft_model.config, "flashmtp_config", None) or {}
+    return {
+        "architecture_version": fcfg.get("architecture_version"),
+        "sliding_window_size": draft_model.sliding_window_size,
+        "history_slot_count": draft_model.history_slot_count,
+        "chs_num_layers": draft_model.chs_num_layers,
+        "current_chs_slots": draft_model.current_chs_slot_count,
+        "condition_slots": draft_model.condition_slot_count,
+        "local_position": draft_model.local_position,
+        "target_layer_ids": getattr(draft_model, "target_layer_ids", None),
+        "block_size": int(
+            getattr(draft_model, "block_size", fcfg.get("block_size", 0))
+        ),
+        "markov_head_type": getattr(
+            draft_model, "markov_head_type", fcfg.get("markov_head_type", "none")
+        ),
+        "markov_output_mode": getattr(
+            draft_model,
+            "markov_output_mode",
+            fcfg.get("markov_output_mode", "additive"),
+        ),
+        "markov_rank": getattr(draft_model, "markov_rank", fcfg.get("markov_rank", 0)),
+        "mask_token_id": getattr(
+            draft_model, "mask_token_id", fcfg.get("mask_token_id")
+        ),
+        "pivot_query_embedding": getattr(
+            draft_model,
+            "pivot_query_embedding",
+            fcfg.get("pivot_query_embedding", False),
+        ),
+        "include_token_embedding_chs": getattr(
+            draft_model,
+            "include_token_embedding_chs",
+            fcfg.get("include_token_embedding_chs", False),
+        ),
+    }
+
+
+def log_flashmtp_config(draft_model: FlashMTPDraftModel) -> dict[str, Any]:
+    summary = flashmtp_config_summary(draft_model)
+    logger.info(
+        "FlashMTP draft: architecture_version={} sliding_window_size={} "
+        "history_slots={} chs_num_layers={} current_chs_slots={} condition_slots={} "
+        "pivot_query_embedding={} include_token_embedding_chs={} local_position={} "
+        "target_layer_ids={} block_size={} markov_head_type={} markov_output_mode={} "
+        "markov_rank={} mask_token_id={}",
+        summary["architecture_version"],
+        summary["sliding_window_size"],
+        summary["history_slot_count"],
+        summary["chs_num_layers"],
+        summary["current_chs_slots"],
+        summary["condition_slots"],
+        summary["pivot_query_embedding"],
+        summary["include_token_embedding_chs"],
+        summary["local_position"],
+        summary["target_layer_ids"],
+        summary["block_size"],
+        summary["markov_head_type"],
+        summary["markov_output_mode"],
+        summary["markov_rank"],
+        summary["mask_token_id"],
+    )
+    return summary
+
+
+def validate_decode_config(draft_model: FlashMTPDraftModel) -> None:
+    """Log serial-head inference settings from the loaded checkpoint."""
+    summary = flashmtp_config_summary(draft_model)
+    markov_head_type = str(summary["markov_head_type"])
+    markov_output_mode = str(summary["markov_output_mode"])
+    logger.info(
+        "Token history layout: token-window embeddings condition the draft; "
+        "block_size={} proposals={} dense_window={} history_slots={} query_len={}",
+        summary["block_size"],
+        draft_model.proposal_length,
+        summary["sliding_window_size"],
+        summary["history_slot_count"],
+        draft_model.draft_query_length,
+    )
+
+    if markov_head_type == "none":
+        return
+
+    logger.info(
+        "Serial head enabled for inference: type={} output_mode={} rank={}",
+        markov_head_type,
+        markov_output_mode,
+        summary["markov_rank"],
+    )
+    if markov_output_mode == "direct":
+        logger.info(
+            "Direct serial-head mode: draft logits come from the Markov head only "
+            "(base LM head is skipped for draft sampling)."
+        )
+    elif markov_output_mode == "additive":
+        logger.info(
+            "Additive serial-head mode: draft logits = base LM head(h) + Markov bias."
+        )
+
+
+def has_flash_attention() -> bool:
+    try:
+        import flash_attn  # noqa: F401
+
+        return True
+    except ImportError:
+        logger.warning(
+            "flash_attn is not installed. Falling back to torch.sdpa. "
+            "The speedup will be lower."
+        )
+        return False
+
+
+def load_decode_config(model_path: str, args: argparse.Namespace):
+    """Load a model config with an optional runtime long-context RoPE override."""
+    rope_type = getattr(args, "rope_scaling", None)
+    if not rope_type or rope_type == "none":
+        config = AutoConfig.from_pretrained(
+            model_path,
+            trust_remote_code=getattr(args, "trust_remote_code", False),
+        )
+        context_limit = getattr(args, "context_limit", None)
+        if context_limit is not None:
+            config.max_position_embeddings = int(context_limit)
+            logger.info(
+                "Using default RoPE with runtime context capacity {} for {}",
+                context_limit,
+                model_path,
+            )
+        return config
+
+    factor = float(getattr(args, "rope_factor", 1.0))
+    original_max = int(getattr(args, "original_max_position_embeddings", None) or 40960)
+    if factor < 1.0:
+        raise ValueError(f"rope_factor must be >= 1, got {factor}")
+    extended_max = int(original_max * factor)
+    rope_scaling = {
+        "rope_type": str(rope_type),
+        "factor": factor,
+        "original_max_position_embeddings": original_max,
+    }
+    logger.info(
+        "Applying runtime RoPE scaling to {}: type={} factor={} original_max={} extended_max={}",
+        model_path,
+        rope_type,
+        factor,
+        original_max,
+        extended_max,
+    )
+    return AutoConfig.from_pretrained(
+        model_path,
+        max_position_embeddings=extended_max,
+        rope_scaling=rope_scaling,
+        trust_remote_code=getattr(args, "trust_remote_code", False),
+    )
+
+
+def load_flashmtp_benchmark_models(
+    args: argparse.Namespace,
+    device: torch.device,
+) -> tuple[AutoModelForCausalLM, FlashMTPDraftModel, AutoTokenizer, dict[str, Any]]:
+    installed_flash_attn = has_flash_attention()
+    attn_impl = "flash_attention_2" if installed_flash_attn else "sdpa"
+
+    target_config = load_decode_config(args.model_name_or_path, args)
+    draft_config = load_decode_config(args.draft_name_or_path, args)
+
+    target = (
+        AutoModelForCausalLM.from_pretrained(
+            args.model_name_or_path,
+            config=target_config,
+            attn_implementation=attn_impl,
+            dtype=torch.bfloat16,
+            trust_remote_code=getattr(args, "trust_remote_code", False),
+        )
+        .to(device)
+        .eval()
+    )
+
+    draft_model = (
+        FlashMTPDraftModel.from_pretrained(
+            args.draft_name_or_path,
+            config=draft_config,
+            attn_implementation=attn_impl,
+            dtype=torch.bfloat16,
+            trust_remote_code=getattr(args, "trust_remote_code", False),
+        )
+        .to(device)
+        .eval()
+    )
+
+    history_mode = str(getattr(args, "history_mode", "token"))
+    if history_mode != "token":
+        raise ValueError(
+            f"FlashMTP benchmark supports only token history, got {history_mode!r}"
+        )
+    sliding_window_size = int(getattr(args, "sliding_window_size", 1))
+    if sliding_window_size < 1:
+        raise ValueError("sliding_window_size must be positive")
+    draft_model.history_mode = history_mode
+    draft_model.sliding_window_size = sliding_window_size
+    draft_model.config.flashmtp_config["history_mode"] = history_mode
+    draft_model.config.flashmtp_config["sliding_window_size"] = sliding_window_size
+    logger.info(
+        "Using FlashMTP history_mode={} sliding_window_size={}",
+        history_mode,
+        sliding_window_size,
+    )
+
+    local_position_override = getattr(args, "local_position", None)
+    if local_position_override is not None:
+        draft_model.set_local_position(bool(local_position_override))
+        logger.info(
+            "Overriding draft-only local_position={} (target positions/cache unchanged)",
+            draft_model.local_position,
+        )
+
+    if args.block_size is not None:
+        draft_model.set_config_block_size(args.block_size)
+        logger.info(
+            "Overriding legacy config block_size={}",
+            draft_model.block_size,
+        )
+
+    tokenizer = AutoTokenizer.from_pretrained(
+        args.model_name_or_path,
+        trust_remote_code=getattr(args, "trust_remote_code", False),
+    )
+    mask_token_id = resolve_mask_token_id(
+        draft_model,
+        tokenizer,
+        cli_mask_token_id=getattr(args, "mask_token_id", None),
+    )
+    draft_model.mask_token_id = mask_token_id
+    if draft_model.config.flashmtp_config is None:
+        draft_model.config.flashmtp_config = {}
+    draft_model.config.flashmtp_config["mask_token_id"] = mask_token_id
+    logger.info("Using mask_token_id={}", mask_token_id)
+
+    summary = log_flashmtp_config(draft_model)
+    validate_decode_config(draft_model)
+    return target, draft_model, tokenizer, summary

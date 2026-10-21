@@ -1,0 +1,378 @@
+_wandb:
+    value:
+        cli_version: 0.27.0
+        e:
+            inrsakdlke81ci2ikokc8ft123dgfkb8:
+                args:
+                    - --target-model-path
+                    - /data/temp/models/Qwen3-4B
+                    - --output-dir
+                    - /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/checkpoints
+                    - --train-data-path
+                    - /data/temp/datasets/open_perfectblend_80k_qwen3_4b.jsonl
+                    - --draft-config
+                    - /data/temp/LiteSpec_exp/configs/composable_selector_dflare_from_inf_checkpoint.json
+                    - --target-model-backend
+                    - sglang
+                    - --sglang-attention-backend
+                    - fa3
+                    - --sglang-mem-fraction-static
+                    - "0.3"
+                    - --sglang-ep-size
+                    - "1"
+                    - --attention-backend
+                    - flex_attention
+                    - --flex-attention-backend
+                    - TRITON
+                    - --chat-template
+                    - qwen
+                    - --max-length
+                    - "4096"
+                    - --batch-size
+                    - "1"
+                    - --accumulation-steps
+                    - "1"
+                    - --tp-size
+                    - "1"
+                    - --no-shard-draft-by-tp
+                    - --dist-timeout
+                    - "1200"
+                    - --block-size
+                    - "8"
+                    - --num-draft-layers
+                    - "5"
+                    - --num-anchors
+                    - "512"
+                    - --num-epochs
+                    - "6"
+                    - --learning-rate
+                    - "0.0006"
+                    - --weight-decay
+                    - "0.0"
+                    - --warmup-ratio
+                    - "0.04"
+                    - --max-grad-norm
+                    - "1.0"
+                    - --use-muon
+                    - --muon-lr
+                    - "0.02"
+                    - --muon-momentum
+                    - "0.95"
+                    - --muon-weight-decay
+                    - "0.0"
+                    - --muon-matrices-per-rank
+                    - "1"
+                    - --muon-adamw-lr
+                    - "0.0006"
+                    - --muon-adamw-weight-decay
+                    - "0.0"
+                    - --seed
+                    - "42"
+                    - --selector-loss-alpha
+                    - "1.0"
+                    - --objective-chunk-blocks
+                    - "512"
+                    - --cache-dir
+                    - /data/temp/LiteSpec_exp/cache/train
+                    - --build-dataset-num-proc
+                    - "128"
+                    - --dataloader-num-workers
+                    - "8"
+                    - --log-interval
+                    - "50"
+                    - --save-interval
+                    - "10000"
+                    - --report-to
+                    - wandb
+                    - --wandb-project
+                    - spec-decoding
+                    - --wandb-name
+                    - composable_selector_dflare
+                    - --no-disaggregate
+                    - --target-ranks-per-node
+                    - "4"
+                    - --draft-ranks-per-node
+                    - "4"
+                    - --target-tp-size
+                    - "1"
+                    - --node-batch-size
+                    - "4"
+                    - --draft-micro-batch-size
+                    - "1"
+                    - --pipeline-depth
+                    - "2"
+                    - --no-profile
+                cpu_count: 90
+                cpu_count_logical: 180
+                cudaVersion: "13.3"
+                disk:
+                    /:
+                        total: "3779302981632"
+                        used: "1154002038784"
+                email: alex-wang@sjtu.edu.cn
+                executable: /data/temp/LiteSpec_exp/.venv/bin/python
+                git:
+                    commit: 8da3570ce538132d393acaf5b74ac49e86d9d1b8
+                    remote: https://github.com/alexwhz-sjtu/LiteSpec.git
+                gpu: NVIDIA H800
+                gpu_count: 8
+                gpu_nvidia:
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-b1d0336d-9d75-019f-ad49-4e3d142d398f
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-c76de2d2-4606-069d-6741-8b86c69b3bde
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-ccdc3c7f-3eb0-53cf-8eec-61c686bc372b
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-b68e2288-1170-d116-f5f9-77e8da74a1e4
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-091ce976-f290-0705-ad74-b645c0626c7c
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-cc2cb02c-5f1f-c202-7d9d-057139831c32
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-56d29881-d3d9-47d4-b36d-da29aa59b678
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H800
+                      uuid: GPU-e0e2fc8b-dca1-ae7c-ca9a-9cdfc91da884
+                host: bsud-reservedpool-dn7lx-11
+                memory:
+                    total: "3105187758080"
+                os: Linux-5.15.0-151-generic-x86_64-with-glibc2.39
+                program: -m scripts.composable.train
+                python: CPython 3.11.17
+                root: /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949
+                startedAt: "2026-10-17T01:34:55.414345Z"
+                writerId: inrsakdlke81ci2ikokc8ft123dgfkb8
+        m: []
+        python_version: 3.11.17
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 51
+                - 63
+                - 71
+                - 95
+                - 105
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 51
+                - 63
+                - 71
+                - 95
+                - 105
+            "3":
+                - 2
+                - 13
+                - 14
+                - 16
+                - 61
+            "4": 3.11.17
+            "5": 0.27.0
+            "6": 4.57.1
+            "12": 0.27.0
+            "13": linux-x86_64
+accumulation_steps:
+    value: 1
+algorithm:
+    value: composable
+attention_backend:
+    value: flex_attention
+batch_size:
+    value: 1
+block_size:
+    value: 8
+build_dataset_num_proc:
+    value: 128
+bv_sampling_provenance:
+    value: null
+cache_dir:
+    value: /data/temp/LiteSpec_exp/cache/train
+chat_template:
+    value: qwen
+dataloader_num_workers:
+    value: 8
+disaggregate:
+    value: false
+dist_timeout:
+    value: 1200
+draft_config:
+    value: /data/temp/LiteSpec_exp/configs/composable_selector_dflare_from_inf_checkpoint.json
+draft_micro_batch_size:
+    value: 1
+draft_ranks_per_node:
+    value: 4
+embedding_key:
+    value: null
+flex_attention_backend:
+    value: TRITON
+init_from:
+    value: null
+is_preformatted:
+    value: false
+learning_rate:
+    value: 0.0006
+lm_head_key:
+    value: lm_head.weight
+log_interval:
+    value: 50
+mask_token_id:
+    value: 151669
+max_grad_norm:
+    value: 1
+max_length:
+    value: 4096
+max_steps:
+    value: null
+mlflow_experiment_name:
+    value: null
+mlflow_run_name:
+    value: null
+mlflow_tracking_uri:
+    value: null
+muon_adamw_lr:
+    value: 0.0006
+muon_adamw_weight_decay:
+    value: 0
+muon_lr:
+    value: 0.02
+muon_matrices_per_rank:
+    value: 1
+muon_momentum:
+    value: 0.95
+muon_weight_decay:
+    value: 0
+node_batch_size:
+    value: 4
+num_anchors:
+    value: 512
+num_draft_layers:
+    value: 5
+num_epochs:
+    value: 6
+objective_chunk_blocks:
+    value: 512
+output_dir:
+    value: /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/checkpoints
+override_attention_backend:
+    value: null
+pad_to_max_length:
+    value: false
+pipeline_depth:
+    value: 2
+profile:
+    value: false
+report_to:
+    value: wandb
+require_target_last_hidden:
+    value: true
+resume_from:
+    value: null
+save_interval:
+    value: 10000
+seed:
+    value: 42
+selector_loss_alpha:
+    value: 1
+selector_ramp_ratio:
+    value: 0
+selector_warmup_ratio:
+    value: 0
+sglang_attention_backend:
+    value: fa3
+sglang_context_length:
+    value: null
+sglang_enable_dp_attention:
+    value: false
+sglang_enable_dp_lm_head:
+    value: false
+sglang_enable_nccl_nvls:
+    value: false
+sglang_enable_piecewise_cuda_graph:
+    value: false
+sglang_enable_symm_mem:
+    value: false
+sglang_enable_torch_compile:
+    value: false
+sglang_ep_size:
+    value: 1
+sglang_max_running_requests:
+    value: null
+sglang_max_total_tokens:
+    value: null
+sglang_mem_fraction_static:
+    value: 0.3
+sglang_piecewise_cuda_graph_max_tokens:
+    value: 4096
+sglang_piecewise_cuda_graph_tokens:
+    value: null
+shard_draft_by_tp:
+    value: false
+swanlab_key:
+    value: null
+swanlab_name:
+    value: null
+swanlab_project:
+    value: null
+target_layer_ids:
+    value: 1,9,17,25,33
+target_model_backend:
+    value: sglang
+target_model_path:
+    value: /data/temp/models/Qwen3-4B
+target_ranks_per_node:
+    value: 4
+target_tp_size:
+    value: 1
+tp_size:
+    value: 1
+train_data_path:
+    value: /data/temp/datasets/open_perfectblend_80k_qwen3_4b.jsonl
+train_hidden_states_path:
+    value: null
+trust_remote_code:
+    value: false
+use_muon:
+    value: true
+wandb_key:
+    value: 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
+wandb_name:
+    value: composable_selector_dflare
+wandb_project:
+    value: spec-decoding
+wandb_run_id:
+    value: null
+warmup_ratio:
+    value: 0.04
+weight_decay:
+    value: 0
+window_buffer_mb:
+    value: 256

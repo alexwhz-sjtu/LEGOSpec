@@ -1,0 +1,17 @@
+{
+  "verified_at": "2026-10-18T20:26:49.170049+00:00",
+  "status": "completed",
+  "legacy_files_sha_verified": 20,
+  "legacy_bytes": 17661725970,
+  "current_training_files_sha_verified": 54,
+  "current_training_bytes": 6502448360,
+  "code_and_evidence_files_extracted": 2603,
+  "git_bundles_and_working_patches_preserved": [
+    "LiteSpec_exp",
+    "SpecForge"
+  ],
+  "archive_root": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019",
+  "source_unchanged": true,
+  "migration_processes_exited_normally": true,
+  "subsequent_collection_host": "QS_H800 only"
+}

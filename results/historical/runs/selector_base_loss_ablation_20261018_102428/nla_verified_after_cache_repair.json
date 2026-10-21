@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-10-18T07:21:51.534129+00:00",
+  "protected_hashes_valid": true,
+  "protected_file_count": 194,
+  "supervisor_pid": 273418,
+  "job_number": 2,
+  "pid": 273425,
+  "start_ticks": "2289307880",
+  "workers": [
+    273471,
+    273472,
+    273473,
+    273474,
+    273475,
+    273476,
+    273477,
+    273478
+  ],
+  "local_metrics": [
+    {
+      "step": 100,
+      "loss": 7.1739
+    },
+    {
+      "step": 150,
+      "loss": 6.3874
+    },
+    {
+      "step": 200,
+      "loss": 6.0315
+    }
+  ],
+  "wandb_state": "running",
+  "online_rows": [
+    {
+      "_step": 50,
+      "train/loss": 8.781749725341797,
+      "detail/composable/hard_label/token_accuracy": 0.015037594363093376,
+      "train/walk_accepted_length": 1.0138427019119263,
+      "train/expected_accept_len": 1.0094215869903564
+    },
+    {
+      "_step": 100,
+      "train/loss": 7.173882484436035,
+      "detail/composable/hard_label/token_accuracy": 0.044880129396915436,
+      "train/walk_accepted_length": 1.048427939414978,
+      "train/expected_accept_len": 1.0364435911178589
+    }
+  ],
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/ism8j8vi",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/02_dflash_mha_selector_nla/train.log",
+  "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/02_dflash_mha_selector_nla/checkpoints"
+}

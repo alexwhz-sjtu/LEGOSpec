@@ -1,0 +1,30 @@
+{
+  "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/01_dflash_mha_selector_dpace/checkpoints/final",
+  "metadata": {
+    "optimizer_step": 59724,
+    "phases": 1
+  },
+  "returncode": 0,
+  "wandb_state": "finished",
+  "summary": {
+    "_step": 59724,
+    "train/loss": 1332.8756103515625,
+    "detail/composable/hard_label/token_accuracy": 0.8565604090690613,
+    "train/walk_accepted_length": 6.471834659576416,
+    "train/expected_accept_len": 5.608505725860596
+  },
+  "log_metrics": [
+    {
+      "step": 59650,
+      "loss": 801.7747
+    },
+    {
+      "step": 59700,
+      "loss": 436.2828
+    },
+    {
+      "step": 59724,
+      "loss": 1332.8756
+    }
+  ]
+}

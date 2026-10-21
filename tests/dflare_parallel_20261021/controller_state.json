@@ -1,0 +1,15 @@
+{
+  "status": "stopped_by_user",
+  "python": "/mnt/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130-h8002/bin/python",
+  "world_size": 8,
+  "series_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/dflare_parallel_20261021",
+  "execution_host": "H800_2",
+  "controller_pid": 183750,
+  "controller_start_ticks": "769206035",
+  "updated_at": "2026-10-21T06:53:09.030856+00:00",
+  "training_supervisor": {
+    "pid": 183755,
+    "start_ticks": "769206083"
+  },
+  "stop_reason": "explicit_user_stop"
+}

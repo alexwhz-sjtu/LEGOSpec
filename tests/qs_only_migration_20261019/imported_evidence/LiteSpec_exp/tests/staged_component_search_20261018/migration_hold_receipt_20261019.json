@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-18T16:56:50.381895+00:00",
+  "reason": "User requires all future training and benchmarks on QS_H800; migrate useful artifacts",
+  "stopped_dispatchers": [
+    {
+      "pid": 2990902,
+      "start_ticks": "807910319",
+      "script": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/staged_component_search_20261018/continuation.py"
+    },
+    {
+      "pid": 2946171,
+      "start_ticks": "807586581",
+      "script": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/staged_component_search_20261018/supervisor.py"
+    }
+  ],
+  "training_untouched": {
+    "pid": 2948515,
+    "start_ticks": "807593000"
+  },
+  "queue_not_modified": true,
+  "do_not_restore_on_this_host": true
+}

@@ -1,0 +1,7 @@
+{"status": "waiting_source", "supervisor_pid": 88125}
+{"status": "verifying_source"}
+{"status": "verifying_source", "source_final_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/checkpoints/final"}
+{"status": "waiting_resources", "source_completion": {"optimizer_step": 59724, "phase_index": 1}}
+{"status": "training_started", "next_pid": 90580, "next_start_ticks": "2279732553", "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_parallel_dflash_20261017_121432/train.log", "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/h4iy1alf"}
+{"status": "training_started", "next_checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_parallel_dflash_20261017_121432/checkpoints"}
+{"status": "training_verified", "verified_metrics": [{"step": 50, "loss": 9.6411}, {"step": 100, "loss": 7.866}, {"step": 150, "loss": 5.9992}]}

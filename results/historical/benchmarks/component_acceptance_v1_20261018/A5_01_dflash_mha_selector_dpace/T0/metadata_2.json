@@ -1,0 +1,39 @@
+{
+  "protocol": "component-acceptance-v1",
+  "manifest_sha256": "bdfd20787753294352983d7712951c1b03dd5cc148a0f2ef746b235bd7ce1c79",
+  "draft": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/01_dflash_mha_selector_dpace/checkpoints/final",
+  "draft_hashes": {
+    "model.safetensors": "994873d7a2adf99dd0a83dbadde805e37e1c02b24d259711f238a57de2001e20"
+  },
+  "config_sha256": "7bbd19c6b27c32fc2bfb90f40d3b6fb76d9d65a85bf254c872ea70b21434cd0d",
+  "target": "/data/temp/models/Qwen3-4B",
+  "target_hashes": {
+    "config.json": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+    "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "model-00001-of-00003.safetensors": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+    "model-00002-of-00003.safetensors": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+    "model-00003-of-00003.safetensors": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1"
+  },
+  "harness_hashes": {
+    "test_jsonl.py": "8229263a95dcb2afd9a0503d1b424e7fb3a058d8d71c0901047a61e38a381b39",
+    "jsonl_io.py": "0d768ee01620dcb6d3b05dbc006bc9a8f7f6e08a5593196118fc2272bfb03d74",
+    "prepare.py": "3a664d447584dff61644bda7fb6dec0aa12eb6eb6eb825befcb14bdb9d4b79f4",
+    "test_verifier.py": "f18638ba87181a502ed308abcdf713196d05b6f03d7c1424b5e21a10cbd483d8",
+    "compare.py": "3425dd5b38ffe6a61f4c469a713b9194746d1835f8e95b259fa8c1ee46e8ccbe",
+    "run.py": "061d3b68ad8b6cfa8ae0a5f8806ff17bde824fa5641f04fdc0671d614a77f2a4",
+    "summarize.py": "61d4828520f4dca37ec86ebbb14d82fdfc23567540e5d2c61d0017a49e99618a",
+    "engine.py": "1953aa96b2e27ec7937a5a7adb4dfa148cd7c45dcc92745ff6a8c70b540dc7b2",
+    "test_components.py": "8cc5a3607d36d7fac2efa83f04a1d6cf7a897768d892d0eeb9aaf3d9a54bbd42",
+    "canonical_mtbench.py": "a05c71f2b56873bbbf5ebf61ca1a1467d24a274e38fc63b6689274a9846f97bc"
+  },
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_new_tokens": 512,
+  "shards": 8,
+  "smoke": false,
+  "torch": "2.9.1+cu128",
+  "python": "3.11.17",
+  "target_attention": "sdpa",
+  "draft_attention": "sdpa",
+  "gpu": "NVIDIA H800"
+}

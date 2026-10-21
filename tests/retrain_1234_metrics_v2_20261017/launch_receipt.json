@@ -1,0 +1,5 @@
+{
+  "supervisor_pid": 143762,
+  "queue": "/data/temp/LiteSpec_exp/tests/retrain_1234_metrics_v2_20261017/queue.json",
+  "series_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434"
+}

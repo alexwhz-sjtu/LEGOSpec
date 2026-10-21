@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/component_benchmark_20261018/benchmark_queue.py", line 89, in main
+    assert all(p.returncode==0 for p in children)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/component_benchmark_20261018/benchmark_queue.py", line 106, in <module>
+    main()
+  File "/data/temp/LiteSpec_exp/tests/component_benchmark_20261018/benchmark_queue.py", line 89, in main
+    assert all(p.returncode==0 for p in children)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

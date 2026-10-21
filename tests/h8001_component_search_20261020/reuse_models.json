@@ -1,0 +1,32 @@
+[
+  {
+    "label": "reused_RNN_hard_ce_from_inf_final",
+    "proposal": "rnn",
+    "loss": "hard_ce",
+    "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/01_current_rnn_ce_final_9a312f5d/final"
+  },
+  {
+    "label": "reused_A4_parallel_hard_ce",
+    "proposal": "parallel",
+    "loss": "hard_ce",
+    "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/11_04_dflash_mha_parallel_final_9e822926/final"
+  },
+  {
+    "label": "reused_01_dflash_mha_rnn_dpace",
+    "proposal": "rnn",
+    "loss": "dpace",
+    "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/05_01_dflash_mha_rnn_dpace_final_ad53d8a0/final"
+  },
+  {
+    "label": "reused_02_dflash_mha_rnn_nla_gamma4",
+    "proposal": "rnn",
+    "loss": "nla",
+    "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/06_02_dflash_mha_rnn_nla_gamma4_final_cabcd6b5/final"
+  },
+  {
+    "label": "reused_03_dflash_mha_rnn_ce01_tv09",
+    "proposal": "rnn",
+    "loss": "ce01_tv09",
+    "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/07_03_dflash_mha_rnn_ce01_tv09_final_b0df884d/final"
+  }
+]

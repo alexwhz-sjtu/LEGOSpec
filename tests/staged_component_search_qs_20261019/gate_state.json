@@ -1,0 +1,10 @@
+{
+  "status": "dispatched",
+  "pid": 400322,
+  "updated_at": "2026-10-18T19:19:45.700641+00:00",
+  "benchmark_ready": true,
+  "import_ready": true,
+  "reason": "BV excluded by user; six non-BV jobs ready after benchmark and verified import",
+  "supervisor_pid": 408236,
+  "controller_pid": 408237
+}

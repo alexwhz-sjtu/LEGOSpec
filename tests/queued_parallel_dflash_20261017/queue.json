@@ -1,0 +1,45 @@
+{
+  "status": "training_verified",
+  "next_run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_parallel_dflash_20261017_121432",
+  "next_wandb_id": "h4iy1alf",
+  "source_pid": 68803,
+  "source_start_ticks": "2278593651",
+  "source_run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949",
+  "source_log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/train.log",
+  "source_final_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/checkpoints/final",
+  "config": "/data/temp/LiteSpec_exp/scripts/config/composable_parallel_dflash.yaml",
+  "draft_config": "/data/temp/LiteSpec_exp/configs/composable_parallel_dflash_from_inf_checkpoint.json",
+  "repo": "/data/temp/LiteSpec_exp",
+  "source_data_sha256": "b8fb09cec39962888b08d457836bcb2bfff0bd988df51ce4910a065e24edc168",
+  "env_file": "/data/temp/LiteSpec_exp/tests/h800_setup_20261016/env.sh",
+  "prepared_hashes": {
+    "/data/temp/LiteSpec_exp/scripts/config/composable_parallel_dflash.yaml": "3f310b16c386a5e7d55e3e8ce807fdbb4b9b02806ab1160176982c7e862c095f",
+    "/data/temp/LiteSpec_exp/configs/composable_parallel_dflash_from_inf_checkpoint.json": "f98e05d0b20a2e249e85075027be2afa327d3cbed385c4ed8eb13e75d6905249"
+  },
+  "prepared_at": "2026-10-17T04:14:33.322512+00:00",
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/h4iy1alf",
+  "updated_at": "2026-10-17T04:45:31.504885+00:00",
+  "supervisor_pid": 88125,
+  "source_completion": {
+    "optimizer_step": 59724,
+    "phase_index": 1
+  },
+  "next_pid": 90580,
+  "next_start_ticks": "2279732553",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_parallel_dflash_20261017_121432/train.log",
+  "next_checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_parallel_dflash_20261017_121432/checkpoints",
+  "verified_metrics": [
+    {
+      "step": 50,
+      "loss": 9.6411
+    },
+    {
+      "step": 100,
+      "loss": 7.866
+    },
+    {
+      "step": 150,
+      "loss": 5.9992
+    }
+  ]
+}

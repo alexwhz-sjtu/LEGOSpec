@@ -1,0 +1,14 @@
+{
+  "number": 3,
+  "label": "03_dflash_mha_rnn_ce01_tv09",
+  "proposal": "rnn",
+  "loss": "ce01_tv09",
+  "status": "launching",
+  "draft_config": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/configs/03_dflash_mha_rnn_ce01_tv09.json",
+  "config": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/configs/03_dflash_mha_rnn_ce01_tv09.yaml",
+  "run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/03_dflash_mha_rnn_ce01_tv09",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/03_dflash_mha_rnn_ce01_tv09/train.log",
+  "wandb_id": "cac0aa4b",
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/cac0aa4b",
+  "expected_steps": 59724
+}

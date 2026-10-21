@@ -1,0 +1,76 @@
+{
+  "verified_at": "2026-10-20T13:01:40.144393+00:00",
+  "completed_number": 10,
+  "exit_receipt": {
+    "pid": 616476,
+    "start_ticks": "186863799",
+    "watcher_pid": 616475,
+    "returncode": 0
+  },
+  "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/10_dflash_layer_conv_ce01_tv09/checkpoints/final",
+  "completion": {
+    "optimizer_step": 59724,
+    "phases": 1
+  },
+  "all_rank_metadata_verified": true,
+  "wandb_id": "77ebfefb",
+  "wandb_state": "finished",
+  "online_last_step": 59724,
+  "metrics": {
+    "train/loss": 0.3462536931037903,
+    "detail/composable/hard_label/token_accuracy": 0.8620076179504395,
+    "train/walk_accepted_length": 6.0790696144104,
+    "train/expected_accept_len": 5.832838535308838
+  },
+  "formal_test": {
+    "label": "05_dflash_mha_parallel_dpace",
+    "temperature": 0,
+    "supervisor_pid": 675006,
+    "workers": [
+      {
+        "pid": 675017,
+        "start_ticks": "188459003"
+      },
+      {
+        "pid": 675018,
+        "start_ticks": "188459003"
+      },
+      {
+        "pid": 675019,
+        "start_ticks": "188459003"
+      },
+      {
+        "pid": 675020,
+        "start_ticks": "188459003"
+      },
+      {
+        "pid": 675021,
+        "start_ticks": "188459004"
+      },
+      {
+        "pid": 675022,
+        "start_ticks": "188459004"
+      },
+      {
+        "pid": 675023,
+        "start_ticks": "188459004"
+      },
+      {
+        "pid": 675024,
+        "start_ticks": "188459004"
+      }
+    ],
+    "metadata_shards": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "valid_requests": 474,
+    "output": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/05_dflash_mha_parallel_dpace/T0"
+  }
+}

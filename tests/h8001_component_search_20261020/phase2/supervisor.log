@@ -1,0 +1,15 @@
+{"at": "2026-10-20T04:15:11.070392+00:00", "event": "supervisor_attached", "status": "prepared", "cursor": 0}
+{"at": "2026-10-20T04:15:11.073352+00:00", "event": "preflight_waiting_resources", "status": "waiting_resources", "cursor": 0}
+{"at": "2026-10-20T04:15:11.492552+00:00", "event": "preflight_started", "status": "preflight", "cursor": 0}
+{"at": "2026-10-20T04:15:48.269010+00:00", "event": "preflight_passed", "status": "preflight", "cursor": 0}
+{"at": "2026-10-20T04:15:48.271763+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 0}
+{"at": "2026-10-20T04:15:48.717958+00:00", "event": "launching_experiment_9", "status": "launching", "cursor": 0}
+{"at": "2026-10-20T04:15:48.923433+00:00", "event": "started_experiment_9", "status": "running", "cursor": 0}
+{"at": "2026-10-20T04:18:18.950917+00:00", "event": "verified_experiment_9", "status": "running", "cursor": 0}
+{"at": "2026-10-20T08:27:57.826611+00:00", "event": "completed_experiment_9", "status": "between_experiments", "cursor": 1}
+{"at": "2026-10-20T08:27:57.830275+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 1}
+{"at": "2026-10-20T08:27:58.297393+00:00", "event": "launching_experiment_10", "status": "launching", "cursor": 1}
+{"at": "2026-10-20T08:27:59.004391+00:00", "event": "started_experiment_10", "status": "running", "cursor": 1}
+{"at": "2026-10-20T08:30:29.036368+00:00", "event": "verified_experiment_10", "status": "running", "cursor": 1}
+{"at": "2026-10-20T12:53:33.646834+00:00", "event": "completed_experiment_10", "status": "between_experiments", "cursor": 2}
+{"at": "2026-10-20T12:53:33.650475+00:00", "event": "all_prepared_experiments_completed", "status": "completed", "cursor": 2}

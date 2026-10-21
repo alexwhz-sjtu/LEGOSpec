@@ -1,0 +1,12 @@
+{
+  "started_verified": [
+    1
+  ],
+  "completed": [],
+  "verified_pid": 2948515,
+  "verified_online_steps": [
+    1150,
+    1500
+  ],
+  "source": "Interactive session verified 8 workers and finite online final metrics; main chat has reported initial start"
+}

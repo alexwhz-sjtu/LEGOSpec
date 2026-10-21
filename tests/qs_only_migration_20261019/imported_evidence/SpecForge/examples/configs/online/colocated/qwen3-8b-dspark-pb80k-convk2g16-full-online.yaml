@@ -1,0 +1,41 @@
+model:
+  target_model_path: /data/wanghanzhen/models/Qwen3-8B
+  draft_model_config: configs/qwen3-8b-dspark-convk2g16-full.json
+  target_backend: sglang
+  torch_dtype: bfloat16
+  sglang_mem_fraction_static: 0.25
+
+data:
+  train_data_path: /data/wanghanzhen/training_data/generated/qwen3-8b/open_perfectblend_80k_qwen3_8b.jsonl
+  max_length: 4096
+  chat_template: qwen
+  is_preformatted: false
+  build_dataset_num_proc: 32
+  dataloader_num_workers: 0
+  cache_dir: ./cache/data/qwen3-8b-dspark-pb80k
+
+training:
+  strategy: dspark
+  num_epochs: 6
+  batch_size: 1
+  tp_size: 1
+  learning_rate: 0.0006
+  warmup_ratio: 0.04
+  max_grad_norm: 1.0
+  attention_backend: flex_attention
+  num_anchors: 512
+  loss_decay_gamma: 4.0
+  objective_chunk_blocks: 128
+  dspark_ce_loss_alpha: 0.1
+  dspark_l1_loss_alpha: 0.9
+  dspark_confidence_head_alpha: 1.0
+  save_interval: 10000
+  log_interval: 50
+  dist_timeout: 300
+  seed: 42
+
+deployment:
+  mode: local_colocated
+  trainer:
+    nnodes: 1
+    nproc_per_node: 8

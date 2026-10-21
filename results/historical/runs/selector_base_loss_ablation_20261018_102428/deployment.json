@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-18T02:25:05.208239+00:00",
+  "root": "/data/temp/LiteSpec_exp",
+  "files": {
+    "litespec/core/composable/objectives/tv.py": {
+      "before": "530a188511d4553ea5fd7d24debf7fe0dd741e3f4926e61576ccf030e0bd5fd2",
+      "after": "bb64c222b357182d2b7492fa0c905fbc354f2faa3419ae749d716a3dbeb5e33a"
+    },
+    "litespec/core/composable/objectives/__init__.py": {
+      "before": "074ad8c4f37e5d97c0e9c8ba24e70837275c237fb52641dcc3bbfd68cd9f4cff",
+      "after": "ce4858d63d5a6f44e259ac213f1a3abfbbe711fc654ace134172b9a1a2fe43cd"
+    },
+    "litespec/modeling/draft/composable/configuration.py": {
+      "before": "8f55fe0b26165328bf5e01400f1cca183766a4ec14672c23d692a9112e5b86be",
+      "after": "c732233916a1b670e552a130b918b3ac344567a0b14b7ef3e33548305ab651aa"
+    },
+    "litespec/core/composable/objectives/weighted_sum.py": {
+      "before": null,
+      "after": "909abe4e6cd721a12273bbbb608bdb24f975e92533b200fdeb208e90f55cebac"
+    }
+  }
+}

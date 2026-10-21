@@ -1,0 +1,41 @@
+{
+  "dataset": "/data/wanghanzhen/projects/SpecDecoding/training_data/generated/qwen3-4b/open_perfectblend_80k_qwen3_4b.jsonl",
+  "dataset_sha256": "b8fb09cec39962888b08d457836bcb2bfff0bd988df51ce4910a065e24edc168",
+  "dataset_records": 80000,
+  "record_keys": [
+    "source",
+    "conversations",
+    "status",
+    "id"
+  ],
+  "temperature_evidence": 0.0,
+  "full_vocab_t1_verified": false,
+  "basis": "Same-named Qwen3-4B output in retained generator logs; no per-record T1 provenance. Do not declare target_full_vocab_t1.",
+  "evidence": [
+    {
+      "source": "/data/wanghanzhen/projects/SpecDecoding/training_data/generated/qwen3-4b/logs/open_perfectblend_80k_temp0/launcher.log",
+      "sha256": "89e848c33ed94b8cb48938305ea8db2fb2c459c6fd8c0dde1f21498f4183d113",
+      "relevant_lines": [
+        "generating: expected_inputs=80000 temperature=0.0 max_tokens=4096 gpus=1,2,3,4,5,6,7",
+        "  Model path: /data/wanghanzhen/models/Qwen3-4B",
+        "  Temperature: 0.0",
+        "  Output file: /data/wanghanzhen/training_data/generated/qwen3-4b/open_perfectblend_80k_qwen3_4b.jsonl",
+        "  Model path: /data/wanghanzhen/models/Qwen3-4B",
+        "  Temperature: 0.0",
+        "  Output file: /data/wanghanzhen/training_data/generated/qwen3-4b/open_perfectblend_80k_qwen3_4b.jsonl"
+      ]
+    },
+    {
+      "source": "/data/wanghanzhen/projects/SpecDecoding/training_data/generated/qwen3-4b/logs/open_perfectblend_80k_temp0/regenerate.log",
+      "sha256": "6def29f7ffdf9efc0299292a8e347ba0f45210671e83f63d03e2c8fe699cd048",
+      "relevant_lines": [
+        "  Model path: /data/wanghanzhen/models/Qwen3-4B",
+        "  Temperature: 0.0",
+        "  Output file: /data/wanghanzhen/training_data/generated/qwen3-4b/open_perfectblend_80k_qwen3_4b.jsonl",
+        "  Model path: /data/wanghanzhen/models/Qwen3-4B",
+        "  Temperature: 0.0",
+        "  Output file: /data/wanghanzhen/training_data/generated/qwen3-4b/open_perfectblend_80k_qwen3_4b.jsonl"
+      ]
+    }
+  ]
+}

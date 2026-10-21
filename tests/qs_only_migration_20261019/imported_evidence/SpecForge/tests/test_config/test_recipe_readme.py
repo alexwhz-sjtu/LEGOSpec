@@ -1,0 +1,50 @@
+"""Keep the user-facing YAML reference synchronized with the typed schema."""
+
+import unittest
+from pathlib import Path
+
+from specforge.config import (
+    Config,
+    DataConfig,
+    DeploymentConfig,
+    DisaggregatedDeploymentConfig,
+    ModelConfig,
+    ProfilingConfig,
+    RuntimeConfig,
+    TrackingConfig,
+    TrainerDeploymentConfig,
+    TrainingConfig,
+)
+
+ROOT = Path(__file__).resolve().parents[2]
+README = ROOT / "examples" / "configs" / "README.md"
+
+
+class TestRecipeReadmeSync(unittest.TestCase):
+    def test_recipe_readme_names_every_typed_config_field(self):
+        text = README.read_text(encoding="utf-8")
+        schemas = (
+            ("", Config),
+            ("model", ModelConfig),
+            ("data", DataConfig),
+            ("training", TrainingConfig),
+            ("tracking", TrackingConfig),
+            ("profiling", ProfilingConfig),
+            ("runtime", RuntimeConfig),
+            ("deployment", DeploymentConfig),
+            ("deployment.trainer", TrainerDeploymentConfig),
+            ("deployment.disaggregated", DisaggregatedDeploymentConfig),
+        )
+
+        missing = []
+        for prefix, schema in schemas:
+            for field_name in schema.model_fields:
+                path = f"{prefix}.{field_name}" if prefix else field_name
+                if f"`{path}`" not in text:
+                    missing.append(path)
+
+        self.assertEqual(
+            [],
+            missing,
+            f"examples/configs/README.md is missing config fields: {missing}",
+        )

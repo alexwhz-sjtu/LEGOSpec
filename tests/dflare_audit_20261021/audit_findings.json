@@ -1,0 +1,194 @@
+{
+  "audited_at": "2026-10-21T04:05:45.427640+00:00",
+  "status": "code_and_cpu_audit_complete_causal_root_cause_unproven",
+  "official_source": "https://github.com/Tencent/AngelSpec/blob/d3412bed231025ea85d35dbf5e0af44f1ac62a5b/angelspec/models/draft/dflare.py",
+  "paper": "https://arxiv.org/html/2606.02091v2",
+  "frozen_root": "/share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/h8001_component_search_20261020/snapshot",
+  "protected_hash_check": {
+    "files": 239,
+    "mismatches": []
+  },
+  "code_matches": [
+    "per-draft-layer softmax mixing over target layers",
+    "RMSNorm after mixing",
+    "distance-based fusion prior alpha2",
+    "independent target K/V projections",
+    "concat -> K norm -> absolute RoPE",
+    "confirmed-context cache agrees with full forward in CPU tests"
+  ],
+  "current_comparison": {
+    "regular6": {
+      "baseline": 4.492517241258993,
+      "dflare": 4.429775232606197,
+      "relative_percent": -1.3965891566664945
+    },
+    "long6": {
+      "baseline": 2.621233634939977,
+      "dflare": 1.7963386325713053,
+      "relative_percent": -31.46972446000834
+    }
+  },
+  "historical_selector_ce_comparison": {
+    "regular6": {
+      "baseline": 4.314812906149266,
+      "dflare": 4.287635604349475,
+      "relative_percent": -0.6298604920055406
+    },
+    "long6": {
+      "baseline": 2.2995745445666436,
+      "dflare": 1.894093060476353,
+      "relative_percent": -17.63289148631204
+    }
+  },
+  "recipe_differences": {
+    "draft_layers": {
+      "current": 5,
+      "paper_main": 7
+    },
+    "target_features": {
+      "current": [
+        1,
+        9,
+        17,
+        25,
+        33
+      ],
+      "paper_main": "9 uniformly selected target layers"
+    },
+    "block_size": {
+      "current": 8,
+      "paper_main": 16
+    },
+    "proposal": {
+      "current": "RNN Markov correction head",
+      "official": "parallel LM head"
+    },
+    "objective": {
+      "current": "0.1hard_ce+0.9TV",
+      "paper": "position-weighted CE, gamma0=4.5 +1/epoch for Qwen3"
+    },
+    "training_data": {
+      "current": "80k original target-T0 regenerated responses",
+      "paper_main": "2.4M target-T0.6 regenerated responses"
+    },
+    "optimizer": {
+      "current": "Muon matrices .02 + AdamW others .0006; fusion logits explicitly AdamW",
+      "paper": "AdamW .0006"
+    },
+    "train_max_length": {
+      "current": 4096,
+      "paper": 3072
+    }
+  },
+  "numerical": {
+    "fusion_prior_exact": true,
+    "cpu_only": true,
+    "official_pinned_equals_main": true,
+    "trained_fusion": {
+      "logits": [
+        [
+          -0.8203125,
+          -2.484375,
+          -3.75,
+          -3.328125,
+          -5.6875
+        ],
+        [
+          -2.390625,
+          -1.0859375,
+          -1.3203125,
+          -2.875,
+          -5.0625
+        ],
+        [
+          -6.03125,
+          -6.375,
+          -1.8046875,
+          -0.51953125,
+          -2.953125
+        ],
+        [
+          -1.4375,
+          -1.6328125,
+          -0.37890625,
+          0.03857421875,
+          -4.9375
+        ],
+        [
+          -0.1630859375,
+          -1.8828125,
+          -1.6640625,
+          -1.3359375,
+          -1.25
+        ]
+      ],
+      "probabilities": [
+        [
+          0.7507941722869873,
+          0.14217646420001984,
+          0.04010271281003952,
+          0.061149340122938156,
+          0.005777343641966581
+        ],
+        [
+          0.12065590173006058,
+          0.4448024332523346,
+          0.35186767578125,
+          0.07433394342660904,
+          0.008340037427842617
+        ],
+        [
+          0.0029456429183483124,
+          0.00208877376280725,
+          0.20172183215618134,
+          0.7292713522911072,
+          0.06397242844104767
+        ],
+        [
+          0.10975956916809082,
+          0.0902857556939125,
+          0.3163616359233856,
+          0.4802786409854889,
+          0.0033144517801702023
+        ],
+        [
+          0.4880986511707306,
+          0.0874258503317833,
+          0.10880322754383087,
+          0.15105831623077393,
+          0.16461403667926788
+        ]
+      ],
+      "entropy": [
+        0.8221732378005981,
+        1.2161650657653809,
+        0.7591027021408081,
+        1.1948723793029785,
+        1.3869876861572266
+      ]
+    },
+    "context_norm_range": [
+      0.09716796875,
+      1.96875
+    ],
+    "full_short_fp32_forward_max_abs": 0.0,
+    "full_short_gradient_max_abs": 0.0,
+    "full_4096_fp32_forward_max_abs": 0.0,
+    "cached_vs_full_4096_fp32_max_abs": 0.0,
+    "cache_positions_4096": true,
+    "full_32768_fp32_forward_max_abs": 0.0,
+    "cached_vs_full_32768_fp32_max_abs": 0.0,
+    "cache_positions_32768": true,
+    "full_37_bf16_forward_max_abs": 0.0078125,
+    "full_32768_bf16_forward_max_abs": 0.00390625,
+    "status": "passed",
+    "scope": "CPU tiny hidden32, full5layer, actual learned fusion25 scalars; no production-sized GPU/kernel equivalence claim"
+  },
+  "interpretation": "Core implementation aligns. This is a matched DFlare-context ablation, not the complete paper recipe. Observed penalty is dominated by 32k long-context transfer; historical CE/Selector also loses Long performance, so CE+TV alone cannot explain it. No direct causal claim about data size, feature count or fusion weights.",
+  "remaining_checks": [
+    "production-dimension BF16 GPU kernels not numerically audited",
+    "GPU length sweep on fixed trajectories to separate length effects from benchmark domain",
+    "matched component interventions needed to establish causal mechanism"
+  ],
+  "production_changes": "none; no training/evaluation queues or checkpoints changed; no GPU task launched"
+}

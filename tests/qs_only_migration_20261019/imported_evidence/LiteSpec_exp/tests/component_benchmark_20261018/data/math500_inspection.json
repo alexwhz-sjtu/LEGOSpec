@@ -1,0 +1,57 @@
+[
+  {
+    "keys": [
+      "answer",
+      "level",
+      "problem",
+      "solution",
+      "subject",
+      "unique_id"
+    ],
+    "excerpt": "{'problem': 'Convert the point $(0,3)$ in rectangular coordinates to polar coordinates.  Enter your answer in the form $(r,\\\\theta),$ where $r > 0$ and $0 \\\\le \\\\theta < 2 \\\\pi.$', 'solution': 'We have that $r = \\\\sqrt{0^2 + 3^2} = 3.$  Also, if we draw the line connecting the origin and $(0,3),$ this line makes an angle of $\\\\frac{\\\\pi}{2}$ with the positive $x$-axis.\\n\\n[asy]\\nunitsize(0.8 cm);\\n\\ndraw((-0.5,0)--(3.5,0));\\ndraw((0,-0.5)--(0,3.5));\\ndraw(arc((0,0),3,0,90),red,Arrow(6));\\n\\ndot((0,3), red);\\nlabel(\"$(0,3)$\", (0,3), W);\\ndot((3,0), red);\\n[/asy]\\n\\nTherefore, the polar coordinates are $\\\\boxed{\\\\left( 3, \\\\frac{\\\\pi}{2} \\\\right)}.$', 'answer': '\\\\left( 3, \\\\frac{\\\\pi}{2} \\\\right)', 'subject': 'Precalculus', 'level': 2, 'unique_id': 'test/precalculus/807.json'}"
+  },
+  {
+    "keys": [
+      "answer",
+      "level",
+      "problem",
+      "solution",
+      "subject",
+      "unique_id"
+    ],
+    "excerpt": "{'problem': 'Define\\n\\\\[p = \\\\sum_{k = 1}^\\\\infty \\\\frac{1}{k^2} \\\\quad \\\\text{and} \\\\quad q = \\\\sum_{k = 1}^\\\\infty \\\\frac{1}{k^3}.\\\\]Find a way to write\\n\\\\[\\\\sum_{j = 1}^\\\\infty \\\\sum_{k = 1}^\\\\infty \\\\frac{1}{(j + k)^3}\\\\]in terms of $p$ and $q.$', 'solution': 'We count the number of times $\\\\frac{1}{n^3}$ appears in the sum\\n\\\\[\\\\sum_{j = 1}^\\\\infty \\\\sum_{k = 1}^\\\\infty \\\\frac{1}{(j + k)^3},\\\\]where $n$ is a fixed positive integer.  (In other words, we are conditioning the sum on $j + k$.)  We get a term of $\\\\frac{1}{n^3}$ each time $j + k = n.$  The pairs $(j,k)$ that work are $(1,n - 1),$ $(2,n - 2),$ $\\\\dots,$ $(n - 1,1),$ for a total of $n - 1$ pairs.  Therefore,\\n\\\\begin{align*}\\n\\\\sum_{j = 1}^\\\\infty \\\\sum_{k = 1}^\\\\infty \\\\frac{1}{(j + k)^3} &= \\\\sum_{n = 1}^\\\\infty \\\\frac{n "
+  },
+  {
+    "keys": [
+      "answer",
+      "level",
+      "problem",
+      "solution",
+      "subject",
+      "unique_id"
+    ],
+    "excerpt": "{'problem': 'If $f(x) = \\\\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)+f(0)$? Express your answer as a common fraction.', 'solution': '$f(-2)+f(-1)+f(0)=\\\\frac{3(-2)-2}{-2-2}+\\\\frac{3(-1)-2}{-1-2}+\\\\frac{3(0)-2}{0-2}=\\\\frac{-8}{-4}+\\\\frac{-5}{-3}+\\\\frac{-2}{-2}=2+\\\\frac{5}{3}+1=\\\\boxed{\\\\frac{14}{3}}$', 'answer': '\\\\frac{14}{3}', 'subject': 'Algebra', 'level': 3, 'unique_id': 'test/algebra/2584.json'}"
+  },
+  {
+    "keys": [
+      "answer",
+      "level",
+      "problem",
+      "solution",
+      "subject",
+      "unique_id"
+    ],
+    "excerpt": "{'problem': 'How many positive whole-number divisors does 196 have?', 'solution': 'First prime factorize $196=2^2\\\\cdot7^2$.  The prime factorization of any divisor of 196 cannot include any primes other than 2 and 7.  We are free to choose either 0, 1, or 2 as the exponent of 2 in the prime factorization of a divisor of 196.  Similarly, we may choose 0, 1, or 2 as the exponent of 7.  In total, there are $3\\\\times 3=9$ possibilities for the prime factorization of a divisor of 196.  Distinct prime factorizations correspond to distinct integers, so there are $\\\\boxed{9}$ divisors of 196.', 'answer': '9', 'subject': 'Number Theory', 'level': 3, 'unique_id': 'test/number_theory/572.json'}"
+  },
+  {
+    "keys": [
+      "answer",
+      "level",
+      "problem",
+      "solution",
+      "subject",
+      "unique_id"
+    ],
+    "excerpt": "{'problem': 'The results of a cross-country team\\'s training run are graphed below. Which student has the greatest average speed? [asy]\\nfor ( int i = 1; i <= 7; ++i )\\n{\\n\\ndraw((i,0)--(i,6));\\n}\\n\\nfor ( int i = 1; i <= 5; ++i )\\n{\\n\\ndraw((0,i)--(8,i));\\n}\\ndraw((-0.5,0)--(8,0), linewidth(1));\\ndraw((0,-0.5)--(0,6), linewidth(1));\\nlabel(\"$O$\", (0,0), SW);\\nlabel(scale(.85)*rotate(90)*\"distance\", (0, 3), W);\\nlabel(scale(.85)*\"time\", (4, 0), S);\\ndot((1.25, 4.5));\\nlabel(scale(.85)*\"Evelyn\", (1.25, 4.8), N);\\ndot((2.5, 2.2));\\nlabel(scale(.85)*\"Briana\", (2.5, 2.2), S);\\ndot((4.25,5.2));\\nlabel(scale(.85)*\"Carla\", (4.25, 5.2), SE);\\ndot((5.6, 2.8));\\nlabel(scale(.85)*\"Debra\", (5.6, 2.8), N);\\ndot((6.8, 1.4));\\nlabel(scale(.85)*\"Angela\", (6.8, 1.4), E);\\n[/asy]', 'solution': \"Evelyn cover"
+  }
+]

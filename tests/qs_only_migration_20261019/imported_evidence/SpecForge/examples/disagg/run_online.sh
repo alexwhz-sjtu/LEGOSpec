@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Thin online-disaggregated example over the one public training entry.
+set -euo pipefail
+
+if [[ "${1:-}" == -h || "${1:-}" == --help ]]; then
+    printf '%s\n' \
+        "Usage: CONFIG=path/to/online-disagg.yaml $0 [SPECFORGE_TRAIN_ARG ...]" \
+        "Capture node: CONFIG=... $0 --role producer" \
+        "Trainer node: CONFIG=... $0 --role consumer" \
+        "Online producer and consumer roles must run on disjoint nodes."
+    exit 0
+fi
+
+config=${CONFIG:-}
+[[ -n "$config" ]] || {
+    printf 'error: set CONFIG\n' >&2
+    exit 2
+}
+[[ -f "$config" ]] || {
+    printf 'error: CONFIG does not exist: %s\n' "$config" >&2
+    exit 2
+}
+
+specforge_bin=$(command -v specforge) || {
+    printf 'error: specforge is not on PATH\n' >&2
+    exit 2
+}
+exec "$specforge_bin" train --config "$config" "$@"

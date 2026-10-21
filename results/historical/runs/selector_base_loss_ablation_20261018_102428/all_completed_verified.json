@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-10-18T15:22:20.821067+00:00",
+  "status": "all_completed_verified",
+  "protected_hashes_valid": true,
+  "series_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428",
+  "jobs": [
+    {
+      "number": 1,
+      "label": "01_dflash_mha_selector_dpace",
+      "pid": 242928,
+      "returncode": 0,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/01_dflash_mha_selector_dpace/checkpoints/final",
+      "metadata": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/0jib9iza",
+      "wandb_state": "finished",
+      "last_training_batch": {
+        "_step": 59724,
+        "train/loss": 1332.8756103515625,
+        "detail/composable/hard_label/token_accuracy": 0.8565604090690613,
+        "train/walk_accepted_length": 6.471834659576416,
+        "train/expected_accept_len": 5.608505725860596
+      }
+    },
+    {
+      "number": 2,
+      "label": "02_dflash_mha_selector_nla",
+      "pid": 273425,
+      "returncode": 0,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/02_dflash_mha_selector_nla/checkpoints/final",
+      "metadata": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/ism8j8vi",
+      "wandb_state": "finished",
+      "last_training_batch": {
+        "_step": 59724,
+        "train/loss": 0.8661414384841919,
+        "detail/composable/hard_label/token_accuracy": 0.8693847060203552,
+        "train/walk_accepted_length": 6.433591842651367,
+        "train/expected_accept_len": 5.66928768157959
+      }
+    },
+    {
+      "number": 3,
+      "label": "03_dflash_mha_selector_ce01_tv09",
+      "pid": 301107,
+      "returncode": 0,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/03_dflash_mha_selector_ce01_tv09/checkpoints/final",
+      "metadata": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/16dr43sn",
+      "wandb_state": "finished",
+      "last_training_batch": {
+        "_step": 59724,
+        "train/loss": 0.7521949410438538,
+        "detail/composable/hard_label/token_accuracy": 0.8664195537567139,
+        "train/walk_accepted_length": 6.451938152313232,
+        "train/expected_accept_len": 5.656239986419678
+      }
+    }
+  ]
+}

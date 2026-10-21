@@ -1,0 +1,43 @@
+# Qwen3.5-4B DFlash2 draft, offline hidden-state training.
+model:
+  target_model_path: Qwen/Qwen3.5-4B
+  draft_model_config: configs/qwen3.5-4b-dflash2.json
+  target_backend: sglang
+  trust_remote_code: true
+  embedding_key: model.language_model.embed_tokens.weight
+  torch_dtype: bfloat16
+
+data:
+  hidden_states_path: ./cache/hidden_states/qwen3.5-4b-dflash2-sharegpt
+  max_length: 2048
+  chat_template: qwen3.5
+  cache_dir: ./cache
+
+training:
+  strategy: dflash
+  num_epochs: 1
+  batch_size: 1
+  learning_rate: 1.0e-4
+  warmup_ratio: 0.015
+  max_grad_norm: 0.5
+  attention_backend: flex_attention
+  num_anchors: 512
+  objective_chunk_blocks: 128
+  loss_type: dflash
+  dflash2_selector_loss_alpha: 1.0
+  dflash2_selector_warmup_ratio: 0.0
+  dflash2_selector_ramp_ratio: 0.0
+  dflash2_selector_stop_gradient: false
+  save_interval: 0
+  log_interval: 50
+  dist_timeout: 10
+  seed: 42
+
+run_id: qwen3.5-4b-dflash2-offline
+output_dir: ./outputs/qwen3.5-4b-dflash2-offline
+
+deployment:
+  mode: local_colocated
+  trainer:
+    nnodes: 1
+    nproc_per_node: 1

@@ -1,0 +1,84 @@
+{
+  "checked_at": "2026-10-18T11:22:00.866818+00:00",
+  "protected_hashes_valid": true,
+  "completed_job": {
+    "number": 2,
+    "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/02_dflash_mha_selector_nla/checkpoints/final",
+    "metadata": {
+      "optimizer_step": 59724,
+      "phases": 1
+    },
+    "returncode": 0,
+    "wandb_state": "finished",
+    "summary": {
+      "_step": 59724,
+      "train/loss": 0.8661414384841919,
+      "detail/composable/hard_label/token_accuracy": 0.8693847060203552,
+      "train/walk_accepted_length": 6.433591842651367,
+      "train/expected_accept_len": 5.66928768157959
+    }
+  },
+  "started_job": {
+    "number": 3,
+    "pid": 301107,
+    "start_ticks": "2290636996",
+    "workers": [
+      301210,
+      301211,
+      301212,
+      301213,
+      301214,
+      301215,
+      301216,
+      301217
+    ],
+    "local_metrics": [
+      {
+        "step": 4700,
+        "loss": 1.9509
+      },
+      {
+        "step": 4750,
+        "loss": 1.6849
+      },
+      {
+        "step": 4800,
+        "loss": 1.43
+      }
+    ],
+    "wandb_state": "running",
+    "online_rows": [
+      {
+        "_step": 4550,
+        "train/loss": 1.741119623184204,
+        "detail/composable/hard_label/token_accuracy": 0.6401297450065613,
+        "train/walk_accepted_length": 4.214885711669922,
+        "train/expected_accept_len": 3.9188289642333984
+      },
+      {
+        "_step": 4600,
+        "train/loss": 1.49168062210083,
+        "detail/composable/hard_label/token_accuracy": 0.7019235491752625,
+        "train/walk_accepted_length": 4.698245525360107,
+        "train/expected_accept_len": 4.4149627685546875
+      },
+      {
+        "_step": 4650,
+        "train/loss": 1.9754706621170044,
+        "detail/composable/hard_label/token_accuracy": 0.5736066699028015,
+        "train/walk_accepted_length": 3.7743008136749268,
+        "train/expected_accept_len": 3.460456609725952
+      },
+      {
+        "_step": 4700,
+        "train/loss": 1.950939416885376,
+        "detail/composable/hard_label/token_accuracy": 0.573850154876709,
+        "train/walk_accepted_length": 3.767270803451538,
+        "train/expected_accept_len": 3.5121328830718994
+      }
+    ],
+    "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/16dr43sn",
+    "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/03_dflash_mha_selector_ce01_tv09/train.log",
+    "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/03_dflash_mha_selector_ce01_tv09/checkpoints"
+  }
+}

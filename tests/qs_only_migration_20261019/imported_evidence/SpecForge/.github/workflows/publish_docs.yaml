@@ -1,0 +1,49 @@
+name: Release Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "version.txt"
+  workflow_dispatch:
+
+concurrency:
+  group: release-docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-github-pages:
+    runs-on: ubuntu-latest
+    if: github.repository == 'sgl-project/SpecForge' || github.repository == 'sleepcoo/SpecForge'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # lastUpdated timestamps come from git history
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: docs/web/package-lock.json
+
+      - name: Build documentation
+        run: |
+          cd docs/web
+          npm ci
+          npm run build
+
+      - name: Add .nojekyll file
+        run: |
+          touch ./docs/web/.vitepress/dist/.nojekyll
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/web/.vitepress/dist

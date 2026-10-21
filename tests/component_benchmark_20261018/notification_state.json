@@ -1,0 +1,298 @@
+{
+  "started_verified": [
+    "A1/T0"
+  ],
+  "completed": [
+    "A1/T0",
+    "A1/T1",
+    "A2/T0",
+    "A2/T1",
+    "A3/T0",
+    "A3/T1",
+    "A4/T0",
+    "A4/T1",
+    "A5/T0",
+    "A5/T1",
+    "A6/T0",
+    "A6/T1",
+    "A7/T0",
+    "A7/T1"
+  ],
+  "note": "Main chat reported real formal records; failed original T0 contains no request results and is excluded",
+  "last_verified_at": "2026-10-18T19:25:18.496003+00:00",
+  "completion_evidence": {
+    "A1_dflash_mha_selector/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.437526293544873,
+      "long_domain_macro_tau": 2.345960213241996,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A1_dflash_mha_selector/T0_jsonl_retry"
+    },
+    "A1_dflash_mha_selector/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.192099518753659,
+      "long_domain_macro_tau": 2.2531888758912912,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A1_dflash_mha_selector/T1"
+    },
+    "A2_dflare_hybrid_rnn/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.4039477366601565,
+      "long_domain_macro_tau": 2.828614775139231,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A2_dflare_hybrid_rnn/T0"
+    },
+    "A2/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.2218565138609145,
+      "long_domain_macro_tau": 2.6515021909295293,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A2_dflare_hybrid_rnn/T1"
+    },
+    "A3/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.401978152741312,
+      "long_domain_macro_tau": 1.9534750904296525,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A3_dflare_mha_selector/T0"
+    },
+    "A3/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.173293055957639,
+      "long_domain_macro_tau": 1.8347110305230536,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A3_dflare_mha_selector/T1"
+    },
+    "A4/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.140694446123383,
+      "long_domain_macro_tau": 2.3410611231677536,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A4_dflash_mha_parallel/T0"
+    },
+    "A4/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 3.8614979108293457,
+      "long_domain_macro_tau": 2.149572695537671,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A4_dflash_mha_parallel/T1"
+    },
+    "A5/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.4784469387230095,
+      "long_domain_macro_tau": 2.1817418345088035,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A5_01_dflash_mha_selector_dpace/T0"
+    },
+    "A5/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.2401822342671975,
+      "long_domain_macro_tau": 2.0614581791544073,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A5_01_dflash_mha_selector_dpace/T1"
+    },
+    "A1/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.437526293544873,
+      "long_domain_macro_tau": 2.345960213241996,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A1_dflash_mha_selector/T0_jsonl_retry"
+    },
+    "A1/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.192099518753659,
+      "long_domain_macro_tau": 2.2531888758912912,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A1_dflash_mha_selector/T1"
+    },
+    "A2/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.4039477366601565,
+      "long_domain_macro_tau": 2.828614775139231,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A2_dflare_hybrid_rnn/T0"
+    },
+    "A6/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.493469540854895,
+      "long_domain_macro_tau": 2.397448333224021,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A6_02_dflash_mha_selector_nla/T0"
+    },
+    "A6/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.2750788249923755,
+      "long_domain_macro_tau": 2.256602585706355,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A6_02_dflash_mha_selector_nla/T1"
+    },
+    "A7/T0": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.516681688628918,
+      "long_domain_macro_tau": 2.4048065905371683,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A7_03_dflash_mha_selector_ce01_tv09/T0"
+    },
+    "A7/T1": {
+      "requests": 1056,
+      "returncodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "regular_task_macro_tau": 4.303121181447042,
+      "long_domain_macro_tau": 2.241210621389881,
+      "output": "/mnt/bd-1/task/339953/artifacts/LiteSpec/benchmarks/component_acceptance_v1_20261018/A7_03_dflash_mha_selector_ce01_tv09/T1"
+    }
+  },
+  "all_completed_notified": true
+}

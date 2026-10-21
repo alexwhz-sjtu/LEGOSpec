@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-17T14:08:37.533827+00:00",
+  "job": 1,
+  "pid": 143765,
+  "workers": [
+    143799,
+    143800,
+    143801,
+    143802,
+    143803,
+    143804,
+    143805,
+    143806
+  ],
+  "local_metrics": [
+    {
+      "step": 150,
+      "loss": 7.1529
+    },
+    {
+      "step": 200,
+      "loss": 6.6499
+    },
+    {
+      "step": 250,
+      "loss": 6.7478
+    }
+  ],
+  "online_metrics": [
+    {
+      "_step": 100,
+      "train/loss": 8.692741394042969,
+      "detail/composable/hard_label/token_accuracy": 0.040979769080877304,
+      "train/walk_accepted_length": 1.0466208457946777,
+      "train/expected_accept_len": 1.0353530645370483
+    },
+    {
+      "_step": 150,
+      "train/loss": 7.152908802032471,
+      "detail/composable/hard_label/token_accuracy": 0.06191965937614441,
+      "train/walk_accepted_length": 1.0929824113845825,
+      "train/expected_accept_len": 1.0511618852615356
+    },
+    {
+      "_step": 200,
+      "train/loss": 6.649874687194824,
+      "detail/composable/hard_label/token_accuracy": 0.10986964404582977,
+      "train/walk_accepted_length": 1.2550644874572754,
+      "train/expected_accept_len": 1.1383521556854248
+    }
+  ],
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/bzyp7jnr",
+  "group": "retrain_1234_metrics_v2_20261017_220434",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/01_dflash_mha_selector/train.log",
+  "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/01_dflash_mha_selector/checkpoints",
+  "supervisor_pid": 143762
+}

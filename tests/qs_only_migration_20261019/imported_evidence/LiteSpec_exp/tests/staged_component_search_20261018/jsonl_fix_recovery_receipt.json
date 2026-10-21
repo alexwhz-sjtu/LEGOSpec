@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-18T15:09:30.843745+00:00",
+  "reason": "Valid JSONL Unicode line separator reader fix and explicit per-worker GPU binding; benchmark only; active training source/config unchanged",
+  "changes": [
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/run.py",
+      "old": "30ad79f8f6a2c9a06f9339518a20e132b779db57d14fc9d56e56223217a84ef3",
+      "new": "061d3b68ad8b6cfa8ae0a5f8806ff17bde824fa5641f04fdc0671d614a77f2a4"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/summarize.py",
+      "old": "a63419b209ea651c84c1b1605fc85ff26c84d00672f895ef419d14dc56e1fc5f",
+      "new": "61d4828520f4dca37ec86ebbb14d82fdfc23567540e5d2c61d0017a49e99618a"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/canonical_mtbench.py",
+      "old": "a2837fd8794bd55df037c1408a9be1c05e081b83ccbfbfa20313d75e0286da6f",
+      "new": "a05c71f2b56873bbbf5ebf61ca1a1467d24a274e38fc63b6689274a9846f97bc"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/compare.py",
+      "old": "b3ba5c3bd2f1c72794634de4b443686d4e6c2c7ce936e15a1b248f3c586db5cb",
+      "new": "3425dd5b38ffe6a61f4c469a713b9194746d1835f8e95b259fa8c1ee46e8ccbe"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/harness/prepare.py",
+      "old": "6aa9c251a007cbf0639cfc08400a364bd46f3fd5654c1c838bf2f8c704cc989f",
+      "new": "3a664d447584dff61644bda7fb6dec0aa12eb6eb6eb825befcb14bdb9d4b79f4"
+    },
+    {
+      "file": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/benchmark_queue.py",
+      "old": "318fcceda2af11d3f20d3519f50ea3bf4b8be2efadf25383e788ebc39aa53e9b",
+      "new": "faec4bd99848d7016b464d489863e4cacd83617e3653db7d759c29f01cb0e314"
+    }
+  ]
+}

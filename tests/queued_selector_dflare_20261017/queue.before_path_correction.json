@@ -1,0 +1,21 @@
+{
+  "status": "failed",
+  "next_run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949",
+  "next_wandb_id": "67b562ee",
+  "source_pid": 14645,
+  "source_start_ticks": "2275169323",
+  "source_run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438",
+  "source_final_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints/final",
+  "config": "/data/temp/LiteSpec_exp/scripts/config/composable_selector_dflare.yaml",
+  "draft_config": "/data/temp/LiteSpec_exp/configs/composable_selector_dflare_from_inf_checkpoint.json",
+  "repo": "/data/temp/LiteSpec_exp",
+  "source_data_sha256": "b8fb09cec39962888b08d457836bcb2bfff0bd988df51ce4910a065e24edc168",
+  "env_file": "/data/temp/LiteSpec_exp/tests/h800_setup_20261016/env.sh",
+  "prepared_hashes": {
+    "/data/temp/LiteSpec_exp/scripts/config/composable_selector_dflare.yaml": "b13cbafcfc786e4f03f410c6f51a3c00960baaac8ecadc3cd82491195429c97e",
+    "/data/temp/LiteSpec_exp/configs/composable_selector_dflare_from_inf_checkpoint.json": "c997b101ce9398ff9055965ebb37dc883de37f9f9610ea7ce882b49749f04cb0"
+  },
+  "updated_at": "2026-10-16T20:01:27.316874+00:00",
+  "supervisor_pid": 26578,
+  "error": "AssertionError: Missing final checkpoint file: /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints/final/config.json"
+}

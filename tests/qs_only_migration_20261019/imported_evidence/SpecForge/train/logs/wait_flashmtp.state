@@ -1,0 +1,6 @@
+status=failed
+waiter_pid=1416557
+updated_at=2026-09-23T05:17:34Z
+config=/data/wanghanzhen/projects/SpecDecoding/SpecForge/examples/configs/online/colocated/qwen3-8b-flashmtp-online.yaml
+train_log=/data/wanghanzhen/projects/SpecDecoding/SpecForge/train/logs/flashmtp_20260923T042015Z.log
+exit_code=1

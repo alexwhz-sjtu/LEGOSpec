@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-10-21T05:36:39.675490+00:00",
+  "authorized_request": "Train DFlare+Parallel with CE and .1CE+.9TV from scratch, then formal T0/T1 testing",
+  "world_size": 8,
+  "global_batch": 8,
+  "accumulation_steps": 1,
+  "expected_steps": 59724,
+  "epochs": 6,
+  "seed": 42,
+  "target_features": [
+    1,
+    9,
+    17,
+    25,
+    33
+  ],
+  "block_size": 8,
+  "source_snapshot": "/mnt/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/h8001_component_search_20261020/snapshot",
+  "data_sha256": "b8fb09cec39962888b08d457836bcb2bfff0bd988df51ce4910a065e24edc168",
+  "training_jobs": [
+    "11_dflare_mha_parallel_hard_ce",
+    "12_dflare_mha_parallel_ce01_tv09"
+  ],
+  "formal_jobs": 4,
+  "requests_per_job": 1056,
+  "comparisons": [
+    {
+      "candidate_label": "11_dflare_mha_parallel_hard_ce",
+      "temperature": 0,
+      "baseline": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_A4_parallel_hard_ce/T0"
+    },
+    {
+      "candidate_label": "11_dflare_mha_parallel_hard_ce",
+      "temperature": 1,
+      "baseline": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_A4_parallel_hard_ce/T1"
+    },
+    {
+      "candidate_label": "12_dflare_mha_parallel_ce01_tv09",
+      "temperature": 0,
+      "baseline": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/07_dflash_mha_parallel_ce01_tv09/T0"
+    },
+    {
+      "candidate_label": "12_dflare_mha_parallel_ce01_tv09",
+      "temperature": 1,
+      "baseline": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/07_dflash_mha_parallel_ce01_tv09/T1"
+    }
+  ],
+  "unchanged_historical_protection": 239,
+  "resource_policy": "Only idle GPUs; never terminate or claim other users processes; training waits for required rank count, benchmark schedules 8 logical shards on 1-8 idle GPUs",
+  "execution_host": "H800_2",
+  "hostname": "is-ddmv5luhgpecdlq5-devmachine-0",
+  "shared_mount": "/mnt/dai-sys",
+  "path_only_relocation": true,
+  "original_environment_unchanged": true
+}

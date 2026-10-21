@@ -1,0 +1,154 @@
+ M README.md
+ M docs/recipes/kimi-k3-dspark-disaggregated.md
+ M docs/recipes/qwen3.8-27b-dflash2-disaggregated.md
+ M docs/sections/advanced_features/customization.md
+ M docs/sections/basic_usage/AMD/amd_rocm.md
+ M docs/sections/basic_usage/Ascend/ascend_npu.md
+ M docs/sections/basic_usage/disaggregated_training.md
+ M docs/sections/basic_usage/training.md
+ M docs/sections/benchmarks/domino-disaggregated-performance.md
+ M docs/sections/concepts/DFlash2.md
+ M docs/sections/examples/llama3-eagle3-online.md
+ M examples/README.md
+ M examples/configs/README.md
+ M examples/configs/online/colocated/README.md
+ M examples/configs/online/disaggregated/external/deepseek-v2-lite-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/deepseek-v3-671b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/deepseek-v4-flash-dspark-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/gemma3-1b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/glm-5.2-dspark-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/gpt-oss-120b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/gpt-oss-20b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/inkling-dspark-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/kimi-k3-dspark-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/lfm2.5-1.2b-instruct-dflash-online.yaml
+ M examples/configs/online/disaggregated/external/ling-flash-2.0-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/llama3.1-8b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/llama3.3-70b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/llama4-scout-17b-16e-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/longcat-flash-dflash-online.yaml
+ M examples/configs/online/disaggregated/external/longcat-flash-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/phi4-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen2.5-0.5b-dflash-online.yaml
+ M examples/configs/online/disaggregated/external/qwen2.5-0.5b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-235b-a22b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-30b-a3b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-30b-a3b-eagle3.1-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-32b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-4b-dflash-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-4b-dspark-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwen3-4b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-dflash-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-dflash-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-domino-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-domino-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-dpace-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-dspark-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-eagle3-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwen3-8b-peagle-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwen3-coder-30b-a3b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-coder-480b-a35b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-coder-next-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3-next-80b-a3b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3.5-35b-a3b-dflash-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3.5-35b-a3b-eagle3-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3.5-4b-dflash-online-amd.yaml
+ M examples/configs/online/disaggregated/external/qwen3.5-4b-dflash-online-npu.yaml
+ M examples/configs/online/disaggregated/external/qwen3.5-4b-dflash2-online-npu.yaml
+ M examples/configs/online/disaggregated/external/qwen3.5-4b-domino-online-npu.yaml
+ M examples/configs/online/disaggregated/external/qwen3.6-27b-dflash-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwen3.6-27b-dflash-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3.6-27b-domino-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3.6-27b-dspark-online.yaml
+ M examples/configs/online/disaggregated/external/qwen3.8-27b-dflash2-disaggregated.yaml
+ M examples/configs/online/disaggregated/external/qwq-32b-eagle3-online.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3-8b-dflash-1server-dp7-disaggregated.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3-8b-domino-1server-dp7-disaggregated.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3-8b-domino-multiserver-disaggregated.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3.5-4b-dflash-disaggregated-npu.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3.5-4b-mtp-disaggregated-npu.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3.6-27b-dflash-1server-dp2-disaggregated.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3.6-27b-dflash-multiserver-disaggregated.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3.6-27b-dflash2-disaggregated.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3.6-27b-dspark-disaggregated.yaml
+ D examples/configs/online/disaggregated/managed-local/qwen3.8-27b-dflash2-4server-dp4-disaggregated.yaml
+ M examples/disagg/README.md
+ M examples/disagg/run_online.sh
+ M scripts/gates/README.md
+ M specforge/algorithms/builtin.py
+ M specforge/algorithms/common/dflash_family_model.py
+ M specforge/algorithms/model_providers.py
+ M specforge/application/planning.py
+ M specforge/cli.py
+ M specforge/config/__init__.py
+ M specforge/config/schema.py
+ M specforge/data/preprocessing.py
+ M specforge/data/prompt_builder.py
+ M specforge/inference/sglang_patch_inventory.md
+ M specforge/launch.py
+ M specforge/launch_plan.py
+ M specforge/modeling/draft/__init__.py
+ M specforge/modeling/draft/dflash.py
+ M specforge/modeling/draft/dflash2.py
+ M specforge/modeling/draft/dspark.py
+ M specforge/modeling/draft/flex_attention_backend.py
+ M specforge/offline_capture/__init__.py
+ M specforge/offline_capture/sglang.py
+ M specforge/offline_capture/sglang_backend/capture.py
+ M specforge/runtime/contracts.py
+ M specforge/tracker.py
+ M specforge/training/assembly.py
+ M specforge/training/strategies/base.py
+ M specforge/training/tracking.py
+ M specforge/training/trainer.py
+ M tests/test_algorithms/test_builtin_parity.py
+ M tests/test_algorithms/test_builtin_providers.py
+ M tests/test_algorithms/test_offline_capture_layout.py
+ M tests/test_application/test_composition.py
+ M tests/test_config/test_example_draft_config_wiring.py
+ M tests/test_config/test_launch_topology.py
+ M tests/test_config/test_model_loading_schema.py
+ M tests/test_config/test_recipe_readme.py
+ M tests/test_config/test_schema.py
+ M tests/test_config/test_server_only_online.py
+ M tests/test_config/test_unified_feature_reachability.py
+ M tests/test_data/test_prompt_builder.py
+ M tests/test_modeling/test_dflash2.py
+ M tests/test_modeling/test_draft_registry.py
+ M tests/test_offline_capture/test_sglang_backend.py
+ M tests/test_runtime/test_disaggregated_defaults.py
+ M tests/test_runtime/test_disaggregated_model_loading.py
+ M tests/test_runtime/test_eval_entry_wiring.py
+ M tests/test_runtime/test_launch_plan.py
+ M tests/test_runtime/test_model_loading.py
+ M tests/test_runtime/test_offline_vocab_mapping.py
+ M tests/test_runtime/test_package_architecture.py
+ D tests/test_runtime/test_service_readiness.py
+ M tests/test_runtime/test_single_entry.py
+ M tests/test_runtime/test_tracking_logger.py
+ M tests/test_utils/test_dflash_walk.py
+?? THIRD_PARTY_NOTICES.md
+?? configs/qwen3-4b-dflash2.json
+?? configs/qwen3-8b-dspark-conv-switch.json
+?? configs/qwen3-8b-dspark-convk2g16-full.json
+?? diagnostics/
+?? evaluation/
+?? examples/configs/offline/colocated/qwen3-8b-flashmtp-offline.yaml
+?? examples/configs/offline/colocated/qwen3.5-4b-dflash2-offline.yaml
+?? examples/configs/online/colocated/qwen3-4b-dflash-colocated-online.yaml
+?? examples/configs/online/colocated/qwen3-4b-dflash2-online.yaml
+?? examples/configs/online/colocated/qwen3-4b-dspark-online.yaml
+?? examples/configs/online/colocated/qwen3-4b-flashmtp-online.yaml
+?? examples/configs/online/colocated/qwen3-8b-dspark-pb80k-convk2g16-full-online.yaml
+?? examples/configs/online/colocated/qwen3-8b-dspark-pb80k-online.yaml
+?? examples/configs/online/colocated/qwen3-8b-flashmtp-online.yaml
+?? specforge/algorithms/flashmtp/
+?? specforge/core/flashmtp.py
+?? specforge/modeling/draft/flashmtp.py
+?? specforge/modeling/draft/flashmtp_markov_head.py
+?? specforge/training/local_online.py
+?? tests/test_config/test_online_launch_scripts.py
+?? tests/test_modeling/test_dspark_conv_switch.py
+?? tests/test_modeling/test_flashmtp.py
+?? tests/test_training/test_local_online.py
+?? train/

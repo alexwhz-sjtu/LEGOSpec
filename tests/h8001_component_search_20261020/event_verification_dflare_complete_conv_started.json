@@ -1,0 +1,132 @@
+{
+  "verified_at": "2026-10-20T10:59:37.226498+00:00",
+  "completed_number": 9,
+  "started_number": 10,
+  "exit_receipt": {
+    "pid": 556269,
+    "start_ticks": "185350784",
+    "watcher_pid": 556268,
+    "returncode": 0
+  },
+  "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/09_dflare_context_ce01_tv09/checkpoints/final",
+  "completion": {
+    "optimizer_step": 59724,
+    "phases": 1
+  },
+  "all_rank_metadata_verified": true,
+  "online": {
+    "9": {
+      "id": "009d1498",
+      "state": "finished",
+      "last_step": 59724,
+      "metrics": {
+        "train/loss": 0.35366857051849365,
+        "detail/composable/hard_label/token_accuracy": 0.8587097525596619,
+        "train/walk_accepted_length": 6.032299518585205,
+        "train/expected_accept_len": 5.80350923538208
+      }
+    },
+    "10": {
+      "id": "77ebfefb",
+      "state": "running",
+      "last_step": 33850,
+      "metrics": {
+        "train/loss": 0.5063265562057495,
+        "detail/composable/hard_label/token_accuracy": 0.7949712872505188,
+        "train/walk_accepted_length": 5.22987699508667,
+        "train/expected_accept_len": 5.0420050621032715
+      },
+      "history": [
+        {
+          "_step": 33600,
+          "train/loss": 0.205331951379776
+        },
+        {
+          "_step": 33650,
+          "train/loss": 0.261476069688797
+        },
+        {
+          "_step": 33700,
+          "train/loss": 0.26448410749435425
+        },
+        {
+          "_step": 33750,
+          "train/loss": 0.34557074308395386
+        },
+        {
+          "_step": 33750,
+          "train/loss": 0.34557074308395386
+        },
+        {
+          "_step": 33800,
+          "train/loss": 0.5498783588409424
+        },
+        {
+          "_step": 33850,
+          "train/loss": 0.5063265562057495
+        }
+      ]
+    }
+  },
+  "local_metrics": [
+    {
+      "step": 33850,
+      "loss": 0.5063
+    },
+    {
+      "step": 33900,
+      "loss": 0.3739
+    },
+    {
+      "step": 33950,
+      "loss": 0.7386
+    }
+  ],
+  "main_pid": 616476,
+  "start_ticks": "186863799",
+  "workers": [
+    {
+      "pid": 616586,
+      "start_ticks": "186866995",
+      "ppid": 616476
+    },
+    {
+      "pid": 616587,
+      "start_ticks": "186866996",
+      "ppid": 616476
+    },
+    {
+      "pid": 616588,
+      "start_ticks": "186866996",
+      "ppid": 616476
+    },
+    {
+      "pid": 616589,
+      "start_ticks": "186866996",
+      "ppid": 616476
+    },
+    {
+      "pid": 616590,
+      "start_ticks": "186866996",
+      "ppid": 616476
+    },
+    {
+      "pid": 616591,
+      "start_ticks": "186866996",
+      "ppid": 616476
+    },
+    {
+      "pid": 616592,
+      "start_ticks": "186866996",
+      "ppid": 616476
+    },
+    {
+      "pid": 616593,
+      "start_ticks": "186866996",
+      "ppid": 616476
+    }
+  ],
+  "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/10_dflash_layer_conv_ce01_tv09/train.log",
+  "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/10_dflash_layer_conv_ce01_tv09/checkpoints",
+  "protected_files": 238
+}

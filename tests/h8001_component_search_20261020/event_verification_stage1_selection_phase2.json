@@ -1,0 +1,225 @@
+{
+  "verified_at": "2026-10-20T05:02:29.176817+00:00",
+  "completed_number": 7,
+  "started_number": 9,
+  "exit_receipt": {
+    "pid": 498293,
+    "start_ticks": "183571189",
+    "watcher_pid": 498292,
+    "returncode": 0
+  },
+  "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/checkpoints/final",
+  "completion": {
+    "optimizer_step": 59724,
+    "phases": 1
+  },
+  "all_rank_metadata_verified": true,
+  "selection": [
+    {
+      "label": "05_dflash_mha_parallel_dpace",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "05_dflash_mha_parallel_dpace",
+      "temperature": 1,
+      "requests": 190
+    },
+    {
+      "label": "06_dflash_mha_parallel_nla_gamma4",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "06_dflash_mha_parallel_nla_gamma4",
+      "temperature": 1,
+      "requests": 190
+    },
+    {
+      "label": "07_dflash_mha_parallel_ce01_tv09",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "07_dflash_mha_parallel_ce01_tv09",
+      "temperature": 1,
+      "requests": 190
+    },
+    {
+      "label": "reused_RNN_hard_ce_from_inf_final",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "reused_RNN_hard_ce_from_inf_final",
+      "temperature": 1,
+      "requests": 190
+    },
+    {
+      "label": "reused_A4_parallel_hard_ce",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "reused_A4_parallel_hard_ce",
+      "temperature": 1,
+      "requests": 190
+    },
+    {
+      "label": "reused_01_dflash_mha_rnn_dpace",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "reused_01_dflash_mha_rnn_dpace",
+      "temperature": 1,
+      "requests": 190
+    },
+    {
+      "label": "reused_02_dflash_mha_rnn_nla_gamma4",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "reused_02_dflash_mha_rnn_nla_gamma4",
+      "temperature": 1,
+      "requests": 190
+    },
+    {
+      "label": "reused_03_dflash_mha_rnn_ce01_tv09",
+      "temperature": 0,
+      "requests": 190
+    },
+    {
+      "label": "reused_03_dflash_mha_rnn_ce01_tv09",
+      "temperature": 1,
+      "requests": 190
+    }
+  ],
+  "loss_selection": {
+    "winner": "ce01_tv09",
+    "scores": {
+      "hard_ce": 4.3285246741815815,
+      "nla": 4.526227286310179,
+      "ce01_tv09": 4.5611752143431215,
+      "dpace": 4.504282875293777
+    },
+    "rule": "mean over 5 tasks x 2 temperatures x 2 proposals; within .01 prefer CE,NLA-gamma4,CE+TV,D-PACE; BV held by user",
+    "selected_at": "2026-10-20T04:15:10.778158+00:00"
+  },
+  "online": {
+    "7": {
+      "id": "acca1fbd",
+      "state": "finished",
+      "last_step": 59724,
+      "metrics": {
+        "train/loss": 0.5554623603820801,
+        "detail/composable/hard_label/token_accuracy": 0.7793752551078796,
+        "train/walk_accepted_length": 5.879845142364502,
+        "train/expected_accept_len": 5.547396659851074
+      }
+    },
+    "9": {
+      "id": "009d1498",
+      "state": "running",
+      "last_step": 10600,
+      "metrics": {
+        "train/loss": 0.4780007004737854,
+        "detail/composable/hard_label/token_accuracy": 0.8051746487617493,
+        "train/walk_accepted_length": 5.411786079406738,
+        "train/expected_accept_len": 5.264415740966797
+      },
+      "history": [
+        {
+          "_step": 10350,
+          "train/loss": 0.646135151386261
+        },
+        {
+          "_step": 10400,
+          "train/loss": 1.0565589666366577
+        },
+        {
+          "_step": 10450,
+          "train/loss": 0.45457687973976135
+        },
+        {
+          "_step": 10500,
+          "train/loss": 0.6791125535964966
+        },
+        {
+          "_step": 10500,
+          "train/loss": 0.6791125535964966
+        },
+        {
+          "_step": 10550,
+          "train/loss": 0.4573003351688385
+        },
+        {
+          "_step": 10600,
+          "train/loss": 0.4780007004737854
+        }
+      ]
+    }
+  },
+  "local_metrics": [
+    {
+      "step": 10650,
+      "loss": 0.8297
+    },
+    {
+      "step": 10700,
+      "loss": 0.8554
+    },
+    {
+      "step": 10750,
+      "loss": 0.2633
+    }
+  ],
+  "main_pid": 556269,
+  "start_ticks": "185350784",
+  "workers": [
+    {
+      "pid": 556331,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    },
+    {
+      "pid": 556332,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    },
+    {
+      "pid": 556333,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    },
+    {
+      "pid": 556334,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    },
+    {
+      "pid": 556335,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    },
+    {
+      "pid": 556336,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    },
+    {
+      "pid": 556337,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    },
+    {
+      "pid": 556338,
+      "start_ticks": "185353433",
+      "ppid": 556269
+    }
+  ],
+  "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/09_dflare_context_ce01_tv09/train.log",
+  "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/09_dflare_context_ce01_tv09/checkpoints",
+  "phase2_protected_files": 238
+}

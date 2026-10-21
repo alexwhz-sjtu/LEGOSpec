@@ -1,0 +1,11 @@
+{
+  "source": "Inf_H800_2:/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/output/composable_1/epoch_5_step_50000",
+  "only_recipe_change": {
+    "composable_config.context.type": {
+      "old": "dflash",
+      "new": "dflare"
+    }
+  },
+  "training_setting_changes": "paths and W&B run name only",
+  "from_scratch": true
+}

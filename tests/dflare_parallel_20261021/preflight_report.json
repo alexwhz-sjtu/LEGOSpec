@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "world_size": 8,
+  "precision": "BF16",
+  "rows": [
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 3.6726856231689453,
+        "objective/main": 3.6726856231689453,
+        "hard_label/token_accuracy": 0.05517241358757019,
+        "hard_label/block_accepted_length": 1.0208333730697632,
+        "expected_accept_len": 2.899818181991577
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 3.663132905960083,
+        "objective/main": 3.663132905960083,
+        "hard_label/token_accuracy": 0.054421767592430115,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.8673951625823975
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.9371753334999084,
+        "objective/main": 0.9371753334999084,
+        "hard_label/token_accuracy": 0.05517241358757019,
+        "hard_label/block_accepted_length": 1.0208333730697632,
+        "expected_accept_len": 2.899818181991577
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.9406318068504333,
+        "objective/main": 0.9406318068504333,
+        "hard_label/token_accuracy": 0.054421767592430115,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.8673951625823975
+      }
+    }
+  ]
+}

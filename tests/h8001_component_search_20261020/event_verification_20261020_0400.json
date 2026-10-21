@@ -1,0 +1,276 @@
+{
+  "verified_at": "2026-10-19T19:57:37.117356+00:00",
+  "completed_number": 5,
+  "started_number": 6,
+  "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/05_dflash_mha_parallel_dpace/checkpoints/final",
+  "completion": {
+    "optimizer_step": 59724,
+    "phases": 1
+  },
+  "rank_files": [
+    {
+      "rank": 0,
+      "bytes": 537534546,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    },
+    {
+      "rank": 1,
+      "bytes": 537502116,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    },
+    {
+      "rank": 2,
+      "bytes": 537524306,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    },
+    {
+      "rank": 3,
+      "bytes": 537524649,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    },
+    {
+      "rank": 4,
+      "bytes": 537502116,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    },
+    {
+      "rank": 5,
+      "bytes": 537524306,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    },
+    {
+      "rank": 6,
+      "bytes": 537524649,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    },
+    {
+      "rank": 7,
+      "bytes": 537512013,
+      "keys": [
+        "cursor",
+        "training_stage",
+        "phase_plan",
+        "steps_per_epoch",
+        "optimizer_step",
+        "scheduler_total_steps",
+        "scheduler_learning_rate",
+        "scheduler_warmup_ratio",
+        "train_data_identity",
+        "train_data_mode",
+        "loss_config",
+        "composable_recipe",
+        "selector_schedule_step",
+        "selector_effective_alpha",
+        "selector_loss_alpha"
+      ]
+    }
+  ],
+  "exit_receipt": {
+    "pid": 434492,
+    "start_ticks": "181340821",
+    "watcher_pid": 434490,
+    "returncode": 0
+  },
+  "online": {
+    "5": {
+      "id": "11af11ea",
+      "state": "finished",
+      "last_step": 59724,
+      "metrics": {
+        "train/loss": 1300.8875732421875,
+        "detail/composable/hard_label/token_accuracy": 0.8027198314666748,
+        "train/walk_accepted_length": 6.342118740081787,
+        "train/expected_accept_len": 5.480057716369629
+      }
+    },
+    "6": {
+      "id": "7e2e1c91",
+      "state": "running",
+      "last_step": 750,
+      "metrics": {
+        "train/loss": 1.3961061239242554,
+        "detail/composable/hard_label/token_accuracy": 0.3219033479690552,
+        "train/walk_accepted_length": 2.5711143016815186,
+        "train/expected_accept_len": 2.2754883766174316
+      },
+      "history": [
+        {
+          "_step": 450,
+          "train/loss": 1.8850517272949219
+        },
+        {
+          "_step": 500,
+          "train/loss": 1.792475938796997
+        },
+        {
+          "_step": 550,
+          "train/loss": 1.4494788646697998
+        },
+        {
+          "_step": 600,
+          "train/loss": 1.7412610054016113
+        },
+        {
+          "_step": 600,
+          "train/loss": 1.7412610054016113
+        },
+        {
+          "_step": 650,
+          "train/loss": 2.131692409515381
+        },
+        {
+          "_step": 700,
+          "train/loss": 1.1664427518844604
+        },
+        {
+          "_step": 750,
+          "train/loss": 1.3961061239242554
+        },
+        {
+          "_step": 750,
+          "train/loss": 1.3961061239242554
+        }
+      ]
+    }
+  },
+  "local_metrics": [
+    {
+      "step": 800,
+      "loss": 1.4134
+    },
+    {
+      "step": 850,
+      "loss": 1.3467
+    },
+    {
+      "step": 900,
+      "loss": 1.3446
+    }
+  ],
+  "main_pid": 471208,
+  "start_ticks": "182331663",
+  "workers": [
+    471259,
+    471260,
+    471261,
+    471262,
+    471263,
+    471264,
+    471265,
+    471266
+  ],
+  "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/train.log",
+  "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/checkpoints"
+}

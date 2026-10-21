@@ -1,0 +1,45 @@
+{"at": "2026-10-18T02:25:54.351086+00:00", "event": "supervisor_attached", "status": "prepared", "cursor": 0}
+{"at": "2026-10-18T02:25:54.379804+00:00", "event": "waiting_for_previous_four_experiments", "status": "waiting_predecessor", "cursor": 0}
+{"at": "2026-10-18T03:09:59.595804+00:00", "event": "previous_four_experiments_verified", "status": "waiting_predecessor", "cursor": 0}
+{"at": "2026-10-18T03:09:59.659990+00:00", "event": "waiting_for_preflight_resources", "status": "waiting_resources", "cursor": 0}
+{"at": "2026-10-18T03:09:59.885532+00:00", "event": "eight_gpu_preflight_started", "status": "preflight", "cursor": 0}
+{"at": "2026-10-18T03:10:18.311042+00:00", "event": "eight_gpu_preflight_passed", "status": "preflight", "cursor": 0}
+{"at": "2026-10-18T03:10:18.334145+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 0}
+{"at": "2026-10-18T03:10:18.529743+00:00", "event": "launching_experiment_1", "status": "launching", "cursor": 0}
+{"at": "2026-10-18T03:10:18.562061+00:00", "event": "started_experiment_1", "status": "running", "cursor": 0}
+{"at": "2026-10-18T03:12:18.690705+00:00", "event": "verified_experiment_1", "status": "running", "cursor": 0}
+{"at": "2026-10-18T06:08:14.429588+00:00", "event": "queue_failed", "status": "failed", "cursor": 0}
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/supervisor.py", line 305, in main
+    run(state)
+  File "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/supervisor.py", line 220, in run
+    verify_hashes(state)
+  File "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/supervisor.py", line 60, in verify_hashes
+    assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, 'Prepared file changed: ' + name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Prepared file changed: /data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/snapshot/.cache/tvm-ffi/rank_1/sgl_kernel_jit_apply_rope_pos_ids_cos_sin_cache_1c2960bece5b99e3/.ninja_deps
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/supervisor.py", line 314, in <module>
+    main()
+  File "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/supervisor.py", line 305, in main
+    run(state)
+  File "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/supervisor.py", line 220, in run
+    verify_hashes(state)
+  File "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/supervisor.py", line 60, in verify_hashes
+    assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == expected, 'Prepared file changed: ' + name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Prepared file changed: /data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/snapshot/.cache/tvm-ffi/rank_1/sgl_kernel_jit_apply_rope_pos_ids_cos_sin_cache_1c2960bece5b99e3/.ninja_deps
+{"at": "2026-10-18T07:19:53.179886+00:00", "event": "supervisor_attached", "status": "running", "cursor": 0}
+{"at": "2026-10-18T07:19:53.208982+00:00", "event": "reattached_experiment_1", "status": "running", "cursor": 0}
+{"at": "2026-10-18T07:19:54.369608+00:00", "event": "completed_experiment_1", "status": "between_experiments", "cursor": 1}
+{"at": "2026-10-18T07:19:54.400554+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 1}
+{"at": "2026-10-18T07:19:54.619164+00:00", "event": "launching_experiment_2", "status": "launching", "cursor": 1}
+{"at": "2026-10-18T07:19:54.650170+00:00", "event": "started_experiment_2", "status": "running", "cursor": 1}
+{"at": "2026-10-18T07:21:24.774783+00:00", "event": "verified_experiment_2", "status": "running", "cursor": 1}
+{"at": "2026-10-18T11:01:25.527492+00:00", "event": "completed_experiment_2", "status": "between_experiments", "cursor": 2}
+{"at": "2026-10-18T11:01:25.566297+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 2}
+{"at": "2026-10-18T11:01:25.779794+00:00", "event": "launching_experiment_3", "status": "launching", "cursor": 2}
+{"at": "2026-10-18T11:01:25.818025+00:00", "event": "started_experiment_3", "status": "running", "cursor": 2}
+{"at": "2026-10-18T11:02:55.941272+00:00", "event": "verified_experiment_3", "status": "running", "cursor": 2}
+{"at": "2026-10-18T15:02:58.587000+00:00", "event": "completed_experiment_3", "status": "between_experiments", "cursor": 3}
+{"at": "2026-10-18T15:02:58.617093+00:00", "event": "all_three_experiments_completed", "status": "completed", "cursor": 3}

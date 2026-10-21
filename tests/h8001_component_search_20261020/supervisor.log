@@ -1,0 +1,17 @@
+{"at": "2026-10-19T17:07:28.648405+00:00", "event": "supervisor_attached", "status": "prepared", "cursor": 0}
+{"at": "2026-10-19T17:07:28.651279+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 0}
+{"at": "2026-10-19T17:07:29.053743+00:00", "event": "launching_experiment_5", "status": "launching", "cursor": 0}
+{"at": "2026-10-19T17:07:29.292536+00:00", "event": "started_experiment_5", "status": "running", "cursor": 0}
+{"at": "2026-10-19T17:11:29.322238+00:00", "event": "verified_experiment_5", "status": "running", "cursor": 0}
+{"at": "2026-10-19T19:52:36.500719+00:00", "event": "completed_experiment_5", "status": "between_experiments", "cursor": 1}
+{"at": "2026-10-19T19:52:36.504265+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 1}
+{"at": "2026-10-19T19:52:36.947913+00:00", "event": "launching_experiment_6", "status": "launching", "cursor": 1}
+{"at": "2026-10-19T19:52:37.654863+00:00", "event": "started_experiment_6", "status": "running", "cursor": 1}
+{"at": "2026-10-19T19:55:07.681529+00:00", "event": "verified_experiment_6", "status": "running", "cursor": 1}
+{"at": "2026-10-19T23:19:11.735011+00:00", "event": "completed_experiment_6", "status": "between_experiments", "cursor": 2}
+{"at": "2026-10-19T23:19:11.739338+00:00", "event": "waiting_for_resources", "status": "waiting_resources", "cursor": 2}
+{"at": "2026-10-19T23:19:12.176533+00:00", "event": "launching_experiment_7", "status": "launching", "cursor": 2}
+{"at": "2026-10-19T23:19:12.985247+00:00", "event": "started_experiment_7", "status": "running", "cursor": 2}
+{"at": "2026-10-19T23:21:43.018265+00:00", "event": "verified_experiment_7", "status": "running", "cursor": 2}
+{"at": "2026-10-20T03:06:17.091645+00:00", "event": "completed_experiment_7", "status": "between_experiments", "cursor": 3}
+{"at": "2026-10-20T03:06:17.095742+00:00", "event": "all_prepared_experiments_completed", "status": "completed", "cursor": 3}

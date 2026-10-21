@@ -1,0 +1,14 @@
+{
+  "number": 2,
+  "label": "02_dflash_mha_rnn_nla_gamma4",
+  "proposal": "rnn",
+  "loss": "nla",
+  "status": "launching",
+  "draft_config": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/configs/02_dflash_mha_rnn_nla_gamma4.json",
+  "config": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/configs/02_dflash_mha_rnn_nla_gamma4.yaml",
+  "run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/02_dflash_mha_rnn_nla_gamma4",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/02_dflash_mha_rnn_nla_gamma4/train.log",
+  "wandb_id": "d0a10860",
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/d0a10860",
+  "expected_steps": 59724
+}

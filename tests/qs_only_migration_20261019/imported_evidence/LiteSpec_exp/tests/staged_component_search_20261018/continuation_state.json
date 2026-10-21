@@ -1,0 +1,14 @@
+{
+  "status": "waiting_stage1",
+  "python": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/.venv/bin/python",
+  "snapshot": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/staged_component_search_20261018/snapshot",
+  "series_dir": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/output/staged_component_search_20261018_141515",
+  "target": "/data/wanghanzhen/models/Qwen3-4B",
+  "stage1_queue": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/staged_component_search_20261018/queue.json",
+  "prerequisite_data": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/component_benchmark_20261018/data/manifest_metadata.json",
+  "selection_rule": "seed43 disjoint5-task panel, both temperatures and proposals; test panel never used for selection",
+  "new_training_count": 9,
+  "reused_model": "A4 parallel hardCE",
+  "controller_pid": 2990902,
+  "updated_at": "2026-10-18T15:09:30.902229+00:00"
+}

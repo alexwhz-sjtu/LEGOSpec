@@ -1,0 +1,337 @@
+{
+  "status": "complete",
+  "smoke": false,
+  "identity": {
+    "protocol": "component-acceptance-v1",
+    "manifest_sha256": "bdfd20787753294352983d7712951c1b03dd5cc148a0f2ef746b235bd7ce1c79",
+    "draft": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/03_dflare_mha_selector/checkpoints/final",
+    "draft_hashes": {
+      "model.safetensors": "36ddefa7a8c818196337c88b752b1d73145e09c85e80d41340cdc0860bafb10c"
+    },
+    "config_sha256": "c997b101ce9398ff9055965ebb37dc883de37f9f9610ea7ce882b49749f04cb0",
+    "target": "/data/temp/models/Qwen3-4B",
+    "target_hashes": {
+      "config.json": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "model-00001-of-00003.safetensors": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+      "model-00002-of-00003.safetensors": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+      "model-00003-of-00003.safetensors": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1"
+    },
+    "harness_hashes": {
+      "test_jsonl.py": "8229263a95dcb2afd9a0503d1b424e7fb3a058d8d71c0901047a61e38a381b39",
+      "jsonl_io.py": "0d768ee01620dcb6d3b05dbc006bc9a8f7f6e08a5593196118fc2272bfb03d74",
+      "prepare.py": "3a664d447584dff61644bda7fb6dec0aa12eb6eb6eb825befcb14bdb9d4b79f4",
+      "test_verifier.py": "f18638ba87181a502ed308abcdf713196d05b6f03d7c1424b5e21a10cbd483d8",
+      "compare.py": "3425dd5b38ffe6a61f4c469a713b9194746d1835f8e95b259fa8c1ee46e8ccbe",
+      "run.py": "061d3b68ad8b6cfa8ae0a5f8806ff17bde824fa5641f04fdc0671d614a77f2a4",
+      "summarize.py": "61d4828520f4dca37ec86ebbb14d82fdfc23567540e5d2c61d0017a49e99618a",
+      "engine.py": "1953aa96b2e27ec7937a5a7adb4dfa148cd7c45dcc92745ff6a8c70b540dc7b2",
+      "test_components.py": "8cc5a3607d36d7fac2efa83f04a1d6cf7a897768d892d0eeb9aaf3d9a54bbd42",
+      "canonical_mtbench.py": "a05c71f2b56873bbbf5ebf61ca1a1467d24a274e38fc63b6689274a9846f97bc"
+    },
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "max_new_tokens": 512,
+    "shards": 8,
+    "smoke": false,
+    "torch": "2.9.1+cu128",
+    "python": "3.11.17",
+    "target_attention": "sdpa",
+    "draft_attention": "sdpa",
+    "gpu": "NVIDIA H800"
+  },
+  "missing": [],
+  "unexpected": [],
+  "groups": {
+    "alpaca/all": {
+      "requests": 128,
+      "cycles": 11205,
+      "complete_cycles": 11096,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 2.757209805335256,
+      "request_macro_tau": 3.032216229927534,
+      "request_bootstrap_95ci": [
+        2.8448647395322983,
+        3.238875955004928
+      ],
+      "mean_accepted_draft_tokens": 1.757209805335256,
+      "committed_per_cycle": 2.7663543061133424,
+      "censoring_rate": 0.009727800089245897,
+      "position_conditional_acceptance": [
+        0.6523071377072819,
+        0.6376070737772865,
+        0.6413867822318526,
+        0.6388513513513514,
+        0.6779481755684823,
+        0.6918876755070202,
+        0.7046223224351748
+      ]
+    },
+    "gsm8k/all": {
+      "requests": 128,
+      "cycles": 6868,
+      "complete_cycles": 6752,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 5.524437203791469,
+      "request_macro_tau": 5.70630175553693,
+      "request_bootstrap_95ci": [
+        5.563189842053106,
+        5.851342537309339
+      ],
+      "mean_accepted_draft_tokens": 4.524437203791469,
+      "committed_per_cycle": 5.515142690739662,
+      "censoring_rate": 0.016889924286546343,
+      "position_conditional_acceptance": [
+        0.8923281990521327,
+        0.8931120331950207,
+        0.8884965619773276,
+        0.8878895628529596,
+        0.8906949352179034,
+        0.8897117164771224,
+        0.8834720570749108
+      ]
+    },
+    "livecodebench/all": {
+      "requests": 128,
+      "cycles": 15510,
+      "complete_cycles": 15415,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 3.8747324035030815,
+      "request_macro_tau": 3.9774776321060497,
+      "request_bootstrap_95ci": [
+        3.8874378384593045,
+        4.064759084980184
+      ],
+      "mean_accepted_draft_tokens": 2.8747324035030815,
+      "committed_per_cycle": 3.8711798839458416,
+      "censoring_rate": 0.006125080593165744,
+      "position_conditional_acceptance": [
+        0.7978592280246514,
+        0.7751849743881616,
+        0.7568701489406335,
+        0.7637195121951219,
+        0.7648339684267828,
+        0.7542111506524318,
+        0.7423718150361749
+      ]
+    },
+    "longbenchv2/Single-Document QA": {
+      "requests": 50,
+      "cycles": 8699,
+      "complete_cycles": 8677,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 2.0357266336291344,
+      "request_macro_tau": 2.0413888247053418,
+      "request_bootstrap_95ci": [
+        1.9540276600038928,
+        2.1319912208440694
+      ],
+      "mean_accepted_draft_tokens": 1.0357266336291344,
+      "committed_per_cycle": 2.038740085067249,
+      "censoring_rate": 0.002529026324864958,
+      "position_conditional_acceptance": [
+        0.5760055318658522,
+        0.4935974389755902,
+        0.4126469396027564,
+        0.3516699410609037,
+        0.2849162011173184,
+        0.3235294117647059,
+        0.3333333333333333
+      ]
+    },
+    "longbenchv2/Multi-Document QA": {
+      "requests": 50,
+      "cycles": 8091,
+      "complete_cycles": 8073,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 2.0360460795243402,
+      "request_macro_tau": 2.0515271237733548,
+      "request_bootstrap_95ci": [
+        1.979944382786172,
+        2.1279557199242527
+      ],
+      "mean_accepted_draft_tokens": 1.0360460795243405,
+      "committed_per_cycle": 2.0372018291929304,
+      "censoring_rate": 0.0022246941045606095,
+      "position_conditional_acceptance": [
+        0.5704199182460052,
+        0.4838219326818675,
+        0.4254937163375224,
+        0.38924050632911394,
+        0.4010840108401084,
+        0.3581081081081081,
+        0.24528301886792453
+      ]
+    },
+    "longbenchv2/Code Repository Understanding": {
+      "requests": 47,
+      "cycles": 7923,
+      "complete_cycles": 7913,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 1.8722355617338557,
+      "request_macro_tau": 1.8857935815826667,
+      "request_bootstrap_95ci": [
+        1.8302946678312484,
+        1.9408622203186536
+      ],
+      "mean_accepted_draft_tokens": 0.8722355617338556,
+      "committed_per_cycle": 1.8726492490218352,
+      "censoring_rate": 0.0012621481761958542,
+      "position_conditional_acceptance": [
+        0.5346897510425881,
+        0.42637674308674073,
+        0.332039911308204,
+        0.327212020033389,
+        0.2755102040816326,
+        0.2777777777777778,
+        0.2
+      ]
+    },
+    "longbenchv2/Long In-context Learning": {
+      "requests": 50,
+      "cycles": 6824,
+      "complete_cycles": 6802,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 1.7900617465451338,
+      "request_macro_tau": 1.8296224581152298,
+      "request_bootstrap_95ci": [
+        1.7598360947663791,
+        1.9043048376408849
+      ],
+      "mean_accepted_draft_tokens": 0.7900617465451338,
+      "committed_per_cycle": 1.7924970691676436,
+      "censoring_rate": 0.0032239155920281704,
+      "position_conditional_acceptance": [
+        0.4986768597471332,
+        0.3956367924528302,
+        0.3293591654247392,
+        0.3031674208144796,
+        0.31343283582089554,
+        0.3333333333333333,
+        0.5714285714285714
+      ]
+    },
+    "longbenchv2/Long-dialogue History Understanding": {
+      "requests": 27,
+      "cycles": 3786,
+      "complete_cycles": 3765,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 2.2586985391766268,
+      "request_macro_tau": 2.231063143525401,
+      "request_bootstrap_95ci": [
+        2.1133127829297322,
+        2.360275691445494
+      ],
+      "mean_accepted_draft_tokens": 1.2586985391766268,
+      "committed_per_cycle": 2.2625462229265714,
+      "censoring_rate": 0.005546751188589494,
+      "position_conditional_acceptance": [
+        0.6265604249667994,
+        0.5832980076303519,
+        0.404796511627907,
+        0.414721723518851,
+        0.5541125541125541,
+        0.4765625,
+        0.4426229508196721
+      ]
+    },
+    "longbenchv2/Long Structured Data Understanding": {
+      "requests": 32,
+      "cycles": 5598,
+      "complete_cycles": 5591,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 1.6769808620998032,
+      "request_macro_tau": 1.6814554108759214,
+      "request_bootstrap_95ci": [
+        1.6250221709896024,
+        1.743475069685107
+      ],
+      "mean_accepted_draft_tokens": 0.6769808620998032,
+      "committed_per_cycle": 1.6772061450518043,
+      "censoring_rate": 0.0012504465880671667,
+      "position_conditional_acceptance": [
+        0.4675371132176713,
+        0.34927314460596787,
+        0.21905805038335158,
+        0.205,
+        0.21951219512195122,
+        0.5555555555555556,
+        0.6
+      ]
+    },
+    "math500/all": {
+      "requests": 128,
+      "cycles": 10472,
+      "complete_cycles": 10368,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 5.338155864197531,
+      "request_macro_tau": 5.563415558392661,
+      "request_bootstrap_95ci": [
+        5.418360839858831,
+        5.706530059220623
+      ],
+      "mean_accepted_draft_tokens": 4.338155864197531,
+      "committed_per_cycle": 5.324484339190222,
+      "censoring_rate": 0.009931245225362817,
+      "position_conditional_acceptance": [
+        0.8823302469135802,
+        0.8681679055531264,
+        0.8851674641148325,
+        0.8854907539118065,
+        0.881285140562249,
+        0.8902661319722931,
+        0.8728501228501229
+      ]
+    },
+    "mbpp/all": {
+      "requests": 128,
+      "cycles": 10473,
+      "complete_cycles": 10362,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 4.434761629029145,
+      "request_macro_tau": 4.51897598564008,
+      "request_bootstrap_95ci": [
+        4.421009207210156,
+        4.6123143220825105
+      ],
+      "mean_accepted_draft_tokens": 3.434761629029145,
+      "committed_per_cycle": 4.4266208345268785,
+      "censoring_rate": 0.010598682325981046,
+      "position_conditional_acceptance": [
+        0.832754294537734,
+        0.8104067678757677,
+        0.8128128128128128,
+        0.8221323011963406,
+        0.8260218275197946,
+        0.8207253886010363,
+        0.8156565656565656
+      ]
+    },
+    "mtbench/all": {
+      "requests": 160,
+      "cycles": 17357,
+      "complete_cycles": 17231,
+      "requests_without_complete_cycles": 0,
+      "cycle_weighted_tau": 3.1421855957286287,
+      "request_macro_tau": 3.613481754844616,
+      "request_bootstrap_95ci": [
+        3.407283256820322,
+        3.850111345807676
+      ],
+      "mean_accepted_draft_tokens": 2.1421855957286287,
+      "committed_per_cycle": 3.148067062280348,
+      "censoring_rate": 0.007259319006740816,
+      "position_conditional_acceptance": [
+        0.6935174975335152,
+        0.6844351464435147,
+        0.6950727472796185,
+        0.7076517150395778,
+        0.7484464330101914,
+        0.7625373630023248,
+        0.7700348432055749
+      ]
+    }
+  },
+  "regular_task_macro_tau": 4.401978152741312,
+  "long_domain_macro_tau": 1.9534750904296525
+}

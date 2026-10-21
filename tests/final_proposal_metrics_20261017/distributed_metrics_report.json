@@ -1,0 +1,169 @@
+{
+  "world_size": 8,
+  "wandb_id": "li8l8466",
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/li8l8466",
+  "rows": [
+    {
+      "proposal": "parallel",
+      "step": 0,
+      "payload": {
+        "detail/composable/objective/loss": 3.181373357772827,
+        "detail/composable/objective/main": 3.181373357772827,
+        "detail/composable/hard_label/token_accuracy": 0.190476194024086,
+        "detail/composable/hard_label/block_accepted_length": 1.2083333730697632,
+        "detail/composable/expected_accept_len": 2.3002209663391113,
+        "train/loss": 3.181373357772827,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.2083333730697632,
+        "train/expected_accept_len": 2.3002209663391113,
+        "validation/proposal": "parallel"
+      }
+    },
+    {
+      "proposal": "parallel",
+      "step": 1,
+      "payload": {
+        "detail/composable/objective/loss": 3.1663472652435303,
+        "detail/composable/objective/main": 3.1663472652435303,
+        "detail/composable/hard_label/token_accuracy": 0.18487395346164703,
+        "detail/composable/hard_label/block_accepted_length": 1.2083333730697632,
+        "detail/composable/expected_accept_len": 2.270040988922119,
+        "train/loss": 3.1663472652435303,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.2083333730697632,
+        "train/expected_accept_len": 2.270040988922119,
+        "validation/proposal": "parallel"
+      }
+    },
+    {
+      "proposal": "selector",
+      "step": 0,
+      "payload": {
+        "detail/composable/objective/loss": 3.9094409942626953,
+        "detail/composable/objective/main": 3.283881187438965,
+        "detail/composable/hard_label/token_accuracy": 0.0,
+        "detail/composable/hard_label/block_accepted_length": 1.0,
+        "detail/composable/expected_accept_len": 1.2763783931732178,
+        "detail/composable/objective/selector_ce": 0.6257346272468567,
+        "train/loss": 3.9094409942626953,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.0,
+        "train/expected_accept_len": 1.2763783931732178,
+        "validation/proposal": "selector"
+      }
+    },
+    {
+      "proposal": "selector",
+      "step": 1,
+      "payload": {
+        "detail/composable/objective/loss": 3.8825576305389404,
+        "detail/composable/objective/main": 3.3502211570739746,
+        "detail/composable/hard_label/token_accuracy": 0.0,
+        "detail/composable/hard_label/block_accepted_length": 1.0,
+        "detail/composable/expected_accept_len": 1.2740082740783691,
+        "detail/composable/objective/selector_ce": 0.5350465774536133,
+        "train/loss": 3.8825576305389404,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.0,
+        "train/expected_accept_len": 1.2740082740783691,
+        "validation/proposal": "selector"
+      }
+    },
+    {
+      "proposal": "markov",
+      "step": 0,
+      "payload": {
+        "detail/composable/objective/loss": 3.1753060817718506,
+        "detail/composable/objective/main": 3.1753060817718506,
+        "detail/composable/hard_label/token_accuracy": 0.1111111119389534,
+        "detail/composable/hard_label/block_accepted_length": 1.125,
+        "detail/composable/expected_accept_len": 2.3572871685028076,
+        "train/loss": 3.1753060817718506,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.125,
+        "train/expected_accept_len": 2.3572871685028076,
+        "validation/proposal": "markov"
+      }
+    },
+    {
+      "proposal": "markov",
+      "step": 1,
+      "payload": {
+        "detail/composable/objective/loss": 3.2452123165130615,
+        "detail/composable/objective/main": 3.2452123165130615,
+        "detail/composable/hard_label/token_accuracy": 0.09243697673082352,
+        "detail/composable/hard_label/block_accepted_length": 1.0416666269302368,
+        "detail/composable/expected_accept_len": 2.2972869873046875,
+        "train/loss": 3.2452123165130615,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.0416666269302368,
+        "train/expected_accept_len": 2.2972869873046875,
+        "validation/proposal": "markov"
+      }
+    },
+    {
+      "proposal": "rnn",
+      "step": 0,
+      "payload": {
+        "detail/composable/objective/loss": 3.0305731296539307,
+        "detail/composable/objective/main": 3.0305731296539307,
+        "detail/composable/hard_label/token_accuracy": 0.0,
+        "detail/composable/hard_label/block_accepted_length": 1.0,
+        "detail/composable/expected_accept_len": 2.4303972721099854,
+        "train/loss": 3.0305731296539307,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.0,
+        "train/expected_accept_len": 2.4303972721099854,
+        "validation/proposal": "rnn"
+      }
+    },
+    {
+      "proposal": "rnn",
+      "step": 1,
+      "payload": {
+        "detail/composable/objective/loss": 3.0414817333221436,
+        "detail/composable/objective/main": 3.0414817333221436,
+        "detail/composable/hard_label/token_accuracy": 0.0,
+        "detail/composable/hard_label/block_accepted_length": 1.0,
+        "detail/composable/expected_accept_len": 2.3707144260406494,
+        "train/loss": 3.0414817333221436,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.0,
+        "train/expected_accept_len": 2.3707144260406494,
+        "validation/proposal": "rnn"
+      }
+    },
+    {
+      "proposal": "sequential_rnn",
+      "step": 0,
+      "payload": {
+        "detail/composable/objective/loss": 3.1354758739471436,
+        "detail/composable/objective/main": 3.1354758739471436,
+        "detail/composable/hard_label/token_accuracy": 0.0,
+        "detail/composable/hard_label/block_accepted_length": 1.0,
+        "detail/composable/expected_accept_len": 2.6396236419677734,
+        "train/loss": 3.1354758739471436,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.0,
+        "train/expected_accept_len": 2.6396236419677734,
+        "validation/proposal": "sequential_rnn"
+      }
+    },
+    {
+      "proposal": "sequential_rnn",
+      "step": 1,
+      "payload": {
+        "detail/composable/objective/loss": 3.1357343196868896,
+        "detail/composable/objective/main": 3.1357343196868896,
+        "detail/composable/hard_label/token_accuracy": 0.0,
+        "detail/composable/hard_label/block_accepted_length": 1.0,
+        "detail/composable/expected_accept_len": 2.564518690109253,
+        "train/loss": 3.1357343196868896,
+        "train/learning_rate": 0.001,
+        "train/walk_accepted_length": 1.0,
+        "train/expected_accept_len": 2.564518690109253,
+        "validation/proposal": "sequential_rnn"
+      }
+    }
+  ]
+}

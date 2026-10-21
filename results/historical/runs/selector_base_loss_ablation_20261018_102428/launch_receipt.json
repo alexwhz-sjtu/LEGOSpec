@@ -1,0 +1,6 @@
+{
+  "supervisor_pid": 237840,
+  "start_ticks": "2287543845",
+  "queue": "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/queue.json",
+  "series_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428"
+}

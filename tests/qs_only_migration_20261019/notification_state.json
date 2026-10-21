@@ -1,0 +1,44 @@
+{
+  "completed_verified": [
+    "source_RNN_CE_3500d9c2",
+    "imported_RNN_CE_3500d9c2",
+    "legacy_migration_completed_20261019"
+  ],
+  "source_RNN_CE_3500d9c2": {
+    "verified_at": "2026-10-18T18:24:56.200274+00:00",
+    "pid": 2948515,
+    "start_ticks": "807593000",
+    "returncode": 0,
+    "optimizer_step": 59724,
+    "epochs": 6,
+    "last_loss": 0.4206,
+    "wandb_state": "finished",
+    "full_final_verified": true,
+    "import_completed": true
+  },
+  "imported_RNN_CE_3500d9c2": {
+    "verified": true,
+    "file_sha_count": 54,
+    "returncode": 0,
+    "optimizer_step": 59724,
+    "wandb_state": "finished",
+    "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final"
+  },
+  "legacy_migration_completed_20261019": {
+    "verified_at": "2026-10-18T20:26:49.170049+00:00",
+    "status": "completed",
+    "legacy_files_sha_verified": 20,
+    "legacy_bytes": 17661725970,
+    "current_training_files_sha_verified": 54,
+    "current_training_bytes": 6502448360,
+    "code_and_evidence_files_extracted": 2603,
+    "git_bundles_and_working_patches_preserved": [
+      "LiteSpec_exp",
+      "SpecForge"
+    ],
+    "archive_root": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019",
+    "source_unchanged": true,
+    "migration_processes_exited_normally": true,
+    "subsequent_collection_host": "QS_H800 only"
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "started_verified": [
+    1,
+    2,
+    3
+  ],
+  "completed": [
+    1,
+    2
+  ],
+  "verified_pid": 416407,
+  "verified_start_ticks": "2296103899",
+  "verified_online_steps": [
+    3600,
+    3650,
+    3700,
+    3750,
+    3800
+  ],
+  "verified_workers": [
+    416419,
+    416420,
+    416421,
+    416422,
+    416423,
+    416424,
+    416425,
+    416426
+  ],
+  "online_final_metrics": {
+    "detail/composable/hard_label/token_accuracy": 0.7943783402442932,
+    "train/walk_accepted_length": 5.3122053146362305,
+    "train/expected_accept_len": 5.146820068359375
+  },
+  "last_verified_at": "2026-10-19T02:31:27.978013+00:00",
+  "completion_evidence": {
+    "1": {
+      "returncode": 0,
+      "optimizer_step": 59724,
+      "epochs": 6,
+      "wandb_state": "finished",
+      "wandb_id": "1a1eb290",
+      "last_loss": 1155.9347,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/01_dflash_mha_rnn_dpace/checkpoints/final"
+    },
+    "2": {
+      "returncode": 0,
+      "optimizer_step": 59724,
+      "epochs": 6,
+      "wandb_state": "finished",
+      "wandb_id": "d0a10860",
+      "last_loss": 0.1537,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/02_dflash_mha_rnn_nla_gamma4/checkpoints/final",
+      "verified_at": "2026-10-19T02:31:27.978013+00:00"
+    }
+  },
+  "start_evidence": {
+    "2": {
+      "pid": 413003,
+      "start_ticks": "2294738856",
+      "workers": [
+        413015,
+        413016,
+        413017,
+        413018,
+        413019,
+        413020,
+        413021,
+        413022
+      ],
+      "online_steps": [
+        50,
+        100,
+        150
+      ],
+      "online_loss_at_step150": 2.685885429382324,
+      "wandb_id": "d0a10860",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "online_final_metrics": {
+        "detail/composable/hard_label/token_accuracy": 0.06233910471200943,
+        "train/walk_accepted_length": 1.1007018089294434,
+        "train/expected_accept_len": 1.0327080488204956
+      },
+      "verified_at": "2026-10-18T22:27:48.436739+00:00"
+    },
+    "3": {
+      "pid": 416407,
+      "start_ticks": "2296103899",
+      "workers": [
+        416419,
+        416420,
+        416421,
+        416422,
+        416423,
+        416424,
+        416425,
+        416426
+      ],
+      "worker_start_ticks": [
+        "2296105287",
+        "2296105287",
+        "2296105287",
+        "2296105287",
+        "2296105288",
+        "2296105288",
+        "2296105288",
+        "2296105288"
+      ],
+      "online_steps": [
+        3600,
+        3650,
+        3700,
+        3750,
+        3800
+      ],
+      "online_loss_at_step3800": 0.5044193267822266,
+      "wandb_id": "cac0aa4b",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "online_final_metrics": {
+        "detail/composable/hard_label/token_accuracy": 0.7943783402442932,
+        "train/walk_accepted_length": 5.3122053146362305,
+        "train/expected_accept_len": 5.146820068359375
+      },
+      "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/03_dflash_mha_rnn_ce01_tv09/train.log",
+      "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/03_dflash_mha_rnn_ce01_tv09/checkpoints",
+      "verified_at": "2026-10-19T02:31:27.978013+00:00"
+    }
+  }
+}

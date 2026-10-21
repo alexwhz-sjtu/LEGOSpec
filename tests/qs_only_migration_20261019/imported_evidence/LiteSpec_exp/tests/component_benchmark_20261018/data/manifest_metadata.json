@@ -1,0 +1,188 @@
+{
+  "protocol": "component-acceptance-v1",
+  "seed": 42,
+  "selection_seed": 43,
+  "target": "/data/wanghanzhen/models/Qwen3-4B",
+  "sources": {
+    "gsm8k": {
+      "source": {
+        "repo": "openai/gsm8k",
+        "revision": "740312add88f781978c0658806c59bc2815b9866",
+        "file": "main/test-00000-of-00001.parquet"
+      },
+      "raw_sha256": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59",
+      "counts": {
+        "all": {
+          "source": 1319,
+          "test": 128,
+          "selection": 32,
+          "candidates_considered_for_test": 128,
+          "test_cap": 128
+        }
+      }
+    },
+    "alpaca": {
+      "source": {
+        "repo": "tatsu-lab/alpaca",
+        "revision": "dce01c9b08f87459cf36a430d809084718273017",
+        "file": "data/train-00000-of-00001-a09b74b3ef9c3b56.parquet"
+      },
+      "raw_sha256": "06391b656a06fd3fb9d213160ef2398796c3b7f3dc75ef1e3ced30d461517073",
+      "counts": {
+        "all": {
+          "source": 52002,
+          "test": 128,
+          "selection": 32,
+          "candidates_considered_for_test": 128,
+          "test_cap": 128
+        }
+      }
+    },
+    "mbpp": {
+      "source": {
+        "repo": "google-research-datasets/mbpp",
+        "revision": "4bb6404fdc6cacfda99d4ac4205087b89d32030c",
+        "file": "full/test-00000-of-00001.parquet"
+      },
+      "raw_sha256": "566fd53060ffba5766dace1d1e2f4c38906781526de222b0dfbdbc325b696c77",
+      "counts": {
+        "all": {
+          "source": 500,
+          "test": 128,
+          "selection": 32,
+          "candidates_considered_for_test": 128,
+          "test_cap": 128
+        }
+      }
+    },
+    "math500": {
+      "source": {
+        "repo": "HuggingFaceH4/MATH-500",
+        "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+        "file": "test.jsonl"
+      },
+      "raw_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+      "counts": {
+        "all": {
+          "source": 500,
+          "test": 128,
+          "selection": 32,
+          "candidates_considered_for_test": 128,
+          "test_cap": 128
+        }
+      }
+    },
+    "livecodebench": {
+      "source": {
+        "repo": "livecodebench/code_generation_lite",
+        "revision": "0fe84c3912ea0c4d4a78037083943e8f0c4dd505",
+        "file": "test6.jsonl",
+        "version_tag": "v6",
+        "cohort": "official_v6_temporal_increment_175_not_release_v6_union",
+        "sha256": "bb4c364f71921c4495a6ad15abe1a927350b720009f4933e2e71f8af0f6fd1f5",
+        "bytes": 134303240
+      },
+      "raw_sha256": "bb4c364f71921c4495a6ad15abe1a927350b720009f4933e2e71f8af0f6fd1f5",
+      "counts": {
+        "all": {
+          "source": 175,
+          "test": 128,
+          "selection": 32,
+          "candidates_considered_for_test": 128,
+          "test_cap": 128
+        }
+      }
+    },
+    "longbenchv2": {
+      "source": {
+        "repo": "zai-org/LongBench-v2",
+        "revision": "2b48e494f2c7a2f0af81aae178e05c7e1dde0fe9",
+        "file": "data.json"
+      },
+      "raw_sha256": "15d61c22d92c96900b3c4948b6aeea218d3214b676a65df48e7b8555604c7fe2",
+      "counts": {
+        "Code Repository Understanding": {
+          "source": 50,
+          "test": 47,
+          "selection": 0,
+          "candidates_considered_for_test": 47,
+          "test_cap": 50,
+          "eligible_32k": 47
+        },
+        "Long In-context Learning": {
+          "source": 81,
+          "test": 50,
+          "selection": 10,
+          "candidates_considered_for_test": 50,
+          "test_cap": 50,
+          "eligible_32k": 74
+        },
+        "Long Structured Data Understanding": {
+          "source": 33,
+          "test": 32,
+          "selection": 0,
+          "candidates_considered_for_test": 32,
+          "test_cap": 50,
+          "eligible_32k": 32
+        },
+        "Long-dialogue History Understanding": {
+          "source": 39,
+          "test": 27,
+          "selection": 0,
+          "candidates_considered_for_test": 27,
+          "test_cap": 50,
+          "eligible_32k": 27
+        },
+        "Multi-Document QA": {
+          "source": 125,
+          "test": 50,
+          "selection": 10,
+          "candidates_considered_for_test": 50,
+          "test_cap": 50,
+          "eligible_32k": 93
+        },
+        "Single-Document QA": {
+          "source": 175,
+          "test": 50,
+          "selection": 10,
+          "candidates_considered_for_test": 50,
+          "test_cap": 50,
+          "eligible_32k": 114
+        }
+      }
+    },
+    "mtbench": {
+      "source": {
+        "repo": "lm-sys/FastChat",
+        "revision": "587d5cfa1609a43d192cedb8441cac3c17db105d",
+        "url": "https://raw.githubusercontent.com/lm-sys/FastChat/587d5cfa1609a43d192cedb8441cac3c17db105d/fastchat/llm_judge/data/mt_bench/question.jsonl"
+      },
+      "raw_sha256": "119565adbab82227089cefdb44c8d7e2cf04dc0a0ec233634c82e7d4e2a944f7",
+      "counts": {
+        "all": {
+          "source": 80,
+          "test": 80,
+          "selection": 0,
+          "candidates_considered_for_test": 80,
+          "test_cap": 128
+        }
+      }
+    }
+  },
+  "hashes": {
+    "manifest.jsonl": "bdfd20787753294352983d7712951c1b03dd5cc148a0f2ef746b235bd7ce1c79",
+    "selection_manifest.jsonl": "a458416c6f58022204b3355d2852b52ffc8c906191ad0f502e29bbc3979a5d58"
+  },
+  "tokenizer_hashes": {
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+  },
+  "target_hashes": {
+    "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "config.json": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+    "model-00002-of-00003.safetensors": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+    "model-00003-of-00003.safetensors": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1",
+    "model-00001-of-00003.safetensors": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223"
+  },
+  "canonical_histories_sha256": "aea1a7f2c00a763966d8baf6e1ca77c73aa2bb4f2bff5af04225c13d20c9c668"
+}

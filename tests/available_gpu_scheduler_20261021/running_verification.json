@@ -1,0 +1,79 @@
+{
+  "verified_at": "2026-10-20T18:14:09.801402+00:00",
+  "status": "verified_running",
+  "label": "reused_RNN_hard_ce_from_inf_final/T0",
+  "supervisor_pid": 849235,
+  "controller_pid": 849246,
+  "protected_files": 239,
+  "gpu_map": [
+    {
+      "shard": 0,
+      "gpu_index": 0,
+      "pid": 849265,
+      "start_ticks": "190258395",
+      "status": "completed"
+    },
+    {
+      "shard": 1,
+      "gpu_index": 2,
+      "pid": 849270,
+      "start_ticks": "190258435",
+      "status": "completed"
+    },
+    {
+      "shard": 2,
+      "gpu_index": 3,
+      "pid": 849278,
+      "start_ticks": "190258480",
+      "status": "completed"
+    },
+    {
+      "shard": 3,
+      "gpu_index": 4,
+      "pid": 849283,
+      "start_ticks": "190258518",
+      "status": "completed"
+    },
+    {
+      "shard": 4,
+      "gpu_index": 5,
+      "pid": 849288,
+      "start_ticks": "190258564",
+      "status": "completed"
+    },
+    {
+      "shard": 5,
+      "gpu_index": 6,
+      "pid": 849294,
+      "start_ticks": "190258602",
+      "status": "completed"
+    },
+    {
+      "shard": 6,
+      "gpu_index": 7,
+      "pid": 849302,
+      "start_ticks": "190258646",
+      "status": "completed"
+    },
+    {
+      "shard": 7,
+      "gpu_index": 7,
+      "pid": 854333,
+      "start_ticks": "190348237",
+      "status": "running"
+    }
+  ],
+  "valid_requests": 976,
+  "counts": {
+    "0": 132,
+    "1": 132,
+    "2": 132,
+    "3": 132,
+    "4": 132,
+    "5": 132,
+    "6": 132,
+    "7": 52
+  },
+  "logical_shards": 8,
+  "already_completed_preserved": 6
+}

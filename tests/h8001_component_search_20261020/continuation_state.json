@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "python": "/share/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130/bin/python",
+  "snapshot": "/share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/h8001_component_search_20261020/snapshot",
+  "series_dir": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020",
+  "target": "/share/dai-sys/wanghanzhen/models/Qwen/Qwen3-4B",
+  "stage1_queue": "/share/dai-sys/wanghanzhen/projects/DAC27/LiteSpec_exp/tests/h8001_component_search_20261020/queue.json",
+  "new_training_count": 5,
+  "execution_host": "H800_1",
+  "controller_pid": 849246,
+  "updated_at": "2026-10-21T01:15:42.735199+00:00",
+  "selection_pid": 538648,
+  "winner": {
+    "winner": "ce01_tv09",
+    "scores": {
+      "hard_ce": 4.3285246741815815,
+      "nla": 4.526227286310179,
+      "ce01_tv09": 4.5611752143431215,
+      "dpace": 4.504282875293777
+    },
+    "rule": "mean over 5 tasks x 2 temperatures x 2 proposals; within .01 prefer CE,NLA-gamma4,CE+TV,D-PACE; BV held by user",
+    "selected_at": "2026-10-20T17:54:13.883254+00:00"
+  },
+  "new_models_test_pid": 675006
+}

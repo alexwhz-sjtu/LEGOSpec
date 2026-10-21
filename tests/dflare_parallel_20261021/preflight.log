@@ -1,0 +1,11 @@
+Set TORCH_CUDA_ARCH_LIST to 9.0
+Set TORCH_CUDA_ARCH_LIST to 9.0
+Set TORCH_CUDA_ARCH_LIST to 9.0
+Set TORCH_CUDA_ARCH_LIST to 9.0
+Set TORCH_CUDA_ARCH_LIST to 9.0
+Set TORCH_CUDA_ARCH_LIST to 9.0
+Set TORCH_CUDA_ARCH_LIST to 9.0
+Set TORCH_CUDA_ARCH_LIST to 9.0
+{"passed": true, "checks": 4}
+/mnt/dai-sys/wanghanzhen/projects/DAC27/envs/litespec-py311-cu130-h8002/lib/python3.11/site-packages/torch/distributed/distributed_c10d.py:4876: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+  warnings.warn(  # warn only once

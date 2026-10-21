@@ -1,0 +1,268 @@
+Set TORCH_CUDA_ARCH_LIST to 9.0
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 104.89it/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+REQUEST alpaca/10548/turn1 43
+RESULT alpaca/10548/turn1 tau 1.4 cycles 5
+REQUEST alpaca/13253/turn1 24
+RESULT alpaca/13253/turn1 tau 2.5 cycles 3
+REQUEST alpaca/17788/turn1 30
+RESULT alpaca/17788/turn1 tau 4.612244897959184 cycles 50
+REQUEST alpaca/19565/turn1 21
+RESULT alpaca/19565/turn1 tau 3.3636363636363638 cycles 12
+REQUEST alpaca/2199/turn1 28
+RESULT alpaca/2199/turn1 tau 4.6 cycles 11
+REQUEST alpaca/24344/turn1 19
+RESULT alpaca/24344/turn1 tau 2.3227272727272728 cycles 221
+REQUEST alpaca/2904/turn1 21
+RESULT alpaca/2904/turn1 tau 1.9189189189189189 cycles 75
+REQUEST alpaca/33320/turn1 35
+RESULT alpaca/33320/turn1 tau 2.9411764705882355 cycles 69
+REQUEST alpaca/35223/turn1 37
+RESULT alpaca/35223/turn1 tau 2.6013986013986012 cycles 144
+REQUEST alpaca/38295/turn1 24
+RESULT alpaca/38295/turn1 tau 2.0 cycles 65
+REQUEST alpaca/40756/turn1 27
+RESULT alpaca/40756/turn1 tau 2.2653061224489797 cycles 99
+REQUEST alpaca/43245/turn1 41
+RESULT alpaca/43245/turn1 tau 2.5454545454545454 cycles 34
+REQUEST alpaca/4558/turn1 19
+RESULT alpaca/4558/turn1 tau 2.0238095238095237 cycles 43
+REQUEST alpaca/48004/turn1 30
+RESULT alpaca/48004/turn1 tau 2.693548387096774 cycles 63
+REQUEST alpaca/5129/turn1 26
+RESULT alpaca/5129/turn1 tau 1.972972972972973 cycles 260
+REQUEST alpaca/9332/turn1 32
+RESULT alpaca/9332/turn1 tau 5.551020408163265 cycles 50
+REQUEST gsm8k/1010/turn1 87
+RESULT gsm8k/1010/turn1 tau 5.116666666666666 cycles 61
+REQUEST gsm8k/1149/turn1 56
+RESULT gsm8k/1149/turn1 tau 4.638888888888889 cycles 37
+REQUEST gsm8k/1228/turn1 60
+RESULT gsm8k/1228/turn1 tau 5.555555555555555 cycles 55
+REQUEST gsm8k/1297/turn1 122
+RESULT gsm8k/1297/turn1 tau 5.2105263157894735 cycles 58
+REQUEST gsm8k/152/turn1 64
+RESULT gsm8k/152/turn1 tau 6.176470588235294 cycles 35
+REQUEST gsm8k/197/turn1 75
+RESULT gsm8k/197/turn1 tau 5.806451612903226 cycles 32
+REQUEST gsm8k/296/turn1 69
+RESULT gsm8k/296/turn1 tau 5.045454545454546 cycles 67
+REQUEST gsm8k/357/turn1 106
+RESULT gsm8k/357/turn1 tau 3.7142857142857144 cycles 106
+REQUEST gsm8k/410/turn1 130
+RESULT gsm8k/410/turn1 tau 5.225352112676056 cycles 72
+REQUEST gsm8k/458/turn1 63
+RESULT gsm8k/458/turn1 tau 5.888888888888889 cycles 37
+REQUEST gsm8k/533/turn1 79
+RESULT gsm8k/533/turn1 tau 5.872727272727273 cycles 56
+REQUEST gsm8k/594/turn1 65
+RESULT gsm8k/594/turn1 tau 4.6923076923076925 cycles 40
+REQUEST gsm8k/671/turn1 90
+RESULT gsm8k/671/turn1 tau 5.8 cycles 46
+REQUEST gsm8k/753/turn1 80
+RESULT gsm8k/753/turn1 tau 4.8 cycles 51
+REQUEST gsm8k/828/turn1 67
+RESULT gsm8k/828/turn1 tau 4.944444444444445 cycles 36
+REQUEST gsm8k/910/turn1 62
+RESULT gsm8k/910/turn1 tau 5.923076923076923 cycles 40
+REQUEST livecodebench/atcoder/abc387_f/turn1 356
+RESULT livecodebench/atcoder/abc387_f/turn1 tau 2.9022988505747125 cycles 175
+REQUEST livecodebench/atcoder/abc390_d/turn1 725
+RESULT livecodebench/atcoder/abc390_d/turn1 tau 2.6424870466321244 cycles 194
+REQUEST livecodebench/atcoder/abc392_c/turn1 412
+RESULT livecodebench/atcoder/abc392_c/turn1 tau 3.9834710743801653 cycles 122
+REQUEST livecodebench/atcoder/abc394_c/turn1 508
+RESULT livecodebench/atcoder/abc394_c/turn1 tau 3.0485436893203883 cycles 104
+REQUEST livecodebench/atcoder/abc395_f/turn1 808
+RESULT livecodebench/atcoder/abc395_f/turn1 tau 3.0476190476190474 cycles 168
+REQUEST livecodebench/atcoder/abc397_f/turn1 467
+RESULT livecodebench/atcoder/abc397_f/turn1 tau 3.8421052631578947 cycles 134
+REQUEST livecodebench/atcoder/abc399_b/turn1 653
+RESULT livecodebench/atcoder/abc399_b/turn1 tau 4.0396825396825395 cycles 127
+REQUEST livecodebench/atcoder/arc190_a/turn1 806
+RESULT livecodebench/atcoder/arc190_a/turn1 tau 2.7419354838709675 cycles 187
+REQUEST livecodebench/atcoder/arc193_b/turn1 764
+RESULT livecodebench/atcoder/arc193_b/turn1 tau 2.522167487684729 cycles 203
+REQUEST livecodebench/atcoder/arc195_d/turn1 549
+RESULT livecodebench/atcoder/arc195_d/turn1 tau 3.2838709677419353 cycles 156
+REQUEST livecodebench/leetcode/3697/turn1 315
+RESULT livecodebench/leetcode/3697/turn1 tau 3.422818791946309 cycles 150
+REQUEST livecodebench/leetcode/3722/turn1 324
+RESULT livecodebench/leetcode/3722/turn1 tau 3.38 cycles 151
+REQUEST livecodebench/leetcode/3743/turn1 497
+RESULT livecodebench/leetcode/3743/turn1 tau 2.8435754189944134 cycles 180
+REQUEST livecodebench/leetcode/3763/turn1 441
+RESULT livecodebench/leetcode/3763/turn1 tau 3.1490683229813663 cycles 162
+REQUEST livecodebench/leetcode/3778/turn1 331
+RESULT livecodebench/leetcode/3778/turn1 tau 4.90566037735849 cycles 54
+REQUEST livecodebench/leetcode/3794/turn1 601
+RESULT livecodebench/leetcode/3794/turn1 tau 3.683453237410072 cycles 139
+REQUEST longbenchv2/66ebc3165a08c7b9b35deb38/turn1 32753
+RESULT longbenchv2/66ebc3165a08c7b9b35deb38/turn1 tau 1.9403973509933774 cycles 152
+REQUEST longbenchv2/66ec088c821e116aacb194d9/turn1 32752
+RESULT longbenchv2/66ec088c821e116aacb194d9/turn1 tau 1.681159420289855 cycles 70
+REQUEST longbenchv2/66ec3352821e116aacb1c085/turn1 32752
+RESULT longbenchv2/66ec3352821e116aacb1c085/turn1 tau 1.6923076923076923 cycles 92
+REQUEST longbenchv2/66ece545821e116aacb1dd77/turn1 32752
+RESULT longbenchv2/66ece545821e116aacb1dd77/turn1 tau 1.8370044052863437 cycles 228
+REQUEST longbenchv2/66ed4274821e116aacb1f8f1/turn1 32753
+RESULT longbenchv2/66ed4274821e116aacb1f8f1/turn1 tau 1.9230769230769231 cycles 170
+REQUEST longbenchv2/66f00f1a821e116aacb252cf/turn1 32753
+RESULT longbenchv2/66f00f1a821e116aacb252cf/turn1 tau 2.0965517241379312 cycles 146
+REQUEST longbenchv2/66f25a2f821e116aacb28b2f/turn1 32753
+RESULT longbenchv2/66f25a2f821e116aacb28b2f/turn1 tau 2.2181818181818183 cycles 111
+REQUEST longbenchv2/66f2a414821e116aacb2a3af/turn1 32753
+RESULT longbenchv2/66f2a414821e116aacb2a3af/turn1 tau 2.5 cycles 96
+REQUEST longbenchv2/66f2b546821e116aacb2b152/turn1 32753
+RESULT longbenchv2/66f2b546821e116aacb2b152/turn1 tau 2.3275862068965516 cycles 117
+REQUEST longbenchv2/66f3a311821e116aacb2de19/turn1 32753
+RESULT longbenchv2/66f3a311821e116aacb2de19/turn1 tau 2.5093167701863353 cycles 162
+REQUEST longbenchv2/66f3cfa5821e116aacb2f096/turn1 32752
+RESULT longbenchv2/66f3cfa5821e116aacb2f096/turn1 tau 2.0654761904761907 cycles 169
+REQUEST longbenchv2/66f40501821e116aacb307e8/turn1 32753
+RESULT longbenchv2/66f40501821e116aacb307e8/turn1 tau 3.1037735849056602 cycles 107
+REQUEST longbenchv2/66f52926821e116aacb32b5e/turn1 32752
+RESULT longbenchv2/66f52926821e116aacb32b5e/turn1 tau 2.104895104895105 cycles 143
+REQUEST longbenchv2/66f590fa821e116aacb33f35/turn1 32753
+RESULT longbenchv2/66f590fa821e116aacb33f35/turn1 tau 1.9948979591836735 cycles 197
+REQUEST longbenchv2/66f7aa19bb02136c067c327e/turn1 32752
+RESULT longbenchv2/66f7aa19bb02136c067c327e/turn1 tau 2.289617486338798 cycles 183
+REQUEST longbenchv2/66f94f9ebb02136c067c4fde/turn1 32753
+RESULT longbenchv2/66f94f9ebb02136c067c4fde/turn1 tau 2.1464646464646466 cycles 199
+REQUEST longbenchv2/66fa208bbb02136c067c5fc1/turn1 32752
+RESULT longbenchv2/66fa208bbb02136c067c5fc1/turn1 tau 1.768166089965398 cycles 290
+REQUEST longbenchv2/66fa6702bb02136c067c6abb/turn1 32753
+RESULT longbenchv2/66fa6702bb02136c067c6abb/turn1 tau 1.7083333333333333 cycles 121
+REQUEST longbenchv2/66faa0f5bb02136c067c722c/turn1 32753
+RESULT longbenchv2/66faa0f5bb02136c067c722c/turn1 tau 1.9723756906077348 cycles 182
+REQUEST longbenchv2/66fcf36fbb02136c067c919e/turn1 32752
+RESULT longbenchv2/66fcf36fbb02136c067c919e/turn1 tau 2.1094890510948905 cycles 138
+REQUEST longbenchv2/66fd4f54bb02136c067c9987/turn1 32752
+RESULT longbenchv2/66fd4f54bb02136c067c9987/turn1 tau 1.9918032786885247 cycles 123
+REQUEST longbenchv2/67041f08bb02136c067cdb52/turn1 32753
+RESULT longbenchv2/67041f08bb02136c067cdb52/turn1 tau 1.9393939393939394 cycles 264
+REQUEST longbenchv2/6707f349bb02136c067d13b9/turn1 32752
+RESULT longbenchv2/6707f349bb02136c067d13b9/turn1 tau 1.8016528925619835 cycles 121
+REQUEST longbenchv2/670fb8dfbb02136c067d2c48/turn1 32752
+RESULT longbenchv2/670fb8dfbb02136c067d2c48/turn1 tau 1.7181818181818183 cycles 111
+REQUEST longbenchv2/67191791bb02136c067d406c/turn1 32752
+RESULT longbenchv2/67191791bb02136c067d406c/turn1 tau 2.3502304147465436 cycles 218
+REQUEST longbenchv2/6719ef50bb02136c067d4911/turn1 32752
+RESULT longbenchv2/6719ef50bb02136c067d4911/turn1 tau 2.1846153846153844 cycles 131
+REQUEST longbenchv2/671b2c67bb02136c067d50f7/turn1 32752
+RESULT longbenchv2/671b2c67bb02136c067d50f7/turn1 tau 2.9367816091954024 cycles 175
+REQUEST longbenchv2/67237d8ebb02136c067d6c06/turn1 32753
+RESULT longbenchv2/67237d8ebb02136c067d6c06/turn1 tau 2.5238095238095237 cycles 64
+REQUEST longbenchv2/67246d0ebb02136c067d75f0/turn1 32752
+RESULT longbenchv2/67246d0ebb02136c067d75f0/turn1 tau 2.208 cycles 126
+REQUEST longbenchv2/6724c83fbb02136c067d7962/turn1 32753
+RESULT longbenchv2/6724c83fbb02136c067d7962/turn1 tau 1.7887323943661972 cycles 72
+REQUEST longbenchv2/6725db01bb02136c067d847f/turn1 32752
+RESULT longbenchv2/6725db01bb02136c067d847f/turn1 tau 1.7959183673469388 cycles 99
+REQUEST longbenchv2/67285e1dbb02136c067d901b/turn1 32753
+RESULT longbenchv2/67285e1dbb02136c067d901b/turn1 tau 2.510869565217391 cycles 92
+REQUEST math500/105/turn1 341
+RESULT math500/105/turn1 tau 4.922077922077922 cycles 78
+REQUEST math500/136/turn1 128
+RESULT math500/136/turn1 tau 4.417391304347826 cycles 116
+REQUEST math500/156/turn1 220
+RESULT math500/156/turn1 tau 3.785185185185185 cycles 136
+REQUEST math500/197/turn1 91
+RESULT math500/197/turn1 tau 4.961165048543689 cycles 104
+REQUEST math500/226/turn1 53
+RESULT math500/226/turn1 tau 3.5545454545454547 cycles 111
+REQUEST math500/26/turn1 78
+RESULT math500/26/turn1 tau 3.7226277372262775 cycles 138
+REQUEST math500/286/turn1 94
+RESULT math500/286/turn1 tau 3.657142857142857 cycles 140
+REQUEST math500/326/turn1 72
+RESULT math500/326/turn1 tau 5.214285714285714 cycles 99
+REQUEST math500/348/turn1 39
+RESULT math500/348/turn1 tau 5.546666666666667 cycles 76
+REQUEST math500/378/turn1 43
+RESULT math500/378/turn1 tau 5.532608695652174 cycles 93
+REQUEST math500/394/turn1 140
+RESULT math500/394/turn1 tau 4.129032258064516 cycles 124
+REQUEST math500/410/turn1 61
+RESULT math500/410/turn1 tau 4.627272727272727 cycles 111
+REQUEST math500/433/turn1 42
+RESULT math500/433/turn1 tau 3.8636363636363638 cycles 133
+REQUEST math500/444/turn1 206
+RESULT math500/444/turn1 tau 4.0 cycles 128
+REQUEST math500/479/turn1 72
+RESULT math500/479/turn1 tau 3.8503937007874014 cycles 127
+REQUEST math500/63/turn1 115
+RESULT math500/63/turn1 tau 4.811320754716981 cycles 107
+REQUEST mbpp/105/turn1 68
+RESULT mbpp/105/turn1 tau 3.359375 cycles 65
+REQUEST mbpp/135/turn1 71
+RESULT mbpp/135/turn1 tau 4.25 cycles 32
+REQUEST mbpp/167/turn1 84
+RESULT mbpp/167/turn1 tau 3.9056603773584904 cycles 54
+REQUEST mbpp/191/turn1 67
+RESULT mbpp/191/turn1 tau 3.9878048780487805 cycles 83
+REQUEST mbpp/207/turn1 98
+RESULT mbpp/207/turn1 tau 3.953488372093023 cycles 130
+REQUEST mbpp/250/turn1 188
+RESULT mbpp/250/turn1 tau 4.890909090909091 cycles 56
+REQUEST mbpp/282/turn1 104
+RESULT mbpp/282/turn1 tau 4.0508474576271185 cycles 60
+REQUEST mbpp/307/turn1 141
+RESULT mbpp/307/turn1 tau 4.2105263157894735 cycles 77
+REQUEST mbpp/335/turn1 72
+RESULT mbpp/335/turn1 tau 3.923076923076923 cycles 131
+REQUEST mbpp/37/turn1 211
+RESULT mbpp/37/turn1 tau 4.50561797752809 cycles 90
+REQUEST mbpp/388/turn1 90
+RESULT mbpp/388/turn1 tau 4.2075471698113205 cycles 53
+REQUEST mbpp/415/turn1 107
+RESULT mbpp/415/turn1 tau 3.8876404494382024 cycles 90
+REQUEST mbpp/462/turn1 867
+RESULT mbpp/462/turn1 tau 2.601063829787234 cycles 189
+REQUEST mbpp/479/turn1 74
+RESULT mbpp/479/turn1 tau 4.0227272727272725 cycles 45
+REQUEST mbpp/508/turn1 118
+RESULT mbpp/508/turn1 tau 4.019607843137255 cycles 103
+REQUEST mbpp/73/turn1 155
+RESULT mbpp/73/turn1 tau 3.0 cycles 171
+REQUEST mtbench/100/turn2 531
+RESULT mtbench/100/turn2 tau 2.1483050847457625 cycles 237
+REQUEST mtbench/104/turn2 305
+RESULT mtbench/104/turn2 tau 4.040816326530612 cycles 49
+REQUEST mtbench/108/turn2 303
+RESULT mtbench/108/turn2 tau 2.8351648351648353 cycles 92
+REQUEST mtbench/112/turn2 179
+RESULT mtbench/112/turn2 tau 5.2 cycles 15
+REQUEST mtbench/116/turn2 282
+RESULT mtbench/116/turn2 tau 5.08 cycles 101
+REQUEST mtbench/120/turn2 272
+RESULT mtbench/120/turn2 tau 5.315789473684211 cycles 96
+REQUEST mtbench/124/turn2 788
+RESULT mtbench/124/turn2 tau 3.7153284671532845 cycles 138
+REQUEST mtbench/128/turn2 588
+RESULT mtbench/128/turn2 tau 2.747311827956989 cycles 187
+REQUEST mtbench/132/turn2 253
+RESULT mtbench/132/turn2 tau 3.111111111111111 cycles 10
+REQUEST mtbench/136/turn2 315
+RESULT mtbench/136/turn2 tau 3.0 cycles 6
+REQUEST mtbench/140/turn2 459
+RESULT mtbench/140/turn2 tau 5.285714285714286 cycles 22
+REQUEST mtbench/144/turn2 565
+RESULT mtbench/144/turn2 tau 4.233333333333333 cycles 121
+REQUEST mtbench/148/turn2 599
+RESULT mtbench/148/turn2 tau 3.240506329113924 cycles 158
+REQUEST mtbench/152/turn2 558
+RESULT mtbench/152/turn2 tau 2.095744680851064 cycles 189
+REQUEST mtbench/156/turn2 568
+RESULT mtbench/156/turn2 tau 2.2577777777777777 cycles 226
+REQUEST mtbench/160/turn2 572
+RESULT mtbench/160/turn2 tau 1.9642857142857142 cycles 84
+REQUEST mtbench/84/turn2 283
+RESULT mtbench/84/turn2 tau 3.311111111111111 cycles 90
+REQUEST mtbench/88/turn2 198
+RESULT mtbench/88/turn2 tau 1.5 cycles 6
+REQUEST mtbench/92/turn2 296
+RESULT mtbench/92/turn2 tau 1.8928571428571428 cycles 140
+REQUEST mtbench/96/turn2 469
+RESULT mtbench/96/turn2 tau 2.5049019607843137 cycles 205

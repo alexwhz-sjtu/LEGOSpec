@@ -1,0 +1,13 @@
+{
+  "status": "waiting_stage1",
+  "python": "/data/temp/LiteSpec_exp/.venv/bin/python",
+  "snapshot": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/snapshot",
+  "series_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019",
+  "target": "/data/temp/models/Qwen3-4B",
+  "stage1_queue": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/queue.json",
+  "selection_rule": "seed43 disjoint 5-task x 2 temperatures x RNN/parallel; CE,D-PACE,NLA-gamma4,CE+TV. BV held by user; excluded from winner selection.",
+  "new_training_count": 8,
+  "execution_host": "QS_H800",
+  "controller_pid": 408237,
+  "updated_at": "2026-10-18T19:19:45.737875+00:00"
+}

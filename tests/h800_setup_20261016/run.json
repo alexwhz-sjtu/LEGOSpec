@@ -1,0 +1,9 @@
+{
+  "run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/train.log",
+  "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints",
+  "config": "/data/temp/LiteSpec_exp/scripts/config/composable.yaml",
+  "env_file": "/data/temp/LiteSpec_exp/tests/h800_setup_20261016/env.sh",
+  "pid": 14645,
+  "started_at": 1792166609.0563116
+}

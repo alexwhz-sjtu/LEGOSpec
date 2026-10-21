@@ -1,0 +1,44 @@
+{
+  "status": "training_verified",
+  "next_run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949",
+  "next_wandb_id": "67b562ee",
+  "source_pid": 14645,
+  "source_start_ticks": "2275169323",
+  "source_run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438",
+  "source_final_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints_1/final",
+  "config": "/data/temp/LiteSpec_exp/scripts/config/composable_selector_dflare.yaml",
+  "draft_config": "/data/temp/LiteSpec_exp/configs/composable_selector_dflare_from_inf_checkpoint.json",
+  "repo": "/data/temp/LiteSpec_exp",
+  "source_data_sha256": "b8fb09cec39962888b08d457836bcb2bfff0bd988df51ce4910a065e24edc168",
+  "env_file": "/data/temp/LiteSpec_exp/tests/h800_setup_20261016/env.sh",
+  "prepared_hashes": {
+    "/data/temp/LiteSpec_exp/scripts/config/composable_selector_dflare.yaml": "b13cbafcfc786e4f03f410c6f51a3c00960baaac8ecadc3cd82491195429c97e",
+    "/data/temp/LiteSpec_exp/configs/composable_selector_dflare_from_inf_checkpoint.json": "c997b101ce9398ff9055965ebb37dc883de37f9f9610ea7ce882b49749f04cb0"
+  },
+  "updated_at": "2026-10-17T01:35:42.468267+00:00",
+  "supervisor_pid": 68786,
+  "path_correction_at": "2026-10-17T01:33:53.406293+00:00",
+  "previous_error": "AssertionError: Missing final checkpoint file: /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints/final/config.json",
+  "source_completion": {
+    "optimizer_step": 59724,
+    "phase_index": 1
+  },
+  "next_pid": 68803,
+  "next_start_ticks": "2278593651",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/train.log",
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/67b562ee",
+  "verified_metrics": [
+    {
+      "step": 50,
+      "loss": 9.9493
+    },
+    {
+      "step": 100,
+      "loss": 8.6028
+    },
+    {
+      "step": 150,
+      "loss": 7.1575
+    }
+  ]
+}

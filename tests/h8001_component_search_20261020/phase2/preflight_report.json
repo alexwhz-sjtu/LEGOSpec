@@ -1,0 +1,279 @@
+{
+  "passed": true,
+  "world_size": 8,
+  "precision": "BF16",
+  "rows": [
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 3.4382035732269287,
+        "objective/main": 3.4382035732269287,
+        "hard_label/token_accuracy": 0.017241379246115685,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.928931951522827
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 3.4688215255737305,
+        "objective/main": 3.4688215255737305,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.925469398498535
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 27.129186630249023,
+        "objective/main": 27.129186630249023,
+        "hard_label/token_accuracy": 0.017241379246115685,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.928931951522827
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 27.405061721801758,
+        "objective/main": 27.405061721801758,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.925469398498535
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.20979447662830353,
+        "objective/main": 0.20979447662830353,
+        "hard_label/token_accuracy": 0.017241379246115685,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.928931951522827
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.20992837846279144,
+        "objective/main": 0.20992837846279144,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.925469398498535
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.9019551277160645,
+        "objective/main": 0.9019551277160645,
+        "hard_label/token_accuracy": 0.017241379246115685,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.928931951522827
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.9075604677200317,
+        "objective/main": 0.9075604677200317,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0416666269302368,
+        "expected_accept_len": 2.925469398498535
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 3.5838820934295654,
+        "objective/main": 3.5838820934295654,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9456777572631836
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 3.61920166015625,
+        "objective/main": 3.61920166015625,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.910580635070801
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 27.40028953552246,
+        "objective/main": 27.40028953552246,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9456777572631836
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 27.636465072631836,
+        "objective/main": 27.636465072631836,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.910580635070801
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.20738328993320465,
+        "objective/main": 0.20738328993320465,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9456777572631836
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.2095910757780075,
+        "objective/main": 0.2095910757780075,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.910580635070801
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.9123504757881165,
+        "objective/main": 0.9123504757881165,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9456777572631836
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.9236093163490295,
+        "objective/main": 0.9236093163490295,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.910580635070801
+      }
+    }
+  ]
+}

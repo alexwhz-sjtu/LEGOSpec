@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-18T07:19:52.801107+00:00",
+  "retained_hash_count": 194,
+  "removed_cache_hash_count": 192,
+  "all_retained_hashes_unchanged": true,
+  "training_code_configs_and_supervisor_unchanged": true,
+  "completed_job_pid": 242928,
+  "completed_job_returncode": 0,
+  "completed_final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/01_dflash_mha_selector_dpace/checkpoints/final",
+  "backup": "/data/temp/LiteSpec_exp/tests/selector_loss_ablation_20261018/cache_guard_repair_20261018_071951"
+}

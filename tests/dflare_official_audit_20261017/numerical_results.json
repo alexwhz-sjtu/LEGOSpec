@@ -1,0 +1,8 @@
+{
+  "fusion_prior_exact": true,
+  "fusion_forward_backward_exact_torch.float32": true,
+  "fusion_forward_backward_exact_torch.bfloat16": true,
+  "attention_fp32_max_forward_error": 0.0,
+  "attention_fp32_max_gradient_error": 0.0,
+  "context_kv_storage_independent": true
+}

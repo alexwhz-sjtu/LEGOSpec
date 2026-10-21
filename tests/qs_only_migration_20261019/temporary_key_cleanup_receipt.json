@@ -1,0 +1,11 @@
+{
+  "status": "revoked",
+  "private_key_removed": true,
+  "method": "Original authenticated SSH relay remains active",
+  "removed_direct_partial_files": [
+    {
+      "path": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/LiteSpec_exp/output/composable_1/epoch_1_step_10000/model.safetensors.direct.partial",
+      "bytes": 0
+    }
+  ]
+}

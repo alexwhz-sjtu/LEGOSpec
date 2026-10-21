@@ -1,0 +1,162 @@
+{
+  "verified_at": "2026-10-21T05:47:46.279611+00:00",
+  "host": "H800_2",
+  "job_number": 11,
+  "label": "11_dflare_mha_parallel_hard_ce",
+  "protected_hashes_verified": 256,
+  "main": {
+    "pid": 184142,
+    "start_ticks": "769210251",
+    "ppid": 184141,
+    "state": "S"
+  },
+  "workers": [
+    {
+      "pid": 184358,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184359,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184360,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184361,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184362,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184363,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184364,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184365,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    }
+  ],
+  "local_optimizer_steps": [
+    {
+      "step": 650,
+      "loss": 5.3289
+    },
+    {
+      "step": 700,
+      "loss": 3.2877
+    },
+    {
+      "step": 750,
+      "loss": 3.9589
+    },
+    {
+      "step": 800,
+      "loss": 4.1014
+    },
+    {
+      "step": 850,
+      "loss": 3.68
+    }
+  ],
+  "wandb": {
+    "id": "a008d373",
+    "state": "running",
+    "last_step": 800,
+    "history": [
+      {
+        "_step": 50,
+        "train/loss": 9.845270156860352
+      },
+      {
+        "_step": 100,
+        "train/loss": 7.847339153289795
+      },
+      {
+        "_step": 150,
+        "train/loss": 5.990147590637207
+      },
+      {
+        "_step": 200,
+        "train/loss": 5.395086288452148
+      },
+      {
+        "_step": 250,
+        "train/loss": 5.715467929840088
+      },
+      {
+        "_step": 300,
+        "train/loss": 5.083396911621094
+      },
+      {
+        "_step": 350,
+        "train/loss": 5.271854400634766
+      },
+      {
+        "_step": 400,
+        "train/loss": 4.6166863441467285
+      },
+      {
+        "_step": 450,
+        "train/loss": 4.817568778991699
+      },
+      {
+        "_step": 500,
+        "train/loss": 5.324902534484863
+      },
+      {
+        "_step": 550,
+        "train/loss": 4.3524861335754395
+      },
+      {
+        "_step": 600,
+        "train/loss": 4.724944114685059
+      },
+      {
+        "_step": 650,
+        "train/loss": 5.328901290893555
+      },
+      {
+        "_step": 700,
+        "train/loss": 3.287719964981079
+      },
+      {
+        "_step": 750,
+        "train/loss": 3.9589107036590576
+      },
+      {
+        "_step": 800,
+        "train/loss": 4.101373672485352
+      }
+    ],
+    "metrics": {
+      "detail/composable/hard_label/token_accuracy": 0.2787697911262512,
+      "train/walk_accepted_length": 2.2273082733154297,
+      "train/expected_accept_len": 1.896603226661682
+    }
+  },
+  "next_job_status": "pending"
+}

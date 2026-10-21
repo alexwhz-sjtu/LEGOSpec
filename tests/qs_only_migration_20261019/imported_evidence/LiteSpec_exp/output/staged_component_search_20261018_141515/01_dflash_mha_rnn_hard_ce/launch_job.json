@@ -1,0 +1,14 @@
+{
+  "number": 1,
+  "label": "01_dflash_mha_rnn_hard_ce",
+  "proposal": "rnn",
+  "loss": "hard_ce",
+  "status": "launching",
+  "draft_config": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/staged_component_search_20261018/configs/01_dflash_mha_rnn_hard_ce.json",
+  "config": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/tests/staged_component_search_20261018/configs/01_dflash_mha_rnn_hard_ce.yaml",
+  "run_dir": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/output/staged_component_search_20261018_141515/01_dflash_mha_rnn_hard_ce",
+  "log": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp/output/staged_component_search_20261018_141515/01_dflash_mha_rnn_hard_ce/train.log",
+  "wandb_id": "3500d9c2",
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/3500d9c2",
+  "expected_steps": 59724
+}

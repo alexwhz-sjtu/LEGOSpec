@@ -1,0 +1,12 @@
+test_changed_config_hash_is_rejected (__main__.QueueGuards.test_changed_config_hash_is_rejected) ... ok
+test_complete_source_is_accepted (__main__.QueueGuards.test_complete_source_is_accepted) ... ok
+test_incomplete_phase_is_rejected (__main__.QueueGuards.test_incomplete_phase_is_rejected) ... ok
+test_premature_exit_is_rejected (__main__.QueueGuards.test_premature_exit_is_rejected) ... ok
+test_prepared_recipe_has_exactly_the_authorized_change (__main__.QueueGuards.test_prepared_recipe_has_exactly_the_authorized_change) ... ok
+test_source_process_identity_is_checked (__main__.QueueGuards.test_source_process_identity_is_checked) ... ok
+test_wrong_world_size_is_rejected (__main__.QueueGuards.test_wrong_world_size_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK

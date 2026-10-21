@@ -1,0 +1,11 @@
+{
+  "winner": "ce01_tv09",
+  "scores": {
+    "hard_ce": 4.3285246741815815,
+    "nla": 4.526227286310179,
+    "ce01_tv09": 4.5611752143431215,
+    "dpace": 4.504282875293777
+  },
+  "rule": "mean over 5 tasks x 2 temperatures x 2 proposals; within .01 prefer CE,NLA-gamma4,CE+TV,D-PACE; BV held by user",
+  "selected_at": "2026-10-20T04:15:10.778158+00:00"
+}

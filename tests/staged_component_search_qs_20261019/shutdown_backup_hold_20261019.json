@@ -1,0 +1,19 @@
+{
+  "reason": "User requested full backup before QS_H800 shutdown",
+  "at": "2026-10-19T06:36:39.391064+00:00",
+  "controllers": [
+    {
+      "pid": 408236,
+      "start_ticks": "2293626978",
+      "cmdline": "/data/temp/LiteSpec_exp/.venv/bin/python /data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/supervisor.py ",
+      "signal": "SIGSTOP"
+    },
+    {
+      "pid": 408237,
+      "start_ticks": "2293626988",
+      "cmdline": "/data/temp/LiteSpec_exp/.venv/bin/python /data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/continuation.py ",
+      "signal": "SIGSTOP"
+    }
+  ],
+  "training_untouched": true
+}

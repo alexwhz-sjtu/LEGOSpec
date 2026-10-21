@@ -1,0 +1,24 @@
+Set TORCH_CUDA_ARCH_LIST to 9.0
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 3/3 [00:00<00:00, 103.90it/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/component_benchmark_20261018/harness/run.py", line 109, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/temp/LiteSpec_exp/tests/component_benchmark_20261018/harness/run.py", line 84, in main
+    rows=[json.loads(line) for line in Path(args.manifest).read_text().splitlines() if line.strip()]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/temp/LiteSpec_exp/tests/component_benchmark_20261018/harness/run.py", line 84, in <listcomp>
+    rows=[json.loads(line) for line in Path(args.manifest).read_text().splitlines() if line.strip()]
+          ^^^^^^^^^^^^^^^^
+  File "/data/temp/.tools/python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/temp/.tools/python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/temp/.tools/python/cpython-3.11.17-linux-x86_64-gnu/lib/python3.11/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 164 (char 163)

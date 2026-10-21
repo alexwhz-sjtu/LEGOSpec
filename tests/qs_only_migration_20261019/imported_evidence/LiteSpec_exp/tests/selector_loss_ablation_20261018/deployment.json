@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-18T02:25:24.072438+00:00",
+  "root": "/data/wanghanzhen/projects/SpecDecoding/LiteSpec_exp",
+  "files": {
+    "litespec/core/composable/objectives/tv.py": {
+      "before": "530a188511d4553ea5fd7d24debf7fe0dd741e3f4926e61576ccf030e0bd5fd2",
+      "after": "bb64c222b357182d2b7492fa0c905fbc354f2faa3419ae749d716a3dbeb5e33a"
+    },
+    "litespec/core/composable/objectives/__init__.py": {
+      "before": "074ad8c4f37e5d97c0e9c8ba24e70837275c237fb52641dcc3bbfd68cd9f4cff",
+      "after": "ce4858d63d5a6f44e259ac213f1a3abfbbe711fc654ace134172b9a1a2fe43cd"
+    },
+    "litespec/modeling/draft/composable/configuration.py": {
+      "before": "43a31a60dbcf638b7da512cbe876315a4ab59af1841dfa8068e546d1fbf84c66",
+      "after": "7aec692343a7db29be133bca6c703bc0d1eb4ffdec766e990ff2e383bb4045e4"
+    },
+    "litespec/core/composable/objectives/weighted_sum.py": {
+      "before": null,
+      "after": "909abe4e6cd721a12273bbbb608bdb24f975e92533b200fdeb208e90f55cebac"
+    }
+  }
+}

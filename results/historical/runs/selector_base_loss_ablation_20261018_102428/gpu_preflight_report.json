@@ -1,0 +1,113 @@
+{
+  "passed": true,
+  "world_size": 8,
+  "precision": "BF16",
+  "rows": [
+    {
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 17.425195693969727,
+        "objective/main": 16.77680778503418,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 1.2507362365722656,
+        "objective/selector_ce": 0.6609560251235962
+      }
+    },
+    {
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 16.768146514892578,
+        "objective/main": 16.077245712280273,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 1.2615212202072144,
+        "objective/selector_ce": 0.6815463900566101
+      }
+    },
+    {
+      "objective": {
+        "type": "nla"
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 1.047949194908142,
+        "objective/main": 0.3995606601238251,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 1.2507362365722656,
+        "objective/selector_ce": 0.6609560251235962
+      }
+    },
+    {
+      "objective": {
+        "type": "nla"
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 1.085309386253357,
+        "objective/main": 0.3944089114665985,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 1.2615212202072144,
+        "objective/selector_ce": 0.6815463900566101
+      }
+    },
+    {
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 1.5549921989440918,
+        "objective/main": 0.9075601100921631,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 1.2507362365722656,
+        "objective/selector_ce": 0.6609560251235962
+      }
+    },
+    {
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 1.5874509811401367,
+        "objective/main": 0.897223711013794,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 1.2615212202072144,
+        "objective/selector_ce": 0.6815463900566101
+      }
+    }
+  ]
+}

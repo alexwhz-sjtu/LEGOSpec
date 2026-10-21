@@ -1,0 +1,9 @@
+ M litespec/core/composable/objectives/__init__.py
+ M litespec/core/composable/objectives/tv.py
+ M litespec/modeling/draft/composable/configuration.py
+?? litespec/core/composable/objectives/weighted_sum.py
+?? output/staged_component_search_20261018_141515/
+?? tests/component_benchmark_20261018/
+?? tests/qs_only_migration_20261019/
+?? tests/selector_loss_ablation_20261018/
+?? tests/staged_component_search_20261018/

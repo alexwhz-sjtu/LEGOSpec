@@ -1,0 +1,14 @@
+{
+  "number": 5,
+  "label": "05_dflash_mha_parallel_dpace",
+  "proposal": "parallel",
+  "loss": "dpace",
+  "status": "launching",
+  "draft_config": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/configs/05_dflash_mha_parallel_dpace.json",
+  "config": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/configs/05_dflash_mha_parallel_dpace.yaml",
+  "run_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/05_dflash_mha_parallel_dpace",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/05_dflash_mha_parallel_dpace/train.log",
+  "wandb_id": "da24cef9",
+  "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/da24cef9",
+  "expected_steps": 59724
+}

@@ -1,0 +1,107 @@
+{
+  "files": [
+    {
+      "relative": "LiteSpec_exp/tests/qs_only_migration_20261019/code_and_evidence.tar.gz",
+      "size": 97708011,
+      "sha256": "057637a2adf75d78faf781baf49721ba9940a77df2e428f96aa6ce2f14209e69"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/epoch_1_step_10000/model.safetensors",
+      "size": 1231754592,
+      "sha256": "f88b06fbc22aa1a15481de4f4839a4fd54a8b4139e23cc53cbb670f1a1675b70"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/epoch_2_step_20000/model.safetensors",
+      "size": 1231754592,
+      "sha256": "42b6f665c8e3b616e24ed7157e5708707bac00c0f50b5875218dc859c280e97d"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/epoch_3_step_30000/model.safetensors",
+      "size": 1231754592,
+      "sha256": "1cc67732d205a34e2541cfeeccf41c043c941147df328a6be1e26df1ed2080de"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/epoch_4_step_40000/model.safetensors",
+      "size": 1231754592,
+      "sha256": "ad138bd4f505be8335faa523a6008059fb67aeaf805c79ba91d5577be479705e"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/epoch_5_step_50000/model.safetensors",
+      "size": 1231754592,
+      "sha256": "9eeace0189a4c22261c2f5ce74b53fe410a2a58b2bebc6b55d0908af2164727a"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/model.safetensors",
+      "size": 1231754592,
+      "sha256": "67a9cefb92d52cd4bde863e1038ccaa6b4e8c37b16a95b0de8e724dd7bf74c3a"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state.pt",
+      "size": 8193,
+      "sha256": "1800ceec235750f9555adcb72d6b14314afc36f4fe3d8a21f456fd9ed356fd63"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00000.pt",
+      "size": 615985126,
+      "sha256": "dc99d6decd33a10c29b2acc1c3dfdee5d9bc66f6bbf4dbc360b1be822bf61520"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00001.pt",
+      "size": 615953725,
+      "sha256": "812617df364c91d8bd1114c823e8862a4ea699eee7b1d895d8598dd4cc359b01"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00002.pt",
+      "size": 615974200,
+      "sha256": "f79a4fcf4376a5c72991dae2a7c64a53f96bd1d7e666adffeabd07b78b778b4e"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00003.pt",
+      "size": 615975229,
+      "sha256": "bd861bd0516d17f769ca1cd137e6ddea26351484462a19c37caceb9ea507d406"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00004.pt",
+      "size": 615975229,
+      "sha256": "65f24c1550019702bb9b98b22f81b5151e27d507d36480ef2553a5ea29edd8a4"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00005.pt",
+      "size": 615953725,
+      "sha256": "ae27addc65e6b305f95ea205549141c4857e6e0496e711caabda71868c5cca72"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00006.pt",
+      "size": 621833912,
+      "sha256": "d49af9d3c34d31e720222b0b0651c7346e3aab2e83a0d44385307e2fb7f5ad96"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_1/final/training_state_rank_00007.pt",
+      "size": 923888284,
+      "sha256": "a123c46b7c7e7f80547ea3b912a11b8fa94f4bc45236c272811495f69754c161"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_gdn_smoke_20261017/epoch_0_step_20/model.safetensors",
+      "size": 1232985696,
+      "sha256": "838e7fa7af5dfcfea9320427f2e85378d0a315a012535e1e5263e36f0531b5bb"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_gdn_smoke_20261017/final/model.safetensors",
+      "size": 1232985696,
+      "sha256": "838e7fa7af5dfcfea9320427f2e85378d0a315a012535e1e5263e36f0531b5bb"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_gdn_smoke_20261017_1/epoch_0_step_22/model.safetensors",
+      "size": 1232985696,
+      "sha256": "d4f4064bc01fa595ed499197d8356f0c4ceb0cf8bc13d301a06606c602b97ba3"
+    },
+    {
+      "relative": "LiteSpec_exp/output/composable_gdn_smoke_20261017_1/final/model.safetensors",
+      "size": 1232985696,
+      "sha256": "d4f4064bc01fa595ed499197d8356f0c4ceb0cf8bc13d301a06606c602b97ba3"
+    }
+  ],
+  "code_files": 2603,
+  "bytes": 17661725970,
+  "policy": "All useful project source/config/evidence; all historical inference weights; full original training final state. Excludes environments, rebuildable caches and duplicate intermediate optimizer states. Source unchanged."
+}

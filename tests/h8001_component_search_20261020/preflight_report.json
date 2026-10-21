@@ -1,0 +1,279 @@
+{
+  "passed": true,
+  "world_size": 8,
+  "precision": "BF16",
+  "rows": [
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 3.5980989933013916,
+        "objective/main": 3.5980989933013916,
+        "hard_label/token_accuracy": 0.02068965509533882,
+        "hard_label/block_accepted_length": 1.0208333730697632,
+        "expected_accept_len": 2.891972541809082
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 3.592999219894409,
+        "objective/main": 3.592999219894409,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9349613189697266
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 27.68507194519043,
+        "objective/main": 27.68507194519043,
+        "hard_label/token_accuracy": 0.02068965509533882,
+        "hard_label/block_accepted_length": 1.0208333730697632,
+        "expected_accept_len": 2.891972541809082
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 27.964120864868164,
+        "objective/main": 27.964120864868164,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9349613189697266
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.21204699575901031,
+        "objective/main": 0.21204699575901031,
+        "hard_label/token_accuracy": 0.02068965509533882,
+        "hard_label/block_accepted_length": 1.0208333730697632,
+        "expected_accept_len": 2.891972541809082
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.20742644369602203,
+        "objective/main": 0.20742644369602203,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9349613189697266
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.9212022423744202,
+        "objective/main": 0.9212022423744202,
+        "hard_label/token_accuracy": 0.02068965509533882,
+        "hard_label/block_accepted_length": 1.0208333730697632,
+        "expected_accept_len": 2.891972541809082
+      }
+    },
+    {
+      "proposal": "parallel",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.9150336384773254,
+        "objective/main": 0.9150336384773254,
+        "hard_label/token_accuracy": 0.010204081423580647,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.9349613189697266
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 3.73919677734375,
+        "objective/main": 3.73919677734375,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.909492254257202
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "hard_ce"
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 3.746678352355957,
+        "objective/main": 3.746678352355957,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.915239095687866
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 28.207002639770508,
+        "objective/main": 28.207002639770508,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.909492254257202
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "dpace",
+        "alpha": 0.5
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 28.497915267944336,
+        "objective/main": 28.497915267944336,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.915239095687866
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.21260935068130493,
+        "objective/main": 0.21260935068130493,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.909492254257202
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "nla",
+        "loss_decay_gamma": 4.0
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.21132802963256836,
+        "objective/main": 0.21132802963256836,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.915239095687866
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 0,
+      "metrics": {
+        "objective/loss": 0.9328330159187317,
+        "objective/main": 0.9328330159187317,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.909492254257202
+      }
+    },
+    {
+      "proposal": "rnn",
+      "objective": {
+        "type": "weighted_sum",
+        "components": [
+          {
+            "type": "hard_ce",
+            "weight": 0.1
+          },
+          {
+            "type": "tv",
+            "weight": 0.9
+          }
+        ]
+      },
+      "step": 1,
+      "metrics": {
+        "objective/loss": 0.932537853717804,
+        "objective/main": 0.932537853717804,
+        "hard_label/token_accuracy": 0.0,
+        "hard_label/block_accepted_length": 1.0,
+        "expected_accept_len": 2.915239095687866
+      }
+    }
+  ]
+}

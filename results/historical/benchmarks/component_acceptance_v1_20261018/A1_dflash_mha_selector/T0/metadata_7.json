@@ -1,0 +1,37 @@
+{
+  "protocol": "component-acceptance-v1",
+  "manifest_sha256": "bdfd20787753294352983d7712951c1b03dd5cc148a0f2ef746b235bd7ce1c79",
+  "draft": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/01_dflash_mha_selector/checkpoints/final",
+  "draft_hashes": {
+    "model.safetensors": "2bd05466e8e5b7c9bc3ce16e362603d882576fc47bbcb98f231fe79012ebaee3"
+  },
+  "config_sha256": "042d94f87b866bccf83ab0f1446db0e870e6114995d4c52ca92aaaf1ffbe442b",
+  "target": "/data/temp/models/Qwen3-4B",
+  "target_hashes": {
+    "config.json": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+    "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "model-00001-of-00003.safetensors": "328a91d3122359d5547f9d79521205bc0a46e1f79a792dfe650e99fc2d651223",
+    "model-00002-of-00003.safetensors": "6cd087b316306a68c562436b5492edbcf6e16c6dba3a1308279caa5a58e21ca5",
+    "model-00003-of-00003.safetensors": "e4bf436957184f4eeb86a80e9db394503f1f56446b2e6b7edeac5b81470f4ca1"
+  },
+  "harness_hashes": {
+    "prepare.py": "6aa9c251a007cbf0639cfc08400a364bd46f3fd5654c1c838bf2f8c704cc989f",
+    "test_verifier.py": "f18638ba87181a502ed308abcdf713196d05b6f03d7c1424b5e21a10cbd483d8",
+    "compare.py": "b3ba5c3bd2f1c72794634de4b443686d4e6c2c7ce936e15a1b248f3c586db5cb",
+    "run.py": "30ad79f8f6a2c9a06f9339518a20e132b779db57d14fc9d56e56223217a84ef3",
+    "summarize.py": "a63419b209ea651c84c1b1605fc85ff26c84d00672f895ef419d14dc56e1fc5f",
+    "engine.py": "1953aa96b2e27ec7937a5a7adb4dfa148cd7c45dcc92745ff6a8c70b540dc7b2",
+    "test_components.py": "8cc5a3607d36d7fac2efa83f04a1d6cf7a897768d892d0eeb9aaf3d9a54bbd42",
+    "canonical_mtbench.py": "a2837fd8794bd55df037c1408a9be1c05e081b83ccbfbfa20313d75e0286da6f"
+  },
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "max_new_tokens": 512,
+  "shards": 8,
+  "smoke": false,
+  "torch": "2.9.1+cu128",
+  "python": "3.11.17",
+  "target_attention": "sdpa",
+  "draft_attention": "sdpa",
+  "gpu": "NVIDIA H800"
+}

@@ -1,0 +1,45 @@
+diff --git a/litespec/core/composable/objectives/__init__.py b/litespec/core/composable/objectives/__init__.py
+index 7918ea9..9331bca 100644
+--- a/litespec/core/composable/objectives/__init__.py
++++ b/litespec/core/composable/objectives/__init__.py
+@@ -5,6 +5,7 @@ from .kl import ForwardKLObjective
+ from .nla import NLAObjective
+ from .soft_ce import SoftCEObjective
+ from .tv import TVObjective
++from .weighted_sum import WeightedSumObjective
+ 
+ OBJECTIVES = {
+     "hard_ce": HardCEObjective,
+@@ -15,6 +16,7 @@ OBJECTIVES = {
+     "lk_alpha": NLAObjective,
+     "dpace": DPACEObjective,
+     "bv": BVObjective,
++    "weighted_sum": WeightedSumObjective,
+ }
+ 
+ 
+diff --git a/litespec/core/composable/objectives/tv.py b/litespec/core/composable/objectives/tv.py
+index 0f9759a..ab7e91f 100644
+--- a/litespec/core/composable/objectives/tv.py
++++ b/litespec/core/composable/objectives/tv.py
+@@ -11,6 +11,7 @@ class TVObjective(Objective):
+         target_probabilities = torch.softmax(
+             supervision.target_logits.detach().float(), -1
+         )
+-        token_losses = 0.5 * (target_probabilities - draft_probabilities).abs().sum(-1)
++        # Project convention: TV loss is the full distribution L1 distance [0, 2].
++        token_losses = (target_probabilities - draft_probabilities).abs().sum(-1)
+         loss_weights = self.loss_weights(supervision)
+         return self.output((token_losses * loss_weights).sum(), loss_weights.sum())
+diff --git a/litespec/modeling/draft/composable/configuration.py b/litespec/modeling/draft/composable/configuration.py
+index 31b2f45..a090c60 100644
+--- a/litespec/modeling/draft/composable/configuration.py
++++ b/litespec/modeling/draft/composable/configuration.py
+@@ -125,6 +125,7 @@ class ComposableDraftConfig(Qwen3Config):
+             "lk_alpha",
+             "dpace",
+             "bv",
++            "weighted_sum",
+         ):
+             raise ValueError("Unsupported objective")
+         if objective == "bv" and proposal == "selector":

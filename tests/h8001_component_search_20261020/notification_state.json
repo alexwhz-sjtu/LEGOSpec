@@ -1,0 +1,1113 @@
+{
+  "started_verified": [
+    5,
+    6,
+    7
+  ],
+  "completed": [
+    5,
+    6,
+    7
+  ],
+  "start_evidence": {
+    "5": {
+      "number": 5,
+      "main": {
+        "pid": 434492,
+        "start_ticks": "181340821"
+      },
+      "workers": [
+        {
+          "pid": 434555,
+          "start_ticks": "181344341"
+        },
+        {
+          "pid": 434556,
+          "start_ticks": "181344342"
+        },
+        {
+          "pid": 434557,
+          "start_ticks": "181344342"
+        },
+        {
+          "pid": 434558,
+          "start_ticks": "181344342"
+        },
+        {
+          "pid": 434559,
+          "start_ticks": "181344342"
+        },
+        {
+          "pid": 434560,
+          "start_ticks": "181344342"
+        },
+        {
+          "pid": 434561,
+          "start_ticks": "181344342"
+        },
+        {
+          "pid": 434562,
+          "start_ticks": "181344342"
+        }
+      ],
+      "local_metrics": [
+        {
+          "step": 450,
+          "loss": 3599.4277
+        },
+        {
+          "step": 500,
+          "loss": 3629.6194
+        },
+        {
+          "step": 550,
+          "loss": 3016.834
+        }
+      ],
+      "wandb_id": "11af11ea",
+      "wandb_state": "running",
+      "online_last_step": 500,
+      "online_loss_history": [
+        {
+          "_step": 100,
+          "train/loss": 5345.7255859375
+        },
+        {
+          "_step": 150,
+          "train/loss": 4192.39892578125
+        },
+        {
+          "_step": 200,
+          "train/loss": 2861.425048828125
+        },
+        {
+          "_step": 200,
+          "train/loss": 2861.425048828125
+        },
+        {
+          "_step": 250,
+          "train/loss": 3177.194580078125
+        },
+        {
+          "_step": 300,
+          "train/loss": 3518.22314453125
+        },
+        {
+          "_step": 300,
+          "train/loss": 3518.22314453125
+        },
+        {
+          "_step": 350,
+          "train/loss": 4148.2744140625
+        },
+        {
+          "_step": 400,
+          "train/loss": 3738.4482421875
+        },
+        {
+          "_step": 400,
+          "train/loss": 3738.4482421875
+        },
+        {
+          "_step": 450,
+          "train/loss": 3599.427734375
+        },
+        {
+          "_step": 500,
+          "train/loss": 3629.619384765625
+        },
+        {
+          "_step": 500,
+          "train/loss": 3629.619384765625
+        }
+      ],
+      "online_final_metrics": {
+        "detail/composable/hard_label/token_accuracy": 0.236694797873497,
+        "train/walk_accepted_length": 2.1049160957336426,
+        "train/expected_accept_len": 1.8397446870803833
+      },
+      "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/05_dflash_mha_parallel_dpace/train.log",
+      "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/05_dflash_mha_parallel_dpace/checkpoints",
+      "verified_at": "2026-10-19T17:12:35.354414+00:00",
+      "protected_files": 233
+    },
+    "6": {
+      "verified_at": "2026-10-19T19:57:37.117356+00:00",
+      "completed_number": 5,
+      "started_number": 6,
+      "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/05_dflash_mha_parallel_dpace/checkpoints/final",
+      "completion": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "rank_files": [
+        {
+          "rank": 0,
+          "bytes": 537534546,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 1,
+          "bytes": 537502116,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 2,
+          "bytes": 537524306,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 3,
+          "bytes": 537524649,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 4,
+          "bytes": 537502116,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 5,
+          "bytes": 537524306,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 6,
+          "bytes": 537524649,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 7,
+          "bytes": 537512013,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        }
+      ],
+      "exit_receipt": {
+        "pid": 434492,
+        "start_ticks": "181340821",
+        "watcher_pid": 434490,
+        "returncode": 0
+      },
+      "online": {
+        "5": {
+          "id": "11af11ea",
+          "state": "finished",
+          "last_step": 59724,
+          "metrics": {
+            "train/loss": 1300.8875732421875,
+            "detail/composable/hard_label/token_accuracy": 0.8027198314666748,
+            "train/walk_accepted_length": 6.342118740081787,
+            "train/expected_accept_len": 5.480057716369629
+          }
+        },
+        "6": {
+          "id": "7e2e1c91",
+          "state": "running",
+          "last_step": 750,
+          "metrics": {
+            "train/loss": 1.3961061239242554,
+            "detail/composable/hard_label/token_accuracy": 0.3219033479690552,
+            "train/walk_accepted_length": 2.5711143016815186,
+            "train/expected_accept_len": 2.2754883766174316
+          },
+          "history": [
+            {
+              "_step": 450,
+              "train/loss": 1.8850517272949219
+            },
+            {
+              "_step": 500,
+              "train/loss": 1.792475938796997
+            },
+            {
+              "_step": 550,
+              "train/loss": 1.4494788646697998
+            },
+            {
+              "_step": 600,
+              "train/loss": 1.7412610054016113
+            },
+            {
+              "_step": 600,
+              "train/loss": 1.7412610054016113
+            },
+            {
+              "_step": 650,
+              "train/loss": 2.131692409515381
+            },
+            {
+              "_step": 700,
+              "train/loss": 1.1664427518844604
+            },
+            {
+              "_step": 750,
+              "train/loss": 1.3961061239242554
+            },
+            {
+              "_step": 750,
+              "train/loss": 1.3961061239242554
+            }
+          ]
+        }
+      },
+      "local_metrics": [
+        {
+          "step": 800,
+          "loss": 1.4134
+        },
+        {
+          "step": 850,
+          "loss": 1.3467
+        },
+        {
+          "step": 900,
+          "loss": 1.3446
+        }
+      ],
+      "main_pid": 471208,
+      "start_ticks": "182331663",
+      "workers": [
+        471259,
+        471260,
+        471261,
+        471262,
+        471263,
+        471264,
+        471265,
+        471266
+      ],
+      "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/train.log",
+      "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/checkpoints"
+    },
+    "7": {
+      "verified_at": "2026-10-20T00:02:08.737161+00:00",
+      "completed_number": 6,
+      "started_number": 7,
+      "exit_receipt": {
+        "pid": 471208,
+        "start_ticks": "182331663",
+        "watcher_pid": 471207,
+        "returncode": 0
+      },
+      "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/checkpoints/final",
+      "completion": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "all_rank_metadata_verified": true,
+      "online": {
+        "6": {
+          "id": "7e2e1c91",
+          "state": "finished",
+          "last_step": 59724,
+          "metrics": {
+            "train/loss": 0.27118128538131714,
+            "detail/composable/hard_label/token_accuracy": 0.7742987275123596,
+            "train/walk_accepted_length": 5.777519226074219,
+            "train/expected_accept_len": 5.413430213928223
+          }
+        },
+        "7": {
+          "id": "acca1fbd",
+          "state": "running",
+          "last_step": 10800,
+          "metrics": {
+            "train/loss": 1.0801193714141846,
+            "detail/composable/hard_label/token_accuracy": 0.5603164434432983,
+            "train/walk_accepted_length": 4.208740711212158,
+            "train/expected_accept_len": 4.025413990020752
+          },
+          "history": [
+            {
+              "_step": 10550,
+              "train/loss": 0.7213597297668457
+            },
+            {
+              "_step": 10600,
+              "train/loss": 0.7474201321601868
+            },
+            {
+              "_step": 10650,
+              "train/loss": 1.1545796394348145
+            },
+            {
+              "_step": 10700,
+              "train/loss": 1.1962875127792358
+            },
+            {
+              "_step": 10700,
+              "train/loss": 1.1962875127792358
+            },
+            {
+              "_step": 10750,
+              "train/loss": 0.48188188672065735
+            },
+            {
+              "_step": 10800,
+              "train/loss": 1.0801193714141846
+            }
+          ]
+        }
+      },
+      "local_metrics": [
+        {
+          "step": 10800,
+          "loss": 1.0801
+        },
+        {
+          "step": 10850,
+          "loss": 1.2601
+        },
+        {
+          "step": 10900,
+          "loss": 0.8463
+        }
+      ],
+      "main_pid": 498293,
+      "start_ticks": "183571189",
+      "workers": [
+        498597,
+        498598,
+        498599,
+        498600,
+        498601,
+        498602,
+        498603,
+        498604
+      ],
+      "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/train.log",
+      "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/checkpoints"
+    }
+  },
+  "completion_evidence": {
+    "5": {
+      "verified_at": "2026-10-19T19:57:37.117356+00:00",
+      "completed_number": 5,
+      "started_number": 6,
+      "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/05_dflash_mha_parallel_dpace/checkpoints/final",
+      "completion": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "rank_files": [
+        {
+          "rank": 0,
+          "bytes": 537534546,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 1,
+          "bytes": 537502116,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 2,
+          "bytes": 537524306,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 3,
+          "bytes": 537524649,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 4,
+          "bytes": 537502116,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 5,
+          "bytes": 537524306,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 6,
+          "bytes": 537524649,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        },
+        {
+          "rank": 7,
+          "bytes": 537512013,
+          "keys": [
+            "cursor",
+            "training_stage",
+            "phase_plan",
+            "steps_per_epoch",
+            "optimizer_step",
+            "scheduler_total_steps",
+            "scheduler_learning_rate",
+            "scheduler_warmup_ratio",
+            "train_data_identity",
+            "train_data_mode",
+            "loss_config",
+            "composable_recipe",
+            "selector_schedule_step",
+            "selector_effective_alpha",
+            "selector_loss_alpha"
+          ]
+        }
+      ],
+      "exit_receipt": {
+        "pid": 434492,
+        "start_ticks": "181340821",
+        "watcher_pid": 434490,
+        "returncode": 0
+      },
+      "online": {
+        "5": {
+          "id": "11af11ea",
+          "state": "finished",
+          "last_step": 59724,
+          "metrics": {
+            "train/loss": 1300.8875732421875,
+            "detail/composable/hard_label/token_accuracy": 0.8027198314666748,
+            "train/walk_accepted_length": 6.342118740081787,
+            "train/expected_accept_len": 5.480057716369629
+          }
+        },
+        "6": {
+          "id": "7e2e1c91",
+          "state": "running",
+          "last_step": 750,
+          "metrics": {
+            "train/loss": 1.3961061239242554,
+            "detail/composable/hard_label/token_accuracy": 0.3219033479690552,
+            "train/walk_accepted_length": 2.5711143016815186,
+            "train/expected_accept_len": 2.2754883766174316
+          },
+          "history": [
+            {
+              "_step": 450,
+              "train/loss": 1.8850517272949219
+            },
+            {
+              "_step": 500,
+              "train/loss": 1.792475938796997
+            },
+            {
+              "_step": 550,
+              "train/loss": 1.4494788646697998
+            },
+            {
+              "_step": 600,
+              "train/loss": 1.7412610054016113
+            },
+            {
+              "_step": 600,
+              "train/loss": 1.7412610054016113
+            },
+            {
+              "_step": 650,
+              "train/loss": 2.131692409515381
+            },
+            {
+              "_step": 700,
+              "train/loss": 1.1664427518844604
+            },
+            {
+              "_step": 750,
+              "train/loss": 1.3961061239242554
+            },
+            {
+              "_step": 750,
+              "train/loss": 1.3961061239242554
+            }
+          ]
+        }
+      },
+      "local_metrics": [
+        {
+          "step": 800,
+          "loss": 1.4134
+        },
+        {
+          "step": 850,
+          "loss": 1.3467
+        },
+        {
+          "step": 900,
+          "loss": 1.3446
+        }
+      ],
+      "main_pid": 471208,
+      "start_ticks": "182331663",
+      "workers": [
+        471259,
+        471260,
+        471261,
+        471262,
+        471263,
+        471264,
+        471265,
+        471266
+      ],
+      "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/train.log",
+      "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/checkpoints"
+    },
+    "6": {
+      "verified_at": "2026-10-20T00:02:08.737161+00:00",
+      "completed_number": 6,
+      "started_number": 7,
+      "exit_receipt": {
+        "pid": 471208,
+        "start_ticks": "182331663",
+        "watcher_pid": 471207,
+        "returncode": 0
+      },
+      "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/checkpoints/final",
+      "completion": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "all_rank_metadata_verified": true,
+      "online": {
+        "6": {
+          "id": "7e2e1c91",
+          "state": "finished",
+          "last_step": 59724,
+          "metrics": {
+            "train/loss": 0.27118128538131714,
+            "detail/composable/hard_label/token_accuracy": 0.7742987275123596,
+            "train/walk_accepted_length": 5.777519226074219,
+            "train/expected_accept_len": 5.413430213928223
+          }
+        },
+        "7": {
+          "id": "acca1fbd",
+          "state": "running",
+          "last_step": 10800,
+          "metrics": {
+            "train/loss": 1.0801193714141846,
+            "detail/composable/hard_label/token_accuracy": 0.5603164434432983,
+            "train/walk_accepted_length": 4.208740711212158,
+            "train/expected_accept_len": 4.025413990020752
+          },
+          "history": [
+            {
+              "_step": 10550,
+              "train/loss": 0.7213597297668457
+            },
+            {
+              "_step": 10600,
+              "train/loss": 0.7474201321601868
+            },
+            {
+              "_step": 10650,
+              "train/loss": 1.1545796394348145
+            },
+            {
+              "_step": 10700,
+              "train/loss": 1.1962875127792358
+            },
+            {
+              "_step": 10700,
+              "train/loss": 1.1962875127792358
+            },
+            {
+              "_step": 10750,
+              "train/loss": 0.48188188672065735
+            },
+            {
+              "_step": 10800,
+              "train/loss": 1.0801193714141846
+            }
+          ]
+        }
+      },
+      "local_metrics": [
+        {
+          "step": 10800,
+          "loss": 1.0801
+        },
+        {
+          "step": 10850,
+          "loss": 1.2601
+        },
+        {
+          "step": 10900,
+          "loss": 0.8463
+        }
+      ],
+      "main_pid": 498293,
+      "start_ticks": "183571189",
+      "workers": [
+        498597,
+        498598,
+        498599,
+        498600,
+        498601,
+        498602,
+        498603,
+        498604
+      ],
+      "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/train.log",
+      "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/checkpoints"
+    },
+    "7": {
+      "verified_at": "2026-10-20T05:02:29.176817+00:00",
+      "completed_number": 7,
+      "started_number": 9,
+      "exit_receipt": {
+        "pid": 498293,
+        "start_ticks": "183571189",
+        "watcher_pid": 498292,
+        "returncode": 0
+      },
+      "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/checkpoints/final",
+      "completion": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "all_rank_metadata_verified": true,
+      "selection": [
+        {
+          "label": "05_dflash_mha_parallel_dpace",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "05_dflash_mha_parallel_dpace",
+          "temperature": 1,
+          "requests": 190
+        },
+        {
+          "label": "06_dflash_mha_parallel_nla_gamma4",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "06_dflash_mha_parallel_nla_gamma4",
+          "temperature": 1,
+          "requests": 190
+        },
+        {
+          "label": "07_dflash_mha_parallel_ce01_tv09",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "07_dflash_mha_parallel_ce01_tv09",
+          "temperature": 1,
+          "requests": 190
+        },
+        {
+          "label": "reused_RNN_hard_ce_from_inf_final",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "reused_RNN_hard_ce_from_inf_final",
+          "temperature": 1,
+          "requests": 190
+        },
+        {
+          "label": "reused_A4_parallel_hard_ce",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "reused_A4_parallel_hard_ce",
+          "temperature": 1,
+          "requests": 190
+        },
+        {
+          "label": "reused_01_dflash_mha_rnn_dpace",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "reused_01_dflash_mha_rnn_dpace",
+          "temperature": 1,
+          "requests": 190
+        },
+        {
+          "label": "reused_02_dflash_mha_rnn_nla_gamma4",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "reused_02_dflash_mha_rnn_nla_gamma4",
+          "temperature": 1,
+          "requests": 190
+        },
+        {
+          "label": "reused_03_dflash_mha_rnn_ce01_tv09",
+          "temperature": 0,
+          "requests": 190
+        },
+        {
+          "label": "reused_03_dflash_mha_rnn_ce01_tv09",
+          "temperature": 1,
+          "requests": 190
+        }
+      ],
+      "loss_selection": {
+        "winner": "ce01_tv09",
+        "scores": {
+          "hard_ce": 4.3285246741815815,
+          "nla": 4.526227286310179,
+          "ce01_tv09": 4.5611752143431215,
+          "dpace": 4.504282875293777
+        },
+        "rule": "mean over 5 tasks x 2 temperatures x 2 proposals; within .01 prefer CE,NLA-gamma4,CE+TV,D-PACE; BV held by user",
+        "selected_at": "2026-10-20T04:15:10.778158+00:00"
+      },
+      "online": {
+        "7": {
+          "id": "acca1fbd",
+          "state": "finished",
+          "last_step": 59724,
+          "metrics": {
+            "train/loss": 0.5554623603820801,
+            "detail/composable/hard_label/token_accuracy": 0.7793752551078796,
+            "train/walk_accepted_length": 5.879845142364502,
+            "train/expected_accept_len": 5.547396659851074
+          }
+        },
+        "9": {
+          "id": "009d1498",
+          "state": "running",
+          "last_step": 10600,
+          "metrics": {
+            "train/loss": 0.4780007004737854,
+            "detail/composable/hard_label/token_accuracy": 0.8051746487617493,
+            "train/walk_accepted_length": 5.411786079406738,
+            "train/expected_accept_len": 5.264415740966797
+          },
+          "history": [
+            {
+              "_step": 10350,
+              "train/loss": 0.646135151386261
+            },
+            {
+              "_step": 10400,
+              "train/loss": 1.0565589666366577
+            },
+            {
+              "_step": 10450,
+              "train/loss": 0.45457687973976135
+            },
+            {
+              "_step": 10500,
+              "train/loss": 0.6791125535964966
+            },
+            {
+              "_step": 10500,
+              "train/loss": 0.6791125535964966
+            },
+            {
+              "_step": 10550,
+              "train/loss": 0.4573003351688385
+            },
+            {
+              "_step": 10600,
+              "train/loss": 0.4780007004737854
+            }
+          ]
+        }
+      },
+      "local_metrics": [
+        {
+          "step": 10650,
+          "loss": 0.8297
+        },
+        {
+          "step": 10700,
+          "loss": 0.8554
+        },
+        {
+          "step": 10750,
+          "loss": 0.2633
+        }
+      ],
+      "main_pid": 556269,
+      "start_ticks": "185350784",
+      "workers": [
+        {
+          "pid": 556331,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        },
+        {
+          "pid": 556332,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        },
+        {
+          "pid": 556333,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        },
+        {
+          "pid": 556334,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        },
+        {
+          "pid": 556335,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        },
+        {
+          "pid": 556336,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        },
+        {
+          "pid": 556337,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        },
+        {
+          "pid": 556338,
+          "start_ticks": "185353433",
+          "ppid": 556269
+        }
+      ],
+      "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/09_dflare_context_ce01_tv09/train.log",
+      "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/09_dflare_context_ce01_tv09/checkpoints",
+      "phase2_protected_files": 238
+    }
+  },
+  "selection_completed_notified": true
+}

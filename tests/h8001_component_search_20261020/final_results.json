@@ -1,0 +1,97 @@
+{
+  "selection": {
+    "winner": "ce01_tv09",
+    "scores": {
+      "hard_ce": 4.3285246741815815,
+      "nla": 4.526227286310179,
+      "ce01_tv09": 4.5611752143431215,
+      "dpace": 4.504282875293777
+    },
+    "rule": "mean over 5 tasks x 2 temperatures x 2 proposals; within .01 prefer CE,NLA-gamma4,CE+TV,D-PACE; BV held by user",
+    "selected_at": "2026-10-20T17:54:13.883254+00:00"
+  },
+  "models": [
+    {
+      "label": "05_dflash_mha_parallel_dpace",
+      "proposal": "parallel",
+      "loss": "dpace",
+      "model": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/05_dflash_mha_parallel_dpace/checkpoints/final"
+    },
+    {
+      "label": "06_dflash_mha_parallel_nla_gamma4",
+      "proposal": "parallel",
+      "loss": "nla",
+      "model": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/checkpoints/final"
+    },
+    {
+      "label": "07_dflash_mha_parallel_ce01_tv09",
+      "proposal": "parallel",
+      "loss": "ce01_tv09",
+      "model": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/checkpoints/final"
+    },
+    {
+      "label": "reused_RNN_hard_ce_from_inf_final",
+      "proposal": "rnn",
+      "loss": "hard_ce",
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/01_current_rnn_ce_final_9a312f5d/final"
+    },
+    {
+      "label": "reused_A4_parallel_hard_ce",
+      "proposal": "parallel",
+      "loss": "hard_ce",
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/11_04_dflash_mha_parallel_final_9e822926/final"
+    },
+    {
+      "label": "reused_01_dflash_mha_rnn_dpace",
+      "proposal": "rnn",
+      "loss": "dpace",
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/05_01_dflash_mha_rnn_dpace_final_ad53d8a0/final"
+    },
+    {
+      "label": "reused_02_dflash_mha_rnn_nla_gamma4",
+      "proposal": "rnn",
+      "loss": "nla",
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/06_02_dflash_mha_rnn_nla_gamma4_final_cabcd6b5/final"
+    },
+    {
+      "label": "reused_03_dflash_mha_rnn_ce01_tv09",
+      "proposal": "rnn",
+      "loss": "ce01_tv09",
+      "model": "/share/dai-sys/wanghanzhen/projects/DAC27/models/trained/07_03_dflash_mha_rnn_ce01_tv09_final_b0df884d/final"
+    },
+    {
+      "label": "09_dflare_context_ce01_tv09",
+      "proposal": "rnn",
+      "loss": "ce01_tv09",
+      "model": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/09_dflare_context_ce01_tv09/checkpoints/final"
+    },
+    {
+      "label": "10_dflash_layer_conv_ce01_tv09",
+      "proposal": "rnn",
+      "loss": "ce01_tv09",
+      "model": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/10_dflash_layer_conv_ce01_tv09/checkpoints/final"
+    }
+  ],
+  "test_summary_paths": [
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/05_dflash_mha_parallel_dpace/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/05_dflash_mha_parallel_dpace/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/06_dflash_mha_parallel_nla_gamma4/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/06_dflash_mha_parallel_nla_gamma4/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/07_dflash_mha_parallel_ce01_tv09/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/07_dflash_mha_parallel_ce01_tv09/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_RNN_hard_ce_from_inf_final/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_RNN_hard_ce_from_inf_final/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_A4_parallel_hard_ce/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_A4_parallel_hard_ce/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_01_dflash_mha_rnn_dpace/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_01_dflash_mha_rnn_dpace/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_02_dflash_mha_rnn_nla_gamma4/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_02_dflash_mha_rnn_nla_gamma4/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_03_dflash_mha_rnn_ce01_tv09/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/reused_03_dflash_mha_rnn_ce01_tv09/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/09_dflare_context_ce01_tv09/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/09_dflare_context_ce01_tv09/T1/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/10_dflash_layer_conv_ce01_tv09/T0/summary.json",
+    "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/new_models_test/10_dflash_layer_conv_ce01_tv09/T1/summary.json"
+  ]
+}

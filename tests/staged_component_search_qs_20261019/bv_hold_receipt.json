@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-18T17:13:07.196546+00:00",
+  "user_decision": "Defer BV; continue all other experiments",
+  "active_jobs": 6,
+  "held_bv_jobs": [
+    "04_dflash_mha_rnn_bv",
+    "08_dflash_mha_parallel_bv"
+  ],
+  "hash_changes": {
+    "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/continuation.py": {
+      "old": "d03f09ec6acd62f6ff51f8ab1b599dd70bba5d7ae574bc88af61d7245a14cb8e",
+      "new": "73d785e7f230d9aa2c1cd847f9a3be5ffe71a74ecdd590a671064470d411f2c8"
+    },
+    "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/gpu_preflight_phase2.py": {
+      "old": "7df8e830590d20a287fef116d65daef928bdc58a3c48a4f8a93cf556d523082d",
+      "new": "48661a80da42af439fdf9775d26bad295d16606e412d7509785c47739c9e6db7"
+    },
+    "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/gpu_preflight.py": {
+      "old": "8b84ee5a2c278b5c112a6bc54a86a77621c2ce065285eb9972bbd0ff51d97aa7",
+      "new": "d8fe522e7805393fb66d0e99332b890793e0b66f32d71760af97cf11844adc3e"
+    }
+  },
+  "gate_stopped_and_locked": true,
+  "no_training_started": true
+}

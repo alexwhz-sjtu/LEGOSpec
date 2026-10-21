@@ -1,0 +1,43 @@
+{
+  "models": [
+    {
+      "number": 1,
+      "parameters": 615873792,
+      "context": "dflash",
+      "proposal": "selector",
+      "objective": "hard_ce"
+    },
+    {
+      "number": 2,
+      "parameters": 594381337,
+      "context": "dflare",
+      "proposal": "rnn",
+      "objective": "nla"
+    },
+    {
+      "number": 3,
+      "parameters": 609320217,
+      "context": "dflare",
+      "proposal": "selector",
+      "objective": "hard_ce"
+    },
+    {
+      "number": 4,
+      "parameters": 537427200,
+      "context": "dflash",
+      "proposal": "parallel",
+      "objective": "hard_ce"
+    }
+  ],
+  "metrics_module": "/data/temp/LiteSpec_exp/tests/retrain_1234_metrics_v2_20261017/snapshot/litespec/core/composable/training_model.py",
+  "data_sha256": "b8fb09cec39962888b08d457836bcb2bfff0bd988df51ce4910a065e24edc168",
+  "python": "3.11.17",
+  "torch": "2.9.1+cu128",
+  "ordered": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "metrics": "final proposal accuracy; greedy accepted length; final-distribution expected length"
+}

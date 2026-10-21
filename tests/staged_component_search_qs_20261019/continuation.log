@@ -1,0 +1,2 @@
+{"at": "2026-10-18T19:19:45.733402+00:00", "event": "controller_attached", "status": "waiting_qs_prerequisites"}
+{"at": "2026-10-18T19:19:45.738045+00:00", "event": "waiting_stage1", "status": "waiting_stage1"}

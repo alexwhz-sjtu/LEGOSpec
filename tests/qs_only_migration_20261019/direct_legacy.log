@@ -1,0 +1,10 @@
+VERIFIED /mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/LiteSpec_exp/tests/qs_only_migration_20261019/code_and_evidence.tar.gz
+root@223.76.225.211: Permission denied (publickey,password).
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/qs_only_migration_20261019/direct_copy_qs.py", line 41, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/temp/LiteSpec_exp/tests/qs_only_migration_20261019/direct_copy_qs.py", line 31, in main
+    assert child.wait()==0,'Read-only SSH transfer failed';assert n==entry['size'] and h.hexdigest()==entry['sha256'],'Transfer digest mismatch';temporary.replace(target)
+           ^^^^^^^^^^^^^^^
+AssertionError: Read-only SSH transfer failed

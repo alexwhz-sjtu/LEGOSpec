@@ -1,0 +1,5 @@
+CAUSAL_CONV1D_FORWARD_BACKWARD_PASS
+SGL_KERNEL_RMSNORM_PASS
+FLEX_ATTENTION_TRITON_FORWARD_BACKWARD_PASS
+VERSIONS {"torch": "2.9.1+cu128", "transformers": "4.57.1", "sglang": "0.5.9", "sgl-kernel": "0.3.21", "causal-conv1d": "1.7.0", "flash-linear-attention": "0.5.2"}
+ALL_CUDA_EXTENSION_VALIDATIONS_PASSED

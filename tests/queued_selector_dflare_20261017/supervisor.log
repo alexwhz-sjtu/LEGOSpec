@@ -1,0 +1,27 @@
+{"status": "waiting_source", "supervisor_pid": 26578}
+{"status": "verifying_source"}
+{"status": "failed", "error": "AssertionError: Missing final checkpoint file: /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints/final/config.json"}
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/queued_selector_dflare_20261017/supervisor.py", line 79, in main
+    completion=validate_final(state['source_final_dir'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/temp/LiteSpec_exp/tests/queued_selector_dflare_20261017/supervisor.py", line 30, in validate_final
+    assert p.is_file() and p.stat().st_size>0,'Missing final checkpoint file: '+str(p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing final checkpoint file: /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints/final/config.json
+Traceback (most recent call last):
+  File "/data/temp/LiteSpec_exp/tests/queued_selector_dflare_20261017/supervisor.py", line 104, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/data/temp/LiteSpec_exp/tests/queued_selector_dflare_20261017/supervisor.py", line 79, in main
+    completion=validate_final(state['source_final_dir'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/temp/LiteSpec_exp/tests/queued_selector_dflare_20261017/supervisor.py", line 30, in validate_final
+    assert p.is_file() and p.stat().st_size>0,'Missing final checkpoint file: '+str(p)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missing final checkpoint file: /mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/checkpoints/final/config.json
+{"status": "waiting_source", "supervisor_pid": 68786}
+{"status": "verifying_source"}
+{"status": "waiting_resources", "source_completion": {"optimizer_step": 59724, "phase_index": 1}}
+{"status": "training_started", "next_pid": 68803, "next_start_ticks": "2278593651", "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/train.log", "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/67b562ee"}
+{"status": "training_verified", "verified_metrics": [{"step": 50, "loss": 9.9493}, {"step": 100, "loss": 8.6028}, {"step": 150, "loss": 7.1575}]}

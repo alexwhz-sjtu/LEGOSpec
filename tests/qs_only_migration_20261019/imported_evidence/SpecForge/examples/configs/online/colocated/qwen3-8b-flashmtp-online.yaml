@@ -1,0 +1,54 @@
+model:
+  target_model_path: /data/wanghanzhen/projects/SpecDecoding/models/Qwen3-8B
+  target_backend: sglang
+  torch_dtype: bfloat16
+  sglang_mem_fraction_static: 0.25
+  draft_num_hidden_layers: 5
+  draft_block_size: 8
+  flashmtp_history_mode: token
+  flashmtp_sliding_window_size: 1
+  flashmtp_markov_head_type: rnn_easy
+  flashmtp_markov_output_mode: direct
+  flashmtp_markov_rank: 512
+  flashmtp_chs_num_layers: 12
+  flashmtp_local_position: false
+  flashmtp_backbone_conv_enabled: true
+  flashmtp_conv_kernel_size: 2
+  flashmtp_conv_group_size: 16
+data:
+  train_data_path: /data/wanghanzhen/projects/SpecDecoding/training_data/generated/qwen3-8b/open_perfectblend_80k_qwen3_8b.jsonl
+  max_length: 4096
+  chat_template: qwen
+  is_preformatted: false
+  build_dataset_num_proc: 128
+  # local_colocated capture runs synchronously in each trainer process.
+  dataloader_num_workers: 0
+  cache_dir: ./cache/data/qwen3-8b-flashmtp
+training:
+  strategy: flashmtp
+  num_epochs: 6
+  # Draft micro-batch per trainer rank (before gradient accumulation).
+  batch_size: 1
+  tp_size: 1
+  learning_rate: 0.0004
+  warmup_ratio: 0.04
+  max_grad_norm: 1.0
+  attention_backend: flex_attention
+  num_anchors: 512
+  loss_decay_gamma: 4.0
+  flashmtp_final_ce_weight: 0.1
+  flashmtp_tv_loss_weight: 1.0
+  flashmtp_base_lm_ce_weight: 0.0
+  save_interval: 10000
+  log_interval: 50
+  dist_timeout: 300
+  # Match FlashMTP_v2swa's DistributedSampler default (seed=0).
+  # Keep `seed: 42` below for identical model/global RNG initialization.
+  prompt_seed: 0
+  prompt_sampler_drop_last: false
+  seed: 42
+deployment:
+  mode: local_colocated
+  trainer:
+    nnodes: 1
+    nproc_per_node: 8

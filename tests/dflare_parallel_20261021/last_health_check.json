@@ -1,0 +1,78 @@
+{
+  "checked_at": "2026-10-21T06:45:12.036420+00:00",
+  "host": "H800_2",
+  "status": "healthy_training",
+  "protected_files": 256,
+  "controller": 183750,
+  "supervisor": 183755,
+  "main": 184142,
+  "workers": [
+    {
+      "pid": 184358,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184359,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184360,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184361,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184362,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184363,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184364,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    },
+    {
+      "pid": 184365,
+      "start_ticks": "769212969",
+      "ppid": 184142,
+      "state": "R"
+    }
+  ],
+  "local_steps": [
+    {
+      "step": 20950,
+      "loss": 1.6039
+    },
+    {
+      "step": 21000,
+      "loss": 0.7052
+    },
+    {
+      "step": 21050,
+      "loss": 1.6065
+    }
+  ],
+  "wandb_verified_step": 20900,
+  "wandb_metrics_finite": true,
+  "next_job_status": "pending",
+  "benchmark_status": "prepared",
+  "new_notification": false
+}

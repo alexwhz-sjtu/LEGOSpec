@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-18T17:17:18.497510+00:00",
+  "status": "completed",
+  "legacy_relay_pid": 95446,
+  "legacy_exec_session": 59665,
+  "current_run_import_watcher_pid": 99817,
+  "source_current_run_pid": 2948515,
+  "source_current_run_start_ticks": "807593000",
+  "user_exception": "Only allow this current Inf RNN+CE to finish; then migrate. No other Inf GPU jobs.",
+  "source_dispatchers_stopped": [
+    2946171,
+    2990902
+  ],
+  "qs_gate_pid": 400322,
+  "qs_queue_root": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019",
+  "qs_migration_root": "/data/temp/LiteSpec_exp/tests/qs_only_migration_20261019",
+  "archive_root": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019",
+  "legacy_inventory": "migration_inventory.json",
+  "current_final_ready_receipt": "/data/temp/LiteSpec_exp/tests/staged_component_search_qs_20261019/imported_rnn_ce_verified.json",
+  "temporary_direct_key": "revoked and private key deleted",
+  "bv": "User deferred; six non-BV new QS jobs; current 8-model search excludes BV",
+  "current_run_import_completed": true,
+  "current_run_import_watcher_status": "completed",
+  "qs_gate_status": "dispatched",
+  "qs_supervisor_pid": 408236,
+  "qs_controller_pid": 408237,
+  "qs_current_training_pid": 408489,
+  "legacy_relay_status": "completed",
+  "legacy_completed_files": 20,
+  "all_migration_completed": true
+}

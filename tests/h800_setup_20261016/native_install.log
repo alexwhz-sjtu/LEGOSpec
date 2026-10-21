@@ -1,0 +1,20 @@
+Resolved 3 packages in 130ms
+Prepared 1 package in 131ms
+Installed 1 package in 1ms
+ + wheel==0.48.0
+Resolved 1 package in 5ms
+error: `torch` was declared as an extra build dependency with `match-runtime = true`, but was not found in the resolution
+Resolved 1 package in 1ms
+   Building causal-conv1d @ file:///data/temp/.cache/wheels/causal_conv1d-1.7.0.tar.gz
+      Built causal-conv1d @ file:///data/temp/.cache/wheels/causal_conv1d-1.7.0.tar.gz
+Prepared 1 package in 7m 26s
+Installed 1 package in 0.68ms
+ + causal-conv1d==1.7.0 (from file:///data/temp/.cache/wheels/causal_conv1d-1.7.0.tar.gz)
+Resolved 1 package in 989ms
+   Building litespec @ file:///data/temp/LiteSpec_exp
+      Built litespec @ file:///data/temp/LiteSpec_exp
+Prepared 1 package in 231ms
+Installed 1 package in 0.58ms
+ + litespec==0.2.0 (from file:///data/temp/LiteSpec_exp)
+Checked 192 packages in 2ms
+All installed packages are compatible

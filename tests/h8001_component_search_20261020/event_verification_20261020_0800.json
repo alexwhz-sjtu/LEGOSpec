@@ -1,0 +1,99 @@
+{
+  "verified_at": "2026-10-20T00:02:08.737161+00:00",
+  "completed_number": 6,
+  "started_number": 7,
+  "exit_receipt": {
+    "pid": 471208,
+    "start_ticks": "182331663",
+    "watcher_pid": 471207,
+    "returncode": 0
+  },
+  "final": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/06_dflash_mha_parallel_nla_gamma4/checkpoints/final",
+  "completion": {
+    "optimizer_step": 59724,
+    "phases": 1
+  },
+  "all_rank_metadata_verified": true,
+  "online": {
+    "6": {
+      "id": "7e2e1c91",
+      "state": "finished",
+      "last_step": 59724,
+      "metrics": {
+        "train/loss": 0.27118128538131714,
+        "detail/composable/hard_label/token_accuracy": 0.7742987275123596,
+        "train/walk_accepted_length": 5.777519226074219,
+        "train/expected_accept_len": 5.413430213928223
+      }
+    },
+    "7": {
+      "id": "acca1fbd",
+      "state": "running",
+      "last_step": 10800,
+      "metrics": {
+        "train/loss": 1.0801193714141846,
+        "detail/composable/hard_label/token_accuracy": 0.5603164434432983,
+        "train/walk_accepted_length": 4.208740711212158,
+        "train/expected_accept_len": 4.025413990020752
+      },
+      "history": [
+        {
+          "_step": 10550,
+          "train/loss": 0.7213597297668457
+        },
+        {
+          "_step": 10600,
+          "train/loss": 0.7474201321601868
+        },
+        {
+          "_step": 10650,
+          "train/loss": 1.1545796394348145
+        },
+        {
+          "_step": 10700,
+          "train/loss": 1.1962875127792358
+        },
+        {
+          "_step": 10700,
+          "train/loss": 1.1962875127792358
+        },
+        {
+          "_step": 10750,
+          "train/loss": 0.48188188672065735
+        },
+        {
+          "_step": 10800,
+          "train/loss": 1.0801193714141846
+        }
+      ]
+    }
+  },
+  "local_metrics": [
+    {
+      "step": 10800,
+      "loss": 1.0801
+    },
+    {
+      "step": 10850,
+      "loss": 1.2601
+    },
+    {
+      "step": 10900,
+      "loss": 0.8463
+    }
+  ],
+  "main_pid": 498293,
+  "start_ticks": "183571189",
+  "workers": [
+    498597,
+    498598,
+    498599,
+    498600,
+    498601,
+    498602,
+    498603,
+    498604
+  ],
+  "log": "/share/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/train.log",
+  "checkpoint_dir": "/mnt/dai-sys/wanghanzhen/projects/DAC27/runs/component_search_h8001_20261020/07_dflash_mha_parallel_ce01_tv09/checkpoints"
+}

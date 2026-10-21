@@ -1,0 +1,9 @@
+DOWNLOAD cuda_nvcc
+DOWNLOAD cuda_cudart
+DOWNLOADDOWNLOAD  cuda_cccllibcurand
+
+INSTALLED cuda_cccl 12.8.90
+INSTALLED cuda_cudart 12.8.90
+INSTALLED libcurand 10.3.9.90
+INSTALLED cuda_nvcc 12.8.93
+CUDA_TOOLKIT_READY /data/temp/.tools/cuda-12.8

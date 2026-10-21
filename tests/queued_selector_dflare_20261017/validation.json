@@ -1,0 +1,189 @@
+{
+  "only_recipe_change": "context.type: dflash -> dflare",
+  "from_scratch": true,
+  "data_sha256_matches_old_checkpoint_training": true,
+  "models": {
+    "old": {
+      "parameters": 615873792,
+      "groups": {
+        "context": 32770560,
+        "backbone": 504656640,
+        "proposal": 78446592
+      },
+      "recipe": {
+        "backbone": {
+          "layers": [
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            }
+          ],
+          "type": "transformer"
+        },
+        "context": {
+          "target_layer_ids": [
+            1,
+            9,
+            17,
+            25,
+            33
+          ],
+          "type": "dflash"
+        },
+        "mask_token_id": 151669,
+        "objective": {
+          "type": "hard_ce"
+        },
+        "proposal": {
+          "loss_decay_gamma": 4.0,
+          "rank": 256,
+          "stop_gradient": false,
+          "top_k": 16,
+          "type": "selector"
+        }
+      }
+    },
+    "next": {
+      "parameters": 609320217,
+      "groups": {
+        "context": 2585,
+        "backbone": 530871040,
+        "proposal": 78446592
+      },
+      "recipe": {
+        "backbone": {
+          "layers": [
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            },
+            {
+              "attention": {
+                "access": "dense",
+                "backend": "flex_attention",
+                "flex_backend": "TRITON",
+                "representation": "mha"
+              },
+              "local_operator": {
+                "type": "none"
+              }
+            }
+          ],
+          "type": "transformer"
+        },
+        "context": {
+          "target_layer_ids": [
+            1,
+            9,
+            17,
+            25,
+            33
+          ],
+          "type": "dflare"
+        },
+        "mask_token_id": 151669,
+        "objective": {
+          "type": "hard_ce"
+        },
+        "proposal": {
+          "loss_decay_gamma": 4.0,
+          "rank": 256,
+          "stop_gradient": false,
+          "top_k": 16,
+          "type": "selector"
+        }
+      }
+    }
+  }
+}

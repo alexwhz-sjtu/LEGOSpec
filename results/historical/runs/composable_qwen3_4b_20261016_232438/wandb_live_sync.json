@@ -1,0 +1,20 @@
+{
+  "pid": 25047,
+  "training_pid": 14645,
+  "run_id": "ivanjb7x",
+  "project": "spec-decoding",
+  "offline_directory": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/wandb/offline-run-20261016_160455-ivanjb7x",
+  "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_qwen3_4b_20261016_232438/wandb_live_sync.log",
+  "started_at": 1792167851.3977365,
+  "run_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/ivanjb7x",
+  "first_online_summary": {
+    "_step": 4800,
+    "detail/composable/micro_step": 4800,
+    "detail/composable/objective/loss": 0.383348673582077,
+    "train/loss": 0.383348673582077
+  },
+  "verified_at": 1792167988.8518832,
+  "last_verified_step": 4900,
+  "last_verified_loss": 0.4269903898239136,
+  "online_progress_verified": true
+}

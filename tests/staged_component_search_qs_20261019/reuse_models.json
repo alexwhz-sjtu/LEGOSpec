@@ -1,0 +1,14 @@
+[
+  {
+    "label": "reused_RNN_hard_ce_from_inf_final",
+    "proposal": "rnn",
+    "loss": "hard_ce",
+    "model": "/mnt/bd-1/task/339953/artifacts/LiteSpec/migrations/Inf_H800_2_20261019/current_rnn_ce/final"
+  },
+  {
+    "label": "reused_A4_parallel_hard_ce",
+    "proposal": "parallel",
+    "loss": "hard_ce",
+    "model": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/04_dflash_mha_parallel/checkpoints/final"
+  }
+]

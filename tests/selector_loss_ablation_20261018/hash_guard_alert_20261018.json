@@ -1,0 +1,133 @@
+{
+  "checked_at": "2026-10-18T03:29:44.336427+00:00",
+  "old_completed": [
+    {
+      "number": 1,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/01_dflash_mha_selector/checkpoints/final",
+      "metadata": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "wandb_state": "finished",
+      "summary": {
+        "_step": 59724,
+        "train/loss": 1.0126526355743408,
+        "detail/composable/hard_label/token_accuracy": 0.8923647403717041,
+        "train/walk_accepted_length": 6.690439224243164,
+        "train/expected_accept_len": 5.694431781768799
+      }
+    },
+    {
+      "number": 2,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/02_dflare_hybrid_rnn/checkpoints/final",
+      "metadata": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "wandb_state": "finished",
+      "summary": {
+        "_step": 59724,
+        "train/loss": 0.18104228377342224,
+        "detail/composable/hard_label/token_accuracy": 0.8300663232803345,
+        "train/walk_accepted_length": 5.661240100860596,
+        "train/expected_accept_len": 5.469361305236816
+      }
+    },
+    {
+      "number": 3,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/03_dflare_mha_selector/checkpoints/final",
+      "metadata": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "wandb_state": "finished",
+      "summary": {
+        "_step": 59724,
+        "train/loss": 1.0566229820251465,
+        "detail/composable/hard_label/token_accuracy": 0.883706271648407,
+        "train/walk_accepted_length": 6.611111164093018,
+        "train/expected_accept_len": 5.713028430938721
+      }
+    },
+    {
+      "number": 4,
+      "final": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/04_dflash_mha_parallel/checkpoints/final",
+      "metadata": {
+        "optimizer_step": 59724,
+        "phases": 1
+      },
+      "wandb_state": "finished",
+      "summary": {
+        "_step": 59724,
+        "train/loss": 0.7777765393257141,
+        "detail/composable/hard_label/token_accuracy": 0.8283618092536926,
+        "train/walk_accepted_length": 6.405942916870117,
+        "train/expected_accept_len": 5.41024923324585
+      }
+    }
+  ],
+  "drift_count": 120,
+  "drift_only_runtime_cache": true,
+  "source_and_config_hashes_unchanged": true,
+  "current": {
+    "pid": 242928,
+    "workers": [
+      242965,
+      242966,
+      242967,
+      242968,
+      242969,
+      242970,
+      242971,
+      242972
+    ],
+    "local_metrics": [
+      {
+        "step": 5850,
+        "loss": 2257.9258
+      },
+      {
+        "step": 5900,
+        "loss": 2660.2708
+      },
+      {
+        "step": 5950,
+        "loss": 2885.8237
+      }
+    ],
+    "wandb_state": "running",
+    "online_rows": [
+      {
+        "_step": 5700,
+        "train/loss": 1675.819091796875,
+        "detail/composable/hard_label/token_accuracy": 0.6352259516716003,
+        "train/walk_accepted_length": 4.29438591003418,
+        "train/expected_accept_len": 3.9945199489593506
+      },
+      {
+        "_step": 5750,
+        "train/loss": 2237.630615234375,
+        "detail/composable/hard_label/token_accuracy": 0.6266660094261169,
+        "train/walk_accepted_length": 4.372069835662842,
+        "train/expected_accept_len": 4.1301703453063965
+      },
+      {
+        "_step": 5800,
+        "train/loss": 1667.4891357421875,
+        "detail/composable/hard_label/token_accuracy": 0.7453591823577881,
+        "train/walk_accepted_length": 5.1415557861328125,
+        "train/expected_accept_len": 4.809970855712891
+      },
+      {
+        "_step": 5850,
+        "train/loss": 2257.92578125,
+        "detail/composable/hard_label/token_accuracy": 0.6349334716796875,
+        "train/walk_accepted_length": 4.3557024002075195,
+        "train/expected_accept_len": 4.137814521789551
+      }
+    ],
+    "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/0jib9iza",
+    "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/01_dflash_mha_selector_dpace/train.log",
+    "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/selector_base_loss_ablation_20261018_102428/01_dflash_mha_selector_dpace/checkpoints"
+  }
+}

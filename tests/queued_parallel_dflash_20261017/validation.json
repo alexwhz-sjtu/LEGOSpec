@@ -1,0 +1,13 @@
+{
+  "parameters": 537427200,
+  "proposal_parameters": 0,
+  "context": "HiddenMLPContext",
+  "proposal": "ParallelProposal",
+  "context_kv_shared": true,
+  "tiny_cpu_training_loss": 4.2952494621276855,
+  "tiny_backward_finite": true,
+  "selector_enabled": false,
+  "source_pid": 68803,
+  "source_output_detected": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/composable_selector_dflare_20261017_003949/checkpoints",
+  "recipe_diff_only": "composable_config.proposal.type: selector -> parallel"
+}

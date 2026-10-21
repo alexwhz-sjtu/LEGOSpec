@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-19T06:37:23.301000+00:00",
+  "reason": "User explicitly requested immediate backup and shutdown; no waiting for current training",
+  "job": {
+    "number": 5,
+    "label": "05_dflash_mha_parallel_dpace",
+    "pid": 419665,
+    "start_ticks": "2297586195",
+    "latest_metrics": [
+      {
+        "step": 5550,
+        "loss": 2301.0039
+      },
+      {
+        "step": 5600,
+        "loss": 2237.2019
+      },
+      {
+        "step": 5650,
+        "loss": 2394.426
+      }
+    ],
+    "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/staged_component_search_qs_20261019/05_dflash_mha_parallel_dpace/checkpoints",
+    "wandb_id": "da24cef9"
+  },
+  "workers": [
+    "419677",
+    "419678",
+    "419679",
+    "419680",
+    "419681",
+    "419682",
+    "419683",
+    "419684"
+  ],
+  "signal": "SIGTERM",
+  "no_intermediate_checkpoint": true,
+  "do_not_resume_automatically": true
+}

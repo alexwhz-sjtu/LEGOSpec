@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-17T17:22:17.234439+00:00",
+  "completed": {
+    "number": 1,
+    "final_checkpoint": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/01_dflash_mha_selector/checkpoints/final",
+    "completion": {
+      "optimizer_step": 59724,
+      "phases": 1
+    },
+    "wandb_state": "finished",
+    "last_metrics": {
+      "train/loss": 1.0126526355743408,
+      "detail/composable/hard_label/token_accuracy": 0.8923647403717041,
+      "train/walk_accepted_length": 6.690439224243164,
+      "train/expected_accept_len": 5.694431781768799
+    }
+  },
+  "started": {
+    "number": 2,
+    "pid": 166869,
+    "workers": [
+      166906,
+      166907,
+      166908,
+      166909,
+      166910,
+      166911,
+      166912,
+      166913
+    ],
+    "local_metrics": [
+      {
+        "step": 2000,
+        "loss": 1.0014
+      },
+      {
+        "step": 2050,
+        "loss": 0.7907
+      },
+      {
+        "step": 2100,
+        "loss": 0.838
+      }
+    ],
+    "online_metrics": [
+      {
+        "_step": 1950,
+        "train/loss": 1.0495225191116333,
+        "detail/composable/hard_label/token_accuracy": 0.4751015901565552,
+        "train/walk_accepted_length": 2.9631900787353516,
+        "train/expected_accept_len": 2.6173651218414307
+      },
+      {
+        "_step": 2000,
+        "train/loss": 1.001434087753296,
+        "detail/composable/hard_label/token_accuracy": 0.45182883739471436,
+        "train/walk_accepted_length": 2.8443381786346436,
+        "train/expected_accept_len": 2.5485684871673584
+      },
+      {
+        "_step": 2050,
+        "train/loss": 0.7907005548477173,
+        "detail/composable/hard_label/token_accuracy": 0.5434666872024536,
+        "train/walk_accepted_length": 3.33442759513855,
+        "train/expected_accept_len": 2.9852559566497803
+      }
+    ],
+    "wandb_url": "https://wandb.ai/alex-wang_sjtu-sjtu/spec-decoding/runs/17a6qmx6",
+    "log": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/02_dflare_hybrid_rnn/train.log",
+    "checkpoint_dir": "/mnt/bd-1/task/339953/artifacts/LiteSpec/runs/retrain_1234_metrics_v2_20261017_220434/02_dflare_hybrid_rnn/checkpoints"
+  }
+}
