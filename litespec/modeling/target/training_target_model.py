@@ -316,7 +316,7 @@ class SGLangTrainingTargetModel(TrainingTargetModel):
         return tuple(layers)
 
     @torch.no_grad
-    def _extend(self, reqs, *, return_logits: bool):
+    def _extend(self, reqs, *, return_logits: bool, packed_capture: bool = False):
         from sglang.srt.managers.schedule_batch import ScheduleBatch
         from sglang.srt.managers.scheduler import Scheduler
         from sglang.srt.mem_cache.cache_init_params import CacheInitParams
@@ -379,6 +379,12 @@ class SGLangTrainingTargetModel(TrainingTargetModel):
         output = self._unpack_runner_output(runner_output)
 
         input_lens = [len(req.origin_input_ids) for req in reqs]
+        if packed_capture:
+            if output.aux_hidden_states is None or output.last_hidden_states is None:
+                raise ValueError("Packed capture requires intermediate and final hidden states")
+            self.model_runner.req_to_token_pool.clear()
+            self.model_runner.token_to_kv_pool_allocator.clear()
+            return output.aux_hidden_states, output.last_hidden_states, input_lens
         last_hidden_list = None
         if (
             hasattr(output, "aux_hidden_states")
@@ -522,6 +528,43 @@ class SGLangTrainingTargetModel(TrainingTargetModel):
             attention_mask=attention_mask,
             loss_mask=loss_mask,
         )
+
+
+    @torch.inference_mode()
+    def generate_capture_data(self, records):
+        """Capture valid tokens directly, without padded GPU-to-CPU token copies.
+
+        This entrypoint is only used by the offline collector. The existing
+        dense training interface and its return contract remain unchanged.
+        """
+        from types import SimpleNamespace
+        from sglang.srt.managers.schedule_batch import Req
+        from sglang.srt.sampling.sampling_params import SamplingParams
+
+        requests=[]
+        sampling=SamplingParams(temperature=0,max_new_tokens=1)
+        for record in records:
+            ids=record["input_ids"].reshape(-1).tolist()
+            request=Req(rid=str(record["source_index"]),origin_input_text="",
+                        origin_input_ids=ids,sampling_params=sampling)
+            request.fill_ids=request.origin_input_ids
+            request.extend_input_len=len(ids)-len(request.prefix_indices)
+            requests.append(request)
+        aux,last,lengths=self._extend(requests,return_logits=False,packed_capture=True)
+        hidden_size=self.model_runner.model_config.hidden_size
+        final_id=self.model_runner.model_config.num_hidden_layers-1
+        intermediate=[i for i in self.capture_layer_ids if i<final_id]
+        if aux.shape!=(sum(lengths),len(intermediate)*hidden_size):
+            raise ValueError(f"Unexpected packed intermediate shape {tuple(aux.shape)}")
+        if last.shape!=(sum(lengths),hidden_size):
+            raise ValueError(f"Unexpected final hidden shape {tuple(last.shape)}")
+        viewed=aux.view(sum(lengths),len(intermediate),hidden_size)
+        layers={layer:viewed[:,column,:] for column,layer in enumerate(intermediate)}
+        layers[final_id]=last
+        offsets=[0]
+        for length in lengths:offsets.append(offsets[-1]+length)
+        return SimpleNamespace(hidden_states=layers,packed=True,token_offsets=offsets,
+                               packed_aux=aux,packed_last=last)
 
 
 class HFTrainingTargetModel(TrainingTargetModel):

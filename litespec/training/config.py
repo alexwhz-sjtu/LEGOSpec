@@ -71,6 +71,12 @@ def add_common_args(parser: argparse.ArgumentParser) -> None:
         "--train-hidden-states-path",
         help="Offline regen_full cache directory. Mutually exclusive with --train-data-path.",
     )
+    data.add_argument(
+        "--verify-hidden-cache-checksums",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Opt in to a full shard SHA256 readback before offline training (default: off).",
+    )
     data.add_argument("--chat-template", default="qwen")
     data.add_argument(
         "--is-preformatted", action=argparse.BooleanOptionalAction, default=False

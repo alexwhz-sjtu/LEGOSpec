@@ -472,7 +472,9 @@ def valid_final_shards(
                 break
             if metadata.get("success_start") != expected_start:
                 break
-            if metadata["sample_count"] != shard_size:
+            if metadata["sample_count"] != shard_size and not (
+                metadata.get("final_partial") and 0 < metadata["sample_count"] < shard_size
+            ):
                 break
         except Exception:
             break
@@ -609,7 +611,7 @@ def finalize_staging(
                 "sample_metadata": item.metadata["sample_metadata"],
                 "success_start": item.metadata["success_start"],
                 "success_end": item.metadata["success_end"],
-                "sha256": sha256_file(item.path),
+                "sha256": item.path.with_name(f"{item.path.name}.sha256").read_text().strip(),
             }
             for item in final_shards
         ],
@@ -903,6 +905,7 @@ def run_generation(args: argparse.Namespace) -> dict[str, Any] | None:
                     "chat_template": args.chat_template,
                     "model": args.target_model_path,
                     "preformatted": args.is_preformatted,
+                    "num_samples": args.num_samples,
                 },
                 sort_keys=True,
             ).encode()

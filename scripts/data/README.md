@@ -143,3 +143,57 @@ positions. Offline mode requires `--tp-size 1` and does not support
 The shell launchers use `TRAIN_DATA_PATH` for online mode or
 `TRAIN_HIDDEN_STATES_PATH` for offline mode. These environment variables are
 mutually exclusive.
+
+
+## Optimized offline capture and raw-tar training
+
+The optimized entry point is independent of local experiment directories. Its
+compatibility defaults remain synchronous `tar-v2`. The production configuration
+used for Qwen3-4B captures BF16 layers 1, 9, 17, 25, 33 and the final normalized
+layer 35, retaining original responses and max_length=4096:
+
+```bash
+python -m torch.distributed.run --nproc-per-node=2 --master-port=29679 \
+  -m scripts.data.capture_hidden_states \
+  --target-model-path /path/to/Qwen3-4B --target-model-backend sglang \
+  --sglang-attention-backend fa3 --tp-size 1 --batch-size 4 \
+  --data-path /path/to/data/training/answers.jsonl \
+  --output-path /path/to/data/hidden/full80k/cache \
+  --cache-dir /path/to/data/preprocessed/capture --max-length 4096 \
+  --capture-mode async --cache-format tar-raw-v1 --packed-requests \
+  --tar-stream-sha --tar-async-commit --tar-shard-bytes 2147483648 \
+  --pipeline-depth 2 --writer-workers 2 --max-pending-bytes 8589934592 \
+  --fail-on-error
+```
+
+Raw members store tensor descriptors and exact tensor bytes inside ordinary
+uncompressed tar shards. They avoid per-sample hidden clones and `torch.save`
+packing. Each rank publishes its own final shards plus a unified sample index;
+training ranks use the distributed sampler rather than owning capture-rank files.
+The writer retains buffers until writes finish and propagates asynchronous errors.
+Use `--resume` only with the same input/model/capture identity; already committed
+shards are verified on resume, and only uncommitted samples are recaptured.
+
+SHA256 is computed while writing; fsync and atomic data/index publication remain.
+This entry point does not perform an additional full-dataset readback after
+capture. Optional `--profiling-output /path/to/data/profiling/run1` writes CPU/CUDA
+timing outside the cache. Do not put datasets, checkpoints or profiling artifacts
+in test/tests directories.
+
+The training reader supports `tar-v2`, `tar-indexed-v2`, and `tar-raw-v1` with the
+same tokens, masks and hidden fields. Start from
+`scripts/config/offline_dflare_parallel_ce.yaml` or
+`scripts/config/offline_dflare_parallel_ce_tv.yaml`, replace `/path/to` paths,
+then run:
+
+```bash
+python -m scripts.config.launch_composable \
+  --config scripts/config/offline_dflare_parallel_ce.yaml
+```
+
+Both templates use two GPUs, batch4 per GPU, accumulation1 (global batch8),
+512 total anchors, objective_chunk_blocks256, max_length4096 and six epochs.
+The CE+TV template keeps the original 0.1 CE / 0.9 TV weighting. Training validates
+manifest/index structure and sample tensors, but full shard checksum readback is
+off by default. Opt in with `verify_hidden_cache_checksums: true` or
+`--verify-hidden-cache-checksums` when explicitly needed.
