@@ -5,6 +5,9 @@ from .kl import ForwardKLObjective
 from .nla import NLAObjective
 from .soft_ce import SoftCEObjective
 from .tv import TVObjective
+from .l1 import L1Objective
+from .tv_survival import TVSurvivalObjective
+from .opd_survival import OPDSurvivalObjective
 from .weighted_sum import WeightedSumObjective
 
 OBJECTIVES = {
@@ -12,6 +15,9 @@ OBJECTIVES = {
     "soft_ce": SoftCEObjective,
     "forward_kl": ForwardKLObjective,
     "tv": TVObjective,
+    "l1": L1Objective,
+    "tv_survival": TVSurvivalObjective,
+    "opd_survival": OPDSurvivalObjective,
     "nla": NLAObjective,
     "lk_alpha": NLAObjective,
     "dpace": DPACEObjective,

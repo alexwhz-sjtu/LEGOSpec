@@ -115,11 +115,21 @@ def tensor_bytes(value):
 
 
 @dataclass
+class OPDReplayMetadata:
+    accepted_lengths: dict[str, torch.Tensor]
+    rng_state: dict
+
+
+@dataclass
 class PreparedLogicalBatch:
     data: object
     layout: BlockLayout
     window_denominators: torch.Tensor
     spill_path: Optional[str] = None
+    opd_metadata: Optional[dict] = None
+    opd_component_denominators: Optional[dict] = None
+    opd_reference_samples: Optional[torch.Tensor] = None
+    opd_inputs_prepared: bool = False
 
     def materialize(self):
         if self.spill_path and self.data is None:

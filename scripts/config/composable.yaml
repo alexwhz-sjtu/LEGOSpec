@@ -47,7 +47,6 @@ arguments:
   muon_adamw_lr: 0.0006
   muon_adamw_weight_decay: 0.0
   seed: 42
-  selector_loss_alpha: 1.0
   objective_chunk_blocks: 512
   cache_dir: /data/temp/LiteSpec_exp/cache/train
   build_dataset_num_proc: 128

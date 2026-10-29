@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-23T02:56:23.464960+00:00",
+  "valid_report_copies": 34,
+  "target_hashes_match": true,
+  "manifest_hashes_match": true,
+  "verifier_engine_sha256": "1953aa96b2e27ec7937a5a7adb4dfa148cd7c45dcc92745ff6a8c70b540dc7b2",
+  "verifier_engine_identical": true,
+  "top_p_protocol_match": true,
+  "torch_builds": [
+    "2.9.1+cu128",
+    "2.9.1+cu130"
+  ],
+  "note": "Historical CUDA12.8 and H800 CUDA13 builds retained as recorded; model/config/target/manifest and verifier identities match. No original results overwritten."
+}

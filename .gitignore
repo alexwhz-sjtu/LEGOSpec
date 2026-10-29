@@ -255,3 +255,13 @@ private/
 **/inductor-cache/
 **/triton-cache/
 **/processed_dataset/
+
+# Local experiments, datasets, diagnostics and macOS metadata
+/test/
+/tests/
+/data/
+/output/
+*.jsonl
+*.nsys-rep
+*.sqlite
+._*

@@ -22,14 +22,14 @@ class SGLangBackendArgs:
 
     @staticmethod
     def add_args(parser: argparse.ArgumentParser) -> None:
-        from sglang.srt.server_args import ATTENTION_BACKEND_CHOICES
+        # SGLang validates its backend when constructed. Keep offline/HF CLI
+        # parsing independent of optional SGLang runtime imports.
 
         # sglang arguments
         parser.add_argument(
             "--sglang-attention-backend",
             type=str,
             default="flashinfer",
-            choices=ATTENTION_BACKEND_CHOICES,
             help="The attention backend of SGLang backend",
         )
         parser.add_argument(

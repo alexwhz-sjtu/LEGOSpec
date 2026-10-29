@@ -71,6 +71,12 @@ def add_common_args(parser: argparse.ArgumentParser) -> None:
         "--train-hidden-states-path",
         help="Offline regen_full cache directory. Mutually exclusive with --train-data-path.",
     )
+    data.add_argument(
+        "--verify-hidden-cache-checksums",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Opt in to a full shard SHA256 readback before offline training (default: off).",
+    )
     data.add_argument("--chat-template", default="qwen")
     data.add_argument(
         "--is-preformatted", action=argparse.BooleanOptionalAction, default=False
@@ -107,6 +113,13 @@ def add_common_args(parser: argparse.ArgumentParser) -> None:
         type=int,
         default=1,
         help="Maximum same-shape matrices per compute rank in each Muon batch.",
+    )
+    train.add_argument(
+        "--muon-mla-per-head",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Use per-head Muon for MLA Q and separate K/V up-projections; "
+             "disable to reproduce whole-matrix updates. GQA/MHA are unchanged.",
     )
     train.add_argument("--muon-adamw-lr", type=float, default=0.0004)
     train.add_argument("--muon-adamw-weight-decay", type=float, default=0.1)

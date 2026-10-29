@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import math
 import random
@@ -58,9 +59,9 @@ def load_hidden_cache_manifest(
     except (OSError, json.JSONDecodeError) as exc:
         raise HiddenCacheError(f"cannot read regen_full manifest: {exc}") from exc
 
-    if manifest.get("schema_version") != REGEN_FULL_SCHEMA_VERSION:
+    if manifest.get("schema_version") not in (REGEN_FULL_SCHEMA_VERSION, 3):
         raise HiddenCacheError(
-            f"regen_full schema must be {REGEN_FULL_SCHEMA_VERSION}; regenerate the cache"
+            "regen_full schema must be 2 or 3; regenerate the cache"
         )
     if manifest.get("save_mode") != "regen_full" or not manifest.get("complete"):
         raise HiddenCacheError("regen_full cache is not marked complete")
@@ -126,12 +127,36 @@ def load_hidden_cache_manifest(
             )
         for value in sample_metadata:
             _validate_sample_metadata(value, path)
+        if manifest.get("cache_format") in ("tar-indexed-v2", "tar-raw-v1"):
+            names = shard.get("member_names", [])
+            ranges = shard.get("member_ranges", [])
+            if len(names) != count or len(ranges) != count or len(set(names)) != count:
+                raise HiddenCacheError(f"invalid indexed tar members: {path}")
+            previous_end = 0
+            file_size = path.stat().st_size
+            for name, span, source in zip(names, ranges, source_indices):
+                extension = "bin" if manifest.get("cache_format") == "tar-raw-v1" else "pt"
+                if name != f"samples/{int(source):012d}.{extension}" or not isinstance(span, list) or len(span) != 2:
+                    raise HiddenCacheError(f"invalid indexed tar entry: {path}")
+                offset, size = span
+                if not all(isinstance(v, int) for v in span) or offset % 512 or offset < previous_end or size <= 0 or offset + size > file_size:
+                    raise HiddenCacheError(f"invalid indexed tar byte range: {path}")
+                previous_end = offset + size
+        if manifest.get("schema_version") == 3:
+            offsets = shard.get("token_offsets", [])
+            if len(offsets) != count + 1 or offsets[0] != 0:
+                raise HiddenCacheError(f"invalid packed token offsets: {path}")
+            if any(b-a != row["sequence_length"] for a,b,row in zip(offsets,offsets[1:],sample_metadata)):
+                raise HiddenCacheError(f"packed lengths disagree with sample metadata: {path}")
         if verify_checksums and _sha256(path) != shard.get("sha256"):
             raise HiddenCacheError(f"regen_full shard checksum mismatch: {path}")
         expected_start = end + 1
         counted += count
     if counted != int(manifest.get("successful_samples", -1)):
         raise HiddenCacheError("regen_full successful sample count is inconsistent")
+    indices = [i for shard in shards for i in shard["source_indices"]]
+    if len(set(indices)) != len(indices):
+        raise HiddenCacheError("regen_full contains duplicate source indices")
     return manifest
 
 
@@ -213,6 +238,7 @@ class RegenFullDataset(Dataset):
         self.max_length = int(max_length)
         self.max_open_archives = max(1, int(max_open_archives))
         self.entries: list[tuple[Path, str, int, dict[str, Any]]] = []
+        self._member_ranges = {}
         for shard in manifest["shards"]:
             path = self.root / shard["path"]
             start = int(shard["success_start"])
@@ -223,12 +249,17 @@ class RegenFullDataset(Dataset):
                 self.entries.append(
                     (
                         path,
-                        f"samples/{ordinal:012d}.pt",
+                        str(shard["token_offsets"][offset]) if manifest.get("schema_version") == 3 else shard["member_names"][offset] if manifest.get("cache_format") in ("tar-indexed-v2", "tar-raw-v1") else f"samples/{ordinal:012d}.pt",
                         int(source_index),
                         sample_metadata,
                     )
                 )
-        self._archives: OrderedDict[Path, tarfile.TarFile] = OrderedDict()
+            if manifest.get("cache_format") in ("tar-indexed-v2", "tar-raw-v1"):
+                for name, span in zip(shard["member_names"], shard["member_ranges"]):
+                    self._member_ranges[(path, name)] = span
+        if manifest.get("schema_version") == 3 or manifest.get("cache_format") in ("tar-indexed-v2", "tar-raw-v1"):
+            self.entries.sort(key=lambda value: value[2])
+        self._archives: OrderedDict[Path, Any] = OrderedDict()
 
     def __getstate__(self):
         state = dict(self.__dict__)
@@ -248,7 +279,7 @@ class RegenFullDataset(Dataset):
         return len(self.entries)
 
     def _load_payload(self, index: int) -> dict[str, Any]:
-        path, member_name, source_index, _ = self.entries[index]
+        path, member_name, source_index, metadata = self.entries[index]
         archive = self._archives.get(path)
         if archive is None:
             if len(self._archives) >= self.max_open_archives:
@@ -256,16 +287,40 @@ class RegenFullDataset(Dataset):
                 stale.close()
             # Reused per worker; the LRU bound prevents persistent workers from
             # eventually holding one descriptor for every shard.
-            archive = tarfile.open(path, "r:*")  # noqa: SIM115
+            if self.manifest.get("schema_version") == 3:
+                from .hidden_v3 import BlockArchive
+                archive = BlockArchive(path)
+            elif self.manifest.get("cache_format") in ("tar-indexed-v2", "tar-raw-v1"):
+                archive = path.open("rb")
+            else:
+                archive = tarfile.open(path, "r:*")  # noqa: SIM115
             self._archives[path] = archive
         else:
             self._archives.move_to_end(path)
+        if self.manifest.get("schema_version") == 3:
+            return archive.payload(int(member_name), metadata["sequence_length"], source_index)
+        if self.manifest.get("cache_format") == "tar-raw-v1":
+            from .hidden_tar_raw import load_raw
+            offset, size = self._member_ranges[(path, member_name)]
+            payload = load_raw(archive, offset, size)
+            if payload["sample_index"] != source_index:
+                raise HiddenCacheError("Raw member source index mismatch")
+            return payload
         try:
-            member = archive.getmember(member_name)
-            handle = archive.extractfile(member)
-            if handle is None:
-                raise HiddenCacheError(f"cannot read {member_name} from {path}")
-            payload = torch.load(handle, map_location="cpu", weights_only=True)
+            if self.manifest.get("cache_format") in ("tar-indexed-v2", "tar-raw-v1"):
+                offset, size = self._member_ranges[(path, member_name)]
+                archive.seek(offset)
+                data = archive.read(size)
+                if len(data) != size:
+                    raise HiddenCacheError(f"truncated indexed member {member_name}")
+                handle = io.BytesIO(data)
+            else:
+                member = archive.getmember(member_name)
+                handle = archive.extractfile(member)
+                if handle is None:
+                    raise HiddenCacheError(f"cannot read {member_name} from {path}")
+            with handle:
+                payload = torch.load(handle, map_location="cpu", weights_only=True)
         except (KeyError, OSError, RuntimeError, tarfile.TarError) as exc:
             raise HiddenCacheError(
                 f"cannot load {member_name} from {path}: {exc}"
@@ -342,7 +397,9 @@ class RegenFullDataset(Dataset):
 
 
 class ShardAwareDistributedSampler(Sampler[int]):
-    """Shuffle by shard while giving each DP rank a mostly contiguous shard slice."""
+    """Shuffle shards and their members; keep each shard grouped for locality."""
+
+    ORDER_VERSION = 2
 
     def __init__(
         self,
@@ -380,9 +437,10 @@ class ShardAwareDistributedSampler(Sampler[int]):
         if self.shuffle:
             generator = random.Random(self.seed + self.epoch)
             generator.shuffle(shard_keys)
-            # Preserve member order inside each tar. This avoids random seeks (and
-            # repeated decompression for .tar.gz) while still changing shard order
-            # deterministically every epoch.
+            # Every rank constructs the same epoch permutation before slicing.
+            # Shards stay grouped, but members no longer follow source order.
+            for key in shard_keys:
+                generator.shuffle(groups[key])
         values = [index for key in shard_keys for index in groups[key]]
         if values and len(values) < self.total_size:
             values += [

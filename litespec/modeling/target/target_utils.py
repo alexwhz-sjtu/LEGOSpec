@@ -142,6 +142,24 @@ class SharedTargetEmbeddingsAndHead(nn.Module):
         self.lm_head = lm_head
 
 
+class FlattenedLMHead(nn.Linear):
+    """Project all token axes with one GEMM, including sliced proposal blocks.
+
+    Keep Linear's parameters/state keys and gradients while matching the online
+    TP adapter's contiguous two-dimensional projection input.
+    """
+
+    def forward(self, input: torch.Tensor) -> torch.Tensor:
+        if input.ndim == 0 or input.size(-1) != self.in_features:
+            raise ValueError(
+                f"Expected final hidden dimension {self.in_features}, "
+                f"got shape {tuple(input.shape)}."
+            )
+        output_shape = (*input.shape[:-1], self.out_features)
+        flat_hidden = input.reshape(-1, self.in_features).contiguous()
+        return F.linear(flat_hidden, self.weight, self.bias).reshape(output_shape)
+
+
 class TargetEmbeddingsAndHead(nn.Module):
     """
     Efficiently loads only the embedding layer and lm_head from a pretrained model.
@@ -159,7 +177,7 @@ class TargetEmbeddingsAndHead(nn.Module):
             padding_idx=getattr(text_config, "pad_token_id", None),
         )
 
-        self.lm_head = nn.Linear(
+        self.lm_head = FlattenedLMHead(
             text_config.hidden_size, text_config.vocab_size, bias=False
         )
 

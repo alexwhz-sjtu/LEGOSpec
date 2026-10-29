@@ -27,6 +27,10 @@ class DraftLayer(nn.Module):
                 "rope_interleave",
             ):
                 setattr(local, key, value)
+            elif recipe["attention"]["representation"] in ("mha", "gqa", "mla") and key in (
+                "num_attention_heads", "num_key_value_heads", "head_dim",
+            ):
+                setattr(local, key, value)
         local.rope_parameters = deepcopy(
             getattr(local, "rope_parameters", None)
             or local.rope_scaling
@@ -76,6 +80,9 @@ class DraftLayer(nn.Module):
         draft_hidden_states = self.self_attn(
             draft_hidden_states, context_hidden_states, embeddings, inputs
         )
+        teacher = None
+        if isinstance(draft_hidden_states, tuple):
+            draft_hidden_states, teacher = draft_hidden_states
         if self.attention_conv is not None:
             draft_hidden_states = self.attention_conv.finish(
                 draft_hidden_states, coefficients
@@ -92,4 +99,5 @@ class DraftLayer(nn.Module):
             draft_hidden_states = self.mlp_conv.finish(
                 draft_hidden_states, coefficients
             )
-        return residual + draft_hidden_states
+        hidden = residual + draft_hidden_states
+        return (hidden, teacher) if inputs.selection is not None else hidden

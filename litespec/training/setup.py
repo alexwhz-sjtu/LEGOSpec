@@ -150,7 +150,9 @@ def build_hidden_cache_dataloader(args, tokenizer, *, required_layer_ids: set[in
     target_config = load_text_model_config(
         args.target_model_path, trust_remote_code=args.trust_remote_code
     )
-    verify = not dist.is_initialized() or dist.get_rank() == 0
+    verify = bool(getattr(args, "verify_hidden_cache_checksums", False)) and (
+        not dist.is_initialized() or dist.get_rank() == 0
+    )
     manifest = load_hidden_cache_manifest(
         args.train_hidden_states_path,
         target_model=args.target_model_path,
@@ -225,7 +227,8 @@ def training_data_identity(args) -> str:
         with open(manifest_path, "rb") as handle:
             for chunk in iter(lambda: handle.read(1024 * 1024), b""):
                 digest.update(chunk)
-        identity = f"{identity}#manifest_sha256={digest.hexdigest()}"
+        identity = (f"{identity}#manifest_sha256={digest.hexdigest()}"
+                    f"#sampler_order_version={ShardAwareDistributedSampler.ORDER_VERSION}")
     return identity
 
 

@@ -16,6 +16,25 @@ class ParameterSpec:
     name: str
     shape: tuple[int, ...]
     optimizer: str
+    # Output rows are packed as [head, *head_dims, input]. Empty means whole matrix.
+    muon_heads: int = 0
+    muon_head_dims: tuple[int, ...] = ()
+
+    def __post_init__(self):
+        if self.muon_heads == 0 and not self.muon_head_dims:
+            return
+        if (
+            self.optimizer != "muon"
+            or len(self.shape) != 2
+            or isinstance(self.muon_heads, bool)
+            or not isinstance(self.muon_heads, int)
+            or self.muon_heads < 1
+            or not self.muon_head_dims
+            or any(isinstance(d, bool) or not isinstance(d, int) or d < 1
+                   for d in self.muon_head_dims)
+            or self.muon_heads * sum(self.muon_head_dims) != self.shape[0]
+        ):
+            raise ValueError(f"Invalid Muon head layout: {self.name}")
 
 
 @dataclass(frozen=True)
@@ -36,7 +55,12 @@ class ParameterLayout:
             raise ValueError(f"Shards do not cover {self.spec.name}: {self.shards}")
 
     def state_dict(self):
-        return asdict(self)
+        state = asdict(self)
+        if not self.spec.muon_heads:
+            # Keep whole-matrix layouts compatible with pre-headwise checkpoints.
+            state["spec"].pop("muon_heads")
+            state["spec"].pop("muon_head_dims")
+        return state
 
 
 def local_layouts(specs):

@@ -1,9 +1,7 @@
-from .transformer import TransformerBackbone
-
-BACKBONES = {"transformer": TransformerBackbone}
+from .layer_stack import LayerStackBackbone
 
 
 def build_backbone(config):
-    return BACKBONES[config.composable_config["backbone"].get("type", "transformer")](
-        config
-    )
+    if config.composable_config["backbone"]["type"] != "layer_stack":
+        raise ValueError("Only v3 layer_stack is supported")
+    return LayerStackBackbone(config)

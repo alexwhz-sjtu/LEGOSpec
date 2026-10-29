@@ -20,3 +20,6 @@ class TrainingOutput:
     loss_terms: RatioTerms
     ratio_metrics: dict[str, RatioTerms] = field(default_factory=dict)
     sum_metrics: dict[str, torch.Tensor] = field(default_factory=dict)
+    # Optional native terms whose means have independent global denominators.
+    # The composable wrapper combines them once over the optimizer window.
+    component_terms: dict[str, RatioTerms] = field(default_factory=dict)

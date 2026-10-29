@@ -93,7 +93,12 @@ anchor positions. Offline mode requires `TP_SIZE=1` and
 `shard_draft_by_tp: false`; torchrun workers then operate as data-parallel ranks.
 Current caches also contain a compact per-sample loss-mask index. Startup
 filters invalid samples from this JSON metadata without opening any sample
-tensor member. Training then reads samples in shard-aware order, keeps worker
+tensor member. Each epoch shuffles both shard order and member order within
+each shard using seed + epoch; shards remain grouped for I/O locality. This
+adds random seeks, and compressed tar archives may require repeated decompression;
+uncompressed tar-raw-v1 supports indexed offset reads. The sampler order version
+is part of the offline training identity, so old-order checkpoints cannot silently
+resume with a different sample stream. Training keeps worker
 tar handles alive with a bounded LRU, pins collated CPU tensors, and performs
 non-blocking GPU transfers. Schema-v2 caches created before the lightweight
 index was added must be regenerated.
@@ -322,3 +327,126 @@ only where their losses require them.
 Disaggregated execution accepts `launcher.train_data` only. It is incompatible
 with `launcher.train_hidden_states` and `shard_draft_by_tp: true`; `regen_full`
 keeps using the ordinary offline DP/FSDP path.
+
+
+### Offline TV plus prefix survival
+
+The composable `tv_survival` objective trains from fixed teacher-forced data and
+requires frozen target logits (for offline training, include final hidden states
+in the hidden cache). It adds no confidence head or confidence loss. Its recipe is:
+
+```json
+{"type": "tv_survival", "survival_weight": 1.0}
+```
+
+For each complete supervised block with K predictions, it minimizes
+`mean(TV) + survival_weight * mean(1 - cumprod(1 - TV))`, where standard
+`TV = 0.5 * sum(abs(p - q))`. Composable `tv` uses this standard scale;
+`l1` is the full distribution distance. Historical full-distance `tv` recipes
+have been renamed to `l1` without changing their coefficients. `survival_weight`
+must be finite and nonnegative; zero gives standard TV on complete blocks.
+This block objective ignores fixed position decay, while a sibling Selector
+base/final token objective may use the shared outer gamma.
+
+`block_size` includes the anchor, so K is `block_size - 1`. Anchors are sampled
+only when the entire block is supervised; incomplete and padding blocks do not
+contribute. Both terms share the additive denominator `valid_blocks * K`, so
+whole-block objective chunking, microbatches, and distributed accumulation use
+the same normalization. Empty chunks produce zero additive terms. A completely
+empty optimizer window still follows the runner's existing rejection behavior.
+Probabilities, TV, and prefix products are computed in FP32. Teacher logits are
+detached; draft probabilities and every prefix factor retain gradients.
+
+Copy or edit `scripts/config/offline_dflare_parallel_tv_survival.yaml` for your
+paths, GPU count and output directory, then launch:
+
+```bash
+bash scripts/composable/run_training_composable.sh \
+  scripts/config/offline_dflare_parallel_tv_survival.yaml
+```
+
+To change the loss of a compatible existing checkpoint, add
+`--init-from /path/to/checkpoint`. Use `--resume-from` only to resume the same
+experiment: resume loads the checkpoint's stored model/objective configuration.
+The supplied parallel proposal has no confidence head. The shared target LM
+head and embeddings remain frozen under the existing training setup.
+
+Logs expose `objective/final`, `final/tv_survival/tv`, and
+`final/tv_survival/survival` (or the corresponding `base/` metrics).
+Each branch has its own native denominator; the configured branch weights
+are applied after normalization.
+On fixed data, the prefix product is a surrogate, not an on-policy lower-bound
+guarantee for actual accepted length. Compare pure TV and TV plus survival from
+the same initialization using actual acceptance evaluation.
+
+Run its math, checkpoint/chunk and accumulation checks without pytest:
+
+```bash
+python -m unittest discover -s tests -p 'test_tv_survival.py' -v
+```
+
+
+## Composable loss contract v2
+
+These rules apply only to algorithm=composable. Independent DFlash/DFlash2,
+DSpark, and DLite training interfaces are unchanged.
+
+Selector training uses objective.type=selector_losses with independently
+configurable base and final objectives and weights (defaults: base hard_ce/0.1,
+final hard_ce/1.0). There is no candidate-only auxiliary CE training term.
+Both branches support hard_ce, soft_ce, forward_kl, tv, l1, nla/lk_alpha,
+weighted_sum, dpace, bv, and tv_survival. See configs/README.md for the recipe.
+
+TV is half the distribution L1 distance. All token objectives, including NLA,
+use sum(mask*decay*loss)/sum(mask*decay). objective.loss_decay_gamma defaults
+to 4.0; explicit null disables it; other values must be finite and positive.
+The position offset starts at zero after each block anchor. Branch/component
+gamma overrides and proposal.loss_decay_gamma are rejected. Block objectives
+ignore fixed decay. D-PACE, BV and TV-survival require complete supervised
+blocks (including a supervised anchor, although the anchor itself has no loss).
+D-PACE retains its detached credit formula but averages over the global count
+of complete blocks, not the original sequence batch size. Its resolved recipe
+records reduction=complete_block_mean; legacy D-PACE states must use init_from
+with a new training run rather than silently resume under this normalization.
+Zero-weight branches introduce
+no teacher, complete-block, or BV sampling-provenance requirements.
+
+Selector still forms all top-K-by-top-K transition scores before selecting a
+path. Missing predecessors use the full base distribution; both losses remain
+supervised, including current gold labels outside top-K. A missing predecessor
+zeros that slot's correction and its Selector gradient, not either loss.
+Detailed teacher acceptance metrics are emitted only when teacher final hidden
+states are available; teacher-free objectives do not require them for logging.
+
+Only historical candidate-only inference is retained. New training rejects old
+CE-specific CLI weights/warmup/ramp with a migration message; loss weights now
+live in objective.base/final.weight. Checkpoints record loss_contract_version=2
+and the resolved configuration. Old training states cannot resume under changed
+loss semantics; use init_from with a migrated recipe for a new training run.
+Frozen experiments and their original results are not rewritten.
+
+
+### MLA per-head Muon
+
+New Muon runs default to `--muon-mla-per-head`. Only MLA attention projections
+are affected; GQA/MHA and other components keep whole-matrix Muon.
+
+- Direct `q_proj`, or low-rank `q_b_proj`: independent matrices per query head,
+  including that head's concatenated NoPE/RoPE dimensions.
+- `kv_b_proj` and DFlare `context_kv_b_proj`: independent K and V matrices per
+  head, respecting their interleaved physical packing and potentially unequal widths.
+- Shared `q_a_proj`, `kv_a_proj_with_mqa`, context down-projections, and `o_proj`
+  keep whole-matrix updates. Normalization, forward computations, and weights are unchanged.
+
+Muon shape-dependent LR scaling uses each logical head matrix's dimensions,
+not the dimensions of the original packed projection. Momentum and FP32 master
+weights remain sharded in the original layout. Head geometry is registered from
+the actual attention modules before FSDP wrapping, included in optimizer state,
+and checked on resume. Changing this policy is a new optimizer recipe; optimizer
+checkpoints with a different configuration or geometry are rejected.
+
+Use `--no-muon-mla-per-head` (YAML `muon_mla_per_head: false`) to select
+whole-matrix updates. Existing whole-matrix GQA/MHA optimizer checkpoints remain
+compatible; old MLA checkpoints are not silently migrated to the new per-head recipe.
+The frozen `tests/round1_training_20261026/source` and its training queue retain
+the original recipe; changing the working source does not update that snapshot.

@@ -9,6 +9,7 @@ from torch import nn
 from litespec.core.outputs import RatioTerms, TrainingOutput
 
 from ..batch import position_weights
+from litespec.modeling.draft.composable.loss_config import normalize_objective
 
 
 @dataclass
@@ -18,15 +19,17 @@ class Supervision:
     target_logits: Optional[torch.Tensor] = None
     sample_prediction_counts: Optional[torch.Tensor] = None
     epoch_progress: float = 0.0
+    opd_accepted_lengths: Optional[torch.Tensor] = None
 
 
 class Objective(nn.Module):
     needs_teacher = False
     sample_reduction = False
+    requires_complete_blocks = False
 
     def __init__(self, recipe, proposal_type="parallel"):
         super().__init__()
-        self.recipe = dict(recipe)
+        self.recipe = normalize_objective(recipe)
         self.proposal_type = proposal_type
 
     def loss_weights(self, supervision):

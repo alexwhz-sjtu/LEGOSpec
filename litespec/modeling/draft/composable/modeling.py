@@ -17,7 +17,7 @@ from .proposal import build_proposal
 class ComposableDraftModel(Qwen3PreTrainedModel):
     config_class = ComposableDraftConfig
     method_config_key = "composable_config"
-    _no_split_modules = ["DraftLayer"]
+    _no_split_modules = ["DraftLayer", "GDNLayer"]
     supports_gradient_checkpointing = True
 
     def __init__(self, config):
@@ -40,9 +40,10 @@ class ComposableDraftModel(Qwen3PreTrainedModel):
         self.target_layer_ids = recipe["context"]["target_layer_ids"]
         self.block_size = config.block_size
         self.mask_token_id = recipe.get("mask_token_id")
-        self.context = build_context(config)
-        self.backbone = build_backbone(config)
-        self.proposal = build_proposal(config)
+        execution = config.runtime_config()
+        self.context = build_context(execution)
+        self.backbone = build_backbone(execution)
+        self.proposal = build_proposal(execution)
         self.post_init()
         # post_init initializes Linear modules; restore source-specific identity starts.
         for module in self.modules():
@@ -70,4 +71,5 @@ class ComposableDraftModel(Qwen3PreTrainedModel):
         features = self.backbone(context)
         output = self.proposal(features, context, shared_ops)
         output.backbone_hidden_states = features.draft_hidden_states
+        output.indexer_aux = features.indexer_aux
         return output

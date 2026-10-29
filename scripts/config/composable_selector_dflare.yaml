@@ -9,7 +9,7 @@ launcher:
   master_addr: 127.0.0.1
   master_port: 29501
 arguments:
-  draft_config: /data/temp/LiteSpec_exp/configs/composable_selector_dflare_from_inf_checkpoint.json
+  draft_config: /data/temp/LiteSpec_exp/configs/composable_selector_dflare.json
   target_model_backend: sglang
   sglang_attention_backend: fa3
   sglang_mem_fraction_static: 0.3
@@ -39,7 +39,6 @@ arguments:
   muon_adamw_lr: 0.0006
   muon_adamw_weight_decay: 0.0
   seed: 42
-  selector_loss_alpha: 1.0
   objective_chunk_blocks: 512
   cache_dir: /data/temp/LiteSpec_exp/cache/train
   build_dataset_num_proc: 128

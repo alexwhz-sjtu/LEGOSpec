@@ -28,6 +28,7 @@ def register_optimizer_parameters(model, parameters=None):
     policies = {id(p): set() for p in selected}
     # Muon exceptions for optimizer ownership
     muon_exceptions = {
+        "indexer",
         "selector",
         "candidate_selector",
         "markov_head",
@@ -42,7 +43,8 @@ def register_optimizer_parameters(model, parameters=None):
                 muon_exceptions.intersection(path.split("."))
                 or isinstance(module, torch.nn.Embedding)
                 or "norm" in type(module).__name__.lower()
-                or name in ("bias", "base_kernel", "layer_fusion_weights")
+                or isinstance(module, torch.nn.Conv1d)
+                or name in ("bias", "base_kernel", "layer_fusion_weights", "A_log", "dt_bias")
             ):
                 kind = "adamw"
             elif (
@@ -58,6 +60,25 @@ def register_optimizer_parameters(model, parameters=None):
                     f"Unclassified optimizer parameter: {path}.{name} {tuple(p.shape)}"
                 )
             policies[id(p)].add(kind)
+    # Read actual MLA modules, not global config or projection names alone.
+    # Composable layers can have different head geometries; DFlare has a second KV path.
+    from litespec.modeling.draft.dflash import Qwen3DFlashMLAAttention
+
+    head_layouts = {}
+    for module in model.modules():
+        if not isinstance(module, Qwen3DFlashMLAAttention):
+            continue
+        query = module.q_proj if module.q_lora_rank is None else module.q_b_proj
+        projections = [(query, (module.qk_head_dim,))]
+        kv_dims = tuple(d for d in (module.qk_nope_head_dim, module.v_head_dim) if d)
+        projections.append((module.kv_b_proj, kv_dims))
+        if getattr(module, "separate_context", False):
+            projections.append((module.context_kv_b_proj, kv_dims))
+        for projection, dims in projections:
+            geometry = (module.num_heads, dims)
+            previous = head_layouts.setdefault(id(projection.weight), geometry)
+            if previous != geometry:
+                raise ValueError("Conflicting MLA Muon head layouts for tied weight")
     specs = []
     for p in selected:
         choices = policies[id(p)]
@@ -65,7 +86,9 @@ def register_optimizer_parameters(model, parameters=None):
             raise ValueError(
                 f"Missing/conflicting optimizer ownership: {names.get(id(p), '<external>')}"
             )
-        specs.append(ParameterSpec(names[id(p)], tuple(p.shape), choices.pop()))
+        kind = choices.pop()
+        heads, dims = head_layouts.get(id(p), (0, ())) if kind == "muon" else (0, ())
+        specs.append(ParameterSpec(names[id(p)], tuple(p.shape), kind, heads, dims))
     return selected, specs
 
 
@@ -372,6 +395,10 @@ class BF16Optimizer:
                 parameter_layouts = local_layouts(parameter_specs)
             self.parameter_specs = list(parameter_specs)
             self.parameter_layouts = list(parameter_layouts)
+            if not any(spec.muon_heads for spec in self.parameter_specs):
+                # The new policy has no effect on non-MLA models. Do not change
+                # their serialized recipe or reject existing GQA/MHA checkpoints.
+                muon_config.pop("mla_per_head")
         self.model_params = (
             [p for p in model.parameters() if p.requires_grad]
             if parameters is None
@@ -448,6 +475,14 @@ class BF16Optimizer:
                         for k, v in muon_config.items()
                         if not k.startswith("adamw_")
                     },
+                )
+            marked = [s for s in self.parameter_specs if s.muon_heads]
+            if marked and (not dist.is_initialized() or dist.get_rank(process_group) == 0):
+                logging.getLogger(__name__).info(
+                    "MLA per-head Muon %s: %s projections, geometries=%s",
+                    "enabled" if muon_config["mla_per_head"] else "disabled",
+                    len(marked),
+                    sorted({(s.muon_heads, s.muon_head_dims) for s in marked}),
                 )
             lr, weight_decay = (
                 muon_config["adamw_lr"],
@@ -561,6 +596,8 @@ class BF16Optimizer:
 
         grad_norm = self._global_grad_norm()
         grad_norm_value = float(grad_norm.item())
+        if not math.isfinite(grad_norm_value):
+            raise FloatingPointError("Non-finite gradient norm; optimizer state was not advanced")
         clip_coefficient = min(
             self.max_grad_norm / (grad_norm_value + 1e-6),
             1.0,

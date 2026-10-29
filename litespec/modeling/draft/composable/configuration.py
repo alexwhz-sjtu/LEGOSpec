@@ -1,126 +1,55 @@
-"""Serializable model recipe; target dimensions follow the normal HF config."""
-
+"""Serializable shared attention recipe v3; runtime expansion is never saved."""
 from copy import deepcopy
-
 from transformers.models.qwen3.configuration_qwen3 import Qwen3Config
+from .schema_v3 import MLA_DEFAULTS, execution_options, normalize_v3, runtime_recipe
 
 
 class ComposableDraftConfig(Qwen3Config):
     model_type = "litespec_composable"
 
-    def __init__(
-        self, composable_config=None, block_size=8, num_target_layers=None, **kwargs
-    ):
-        super().__init__(**kwargs)
-        self.block_size = int(block_size)
-        self.num_target_layers = int(num_target_layers or self.num_hidden_layers)
-        self.composable_config = deepcopy(
-            composable_config
-            or {
+    def __init__(self, composable_config=None, block_size=8, num_target_layers=None,
+                 schema_version="composable_v3", target_attention=None,
+                 execution_config=None, **kwargs):
+        if schema_version != "composable_v3":
+            raise ValueError("Only composable_v3 is supported; historical checkpoint compatibility is not provided")
+        if composable_config is None:
+            depth = kwargs.get("num_hidden_layers", 5)
+            composable_config = {
                 "context": {"type": "dflash"},
-                "backbone": {
-                    "type": "transformer",
-                    "layers": [
-                        {
-                            "attention": {
-                                "representation": "mha",
-                                "access": "dense",
-                                "backend": "sdpa",
-                            }
-                        }
-                        for _ in range(self.num_hidden_layers)
-                    ],
-                },
-                "proposal": {"type": "parallel"},
-                "objective": {"type": "hard_ce"},
+                "backbone": {"type": "layer_stack", "layers": [
+                    {"attention": "gqa", "access": "dense"} for _ in range(depth)]},
+                "proposal": {"type": "parallel"}, "objective": {"type": "hard_ce"},
+                "attention_configs": {"gqa": {}}, "access_configs": {},
             }
-        )
+        layers = composable_config.get("backbone", {}).get("layers", [])
+        if "num_hidden_layers" not in kwargs:
+            kwargs["num_hidden_layers"] = len(layers)
+        super().__init__(**kwargs)
+        self.block_size = block_size
+        self.num_target_layers = num_target_layers if num_target_layers is not None else self.num_hidden_layers
+        self.target_attention = deepcopy(target_attention if target_attention is not None else {
+            "num_attention_heads": self.num_attention_heads,
+            "num_key_value_heads": self.num_key_value_heads,
+            "head_dim": self.head_dim,
+        })
+        self.execution_config = execution_options(execution_config or {})
+        self.composable_config = deepcopy(composable_config)
+        self.schema_version = schema_version
         self.architectures = ["ComposableDraftModel"]
-        self.schema_version = "composable_v1"
         self.validate_recipe()
 
     def validate_recipe(self):
-        recipe = self.composable_config
-        if self.block_size < 2:
-            raise ValueError("block_size includes one anchor and must be >= 2")
-        if recipe["context"]["type"] not in ("dflash", "dflare"):
-            raise ValueError(
-                "Only dflash/dflare hidden injection is supported; target KV is deferred"
-            )
-        layers = recipe["backbone"].get("layers")
-        if recipe["backbone"].get("type", "transformer") != "transformer" or not layers:
-            raise ValueError(
-                "backbone.layers must explicitly describe each transformer layer"
-            )
-        if len(layers) != self.num_hidden_layers:
-            raise ValueError("backbone.layers length must equal num_hidden_layers")
-        for layer in layers:
-            attn = layer["attention"]
-            if attn["representation"] not in ("mha", "mla"):
-                raise ValueError("Only mha and mla are supported")
-            access = attn.get("access", "dense")
-            if access not in ("dense", "sliding_window"):
-                raise ValueError("Only dense and sliding_window access are supported")
-            if access == "sliding_window" and int(attn.get("window_size", 0)) <= 0:
-                raise ValueError("sliding_window requires a positive window_size")
-            if attn.get("backend", "sdpa") not in ("sdpa", "eager", "flex_attention"):
-                raise ValueError("Unsupported attention backend")
-            if attn["representation"] == "mla":
-                for key in (
-                    "kv_lora_rank",
-                    "qk_nope_head_dim",
-                    "qk_rope_head_dim",
-                    "v_head_dim",
-                ):
-                    if int(attn.get(key, 0)) <= 0:
-                        raise ValueError("MLA requires a positive " + key)
-                if attn["qk_rope_head_dim"] % 2:
-                    raise ValueError("MLA rotary dimension must be even")
-            if attn.get("backend") == "flex_attention":
-                key_dim = (
-                    attn["qk_nope_head_dim"] + attn["qk_rope_head_dim"]
-                    if attn["representation"] == "mla"
-                    else self.head_dim
-                )
-                value_dim = (
-                    attn["v_head_dim"]
-                    if attn["representation"] == "mla"
-                    else self.head_dim
-                )
-                if min(key_dim, value_dim) < 16:
-                    raise ValueError(
-                        "FlexAttention requires key/value head dimensions >= 16"
-                    )
-                if attn.get("flex_backend", "TRITON") not in ("TRITON", "FLASH"):
-                    raise ValueError("Unsupported FlexAttention kernel backend")
-            operator = layer.get("local_operator", {"type": "none"})
-            if operator["type"] not in ("none", "dflash2_conv"):
-                raise ValueError("Unsupported local operator")
-        proposal = recipe["proposal"]["type"]
-        if proposal not in ("parallel", "markov", "rnn", "sequential_rnn", "selector"):
-            raise ValueError("Unsupported proposal")
-        objective = recipe["objective"]["type"]
-        if objective not in (
-            "hard_ce",
-            "soft_ce",
-            "forward_kl",
-            "tv",
-            "nla",
-            "lk_alpha",
-            "dpace",
-            "bv",
-            "weighted_sum",
-        ):
-            raise ValueError("Unsupported objective")
-        if objective == "bv" and proposal == "selector":
-            raise ValueError("BV + selector is not supported")
-        ids = recipe["context"].get("target_layer_ids")
-        if ids is not None and (
-            not ids
-            or ids != sorted(set(ids))
-            or ids[0] < 0
-            or ids[-1] >= self.num_target_layers
-        ):
-            raise ValueError(
-                "target_layer_ids must be unique, sorted, and within the target"
-            )
+        self.execution_config = execution_options(self.execution_config)
+        self.composable_config = normalize_v3(self)
+
+    @property
+    def indexer_config(self):
+        return self.composable_config["access_configs"].get("dsa")
+
+    def runtime_config(self):
+        result = deepcopy(self)
+        result.composable_config = runtime_recipe(self)
+        if self.indexer_config is not None:
+            first = result.composable_config["backbone"]["layers"][0]["attention"]
+            result.indexer_source_width = first["num_attention_heads"] * first["head_dim"]
+        return result

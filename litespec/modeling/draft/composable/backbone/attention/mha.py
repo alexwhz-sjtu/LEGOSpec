@@ -12,6 +12,7 @@ from .base import AttentionForward
 class MHAAttention(AttentionForward, Qwen3DFlashAttention):
     def __init__(self, config, layer_idx, kernels, recipe, separate_context=False):
         super().__init__(config, layer_idx, kernels)
+        self.is_dsa = recipe.get("access") == "dsa"
         self.backend = recipe.get("backend", "sdpa")
         self.flex_backend = recipe.get("flex_backend", "TRITON")
         self.window_size = (

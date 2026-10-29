@@ -1,28 +1,49 @@
-"""Parameter-free DFlash2 auxiliary CE; never registered as a main objective."""
+"""Configured base/final branches; there is no candidate-only training loss."""
 
-import torch.nn.functional as F
+from copy import deepcopy
+from dataclasses import replace
 
-from .base import Objective
+from torch import nn
 
-
-class SelectorAuxiliaryObjective(Objective):
-    def forward(self, prediction, supervision):
-        covered = prediction.candidate_ids == supervision.labels[..., None]
-        candidate_indices = covered.long().argmax(-1)
-        token_losses = F.cross_entropy(
-            prediction.candidate_logits.float().flatten(0, -2),
-            candidate_indices.flatten(),
-            reduction="none",
-        ).reshape_as(supervision.prediction_mask)
-        loss_weights = self.loss_weights(supervision)
-        numerator = (token_losses * covered.any(-1) * loss_weights).sum()
-        return self.output(numerator, loss_weights.sum())
+from litespec.modeling.draft.composable.loss_config import normalize_training_recipe
+from . import build_objective
 
 
-def build_selector_objective(recipe):
-    gamma = recipe["proposal"].get(
-        "loss_decay_gamma", recipe["objective"].get("loss_decay_gamma")
-    )
-    return SelectorAuxiliaryObjective(
-        {"type": "selector_auxiliary", "loss_decay_gamma": gamma}
-    )
+class LossBranches(nn.Module):
+    def __init__(self, recipe):
+        super().__init__()
+        self.recipe = normalize_training_recipe(recipe)
+        self.is_selector = self.recipe['proposal']['type'] == 'selector'
+        outer = self.recipe['objective']
+        definitions = (
+            [('final', outer['final']), ('base', outer['base'])]
+            if self.is_selector else [('final', {**outer, 'weight': 1.0})]
+        )
+        self.weights = {}
+        self.objectives = nn.ModuleDict()
+        for name, definition in definitions:
+            item = deepcopy(definition)
+            weight = item.pop('weight')
+            self.weights[name] = weight
+            if not weight:
+                continue
+            item['loss_decay_gamma'] = outer['loss_decay_gamma']
+            proposal_type = (
+                'parallel' if name == 'base' else
+                'selector_full_vocab' if self.is_selector else self.recipe['proposal']['type']
+            )
+            self.objectives[name] = build_objective(item, proposal_type)
+        self.needs_teacher = any(o.needs_teacher for o in self.objectives.values())
+        self.requires_complete_blocks = any(o.requires_complete_blocks for o in self.objectives.values())
+        self.needs_bv = any(o.recipe['type'] == 'bv' for o in self.objectives.values())
+
+    def branch_output(self, name, prediction, supervision):
+        if name == 'base':
+            prediction = replace(prediction, draft_logits=prediction.base_logits)
+        return self.objectives[name](prediction, supervision)
+
+    def native_denominators(self, layout):
+        zero = layout.prediction_mask.new_zeros(())
+        return {name: (self.objectives[name].native_denominator(layout)
+                       if name in self.objectives else zero)
+                for name in self.weights}

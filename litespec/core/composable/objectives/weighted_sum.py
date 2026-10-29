@@ -9,6 +9,8 @@ from .ce import HardCEObjective
 from .kl import ForwardKLObjective
 from .soft_ce import SoftCEObjective
 from .tv import TVObjective
+from .l1 import L1Objective
+from .nla import NLAObjective
 
 
 class WeightedSumObjective(Objective):
@@ -19,10 +21,14 @@ class WeightedSumObjective(Objective):
         "soft_ce": SoftCEObjective,
         "forward_kl": ForwardKLObjective,
         "tv": TVObjective,
+        "l1": L1Objective,
+        "nla": NLAObjective,
+        "lk_alpha": NLAObjective,
     }
 
     def __init__(self, recipe, proposal_type="parallel"):
         super().__init__(recipe, proposal_type)
+        recipe = self.recipe
         components = recipe.get("components")
         if not isinstance(components, list) or not components:
             raise ValueError("weighted_sum requires non-empty components")
@@ -35,10 +41,7 @@ class WeightedSumObjective(Objective):
             weight = float(item.pop("weight"))
             if not math.isfinite(weight) or weight < 0:
                 raise ValueError("Component weights must be finite and nonnegative")
-            gamma = recipe.get("loss_decay_gamma")
-            if item.get("loss_decay_gamma", gamma) != gamma:
-                raise ValueError("Components must share the outer loss_decay_gamma")
-            item["loss_decay_gamma"] = gamma
+            item["loss_decay_gamma"] = recipe["loss_decay_gamma"]
             objectives.append(self.COMPONENTS[kind](item, proposal_type))
             weights.append(weight)
         if not any(weights):
