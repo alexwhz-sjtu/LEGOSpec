@@ -47,6 +47,7 @@ class GeneralParser(Parser):
         self.set_assistant_pattern(chat_template)
 
     def apply_chat_template(self, messages, **kwargs) -> str:
+        kwargs = {**self.chat_template.template_kwargs, **kwargs}
         conversation = self.tokenizer.apply_chat_template(
             messages, tokenize=False, add_generation_prompt=False, **kwargs
         )
@@ -306,6 +307,7 @@ class ThinkingParser(GeneralParser):
         super().__init__(tokenizer, chat_template)
 
     def apply_chat_template(self, messages, **kwargs) -> str:
+        kwargs = {**self.chat_template.template_kwargs, **kwargs}
         if messages[-1]["role"] == "assistant":
             conversation_history = self.tokenizer.apply_chat_template(
                 messages[:-1],

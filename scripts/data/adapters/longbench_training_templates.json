@@ -1,0 +1,23 @@
+{
+  "narrativeqa": "Read the following story and answer the question based on it.\n\nStory:\n{context}\n\nQuestion:\n{input}",
+  "qasper": "Read the scientific article and answer the question based on it. If the article does not provide enough information, say so.\n\nArticle:\n{context}\n\nQuestion:\n{input}",
+  "multifieldqa_en": "Read the text and answer the question based on it.\n\nText:\n{context}\n\nQuestion:\n{input}",
+  "multifieldqa_zh": "阅读以下材料，并根据材料回答问题。\n\n材料：\n{context}\n\n问题：\n{input}",
+  "hotpotqa": "Answer the question using the passages below.\n\nPassages:\n{context}\n\nQuestion:\n{input}",
+  "2wikimqa": "Answer the question using the passages below.\n\nPassages:\n{context}\n\nQuestion:\n{input}",
+  "musique": "Answer the question using the passages below.\n\nPassages:\n{context}\n\nQuestion:\n{input}",
+  "dureader": "请根据以下文章回答问题。\n\n文章：\n{context}\n\n问题：\n{input}",
+  "gov_report": "Summarize the following government report.\n\nReport:\n{context}",
+  "qmsum": "Read the meeting transcript and respond to the query based on it.\n\nTranscript:\n{context}\n\nQuery:\n{input}",
+  "multi_news": "Write a summary of the following news articles.\n\nNews articles:\n{context}",
+  "vcsum": "请总结以下会议记录。\n\n会议记录：\n{context}",
+  "trec": "Determine the category of the target question using the examples as reference.\n\nExamples:\n{context}\n\nTarget question:\n{input}",
+  "triviaqa": "Answer the target question based on its supporting passage. The examples are for reference.\n\nExamples:\n{context}\n\nTarget passage and question:\n{input}",
+  "samsum": "Summarize the target dialogue. The examples are for reference.\n\nExamples:\n{context}\n\nTarget dialogue:\n{input}",
+  "lsht": "请参考示例，判断目标新闻的类别。\n\n示例：\n{context}\n\n目标新闻：\n{input}",
+  "passage_count": "Determine how many distinct paragraphs are in the following text, counting duplicate paragraphs once.\n\nParagraphs:\n{context}",
+  "passage_retrieval_en": "Identify which paragraph corresponds to the abstract below.\n\nParagraphs:\n{context}\n\nAbstract:\n{input}",
+  "passage_retrieval_zh": "找出与下面摘要对应的段落。\n\n段落：\n{context}\n\n摘要：\n{input}",
+  "lcc": "Continue the code using the context below.\n\nCode context:\n{context}",
+  "repobench-p": "Continue the target code using the repository context.\n\nRepository context:\n{context}\n\nTarget code:\n{input}"
+}

@@ -1,0 +1,13 @@
+torch==2.9.1
+transformers==5.2.0
+huggingface-hub==1.4.1
+tokenizers>=0.22.0,<=0.23.0
+flash-linear-attention==0.5.2
+causal-conv1d==1.7.0
+tilelang==0.1.15
+safetensors
+numpy
+PyYAML
+pydantic
+rich
+einops

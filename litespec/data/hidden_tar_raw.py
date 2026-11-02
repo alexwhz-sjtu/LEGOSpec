@@ -82,9 +82,14 @@ def load_raw(handle, start, size, *, headers_only=False):
             output[name] = value
         else:
             raise ValueError('Unknown raw tensor field')
-    if names != {'input_ids', 'attention_mask', 'loss_mask', 'final_hidden_state',
-                 'hidden/1', 'hidden/9', 'hidden/17', 'hidden/25', 'hidden/33'}:
-        raise ValueError('Missing raw tensor fields')
+    from .capture_profiles import PROFILES
+    base = {'input_ids', 'attention_mask', 'loss_mask', 'final_hidden_state'}
+    valid = []
+    for profile in PROFILES.values():
+        required = base | {f'hidden/{layer}' for layer in profile.context_layers}
+        valid.extend([required, required | {f'hidden/{profile.final_layer}'}])
+    if names not in valid:
+        raise ValueError('Missing or mixed raw tensor fields')
     if data_start + previous_end != size:
         raise ValueError('Trailing raw tensor bytes')
     return output

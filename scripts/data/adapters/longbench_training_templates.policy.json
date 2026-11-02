@@ -1,0 +1,39 @@
+{
+  "version": "longbench-training-unrestricted-v1",
+  "purpose": "training prompt regeneration, all21 standard LongBench tasks",
+  "prompt_fields": [
+    "context",
+    "input"
+  ],
+  "turn_mode": "multi",
+  "few_shot_policy": {
+    "tasks": [
+      "trec",
+      "triviaqa",
+      "samsum",
+      "lsht"
+    ],
+    "retain_context_demonstrations": true,
+    "user_confirmed": true
+  },
+  "output_constraints": {
+    "require_brief_answer": false,
+    "require_answer_only": false,
+    "forbid_explanation": false,
+    "fixed_sentence_or_page_count": false,
+    "require_single_line_code": false,
+    "require_explanation": false,
+    "minimum_output_length": null
+  },
+  "current_empty_completion_cues_removed": {
+    "trec": "Type:",
+    "triviaqa": "Answer:",
+    "samsum": "Summary:",
+    "lsht": "类别："
+  },
+  "source_evidence_examples_and_code_preserved": true,
+  "include_target_answers": false,
+  "include_all_classes": false,
+  "explicit_current_question_choices": "remove using existing conservative task-option cleaner",
+  "regeneration_authorized_by_this_confirmation": false
+}

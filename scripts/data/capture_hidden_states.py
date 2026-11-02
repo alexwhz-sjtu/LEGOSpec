@@ -3,6 +3,17 @@ import argparse
 import sys
 from pathlib import Path
 
+import os
+import traceback
+
+if 'LOCAL_RANK' in os.environ:
+    cache_root=Path(os.environ.get('LEGOSPEC_COMPILER_CACHE_ROOT','./cache/compilers'))
+    rank='rank_'+os.environ['LOCAL_RANK']
+    for key,subdir in [('TRITON_CACHE_DIR','triton'),('TORCHINDUCTOR_CACHE_DIR','inductor')]:
+        base=Path(os.environ.get(key,str(cache_root/subdir)))
+        if base.name!=rank:base=base/rank
+        os.environ[key]=str(base.resolve())
+
 from litespec.data.capture_engine import parse_args, run_generation
 from litespec.data.capture_metrics import CaptureMetrics
 
@@ -23,7 +34,13 @@ def main(argv=None):
         if settings.profiling_output.resolve().is_relative_to(cache):
             parser.error('--profiling-output must be outside --output-path')
     metrics = CaptureMetrics(profiling=settings.profiling_output is not None)
-    run_generation(args, metrics)
+    try:
+        run_generation(args, metrics)
+    except BaseException:
+        if 'LOCAL_RANK' in os.environ and 'RANK' in os.environ:
+            traceback.print_exc();sys.stderr.flush();sys.stdout.flush()
+            os._exit(1)  # torchrun cleans peers; do not mask the original exception.
+        raise
     if settings.profiling_output is not None:
         metrics.finish(settings.profiling_output)
 

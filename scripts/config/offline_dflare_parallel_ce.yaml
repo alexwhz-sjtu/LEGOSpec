@@ -1,15 +1,15 @@
 algorithm: composable
 launcher:
-  target_model: /path/to/Qwen3-4B
-  output_dir: /path/to/data/training/ce/checkpoints
+  target_model: ./models/teacher
+  output_dir: ./runs/offline_dflare_parallel_ce/checkpoints
   nnodes: 1
   node_rank: 0
   nproc_per_node: 2
   master_addr: 127.0.0.1
   master_port: 29721
-  train_hidden_states: /path/to/data/hidden/full80k/cache
+  train_hidden_states: ./data/hidden/cache
 arguments:
-  draft_config: configs/composable_dflare_parallel_ce.json
+  draft_config: ./configs/custom_draft.json
   target_model_backend: hf
   sglang_attention_backend: fa3
   sglang_mem_fraction_static: 0.3
@@ -39,16 +39,14 @@ arguments:
   muon_adamw_lr: 0.0006
   muon_adamw_weight_decay: 0.0
   seed: 42
-  selector_loss_alpha: 1.0
-  objective_chunk_blocks: 256
-  cache_dir: /path/to/data/preprocessed/training
+  objective_chunk_blocks: 512
+  cache_dir: ./cache/training
   build_dataset_num_proc: 16
   dataloader_num_workers: 2
   log_interval: 50
   save_interval: 5000
   report_to: wandb
-  wandb_project: spec-decoding
-  wandb_name: offline_dflare_parallel_ce
+  wandb_project: legospec-handoff
   disaggregate: false
   profile: false
   verify_hidden_cache_checksums: false

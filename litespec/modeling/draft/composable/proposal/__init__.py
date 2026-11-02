@@ -10,6 +10,8 @@ PROPOSALS = {
     "rnn": RNNProposal,
     "sequential_rnn": SequentialRNNProposal,
     "selector": SelectorProposal,
+    "residual_selector": SelectorProposal,
+    "topk_selector": SelectorProposal,
 }
 
 

@@ -114,6 +114,13 @@ def add_common_args(parser: argparse.ArgumentParser) -> None:
         default=1,
         help="Maximum same-shape matrices per compute rank in each Muon batch.",
     )
+    train.add_argument(
+        "--muon-mla-per-head",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Use per-head Muon for MLA Q and separate K/V up-projections; "
+             "disable to reproduce whole-matrix updates. GQA/MHA are unchanged.",
+    )
     train.add_argument("--muon-adamw-lr", type=float, default=0.0004)
     train.add_argument("--muon-adamw-weight-decay", type=float, default=0.1)
     train.add_argument("--seed", type=int, default=42)
@@ -158,6 +165,8 @@ def add_common_args(parser: argparse.ArgumentParser) -> None:
         ),
     )
     output.add_argument("--save-interval", type=int, default=20000)
+    output.add_argument("--save-strategy", choices=["interval", "final_only"], default="interval")
+    output.add_argument("--save-training-state", action=argparse.BooleanOptionalAction, default=True)
     TrackerArgs.add_args(parser.add_argument_group("tracker"))
 
 

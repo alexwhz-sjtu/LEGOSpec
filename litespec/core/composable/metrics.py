@@ -46,7 +46,13 @@ def acceptance_metric_terms(
     hidden = prediction.draft_hidden_states
     anchor_ids = previous_token_ids[..., 0].reshape(-1)
     shape = labels.shape
-    if hasattr(proposal, "candidate_selector"):
+    if getattr(proposal, "full_vocab_residual", False):
+        greedy_ids, _, _ = proposal.sample_full_vocab(
+            prediction.base_logits.flatten(0, 1), hidden.flatten(0, 1), anchor_ids, 0.0,
+        )
+        greedy_ids = greedy_ids.reshape(shape)
+        acceptance = distribution_acceptance_probability(target_logits, prediction.draft_logits)
+    elif hasattr(proposal, "candidate_selector"):
         selector = proposal.candidate_selector
         unary = prediction.base_logits.gather(-1, prediction.candidate_ids)
         greedy_ids = selector.greedy_path(

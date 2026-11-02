@@ -1,0 +1,47 @@
+algorithm: composable
+launcher:
+  target_model: ./models/teacher
+  train_hidden_states: ./data/hidden/cache
+  output_dir: ./runs/composable_eagle3_all/checkpoints
+  nproc_per_node: 8
+  nnodes: 1
+  node_rank: 0
+  master_addr: 127.0.0.1
+  master_port: 29501
+arguments:
+  draft_config: configs/composable_eagle3.json
+  target_model_backend: sglang
+  attention_backend: flex_attention
+  flex_attention_backend: TRITON
+  chat_template: qwen
+  max_length: 4096
+  batch_size: 1
+  accumulation_steps: 1
+  tp_size: 1
+  block_size: 8
+  num_draft_layers: 1
+  num_anchors: 512
+  supervision_mode: all
+  anchor_sampling: sample_epoch
+  complete_blocks: true
+  num_epochs: 6
+  learning_rate: 0.0006
+  warmup_ratio: 0.04
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  use_muon: true
+  muon_lr: 0.02
+  muon_momentum: 0.95
+  muon_weight_decay: 0.0
+  muon_matrices_per_rank: 1
+  muon_adamw_lr: 0.0006
+  muon_adamw_weight_decay: 0.0
+  seed: 42
+  objective_chunk_blocks: 512
+  cache_dir: ./cache/training
+  build_dataset_num_proc: 32
+  dataloader_num_workers: 8
+  log_interval: 50
+  save_interval: 10000
+  report_to: wandb
+  wandb_project: legospec-handoff

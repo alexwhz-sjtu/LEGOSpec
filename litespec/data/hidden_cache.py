@@ -194,7 +194,7 @@ def _validate_sample_metadata(value: Any, path: Path | None = None) -> None:
 
 
 def sample_metadata_has_valid_anchor(
-    metadata: dict[str, Any], *, block_size: int, max_length: int
+    metadata: dict[str, Any], *, block_size: int, max_length: int, complete_blocks: bool = False
 ) -> bool:
     """Evaluate anchor eligibility using only the lightweight cache index."""
     _validate_sample_metadata(metadata)
@@ -210,6 +210,9 @@ def sample_metadata_has_valid_anchor(
     )
     if supervised_count < 2 * block_size:
         return False
+    if complete_blocks:
+        return any(min(end, effective_length) - start >= block_size
+                   for start, end in runs if start < effective_length)
     max_anchor = effective_length - block_size
     return any(
         start <= max_anchor and min(end, effective_length) - start >= 2
@@ -333,13 +336,14 @@ class RegenFullDataset(Dataset):
             raise HiddenCacheError(f"sample index mismatch in {member_name}")
         return payload
 
-    def eligible_indices(self, *, block_size: int) -> list[int]:
+    def eligible_indices(self, *, block_size: int, complete_blocks: bool = False) -> list[int]:
         """Return valid entry indices without opening a tar file."""
         return [
             index
             for index, (_, _, _, metadata) in enumerate(self.entries)
             if sample_metadata_has_valid_anchor(
-                metadata, block_size=block_size, max_length=self.max_length
+                metadata, block_size=block_size, max_length=self.max_length,
+                complete_blocks=complete_blocks
             )
         ]
 
@@ -369,7 +373,13 @@ class RegenFullDataset(Dataset):
         final_hidden = payload.get("final_hidden_state")
         if not isinstance(final_hidden, torch.Tensor):
             raise HiddenCacheError("cached final_hidden_state is missing")
-        hidden_states[self.final_layer_id] = final_hidden
+        # New HF caches retain raw final decoder output as an ordinary layer;
+        # legacy caches stored only the normalized teacher feature here.
+        hidden_states.setdefault(self.final_layer_id, final_hidden)
+        final_hidden = final_hidden[:self.max_length]
+        if (final_hidden.shape != (length, self.hidden_size)
+                or not torch.isfinite(final_hidden).all()):
+            raise HiddenCacheError("cached normalized final hidden has invalid shape or values")
         selected = {}
         for layer_id in sorted(self.required_layer_ids | {self.final_layer_id}):
             value = hidden_states.get(layer_id)
@@ -391,13 +401,15 @@ class RegenFullDataset(Dataset):
             "attention_mask": attention_mask,
             "loss_mask": loss_mask,
             "hidden_states": selected,
-            "final_hidden_state": selected[self.final_layer_id],
+            "final_hidden_state": final_hidden,
             "final_norm_layer_id": self.final_layer_id,
         }
 
 
 class ShardAwareDistributedSampler(Sampler[int]):
-    """Shuffle by shard while giving each DP rank a mostly contiguous shard slice."""
+    """Shuffle shards and their members; keep each shard grouped for locality."""
+
+    ORDER_VERSION = 2
 
     def __init__(
         self,
@@ -435,9 +447,10 @@ class ShardAwareDistributedSampler(Sampler[int]):
         if self.shuffle:
             generator = random.Random(self.seed + self.epoch)
             generator.shuffle(shard_keys)
-            # Preserve member order inside each tar. This avoids random seeks (and
-            # repeated decompression for .tar.gz) while still changing shard order
-            # deterministically every epoch.
+            # Every rank constructs the same epoch permutation before slicing.
+            # Shards stay grouped, but members no longer follow source order.
+            for key in shard_keys:
+                generator.shuffle(groups[key])
         values = [index for key in shard_keys for index in groups[key]]
         if values and len(values) < self.total_size:
             values += [
@@ -503,5 +516,9 @@ class RegenFullCollator:
             "attention_mask": pad_vectors("attention_mask", 0),
             "loss_mask": pad_vectors("loss_mask", 0),
             "hidden_states": hidden_states,
+            "final_hidden_state": self._pad_to(pad_sequence(
+                [item.get("final_hidden_state", item["hidden_states"][final_layer_id])
+                 for item in features],
+                batch_first=True, padding_value=0.0), seq_len),
             "final_norm_layer_id": final_layer_id,
         }

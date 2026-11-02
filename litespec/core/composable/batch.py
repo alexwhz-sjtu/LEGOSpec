@@ -37,7 +37,8 @@ class BlockLayout:
 
 
 def prepare_layout(
-    input_ids, loss_mask, block_size, num_anchors, *, complete_blocks=False
+    input_ids, loss_mask, block_size, num_anchors, *, complete_blocks=False, generator=None,
+    supervision_mode="sampled", minimum_anchor=0,
 ):
     length = input_ids.size(1)
     eligible = (loss_mask[:, :-1] > 0.5) & (loss_mask[:, 1:] > 0.5)
@@ -53,9 +54,20 @@ def prepare_layout(
         eligible = torch.nn.functional.pad(
             whole, (0, max(0, length - 1 - whole.size(1)))
         )
-    if eligible.numel() and eligible.any():
+    eligible[:, :minimum_anchor] = False
+    if supervision_mode not in ("sampled", "all"):
+        raise ValueError("supervision_mode must be sampled or all")
+    if supervision_mode == "all":
+        width = max(int(num_anchors), eligible.size(1), 1)
+        sentinel = eligible.size(1)
+        positions = torch.arange(sentinel, device=input_ids.device)[None].expand_as(eligible)
+        positions = positions.masked_fill(~eligible, sentinel).sort(-1).values
+        positions = torch.nn.functional.pad(positions, (0, width - sentinel), value=sentinel)
+        keep = positions != sentinel
+        num_anchors = positions.masked_fill(~keep, 0)
+    elif eligible.numel() and eligible.any():
         num_anchors, keep = sample_sorted_anchors(
-            eligible, num_anchors, output_width=num_anchors
+            eligible, num_anchors, output_width=num_anchors, generator=generator
         )
     else:
         num_anchors = input_ids.new_zeros(input_ids.size(0), num_anchors)
@@ -115,11 +127,21 @@ def tensor_bytes(value):
 
 
 @dataclass
+class OPDReplayMetadata:
+    accepted_lengths: dict[str, torch.Tensor]
+    rng_state: dict
+
+
+@dataclass
 class PreparedLogicalBatch:
     data: object
     layout: BlockLayout
     window_denominators: torch.Tensor
     spill_path: Optional[str] = None
+    opd_metadata: Optional[dict] = None
+    opd_component_denominators: Optional[dict] = None
+    opd_reference_samples: Optional[torch.Tensor] = None
+    opd_inputs_prepared: bool = False
 
     def materialize(self):
         if self.spill_path and self.data is None:

@@ -255,7 +255,7 @@ class WandbTracker(Tracker):
             init_kwargs = {
                 "project": args.wandb_project,
                 "name": _clip_wandb_identifier(args.wandb_name, "name"),
-                "config": vars(args),
+                "config": {name: value for name, value in vars(args).items() if name not in ("wandb_key", "swanlab_key")},
             }
             if hasattr(args, "wandb_run_id") and args.wandb_run_id:
                 init_kwargs["id"] = _clip_wandb_identifier(args.wandb_run_id, "id")
@@ -266,7 +266,7 @@ class WandbTracker(Tracker):
 
     def log(self, log_dict: Dict[str, Any], step: Optional[int] = None):
         if self.is_coordinator and self.is_initialized:
-            wandb.log(log_dict, step=step)
+            wandb.log(log_dict, step=step, commit=True)
 
     def close(self):
         if self.is_coordinator and self.is_initialized and wandb.run:

@@ -611,12 +611,8 @@ def _produce_packet(args, topology, target, phase, metadata, values, batch_id):
         ).to(torch.bfloat16)
     target_prediction_hidden = None
     if phase.need_prediction_hidden:
-        final_layer_id = metadata["num_target_layers"] - 1
-        target_last_hidden = (
-            target_hidden_states[final_layer_id]
-            if isinstance(target_hidden_states, dict)
-            else target_hidden_states[-1]
-        )
+        from ._dflash_common import teacher_target_hidden
+        target_last_hidden = teacher_target_hidden(target_output, metadata["num_target_layers"])
         target_prediction_hidden = _prediction_hidden(
             target_last_hidden, anchor_positions, metadata["block_size"]
         ).to(torch.bfloat16)

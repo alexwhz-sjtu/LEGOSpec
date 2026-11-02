@@ -1,7 +1,7 @@
 # Adapted from: https://github.com/sgl-project/sglang/blob/main/python/sglang/lang/chat_template.py#L13
 from typing import List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class ChatTemplate(BaseModel):
@@ -22,6 +22,7 @@ class ChatTemplate(BaseModel):
     parser_type: str = "general"
     assistant_pattern_type: str = "general"
     enable_thinking: bool = False
+    template_kwargs: dict = Field(default_factory=dict)
 
 
 class TemplateRegistry:
@@ -332,4 +333,12 @@ TEMPLATE_REGISTRY.register(
         parser_type="thinking",
         enable_thinking=True,
     ),
+)
+
+TEMPLATE_REGISTRY.register(
+    name="qwen35",
+    template=ChatTemplate(assistant_header="<|im_start|>assistant\n",
+                          user_header="<|im_start|>user\n",
+                          system_prompt=None, end_of_turn_token="<|im_end|>\n",
+                          template_kwargs={"enable_thinking": False}),
 )

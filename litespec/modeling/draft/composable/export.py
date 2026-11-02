@@ -44,6 +44,11 @@ def export_composable(model, save_dir, *, state_dict=None):
                     raise ValueError(
                         "Deployment dependency escapes inference package: " + name
                     )
+    dependencies = {
+        module: {resolve(node, module, path) for node in ast.walk(tree)
+                 if isinstance(node, ast.ImportFrom)}
+        for module, (path, _, tree) in modules.items()
+    }
     names = {
         module: "cs_" + module.removeprefix(PREFIX).replace(".", "_")
         for module in modules
@@ -82,6 +87,21 @@ def export_composable(model, save_dir, *, state_dict=None):
             + ast.unparse(tree)
             + "\n"
         )
+        if module == PREFIX + "composable.configuration":
+            # AutoConfig loads before AutoModel. Transformers copies only direct
+            # dependencies before hashing its recursive closure, so advertise
+            # all transitive pure-config modules directly as well.
+            closure, pending_config = set(), [module]
+            while pending_config:
+                dependency = pending_config.pop()
+                for target in dependencies[dependency]:
+                    if target in modules and target != module and target not in closure:
+                        closure.add(target)
+                        pending_config.append(target)
+            text += "\n" + "\n".join(
+                "from ." + names[name] + " import __name__ as _export_config_" + names[name]
+                for name in sorted(closure)
+            ) + "\n"
         if module == PREFIX + "composable.modeling":
             text += (
                 "\n# Direct closure for Transformers 4.57 local-directory loading.\n"

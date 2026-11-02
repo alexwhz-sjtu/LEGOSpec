@@ -1,3 +1,0 @@
-.............................                                            [100%]
-29 passed, 8 deselected, 8 warnings in 10.28s
-sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

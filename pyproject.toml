@@ -39,11 +39,13 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/alexwhz-sjtu/LiteSpec"
-Issues = "https://github.com/alexwhz-sjtu/LiteSpec/issues"
+Repository = "https://github.com/alexwhz-sjtu/LEGOSpec"
+Issues = "https://github.com/alexwhz-sjtu/LEGOSpec/issues"
 
 [project.optional-dependencies]
 fa = ["flash-attn"]
+gdn = ["tilelang==0.1.15"]
+dev = ["pytest", "build"]
 cu128 = ["torch==2.9.1", "torchaudio==2.9.1", "torchvision==0.24.1"]
 cu130 = ["torch==2.9.1", "torchaudio==2.9.1", "torchvision==0.24.1", "sgl-kernel==0.3.21"]
 
@@ -92,3 +94,7 @@ sgl-kernel = [
 torch = [{ index = "pytorch-cu128", extra = "cu128" }, { index = "pytorch-cu130", extra = "cu130" }]
 torchaudio = [{ index = "pytorch-cu128", extra = "cu128" }, { index = "pytorch-cu130", extra = "cu130" }]
 torchvision = [{ index = "pytorch-cu128", extra = "cu128" }, { index = "pytorch-cu130", extra = "cu130" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/unit"]
+pythonpath = [".", "tests/unit"]

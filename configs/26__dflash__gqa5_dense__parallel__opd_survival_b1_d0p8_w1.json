@@ -1,0 +1,79 @@
+{
+  "architectures": [
+    "ComposableDraftModel"
+  ],
+  "block_size": 8,
+  "schema_version": "composable_v3",
+  "composable_config": {
+    "context": {
+      "type": "dflash",
+      "target_layer_ids": [
+        1,
+        9,
+        17,
+        25,
+        33
+      ]
+    },
+    "backbone": {
+      "type": "layer_stack",
+      "layers": [
+        {
+          "attention": "gqa",
+          "access": "dense",
+          "local_operator": {
+            "type": "none"
+          }
+        },
+        {
+          "attention": "gqa",
+          "access": "dense",
+          "local_operator": {
+            "type": "none"
+          }
+        },
+        {
+          "attention": "gqa",
+          "access": "dense",
+          "local_operator": {
+            "type": "none"
+          }
+        },
+        {
+          "attention": "gqa",
+          "access": "dense",
+          "local_operator": {
+            "type": "none"
+          }
+        },
+        {
+          "attention": "gqa",
+          "access": "dense",
+          "local_operator": {
+            "type": "none"
+          }
+        }
+      ]
+    },
+    "proposal": {
+      "type": "parallel"
+    },
+    "objective": {
+      "type": "opd_survival",
+      "beta_rej": 1.0,
+      "rejection_decay": 0.8,
+      "survival_weight": 1.0,
+      "loss_decay_gamma": null
+    },
+    "access_configs": {
+      "dense": {}
+    },
+    "attention_configs": {
+      "gqa": {
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "head_dim": 128
+      }
+    }
+  }
+}

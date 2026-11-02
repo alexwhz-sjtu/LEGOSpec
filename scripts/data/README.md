@@ -148,9 +148,10 @@ mutually exclusive.
 ## Optimized offline capture and raw-tar training
 
 The optimized entry point is independent of local experiment directories. Its
-compatibility defaults remain synchronous `tar-v2`. The production configuration
-used for Qwen3-4B captures BF16 layers 1, 9, 17, 25, 33 and the final normalized
-layer 35, retaining original responses and max_length=4096:
+defaults enable the full optimized path: SGLang, asynchronous capture,
+`tar-raw-v1`, packed requests, streaming SHA256, and asynchronous tar commits.
+The Qwen3-4B configuration captures BF16 layers 1, 9, 17, 25, 33 and the final
+normalized layer 35, retaining original responses and max_length=4096:
 
 ```bash
 python -m torch.distributed.run --nproc-per-node=2 --master-port=29679 \
@@ -160,11 +161,19 @@ python -m torch.distributed.run --nproc-per-node=2 --master-port=29679 \
   --data-path /path/to/data/training/answers.jsonl \
   --output-path /path/to/data/hidden/full80k/cache \
   --cache-dir /path/to/data/preprocessed/capture --max-length 4096 \
-  --capture-mode async --cache-format tar-raw-v1 --packed-requests \
-  --tar-stream-sha --tar-async-commit --tar-shard-bytes 2147483648 \
+  --tar-shard-bytes 2147483648 \
   --pipeline-depth 2 --writer-workers 2 --max-pending-bytes 8589934592 \
   --fail-on-error
 ```
+
+The five optimization flags are enabled by default and need not be repeated.
+Use `--capture-mode sync`, `--no-packed-requests`, `--no-tar-stream-sha`, or
+`--no-tar-async-commit` to override individual choices. To use legacy synchronous
+output, pass `--capture-mode sync --cache-format tar-v2 --no-packed-requests
+--no-tar-stream-sha --no-tar-async-commit` on one command line. Packed capture
+requires SGLang; explicit `--target-model-backend hf` must use
+`--no-packed-requests` and `--max-batch-tokens 0`. The separate legacy
+`prepare_hidden_states` entry point retains its original behavior.
 
 Raw members store tensor descriptors and exact tensor bytes inside ordinary
 uncompressed tar shards. They avoid per-sample hidden clones and `torch.save`

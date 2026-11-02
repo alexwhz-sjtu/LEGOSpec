@@ -182,7 +182,8 @@ def build_hidden_cache_dataloader(args, tokenizer, *, required_layer_ids: set[in
     )
     # This reads only manifest JSON metadata. Sample tensor members remain unopened
     # until a worker fetches a batch.
-    valid_indices = dataset.eligible_indices(block_size=args.block_size)
+    valid_indices = dataset.eligible_indices(block_size=args.block_size,
+        complete_blocks=getattr(args, "complete_blocks", False))
     process_group = get_dp_group()
     sampler = ShardAwareDistributedSampler(
         dataset,
@@ -227,7 +228,8 @@ def training_data_identity(args) -> str:
         with open(manifest_path, "rb") as handle:
             for chunk in iter(lambda: handle.read(1024 * 1024), b""):
                 digest.update(chunk)
-        identity = f"{identity}#manifest_sha256={digest.hexdigest()}"
+        identity = (f"{identity}#manifest_sha256={digest.hexdigest()}"
+                    f"#sampler_order_version={ShardAwareDistributedSampler.ORDER_VERSION}")
     return identity
 
 
@@ -242,6 +244,8 @@ def required_hidden_layer_ids(draft_models) -> set[int]:
 
 
 def hidden_states_to_cuda(hidden_states):
+    if isinstance(hidden_states, torch.Tensor):
+        return hidden_states.cuda(non_blocking=True)
     if isinstance(hidden_states, dict):
         return {
             key: value.cuda(non_blocking=True) for key, value in hidden_states.items()
@@ -286,7 +290,9 @@ def load_cached_target_data(
     target_logits = None
     if need_logits:
         final_layer_id = int(data["final_norm_layer_id"])
-        final_hidden = hidden_states[final_layer_id]
+        final_hidden = data.get("final_hidden_state")
+        final_hidden = (hidden_states[final_layer_id] if final_hidden is None
+                        else hidden_states_to_cuda(final_hidden))
         target_logits = project_cached_target_logits(
             final_hidden, anchor_positions, block_size, lm_head
         )
@@ -349,6 +355,16 @@ def build_target_model(args, draft_models):
             backend_kwargs["max_total_tokens"] = int(args.batch_size) * int(
                 args.max_length
             )
+        if getattr(args, 'opd_data_mode', 'teacher_forced') == 'sampled_anchor':
+            # A page must not straddle two independent anchor continuations.
+            backend_kwargs['page_size'] = 1
+            requests = int(args.batch_size) * (int(args.num_anchors) + 1)
+            tokens = int(args.batch_size) * (int(args.max_length)
+                + int(args.num_anchors) * max(0, int(args.block_size) - 2))
+            backend_kwargs['max_running_requests'] = max(
+                requests, int(backend_kwargs['max_running_requests']))
+            backend_kwargs['max_total_tokens'] = max(
+                tokens, int(backend_kwargs['max_total_tokens']))
     target = get_training_target_model(
         pretrained_model_name_or_path=args.target_model_path,
         backend=args.target_model_backend,
@@ -366,7 +382,7 @@ def build_target_model(args, draft_models):
 
 def build_target_and_components(args, draft_models):
     """Build one target and bind its tokenizer/embedding/head consistently."""
-    offline = bool(args.train_hidden_states_path)
+    offline = bool(args.train_hidden_states_path) and getattr(args, "opd_data_mode", "teacher_forced") != "sampled_anchor"
     target = None if offline else build_target_model(args, draft_models)
     tokenizer, components, mask_token_id = resolve_tokenizer_and_components(
         args,
@@ -444,19 +460,30 @@ def resolve_tokenizer_and_components(
         method_config = getattr(draft.config, draft.method_config_key)
         if method_config:
             configured_mask_ids.append(method_config.get("mask_token_id"))
-    mask_token_id, mask_source = _select_mask_token_id(
-        explicit_id=args.mask_token_id,
-        configured_ids=configured_mask_ids,
-        tokenizer_mask_id=tokenizer.mask_token_id,
-        used_token_ids={int(value) for value in tokenizer.get_vocab().values()},
-        vocab_size=int(target_config.vocab_size),
-    )
+    needs_mask = any(not getattr(draft, "is_eagle3", False) for draft in draft_models)
+    if needs_mask:
+        mask_token_id, mask_source = _select_mask_token_id(
+            explicit_id=args.mask_token_id,
+            configured_ids=configured_mask_ids,
+            tokenizer_mask_id=tokenizer.mask_token_id,
+            used_token_ids={int(value) for value in tokenizer.get_vocab().values()},
+            vocab_size=int(target_config.vocab_size),
+        )
+    else:
+        # Shared TP adapters require an in-vocabulary row; EAGLE3 never uses MASK.
+        mask_token_id, mask_source = 0, "unused by EAGLE3"
     args.mask_token_id = mask_token_id
     print_on_rank0(
         f"Resolved MASK token id {mask_token_id} from {mask_source}; "
         f"target vocab_size={int(target_config.vocab_size)}."
     )
-    if args.target_model_backend == "sglang" and not standalone_components:
+    if (getattr(args, "opd_data_mode", "teacher_forced") == "sampled_anchor"
+            and args.target_model_backend == 'hf' and not standalone_components):
+        target_model = target.model.requires_grad_(False).eval()
+        components = SharedTargetEmbeddingsAndHead(
+            target_model.get_input_embeddings(), target_model.get_output_embeddings())
+        components.requires_grad_(False)
+    elif args.target_model_backend == "sglang" and not standalone_components:
         if target is None or not hasattr(target, "model_runner"):
             raise ValueError("SGLang target is required to reuse target components.")
         target_model = target.model_runner.model
@@ -487,6 +514,8 @@ def resolve_tokenizer_and_components(
                 "--mask-token-id with an unused in-vocabulary row."
             )
     for draft in draft_models:
+        if getattr(draft, "is_eagle3", False):
+            continue
         draft.mask_token_id = mask_token_id
         draft.mask_embedding_mode = "vocab_row"
         getattr(draft.config, draft.method_config_key)["mask_token_id"] = mask_token_id

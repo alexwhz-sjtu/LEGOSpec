@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import json
 import shutil
 from pathlib import Path
 from typing import Any, Optional
@@ -144,6 +145,9 @@ def validate_session_resume(session):
 
 
 def save_session(session, name):
+    if (getattr(session.args, "save_strategy", "interval") == "final_only"
+            and name != session.phases[-1].final_checkpoint):
+        return None
     return save_checkpoint(
         output_dir=session.args.output_dir,
         name=name,
@@ -377,18 +381,23 @@ def save_checkpoint(
             draft_model
         )
         model_metadata.update(training_identity(training_args))
-        save_distributed_training_state(
-            save_dir,
-            {
-                **metadata,
-                **model_metadata,
-                **optimizer.state_dict(),
-                "rng_state": capture_rng_state(),
-            },
-            process_group=process_group,
-        )
+        if getattr(training_args, "save_training_state", True):
+            save_distributed_training_state(
+                save_dir,
+                {
+                    **metadata,
+                    **model_metadata,
+                    **optimizer.state_dict(),
+                    "rng_state": capture_rng_state(),
+                },
+                process_group=process_group,
+            )
         if group_rank == 0:
             export_draft(draft_model, save_dir, state_dict=draft_state)
+            Path(save_dir, "training_metadata.json").write_text(json.dumps(
+                {**metadata, **model_metadata,
+                 "save_training_state": getattr(training_args, "save_training_state", True)},
+                indent=2, default=str) + "\n")
             if training_yaml is not None:
                 Path(save_dir, "training_config.yaml").write_bytes(
                     training_yaml.encode("utf-8")
@@ -412,7 +421,7 @@ def load_training_state(checkpoint_dir: Optional[str], *, args=None) -> Optional
 
 
 def training_identity(args):
-    return {
+    identity = {
         "training_state_format": "litespec_training_v2",
         "algorithm": args.algorithm,
         "mode": args.mode if args.algorithm == "dlite" else None,
@@ -427,16 +436,34 @@ def training_identity(args):
         ),
         "target_model_path": os.path.realpath(args.target_model_path),
     }
+    if args.algorithm == "composable" and getattr(args, "anchor_sampling", "legacy") == "sample_epoch":
+        identity.update(anchor_sampling_version="sample_epoch_v1", anchor_seed=int(args.seed),
+                        anchor_complete_blocks=True, anchor_count=int(args.num_anchors))
+    if args.algorithm == "composable" and getattr(args, "supervision_mode", "sampled") != "sampled":
+        identity["supervision_mode"] = args.supervision_mode
+    if getattr(args, 'opd_data_mode', 'teacher_forced') == 'sampled_anchor':
+        identity.update(opd_data_mode='sampled_anchor', opd_temperature=1.,
+                        opd_context_source='offline_hidden' if args.train_hidden_states_path else 'online')
+    return identity
 
 
 def validate_training_identity(state, args=None):
     if state.get("training_state_format") != "litespec_training_v2":
         raise ValueError("Resume requires the current LiteSpec training-state format")
     if args is not None:
+        if args.algorithm == "composable":
+            if state.get("supervision_mode", "sampled") != getattr(args, "supervision_mode", "sampled"):
+                raise ValueError("Changing supervision_mode requires init_from, not resume_from")
+            requested_anchor_mode = ("sample_epoch_v1" if getattr(args, "anchor_sampling", "legacy") == "sample_epoch" else "legacy")
+            if state.get("anchor_sampling_version", "legacy") != requested_anchor_mode:
+                raise ValueError("Changing anchor_sampling_version requires init_from, not resume_from")
+        if state.get('opd_data_mode', 'teacher_forced') != getattr(args, 'opd_data_mode', 'teacher_forced'):
+            raise ValueError('Changing OPD data mode requires init_from, not resume_from')
         for key, value in training_identity(args).items():
-            if state[key] != value:
+            if state.get(key) != value:
                 raise ValueError(
-                    f"Resume mismatch for {key}: saved={state[key]!r}, requested={value!r}"
+                    f"Resume mismatch for {key}: saved={state.get(key)!r}, requested={value!r}; "
+                    "use init_from to change the training contract"
                 )
 
 

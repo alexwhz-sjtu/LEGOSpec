@@ -23,6 +23,7 @@ MUON_DEFAULTS = dict(
     eps=1e-7,
     adjust_lr_fn="original",
     matrices_per_rank=1,
+    mla_per_head=True,
     adamw_lr=0.0004,
     adamw_betas=(0.9, 0.999),
     adamw_weight_decay=0.1,
@@ -33,6 +34,7 @@ MUON_CLI_KEYS = (
     "momentum",
     "weight_decay",
     "matrices_per_rank",
+    "mla_per_head",
     "adamw_lr",
     "adamw_weight_decay",
 )
@@ -74,6 +76,8 @@ def validate_muon_config(config):
         raise ValueError("Invalid muon_adjust_lr_fn")
     if not isinstance(config["nesterov"], bool):
         raise ValueError("muon_nesterov must be a boolean")
+    if not isinstance(config["mla_per_head"], bool):
+        raise ValueError("muon_mla_per_head must be a boolean")
     return config
 
 
@@ -81,7 +85,7 @@ def muon_config_from_args(args):
     if not getattr(args, "use_muon", False):
         return None
     return validate_muon_config(
-        {key: getattr(args, f"muon_{key}") for key in MUON_CLI_KEYS}
+        {key: getattr(args, f"muon_{key}", MUON_DEFAULTS[key]) for key in MUON_CLI_KEYS}
     )
 
 
@@ -141,6 +145,7 @@ class ShardedMuon(torch.optim.Optimizer):
         eps=1e-7,
         adjust_lr_fn="original",
         matrices_per_rank=1,
+        mla_per_head=True,
     ):
         validate_muon_config(
             dict(
@@ -153,6 +158,7 @@ class ShardedMuon(torch.optim.Optimizer):
                 eps=eps,
                 adjust_lr_fn=adjust_lr_fn,
                 matrices_per_rank=matrices_per_rank,
+                mla_per_head=mla_per_head,
             )
         )
         defaults = dict(
@@ -164,6 +170,7 @@ class ShardedMuon(torch.optim.Optimizer):
             ns_coefficients=tuple(ns_coefficients),
             eps=eps,
             adjust_lr_fn=adjust_lr_fn,
+            mla_per_head=mla_per_head,
         )
         super().__init__(params, defaults)
         if len(self.param_groups) != 1:
@@ -186,11 +193,16 @@ class ShardedMuon(torch.optim.Optimizer):
         self.communication_calls = 0
         self._prefetch_stream = None
 
+    def _per_head(self, index):
+        return self.param_groups[0].get("mla_per_head", False) and self.layouts[index].spec.muon_heads > 0
+
     def _batches(self, active):
         buckets = defaultdict(list)
         for i, enabled in enumerate(active):
             if enabled:
-                buckets[self.layouts[i].spec.shape].append(i)
+                spec = self.layouts[i].spec
+                split = (spec.muon_heads, spec.muon_head_dims) if self._per_head(i) else (0, ())
+                buckets[(spec.shape, split)].append(i)
         cursor = 0
         capacity = self.world * self.matrices_per_rank
         for indices in buckets.values():
@@ -279,9 +291,32 @@ class ShardedMuon(torch.optim.Optimizer):
                     )
                     cursor += length
             group = self.param_groups[0]
-            orthogonalized_matrices = newton_schulz(
-                full_matrices, group["ns_coefficients"], group["ns_steps"], group["eps"]
-            )
+            spec = self.layouts[owned[0]].spec
+            if self._per_head(owned[0]):
+                # Batch all heads of the owned projections. No per-head collective or
+                # Python head loop. K and V are independent logical matrices even
+                # though kv_b_proj packs them together inside each head.
+                packed = full_matrices.view(
+                    -1, sum(spec.muon_head_dims), spec.shape[1]
+                )
+                # Equal-width K/V blocks are adjacent in memory, so one batched
+                # NS call handles both without a copy or an extra kernel sequence.
+                blocks = (
+                    (full_matrices.view(-1, spec.muon_head_dims[0], spec.shape[1]),)
+                    if len(set(spec.muon_head_dims)) == 1
+                    else packed.split(spec.muon_head_dims, dim=1)
+                )
+                for block in blocks:
+                    update = newton_schulz(
+                        block, group["ns_coefficients"], group["ns_steps"], group["eps"]
+                    )
+                    update.mul_(adjusted_lr(1.0, block.shape[-2:], group["adjust_lr_fn"]))
+                    block.copy_(update)
+                orthogonalized_matrices = full_matrices
+            else:
+                orthogonalized_matrices = newton_schulz(
+                    full_matrices, group["ns_coefficients"], group["ns_steps"], group["eps"]
+                )
             matrices = dict(zip(owned, orthogonalized_matrices.unbind()))
         parts = []
         for peer in range(self.world):
@@ -308,9 +343,9 @@ class ShardedMuon(torch.optim.Optimizer):
                 p.mul_(1 - group["lr"] * group["weight_decay"])
                 p.add_(
                     update,
-                    alpha=-adjusted_lr(
+                    alpha=-(group["lr"] if self._per_head(i) else adjusted_lr(
                         group["lr"], self.layouts[i].spec.shape, group["adjust_lr_fn"]
-                    ),
+                    )),
                 )
                 cursor += n
 

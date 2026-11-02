@@ -38,6 +38,7 @@ def integrated_log_scores(draft_log_probabilities, target_log_probabilities, lab
 
 class BVObjective(Objective):
     needs_teacher = True
+    requires_complete_blocks = True
 
     def __init__(self, recipe, proposal_type="parallel"):
         super().__init__(recipe, proposal_type)

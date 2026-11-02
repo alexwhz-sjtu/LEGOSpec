@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-11-02T17:48:51.792661+00:00",
+  "main_python_syntax_files": 198,
+  "main_python_syntax_errors": [],
+  "portable_training_yaml_dry_runs": [
+    {
+      "file": "examples/qwen35_9b/01.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/05.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/10.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/23.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/28.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/31.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/32.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/34.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/35.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/36.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen35_9b/41.yaml",
+      "passed": true
+    },
+    {
+      "file": "examples/qwen3_4b/41.yaml",
+      "passed": true
+    }
+  ],
+  "capture_profiles_dimension_and_layer_validation": "passed4B/9B",
+  "isolated_sglang059_hash_patch_smoke": "passed using synthetic package with pinned original kernel",
+  "cpu_model_regression": "not passed in validation environment: yunchang initialized CUDA at import with CUDA_VISIBLE_DEVICES empty. Handoff now defers that import until distributed initialization; rerun could not execute because validation host SSH timed out.",
+  "gpu_tests": "not_run",
+  "sglang_syntax_note": "Upstream source uses Python3.10+ syntax; host3.9 check limited to main project."
+}

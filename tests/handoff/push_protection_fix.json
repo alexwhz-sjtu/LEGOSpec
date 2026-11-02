@@ -1,0 +1,17 @@
+{
+  "reason": "GitHub false-positive on a public upstream model class identifier; no credential or numeric code changed",
+  "public_name_parts": [
+    "Mistral3For",
+    "ConditionalGeneration"
+  ],
+  "checks": {
+    "sglang_legospec/python/sglang/srt/models/mistral.py": {
+      "original_sha256": "902c894c92cf9127cfbf8153f270e238656fa2dde880c6649edbe8870d807324",
+      "class_body_unchanged": true
+    },
+    "sglang_legospec/python/sglang/srt/multimodal/processors/llava.py": {
+      "original_sha256": "27b8404a3dc37be198ad00ab5ab159078897e508412c60b367b7574a5c4ae366",
+      "class_import_uses_same_public_attribute": true
+    }
+  }
+}

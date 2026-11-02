@@ -102,6 +102,10 @@ class AttentionForward:
                 cache_valid,
                 cache_documents,
             )
+        if getattr(self, "is_dsa", False) and inputs.selection is not None:
+            from .sparse import gather_attention
+            return gather_attention(self, query_states, key_states, value_states,
+                                    inputs, positions, valid, documents)
         visibility = self.access(
             inputs,
             positions,
@@ -114,6 +118,14 @@ class AttentionForward:
                 else {}
             ),
         )
+        # CUDA SDPA may return finite zeros for fully masked query rows yet
+        # produce NaN dQ in backward. Give only those unused rows one finite
+        # key, then zero their output below. Legal rows and gradients retain
+        # exactly the original visibility; no index leaves the device.
+        query_visible = visibility.any(-1)
+        safe_visibility = visibility.clone()
+        if visibility.size(-1):
+            safe_visibility[..., 0] |= ~query_visible
         repeats = query_states.size(1) // key_states.size(1)
         if repeats != 1:
             key_states = key_states.repeat_interleave(repeats, dim=1)
@@ -122,7 +134,7 @@ class AttentionForward:
             scores = (
                 torch.matmul(query_states, key_states.transpose(-2, -1)) * self.scaling
             )
-            scores = scores.masked_fill(~visibility, float("-inf"))
+            scores = scores.masked_fill(~safe_visibility, float("-inf"))
             attention_probabilities = (
                 torch.softmax(scores, dim=-1, dtype=torch.float32)
                 .to(query_states.dtype)
@@ -155,7 +167,7 @@ class AttentionForward:
             # Pad with False so the callback only loads a tensor; querying shapes
             # inside mask_mod breaks PyTorch 2.9's dynamic FlexAttention lowering.
             flat_visibility = F.pad(
-                visibility[:, 0],
+                safe_visibility[:, 0],
                 (0, -visibility.size(3) % kv_tile, 0, -visibility.size(2) % q_tile),
                 value=False,
             )
@@ -185,10 +197,10 @@ class AttentionForward:
                 query_states,
                 key_states,
                 value_states,
-                attn_mask=visibility,
+                attn_mask=safe_visibility,
                 dropout_p=self.attention_dropout if self.training else 0.0,
                 is_causal=False,
                 scale=self.scaling,
             )
         output = output.transpose(1, 2).reshape(*draft_hidden_states.shape[:2], -1)
-        return self.o_proj(output) * visibility.any(-1).transpose(1, 2).to(output.dtype)
+        return self.o_proj(output) * query_visible.transpose(1, 2).to(output.dtype)

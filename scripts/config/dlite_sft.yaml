@@ -1,17 +1,13 @@
 mode: sft
-
 launcher:
-  target_model: /data/wanghanzhen/models/Qwen3-4B
-  # Online mode. Comment this and enable train_hidden_states for offline mode.
-  # train_data: /path/to/train.jsonl
-  train_hidden_states: /data/wanghanzhen/projects/SpecDecoding/LiteSpec/cache/data/regen_full/wildchat_chinese_qwen3_4b
-  output_dir: ./outputs/dlite_sft_qwen3_4b
+  target_model: ./models/teacher
+  train_hidden_states: ./data/hidden/cache
+  output_dir: ./runs/dlite_sft/checkpoints
   nnodes: 1
   node_rank: 0
   nproc_per_node: 8
   master_addr: 127.0.0.1
   master_port: 29503
-
 arguments:
   target_model_backend: sglang
   sglang_attention_backend: fa3
@@ -36,16 +32,13 @@ arguments:
   num_anchors: 512
   num_epochs: 6
   learning_rate: 0.0004
-  # AdamW-only weight decay; ignored when use_muon is true.
   weight_decay: 0.0
   warmup_ratio: 0.04
   max_grad_norm: 1.0
-  # Optional FSDP1 Muon + AdamW; these settings are ignored when disabled.
   use_muon: true
   muon_lr: 0.02
   muon_momentum: 0.95
   muon_weight_decay: 0.1
-  # Each batch handles up to world_size * this many same-shape matrices.
   muon_matrices_per_rank: 1
   muon_adamw_lr: 0.0004
   muon_adamw_weight_decay: 0.1
@@ -55,16 +48,13 @@ arguments:
   base_lm_ce_weight: 0.0
   loss_decay_gamma: 4
   base_lm_ce_decay_gamma: 12
-  cache_dir: ./cache/train/dlite_sft
+  cache_dir: ./cache/training
   build_dataset_num_proc: 128
   dataloader_num_workers: 8
   log_interval: 50
   save_interval: 20000
   report_to: wandb
-  wandb_project: spec-decoding
-  wandb_name: dlite_sft_qwen3_4b
-  # D-Train disaggregate settings
-  # false: every rank runs target + draft; true: split target and draft ranks.
+  wandb_project: legospec-handoff
   disaggregate: false
   target_ranks_per_node: 4
   draft_ranks_per_node: 4

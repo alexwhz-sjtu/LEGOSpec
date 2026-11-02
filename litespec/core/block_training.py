@@ -14,6 +14,7 @@ def sample_sorted_anchors(
     *,
     output_width: Optional[int] = None,
     max_valid_anchors: Optional[int] = None,
+    generator: Optional[torch.Generator] = None,
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """Randomly sample valid anchors, sort them, and pad with inactive slots.
 
@@ -35,7 +36,8 @@ def sample_sorted_anchors(
     if width < sampled_width:
         raise ValueError("output_width cannot be smaller than sampled width")
 
-    scores = torch.rand_like(valid_anchor_mask, dtype=torch.float32)
+    scores = torch.rand(valid_anchor_mask.shape, device=valid_anchor_mask.device,
+                        dtype=torch.float32, generator=generator)
     scores.masked_fill_(~valid_anchor_mask, 2.0)
     selected_width = min(sampled_width, valid_anchor_mask.size(1))
     anchor_positions = scores.argsort(dim=1)[:, :selected_width]

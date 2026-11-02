@@ -19,6 +19,7 @@ class TargetTrainingOutput:
     input_ids: torch.Tensor  # [batch, seq_len]
     attention_mask: torch.Tensor  # [batch, seq_len]
     loss_mask: torch.Tensor  # [batch, seq_len]
+    final_hidden_state: Optional[torch.Tensor] = None  # post-final-norm teacher feature
 
 
 class TrainingTargetModel(ABC):
@@ -80,6 +81,10 @@ class SGLangTrainingTargetModel(TrainingTargetModel):
         )
 
         tp_size = dist.get_world_size(get_tp_group())
+        from litespec.modeling.config_utils import get_pretrained_config_dict,is_qwen35_model_type
+        if is_qwen35_model_type(get_pretrained_config_dict(pretrained_model_name_or_path).get('model_type')):
+            kwargs.setdefault("mm_attention_backend", "sdpa")
+            kwargs.setdefault("mamba_backend", "triton")
         dtype_arg = torch_dtype if torch_dtype is not None else "auto"
         server_args = ServerArgs(
             model_path=pretrained_model_name_or_path,
@@ -610,16 +615,36 @@ class HFTrainingTargetModel(TrainingTargetModel):
             base_model = getattr(self.model, "model", None)
             if isinstance(base_model, nn.Module) and base_model is not self.model:
                 forward_model = base_model
-        outputs = forward_model(
-            input_ids=input_ids,
-            attention_mask=attention_mask,
-            output_hidden_states=True,
-            use_cache=False,
-        )
+        # HF hidden_states[-1] is normally AFTER the final norm. Context uses
+        # the raw residual stream; teacher logits need the normalized feature.
+        backbone = getattr(self.model, "base_model", self.model)
+        norm = next((getattr(backbone, name, None) for name in
+                     ("norm", "final_layernorm", "final_layer_norm", "ln_f")
+                     if isinstance(getattr(backbone, name, None), nn.Module)), None)
+        if norm is None:
+            raise ValueError("HF target requires an identifiable final norm to capture pre-norm context")
+        pre_final = {}
+
+        def capture_pre_norm(module, args):
+            pre_final["hidden"] = args[0]
+
+        handle = norm.register_forward_pre_hook(capture_pre_norm)
+        try:
+            outputs = forward_model(
+                input_ids=input_ids,
+                attention_mask=attention_mask,
+                output_hidden_states=True,
+                use_cache=False,
+            )
+        finally:
+            handle.remove()
+        if "hidden" not in pre_final:
+            raise RuntimeError("HF target forward did not execute its final norm")
 
         # hidden_states[0] = embedding output; hidden_states[i+1] = layer i output
         # Take all layers except embedding (index 0) and concat in feature dim
-        all_hidden_states = outputs.hidden_states[1:]
+        normalized_final = outputs.hidden_states[-1]
+        all_hidden_states = outputs.hidden_states[1:-1] + (pre_final["hidden"],)
         capture_ids = list(self.capture_layer_ids or [])
         hidden_states = (
             {layer_id: all_hidden_states[layer_id] for layer_id in capture_ids}
@@ -633,6 +658,7 @@ class HFTrainingTargetModel(TrainingTargetModel):
             input_ids=input_ids,
             attention_mask=attention_mask,
             loss_mask=loss_mask,
+            final_hidden_state=normalized_final,
         )
 
 

@@ -59,8 +59,14 @@ class BlockSink:
                      for key in ('input_ids','attention_mask','loss_mask')}
             for layer in (1,9,17,25,33,35):
                 tensors[f'hidden_{layer}']=torch.cat([
-                    r[1]['final_hidden_state'] if layer==35 else r[1]['hidden_states'][layer]
+                    (r[1]['hidden_states'].get(35,r[1]['final_hidden_state'])
+                     if layer==35 else r[1]['hidden_states'][layer])
                     for r in records])
+            separate=[35 in r[1]['hidden_states'] for r in records]
+            if any(separate) and not all(separate):
+                raise ValueError('Cannot mix raw-final-layer and legacy cache records in a block')
+            if all(separate):
+                tensors['teacher_final']=torch.cat([r[1]['final_hidden_state'] for r in records])
             offsets=[0]
             for _,payload,_ in records:offsets.append(offsets[-1]+payload['input_ids'].numel())
             tensors['offsets']=torch.tensor(offsets,dtype=torch.int64)
@@ -145,7 +151,10 @@ class StreamingBlockSink(BlockSink):
         if index in self.done:raise ValueError(f'Duplicate committed source {index}')
         values={key:payload[key] for key in ('input_ids','attention_mask','loss_mask')}
         values.update({f'hidden_{layer}':value for layer,value in payload['hidden_states'].items()})
-        values['hidden_35']=payload['final_hidden_state']
+        if 35 in payload['hidden_states']:
+            values['teacher_final']=payload['final_hidden_state']
+        else:
+            values['hidden_35']=payload['final_hidden_state']
         length=payload['input_ids'].numel()
         if self.buffers is None:
             per_token=sum(value[0].numel()*value.element_size() for value in values.values())
@@ -154,6 +163,8 @@ class StreamingBlockSink(BlockSink):
             self.buffers={key:torch.empty((self.capacity,*value.shape[1:]),dtype=value.dtype)
                           for key,value in values.items()}
         if self.used+length>self.capacity:self.flush()
+        if set(values)!=set(self.buffers):
+            raise ValueError('Cannot mix raw-final-layer and legacy cache records in a block')
         with self.metrics.time('block_copy'):
             for key,value in values.items():
                 if self.buffers[key].dtype!=value.dtype:raise ValueError('Inconsistent block dtype')
@@ -202,6 +213,9 @@ class BlockArchive:
                      hidden_states={layer:self.handle.get_slice(f'hidden_{layer}')[offset:end]
                                     for layer in (1,9,17,25,33)},
                      final_hidden_state=self.handle.get_slice('hidden_35')[offset:end])
+        if 'teacher_final' in self.handle.keys():
+            value['hidden_states'][35]=value['final_hidden_state']
+            value['final_hidden_state']=self.handle.get_slice('teacher_final')[offset:end]
         return value
 
     def close(self):self.handle.__exit__(None,None,None)

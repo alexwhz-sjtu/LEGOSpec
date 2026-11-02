@@ -11,7 +11,7 @@ class TVObjective(Objective):
         target_probabilities = torch.softmax(
             supervision.target_logits.detach().float(), -1
         )
-        # Project convention: TV loss is the full distribution L1 distance [0, 2].
-        token_losses = (target_probabilities - draft_probabilities).abs().sum(-1)
+        # Standard total variation is half the full distribution L1 distance.
+        token_losses = 0.5 * (target_probabilities - draft_probabilities).abs().sum(-1)
         loss_weights = self.loss_weights(supervision)
         return self.output((token_losses * loss_weights).sum(), loss_weights.sum())

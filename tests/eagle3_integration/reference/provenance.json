@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/deepseek-ai/DeepSpec",
+  "revision": "005e03b81cec38b7da6399833d609ee89a2587f2",
+  "files": {
+    "deepspec/modeling/eagle3/common.py": "d650f61702a0b7422a0f1b814d9a646a8fad6ea5f1c3fc461d21bdec9f2f60fd",
+    "deepspec/modeling/eagle3/qwen3/modeling.py": "5f9f2bea9f48fba040e77f922b46ede49cae8abe752de9101f1bb16ddfeca43c",
+    "deepspec/utils/sampling.py": "8f8ff58387e70526452672372628d1b2fbacb778a89f1a46abc9e2b7639d215a",
+    "NOTICE": "aae731b3baf58121af66b25b6600765aa7767cdee86b764f3cf031b64565e8e6",
+    "LICENSE": "474817ff0d848f0d44cea7f5ac0b488fe74f599f2a656476a94f215e5e4094c7"
+  }
+}

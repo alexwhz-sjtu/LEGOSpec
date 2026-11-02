@@ -1,0 +1,146 @@
+{
+  "root": [
+    "architectures",
+    "schema_version",
+    "block_size",
+    "composable_config"
+  ],
+  "recipe": [
+    "context",
+    "backbone",
+    "proposal",
+    "objective",
+    "mask_token_id",
+    "attention_configs",
+    "access_configs"
+  ],
+  "context": [
+    "type",
+    "target_layer_ids"
+  ],
+  "backbone": [
+    "type",
+    "layers"
+  ],
+  "layer": [
+    "attention",
+    "access",
+    "local_operator"
+  ],
+  "local_operator": [
+    "type",
+    "kernel_size",
+    "group_size"
+  ],
+  "mha": [
+    "num_attention_heads",
+    "num_key_value_heads",
+    "head_dim"
+  ],
+  "gqa": [
+    "num_attention_heads",
+    "num_key_value_heads",
+    "head_dim"
+  ],
+  "mla": [
+    "num_attention_heads",
+    "num_key_value_heads",
+    "q_lora_rank",
+    "kv_lora_rank",
+    "qk_nope_head_dim",
+    "qk_rope_head_dim",
+    "v_head_dim",
+    "rope_interleave"
+  ],
+  "gdn": [
+    "linear_num_key_heads",
+    "linear_num_value_heads",
+    "linear_key_head_dim",
+    "linear_value_head_dim",
+    "query_conv_kernel_size",
+    "context_conv_kernel_size",
+    "query_conv_mode"
+  ],
+  "dense": [],
+  "linear": [],
+  "sliding_window": [
+    "window_size"
+  ],
+  "dsa": [
+    "num_query_heads",
+    "head_dim",
+    "rope_head_dim",
+    "index_topk",
+    "anchor_chunk_size",
+    "rope_theta",
+    "stage",
+    "execution",
+    "enabled",
+    "loss_weight"
+  ],
+  "parallel": [
+    "type"
+  ],
+  "markov": [
+    "type",
+    "rank"
+  ],
+  "rnn": [
+    "type",
+    "rank"
+  ],
+  "sequential_rnn": [
+    "type",
+    "rank"
+  ],
+  "selector": [
+    "type",
+    "rank",
+    "top_k",
+    "selector_mode",
+    "stop_gradient"
+  ],
+  "objective": [
+    "type",
+    "loss_decay_gamma"
+  ],
+  "weighted_sum": [
+    "type",
+    "loss_decay_gamma",
+    "components"
+  ],
+  "dpace": [
+    "type",
+    "loss_decay_gamma",
+    "alpha",
+    "reduction"
+  ],
+  "tv_survival": [
+    "type",
+    "loss_decay_gamma",
+    "survival_weight"
+  ],
+  "selector_losses": [
+    "type",
+    "loss_decay_gamma",
+    "base",
+    "final"
+  ],
+  "component": [
+    "type",
+    "weight"
+  ],
+  "branch": [
+    "weight"
+  ],
+  "execution": [
+    "attention_backend",
+    "flex_attention_backend",
+    "gdn_backend"
+  ],
+  "target_attention": [
+    "num_attention_heads",
+    "num_key_value_heads",
+    "head_dim"
+  ]
+}

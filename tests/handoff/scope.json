@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-11-02T17:16:57.139898+00:00",
+  "source_root": "LEGOSpec",
+  "destination": "LEFOSpec_handon",
+  "excluded": [
+    "one-off dated evaluation/training jobs",
+    "datasets and generated answers",
+    "model weights and hidden caches",
+    "results, logs, PID/status and upload receipts",
+    "SSH endpoints, credentials and node keeper scripts",
+    "nested git history and build caches",
+    "paper figures and unrelated upstream docs/benchmarks"
+  ],
+  "training_jobs": "No live training/evaluation processes were modified or resumed by packaging."
+}

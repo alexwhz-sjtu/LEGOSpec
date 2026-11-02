@@ -1,0 +1,38 @@
+{
+  "architectures": [
+    "ComposableDraftModel"
+  ],
+  "block_size": 8,
+  "schema_version": "composable_v3",
+  "composable_config": {
+    "context": {
+      "type": "eagle3",
+      "target_layer_ids": [
+        1,
+        9,
+        17,
+        25,
+        33
+      ]
+    },
+    "backbone": {
+      "type": "eagle3",
+      "layers": [
+        {
+          "attention": "gqa",
+          "access": "dense"
+        }
+      ]
+    },
+    "attention_configs": {
+      "gqa": {}
+    },
+    "access_configs": {
+      "dense": {}
+    },
+    "objective": {
+      "type": "soft_ce",
+      "loss_decay_gamma": 4.481420117724551
+    }
+  }
+}

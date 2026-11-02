@@ -374,12 +374,17 @@ def sync_args_from_draft(args, draft) -> None:
 
 
 def concatenate_target_hidden(
-    hidden_states, target_layer_ids: list[int]
+    hidden_states, target_layer_ids: list[int], *, num_target_layers=None
 ) -> torch.Tensor:
     if isinstance(hidden_states, dict):
         selected = [hidden_states[int(layer_id)] for layer_id in target_layer_ids]
     else:
-        offset = 1 if len(hidden_states) > max(target_layer_ids) + 1 else 0
+        if num_target_layers is None:
+            offset = 1 if len(hidden_states) > max(target_layer_ids) + 1 else 0
+        elif len(hidden_states) in (int(num_target_layers), int(num_target_layers) + 1):
+            offset = int(len(hidden_states) == int(num_target_layers) + 1)
+        else:
+            raise ValueError("Target hidden tuple length does not match target depth")
         selected = [
             hidden_states[int(layer_id) + offset] for layer_id in target_layer_ids
         ]
@@ -392,6 +397,14 @@ def final_target_hidden(hidden_states, num_target_layers: int) -> torch.Tensor:
         return hidden_states[layer_id]
     offset = 1 if len(hidden_states) == int(num_target_layers) + 1 else 0
     return hidden_states[layer_id + offset]
+
+
+def teacher_target_hidden(target_output, num_target_layers: int) -> torch.Tensor:
+    """Prefer the explicit post-norm teacher feature; accept legacy backends."""
+    normalized = getattr(target_output, "final_hidden_state", None)
+    if normalized is not None:
+        return normalized
+    return final_target_hidden(target_output.hidden_states, num_target_layers)
 
 
 def build_dflash_family_components(args, draft):
@@ -452,13 +465,18 @@ def prepare_dflash_family_features(data, target_output, draft, require_last: boo
         else hidden_states_to_cuda(target_output.hidden_states)
     )
     target_context_hidden = concatenate_target_hidden(
-        target_hidden_states, list(draft.target_layer_ids)
+        target_hidden_states, list(draft.target_layer_ids),
+        num_target_layers=int(draft.config.num_target_layers),
     )
-    target_last_hidden = (
-        final_target_hidden(target_hidden_states, int(draft.config.num_target_layers))
-        if require_last
-        else None
-    )
+    target_last_hidden = None
+    if require_last:
+        if target_output is not None:
+            normalized = teacher_target_hidden(target_output, int(draft.config.num_target_layers))
+        else:
+            normalized = data.get("final_hidden_state")
+            if normalized is None:
+                normalized = final_target_hidden(target_hidden_states, int(draft.config.num_target_layers))
+        target_last_hidden = hidden_states_to_cuda(normalized)
     return target_context_hidden, target_last_hidden
 
 
@@ -520,6 +538,7 @@ __all__ = [
     "build_online_model",
     "concatenate_target_hidden",
     "final_target_hidden",
+    "teacher_target_hidden",
     "dflash_family_training_metadata",
     "load_dflash_family_draft",
     "prepare_dflash_family_features",
@@ -563,10 +582,11 @@ def _target_packet(args, topology, target, metadata, values):
         return None
     target_hidden_states = target_output.hidden_states
     target_context_hidden = concatenate_target_hidden(
-        target_hidden_states, metadata["target_layer_ids"]
+        target_hidden_states, metadata["target_layer_ids"],
+        num_target_layers=metadata["num_target_layers"],
     )
     target_last_hidden = (
-        final_target_hidden(target_hidden_states, metadata["num_target_layers"])
+        teacher_target_hidden(target_output, metadata["num_target_layers"])
         if metadata["include_target_last_hidden"]
         else None
     )

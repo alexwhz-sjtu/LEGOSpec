@@ -679,7 +679,16 @@ def sample_payload(
                 f"layer {layer_id} has invalid shape {tuple(value.shape)}"
             )
         sample_hidden[layer_id] = value
-    final_hidden_state = sample_hidden.pop(final_norm_layer_id)
+    normalized_final = getattr(output, "final_hidden_state", None)
+    if normalized_final is None:
+        final_hidden_state = sample_hidden.pop(final_norm_layer_id)
+    else:
+        # HF exposes raw final-layer context and normalized teacher features
+        # separately. Preserve both rather than overwriting either stream.
+        final_hidden_state = normalized_final[batch_index, :length].detach().cpu().contiguous()
+        if (final_hidden_state.shape != sample_hidden[final_norm_layer_id].shape
+                or not torch.isfinite(final_hidden_state).all()):
+            raise HiddenStateError("normalized teacher hidden has invalid shape or values")
     payload = {
         "schema_version": SCHEMA_VERSION,
         "sample_index": source_index,
@@ -803,6 +812,10 @@ def run_generation(args: argparse.Namespace) -> dict[str, Any] | None:
         else default_output_path(args.data_path, args.target_model_path)
     )
     identity = input_fingerprint(input_path)
+    if args.target_model_backend == "hf":
+        # A resumed capture must never mix legacy post-norm-only records with
+        # records that preserve the separate raw context and teacher streams.
+        identity = {**identity, "context_feature_contract": "decoder_outputs_pre_final_norm_v1"}
     init_distributed(timeout=args.dist_timeout, tp_size=args.tp_size)
     try:
         output_root.mkdir(parents=True, exist_ok=True)
@@ -1117,6 +1130,10 @@ def run_generation(args: argparse.Namespace) -> dict[str, Any] | None:
                 "sample_index_version": SAMPLE_INDEX_VERSION,
                 "target_model": args.target_model_path,
                 "target_backend": args.target_model_backend,
+                "context_feature_contract": (
+                    "decoder_outputs_pre_final_norm_v1"
+                    if args.target_model_backend == "hf" else "legacy_backend"
+                ),
                 "chat_template": args.chat_template,
                 "max_length": args.max_length,
                 "requested_hidden_layer_ids": requested_layer_ids,

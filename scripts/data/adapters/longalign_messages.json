@@ -1,0 +1,10 @@
+{
+  "prompt": {
+    "path": "messages",
+    "kind": "messages",
+    "role_path": "role",
+    "content_path": "content"
+  },
+  "source": {"default": "zai-org/LongAlign-10k"},
+  "category": {"path": "dataset", "default": "long"}
+}

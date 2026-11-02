@@ -1,0 +1,83 @@
+{
+  "order": [
+    35,
+    36,
+    31,
+    32,
+    1,
+    5,
+    28,
+    41,
+    23,
+    10,
+    34
+  ],
+  "recipes": [
+    {
+      "index": 35,
+      "name": "35__dflash__gqa4_swa512_gqa1_dense_conv2g16__rnn_r256__ce0p1_l10p9_g4__dataT0__qwen35_9b",
+      "config": "35.json",
+      "source_sha256": "a959c282b4dbda7b5f4e0439c6e8262b7609d43b938ef9ab819a917ca45f2382"
+    },
+    {
+      "index": 36,
+      "name": "36__dflash__gdn4_gqa1_dense_conv2g16__rnn_r256__ce0p1_l10p9_g4__dataT0__qwen35_9b",
+      "config": "36.json",
+      "source_sha256": "c7aa0699718a1e623cc7933b2e7ab611376b315ee0f3234bc6fdf1eaa2074dc4"
+    },
+    {
+      "index": 31,
+      "name": "31__eagle3__gqa1_dense__ce0p1_l10p9__decay0p8__dataT0__qwen35_9b",
+      "config": "31.json",
+      "source_sha256": "a0b083d66e9d74e09508cb6999e428baffac6f1de13b00327e77a90fda615a99"
+    },
+    {
+      "index": 32,
+      "name": "32__eagle3__gqa1_dense__l1__decay0p8__dataT0__qwen35_9b",
+      "config": "32.json",
+      "source_sha256": "733d9ff7eb48120d7a13e929d432f42f41a9003435018ae445c79d4ad1ad285b"
+    },
+    {
+      "index": 1,
+      "name": "01__dflash__gqa5_dense__rnn_r256__ce0p1_l10p9_g4__qwen35_9b",
+      "config": "01.json",
+      "source_sha256": "4a5ceabc0cf9b06469e6b3e9c4ba8b69ebd66ebe11a99baef18adad981a554a0"
+    },
+    {
+      "index": 5,
+      "name": "05__dflash__gqa5_dense_conv2g16__rnn_r256__ce0p1_l10p9_g4__qwen35_9b",
+      "config": "05.json",
+      "source_sha256": "7e12a5438386fba242d81dea005da79127b86785c0aba41ca7b09dab4b35a547"
+    },
+    {
+      "index": 28,
+      "name": "28__dflash__gqa5_dense_conv2g16__selector_r256_k16__basece0p1_finalce0p1l10p9_g4__dataT0__qwen35_9b",
+      "config": "28.json",
+      "source_sha256": "cfecea0c0d8f69d09dcfafa212e12df359cea29ed35283380762314953c4a5cf"
+    },
+    {
+      "index": 41,
+      "name": "41__dflash__gqa4_swa512_gqa1_dense_conv2g16__residualselector_r256_k16__basece0p1_finalce0p1l10p9_g4__dataT0__qwen35_9b",
+      "config": "41.json",
+      "source_sha256": "2cb0614dab24b77920641ae33639623986ff739ca68d894ac32e0025d70f728d"
+    },
+    {
+      "index": 23,
+      "name": "23__dflash__gqa5_dense__markov_r256__ce0p1_l10p9_g4__qwen35_9b",
+      "config": "23.json",
+      "source_sha256": "372059d0564a4305059acbe8b0327b05daece8063c4ac51c06a0e540e52a3157"
+    },
+    {
+      "index": 10,
+      "name": "10__dflash__gqa5_dense__parallel__ce_g4__qwen35_9b",
+      "config": "10.json",
+      "source_sha256": "5058e396cb928029cb1e79ca7914ae05185a52dc404d96d506859b20c44cad77"
+    },
+    {
+      "index": 34,
+      "name": "34__dflash2__gqa5_dense_conv2g16__topk_selector_r256_k16__basece1_finalce1_g4__dataT0__qwen35_9b",
+      "config": "34.json",
+      "source_sha256": "61979eeaa27e911143eb36d29c961fc182c1d0d90325becbbf9e0b2f39ef0139"
+    }
+  ]
+}

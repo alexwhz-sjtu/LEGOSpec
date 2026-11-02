@@ -25,6 +25,12 @@ def configure_rank_caches():
         os.environ[name] = str(Path(value) / f"rank_{rank}")
 
 
+def epoch_checkpoint_due(state, accumulation_steps):
+    """First optimizer boundary at/after an epoch end, including odd loader lengths."""
+    return (state.epoch > 0 and state.next_batch < accumulation_steps
+            and state.phase_step % accumulation_steps == 0)
+
+
 class OptimizerWindow:
     """Sum loss terms, normalize FSDP gradients once, and aggregate telemetry."""
 
@@ -130,6 +136,11 @@ def iter_logical_batches(session, phase):
         ):
             if state.phase_step >= phase.batch_count(session.steps_per_epoch):
                 return
+            if (getattr(session.args, "anchor_sampling", "legacy") == "sample_epoch"
+                    and isinstance(data, dict)):
+                # Stamp at input consumption: an accumulation window may cross
+                # an epoch before the training cursor itself has advanced.
+                data["_anchor_epoch"] = epoch
             yield data
 
 
@@ -296,7 +307,9 @@ def run_draft(session, *, batch_source=iter_logical_batches, save=None, log=log_
             accumulated += 1
             if accumulated == args.accumulation_steps:
                 update()
-            if state.global_step % args.save_interval == 0 and accumulated == 0:
+            epoch_boundary = (getattr(args, "save_every_epoch", False)
+                              and epoch_checkpoint_due(state, args.accumulation_steps))
+            if (state.global_step % args.save_interval == 0 or epoch_boundary) and accumulated == 0:
                 suffix = (
                     f"step_{state.global_step}"
                     if session.topology is not None

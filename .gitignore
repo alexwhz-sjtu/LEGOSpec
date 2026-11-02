@@ -258,10 +258,43 @@ private/
 
 # Local experiments, datasets, diagnostics and macOS metadata
 /test/
-/tests/
+/tests/*
+!/tests/unit/
 /data/
 /output/
 *.jsonl
 *.nsys-rep
 *.sqlite
 ._*
+
+# Local illustration tools, rendered papers and experiment downloads
+/tmp/
+/artifacts/
+/runs/
+/models/
+*.dylib
+*.dll
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.zip
+*.7z
+*.zst
+*.onnx
+*.h5
+*.hdf5
+*.tfevents.*
+*.prof
+*.pid
+
+# Personal command notes; public instructions live in docs/ and README files.
+/scripts/train.md
+
+# Reusable handoff tests are source, not experiment outputs.
+!/tests/acceptance/
+!/tests/eagle3_integration/
+!/tests/handoff/
+
+/runtime_vendor/
+/results/

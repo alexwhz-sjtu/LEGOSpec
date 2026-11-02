@@ -1,7 +1,17 @@
-"""文档占位；尚未集成实现。
+"""DSA selects history; ordinary within-block visibility is retained."""
 
-仅预留文件；第一版不注册、不允许在配置中选择。后续索引策略不得与 MHA/MLA 写成同一互斥枚举。
+from .base import build_visibility
 
-实施计划：output/draft-research/LiteSpec-draft-modules-research.html
-参考索引：refrence/index.html
-"""
+
+def dsa_visibility(inputs, positions, valid, documents, query_length, **kwargs):
+    visibility = build_visibility(inputs, positions, valid, documents, query_length)
+    selection = inputs.selection
+    if selection is None:
+        return visibility
+    import torch
+    n, a, _ = selection.indices.shape
+    counts = torch.zeros(n, a, positions.size(1), dtype=torch.long, device=positions.device)
+    counts.scatter_add_(-1, selection.indices, selection.selected_valid.long())
+    keep = (counts > 0).repeat_interleave(query_length // a, 1)
+    visibility[..., :positions.size(1)] &= keep[:, None]
+    return visibility

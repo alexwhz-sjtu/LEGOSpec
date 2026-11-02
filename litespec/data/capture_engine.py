@@ -17,21 +17,25 @@ import torch
 import torch.distributed as dist
 
 from scripts.data import prepare_hidden_states as legacy
+from litespec.data import build_training_dataset
+from .capture_profiles import PROFILES, resolve_capture_profile
 
 
 def parse_args(argv=None):
     p=argparse.ArgumentParser(add_help=False)
-    p.add_argument('--capture-mode',choices=['sync','async'],default='sync')
-    p.add_argument('--cache-format',choices=['tar-v2','tar-indexed-v2','tar-raw-v1','safetensors-v3'],default='tar-v2')
+    p.add_argument('--target-model-backend',choices=['hf','sglang'],default='sglang')
+    p.add_argument('--capture-profile',choices=['auto','qwen3_4b','qwen35_9b'],default='auto')
+    p.add_argument('--capture-mode',choices=['sync','async'],default='async')
+    p.add_argument('--cache-format',choices=['tar-v2','tar-indexed-v2','tar-raw-v1','safetensors-v3'],default='tar-raw-v1')
     p.add_argument('--pipeline-depth',type=int,default=2)
     p.add_argument('--writer-workers',type=int,default=2)
     p.add_argument('--max-pending-bytes',type=int,default=8*1024**3)
     p.add_argument('--max-batch-tokens',type=int,default=0)
-    p.add_argument('--packed-requests',action='store_true')
+    p.add_argument('--packed-requests',action=argparse.BooleanOptionalAction,default=True)
     p.add_argument('--batch-order',choices=['original','bucket'],default='original')
     p.add_argument('--tar-shard-bytes',type=int,default=2*1024**3)
-    p.add_argument('--tar-stream-sha',action='store_true')
-    p.add_argument('--tar-async-commit',action='store_true')
+    p.add_argument('--tar-stream-sha',action=argparse.BooleanOptionalAction,default=True)
+    p.add_argument('--tar-async-commit',action=argparse.BooleanOptionalAction,default=True)
     p.add_argument('--tar-commit-workers',type=int,default=1)
     p.add_argument('--tar-pending-commits',type=int,default=2)
     p.add_argument('--tar-buffer-bytes',type=int,default=4*1024**2)
@@ -44,10 +48,13 @@ def parse_args(argv=None):
     if argv is not None and "--help" in argv:
         p.print_help()
     own,rest=p.parse_known_args(argv)
-    args=legacy.parse_args(rest)
+    # Forward the resolved backend before legacy validation (including TP).
+    args=legacy.parse_args(['--target-model-backend',own.target_model_backend,*rest])
     for key,value in vars(own).items():setattr(args,key,value)
     if min(args.pipeline_depth,args.writer_workers,args.max_pending_bytes,args.tar_buffer_bytes,args.tar_commit_workers,args.tar_pending_commits)<=0:
         p.error('pipeline and writer limits must be positive')
+    if (args.packed_requests or args.max_batch_tokens) and args.target_model_backend!='sglang':
+        p.error('Packed capture requires SGLang; select --target-model-backend sglang or disable packed capture with --no-packed-requests and --max-batch-tokens 0')
     if args.max_batch_tokens<0:p.error('token budget must be nonnegative')
     if args.tar_shard_bytes<0:p.error('Tar shard byte limit must be nonnegative')
     if (args.max_batch_tokens or args.packed_requests or args.batch_order=='bucket') and args.cache_format not in ('safetensors-v3','tar-indexed-v2','tar-raw-v1'):
@@ -60,16 +67,18 @@ def parse_args(argv=None):
 
 
 class Slot:
-    def __init__(self):
+    def __init__(self,layer_ids=None):
+        self.layer_ids=tuple(layer_ids or PROFILES['qwen3_4b'].captured_layers)
         self.layers={}
         self.valid=torch.empty((),dtype=torch.bool,pin_memory=True)
 
-    def preallocate(self,tokens,hidden_size,bulk):
+    def preallocate(self,tokens,hidden_size,bulk,separate_final=False):
         count=tokens*hidden_size
-        self.flat=torch.empty(count*6,dtype=torch.bfloat16,pin_memory=True)
+        self.flat=torch.empty(count*(7 if separate_final else 6),dtype=torch.bfloat16,pin_memory=True)
         if bulk:
             self.layers={'aux':self.flat[:count*5],'last':self.flat[count*5:]}
-        else:self.layers={layer:self.flat[i*count:(i+1)*count] for i,layer in enumerate((1,9,17,25,33,35))}
+        else:self.layers={layer:self.flat[i*count:(i+1)*count] for i,layer in enumerate(self.layer_ids)}
+        if separate_final:self.layers['teacher_final']=self.flat[count*6:count*7]
 
     @property
     def allocated_bytes(self):
@@ -85,6 +94,7 @@ class Slot:
                 self.layers.pop(key,None)
                 self.layers[key]=torch.empty(tensor.numel(),dtype=tensor.dtype,pin_memory=True)
         return {key:self.layers[key][:value.numel()].view(value.shape) for key,value in hidden.items()}
+
 
 
 def metadata(record):
@@ -135,19 +145,22 @@ class TarSink:
 class Pipeline:
     def __init__(self,args,sink,metrics):
         self.args,self.sink,self.metrics=args,sink,metrics
+        self.layer_ids=tuple(getattr(args,'capture_layer_ids',PROFILES['qwen3_4b'].captured_layers))
+        self.final_layer=getattr(args,'capture_final_norm_layer_id',35)
         self.stream=torch.cuda.Stream()
         self.free=queue.Queue()
-        self.slots=[Slot() for _ in range(args.pipeline_depth)]
+        self.slots=[Slot(self.layer_ids) for _ in range(args.pipeline_depth)]
         if getattr(args,'preallocate_pinned',False) and not getattr(args,'no_buffer_reuse',False):
             budget=args.max_batch_tokens or args.batch_size*args.max_length
             tokens=min(budget,args.batch_size*args.max_length)
             hidden_size=getattr(args,'capture_hidden_size',2560)
-            size=tokens*hidden_size*6*2
+            separate_final=getattr(args,'target_model_backend','sglang')=='hf'
+            size=tokens*hidden_size*(7 if separate_final else 6)*2
             rounded=1<<(size-1).bit_length()
             reserved=torch.cuda.memory.host_memory_stats().get('reserved_bytes.current',0)
             if rounded*args.pipeline_depth+reserved>args.max_pending_bytes:
                 raise MemoryError('Rounded pinned pool allocation exceeds byte quota')
-            for slot in self.slots:slot.preallocate(tokens,hidden_size,args.bulk_packed_transfer and bool(args.max_batch_tokens))
+            for slot in self.slots:slot.preallocate(tokens,hidden_size,args.bulk_packed_transfer and bool(args.max_batch_tokens),separate_final)
         for slot in self.slots:self.free.put(slot)
         self.work=queue.Queue(maxsize=args.pipeline_depth)
         self.error=None
@@ -166,16 +179,19 @@ class Pipeline:
                 try:slot=self.free.get(timeout=0.1);break
                 except queue.Empty:pass
         hidden=legacy.normalize_hidden_states(output.hidden_states,None)
-        if set(hidden)!={1,9,17,25,33,35}:
+        if set(hidden)!=set(self.layer_ids):
             raise legacy.HiddenStateError(f'unexpected capture layers: {sorted(hidden)}')
+        normalized_final=getattr(output,'final_hidden_state',None)
+        if normalized_final is not None:
+            hidden=dict(hidden,teacher_final=normalized_final)
         bulk=bool(getattr(self.args,'bulk_packed_transfer',False) and getattr(output,'packed',False))
         transport={'aux':output.packed_aux,'last':output.packed_last} if bulk else hidden
         try:
             buffers=slot.allocate(transport,self.args.max_pending_bytes//self.args.pipeline_depth)
             if bulk:
                 viewed=buffers['aux'].view(-1,5,output.packed_last.shape[-1])
-                cpu={layer:viewed[:,i,:] for i,layer in enumerate((1,9,17,25,33))}
-                cpu[35]=buffers['last']
+                cpu={layer:viewed[:,i,:] for i,layer in enumerate(self.layer_ids[:-1])}
+                cpu[self.final_layer]=buffers['last']
             else:cpu=buffers
             allocated=sum(s.allocated_bytes for s in self.slots)
             self.metrics.peak_pinned_bytes=max(getattr(self.metrics,'peak_pinned_bytes',0),allocated)
@@ -215,12 +231,15 @@ class Pipeline:
             hidden={key:(value[index,:length] if offsets is None else value[offsets[index]:offsets[index+1]])
                     for key,value in cpu.items()}
             if compact:hidden={key:value.clone() for key,value in hidden.items()}
+            normalized_final=hidden.pop('teacher_final',None)
+            if normalized_final is None:
+                normalized_final=hidden.pop(getattr(self,'final_layer',getattr(self.args,'capture_final_norm_layer_id',35)))
             payload={'schema_version':2,'sample_index':record['source_index'],
                      'input_ids':record['input_ids'].reshape(-1).clone(),
                      'attention_mask':record['attention_mask'].reshape(-1).clone(),
                      'loss_mask':record['loss_mask'].reshape(-1).clone(),
-                     'hidden_states':{key:value for key,value in hidden.items() if key!=35},
-                     'final_hidden_state':hidden[35]}
+                     'hidden_states':hidden,
+                     'final_hidden_state':normalized_final}
             if self.args.cache_format=='tar-raw-v1':
                 from .hidden_tar_raw import RawSample
                 value=RawSample(payload)
@@ -263,7 +282,8 @@ class Pipeline:
 
 def run_generation(args,metrics):
     from datasets import load_dataset
-    from transformers import AutoConfig,AutoTokenizer
+    from transformers import AutoTokenizer
+    from litespec.modeling.config_utils import load_text_model_config
     from litespec.args import SGLangBackendArgs
     from litespec.distributed import init_distributed,destroy_distributed,get_dp_group
     from litespec.modeling.target import get_training_target_model
@@ -277,10 +297,24 @@ def run_generation(args,metrics):
         writer_init(writer,*values,**kwargs)
         writer.archive.copybufsize=args.tar_buffer_bytes
     legacy.TarShardWriter.__init__=buffered_init
+    from litespec.modeling.config_utils import get_pretrained_config_dict,is_qwen35_model_type
+    raw_config=get_pretrained_config_dict(args.target_model_path)
+    if is_qwen35_model_type(raw_config.get('model_type')) and args.target_model_backend=='sglang':
+        from transformers import AutoConfig
+        from sglang.srt.configs.qwen3_5 import Qwen3_5Config
+        AutoConfig.register('qwen3_5',Qwen3_5Config,exist_ok=True)
+    config=load_text_model_config(args.target_model_path)
+    profile=resolve_capture_profile(config,getattr(args,'capture_profile','auto'),args.target_layer_ids)
+    if profile.final_layer==31 and args.target_model_backend!='sglang':
+        raise ValueError('Qwen3.5-9B capture uses native SGLang in the training environment; HF5.2 is a separate evaluation environment')
+    args.capture_layer_ids=profile.captured_layers
+    args.capture_final_norm_layer_id=profile.final_layer
     identity=legacy.input_fingerprint(Path(args.data_path))
     try:
-        header={'input_identity':identity,'model':args.target_model_path,'layers':[1,9,17,25,33,35],
+        header={'input_identity':identity,'model':args.target_model_path,'layers':list(profile.captured_layers),
                 'max_length':args.max_length,'format':args.cache_format,'world_size':world}
+        if args.target_model_backend=='hf':
+            header['context_feature_contract']='decoder_outputs_pre_final_norm_v1'
         header_path=root/'capture_identity.json'
         if rank==0:
             if header_path.exists():
@@ -290,19 +324,18 @@ def run_generation(args,metrics):
         dist.barrier()
         tokenizer=AutoTokenizer.from_pretrained(args.target_model_path)
         if tokenizer.pad_token_id is None:tokenizer.pad_token_id=tokenizer.eos_token_id or 0
-        config=AutoConfig.from_pretrained(args.target_model_path)
         args.capture_hidden_size=config.hidden_size
         kwargs=SGLangBackendArgs.from_args(args).to_kwargs() if args.target_model_backend=='sglang' else {}
         target=get_training_target_model(args.target_model_path,backend=args.target_model_backend,
             torch_dtype=torch.bfloat16,device='cuda' if args.target_model_backend=='hf' else None,**kwargs)
-        target.set_capture_layers([1,9,17,25,33,35])
+        target.set_capture_layers(list(profile.captured_layers))
         raw=load_dataset('json',data_files=args.data_path)['train']
         if args.num_samples is not None:raw=raw.select(range(min(len(raw),args.num_samples)))
         key=hashlib.sha256(json.dumps({'identity':identity,'max_length':args.max_length,
             'chat_template':args.chat_template,'model':args.target_model_path,
             'preformatted':args.is_preformatted,'num_samples':args.num_samples},sort_keys=True).encode()).hexdigest()
         def build():
-            return legacy.build_training_dataset(raw,tokenizer,args.chat_template,max_length=args.max_length,
+            return build_training_dataset(raw,tokenizer,args.chat_template,max_length=args.max_length,
                 shuffle_seed=None,num_proc=args.build_dataset_num_proc,
                 cache_dir=str(Path(args.cache_dir)/'processed_dataset'),cache_key=key,
                 is_preformatted=args.is_preformatted,capture_errors=True)
@@ -371,9 +404,11 @@ def run_generation(args,metrics):
         dist.barrier(group=cpu_group)
         run_metadata={'save_mode':'regen_full','sample_index_version':1,'target_model':args.target_model_path,
             'target_backend':args.target_model_backend,'chat_template':args.chat_template,'max_length':args.max_length,
-            'requested_hidden_layer_ids':[1,9,17,25,33],'stored_hidden_layer_ids':[1,9,17,25,33,35],
-            'final_norm_layer_id':35,'num_hidden_layers':config.num_hidden_layers,'hidden_size':config.hidden_size,
+            'requested_hidden_layer_ids':list(profile.context_layers),'stored_hidden_layer_ids':list(profile.captured_layers),
+            'final_norm_layer_id':profile.final_layer,'num_hidden_layers':config.num_hidden_layers,'hidden_size':config.hidden_size,
             'hidden_dtype':'torch.bfloat16','compressed':False}
+        run_metadata['context_feature_contract']=(
+            'decoder_outputs_pre_final_norm_v1' if args.target_model_backend=='hf' else 'legacy_backend')
         if rank==0:
             print('[rank 0] finalization started',flush=True)
             if args.cache_format=='tar-v2':
@@ -389,4 +424,7 @@ def run_generation(args,metrics):
             print('[rank 0] manifest and data persisted',flush=True)
         dist.barrier(group=cpu_group)
     finally:
-        destroy_distributed()
+        # A failed rank must not enter a collective teardown while peers wait.
+        import sys
+        if sys.exc_info()[0] is None:
+            destroy_distributed()
